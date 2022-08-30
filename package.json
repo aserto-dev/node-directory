@@ -1,9 +1,16 @@
 {
-  "name": "node-directory",
+  "name": "@aserto-dev/node-directory",
   "version": "0.0.1",
   "description": "Node gRPC bindings for the Aserto directory service",
   "scripts": {
     "gen": "buf generate buf.build/aserto-dev/directory:v0.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aserto-dev/node-directory"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "keywords": [],
   "author": "",
