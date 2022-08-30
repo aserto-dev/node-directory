@@ -1,7 +1,8 @@
 version: v1
 
 deps:
-  - buf.build/aserto-dev/directory
+  - buf.build/aserto-dev/ext
+  - buf.build/aserto-dev/aserto
 
 lint:
   use:
