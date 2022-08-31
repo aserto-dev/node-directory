@@ -5,9 +5,9 @@ var grpc = require('@grpc/grpc-js');
 var aserto_directory_v2_directory_pb = require('../../../aserto/directory/v2/directory_pb.js');
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
-var google_rpc_status_pb = require('../../../google/rpc/status_pb.js');
 var protoc$gen$openapiv2_options_annotations_pb = require('../../../protoc-gen-openapiv2/options/annotations_pb.js');
 var aserto_common_info_v1_info_pb = require('../../../aserto/common/info/v1/info_pb.js');
+var aserto_api_v1_pagination_pb = require('../../../aserto/api/v1/pagination_pb.js');
 var aserto_directory_v2_object_pb = require('../../../aserto/directory/v2/object_pb.js');
 var aserto_directory_v2_relation_pb = require('../../../aserto/directory/v2/relation_pb.js');
 
@@ -53,28 +53,6 @@ function serialize_aserto_directory_v2_CheckRelationResponse(arg) {
 
 function deserialize_aserto_directory_v2_CheckRelationResponse(buffer_arg) {
   return aserto_directory_v2_directory_pb.CheckRelationResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_CheckRequest(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.CheckRequest)) {
-    throw new Error('Expected argument of type aserto.directory.v2.CheckRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_CheckRequest(buffer_arg) {
-  return aserto_directory_v2_directory_pb.CheckRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_CheckResponse(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.CheckResponse)) {
-    throw new Error('Expected argument of type aserto.directory.v2.CheckResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_CheckResponse(buffer_arg) {
-  return aserto_directory_v2_directory_pb.CheckResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_aserto_directory_v2_DeleteObjectRequest(arg) {
@@ -165,28 +143,6 @@ function deserialize_aserto_directory_v2_DeleteRelationResponse(buffer_arg) {
   return aserto_directory_v2_directory_pb.DeleteRelationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_aserto_directory_v2_DeleteRelationTypePermissionRequest(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.DeleteRelationTypePermissionRequest)) {
-    throw new Error('Expected argument of type aserto.directory.v2.DeleteRelationTypePermissionRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_DeleteRelationTypePermissionRequest(buffer_arg) {
-  return aserto_directory_v2_directory_pb.DeleteRelationTypePermissionRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_DeleteRelationTypePermissionResponse(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.DeleteRelationTypePermissionResponse)) {
-    throw new Error('Expected argument of type aserto.directory.v2.DeleteRelationTypePermissionResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_DeleteRelationTypePermissionResponse(buffer_arg) {
-  return aserto_directory_v2_directory_pb.DeleteRelationTypePermissionResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_aserto_directory_v2_DeleteRelationTypeRequest(arg) {
   if (!(arg instanceof aserto_directory_v2_directory_pb.DeleteRelationTypeRequest)) {
     throw new Error('Expected argument of type aserto.directory.v2.DeleteRelationTypeRequest');
@@ -229,50 +185,6 @@ function serialize_aserto_directory_v2_GetGraphResponse(arg) {
 
 function deserialize_aserto_directory_v2_GetGraphResponse(buffer_arg) {
   return aserto_directory_v2_directory_pb.GetGraphResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_GetObjRequest(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.GetObjRequest)) {
-    throw new Error('Expected argument of type aserto.directory.v2.GetObjRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_GetObjRequest(buffer_arg) {
-  return aserto_directory_v2_directory_pb.GetObjRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_GetObjResponse(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.GetObjResponse)) {
-    throw new Error('Expected argument of type aserto.directory.v2.GetObjResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_GetObjResponse(buffer_arg) {
-  return aserto_directory_v2_directory_pb.GetObjResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_GetObjTypeRequest(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.GetObjTypeRequest)) {
-    throw new Error('Expected argument of type aserto.directory.v2.GetObjTypeRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_GetObjTypeRequest(buffer_arg) {
-  return aserto_directory_v2_directory_pb.GetObjTypeRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_GetObjTypeResponse(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.GetObjTypeResponse)) {
-    throw new Error('Expected argument of type aserto.directory.v2.GetObjTypeResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_GetObjTypeResponse(buffer_arg) {
-  return aserto_directory_v2_directory_pb.GetObjTypeResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_aserto_directory_v2_GetObjectRequest(arg) {
@@ -319,28 +231,6 @@ function deserialize_aserto_directory_v2_GetObjectTypeResponse(buffer_arg) {
   return aserto_directory_v2_directory_pb.GetObjectTypeResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_aserto_directory_v2_GetPermRequest(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.GetPermRequest)) {
-    throw new Error('Expected argument of type aserto.directory.v2.GetPermRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_GetPermRequest(buffer_arg) {
-  return aserto_directory_v2_directory_pb.GetPermRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_GetPermResponse(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.GetPermResponse)) {
-    throw new Error('Expected argument of type aserto.directory.v2.GetPermResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_GetPermResponse(buffer_arg) {
-  return aserto_directory_v2_directory_pb.GetPermResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_aserto_directory_v2_GetPermissionRequest(arg) {
   if (!(arg instanceof aserto_directory_v2_directory_pb.GetPermissionRequest)) {
     throw new Error('Expected argument of type aserto.directory.v2.GetPermissionRequest');
@@ -363,50 +253,6 @@ function deserialize_aserto_directory_v2_GetPermissionResponse(buffer_arg) {
   return aserto_directory_v2_directory_pb.GetPermissionResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_aserto_directory_v2_GetRelRequest(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.GetRelRequest)) {
-    throw new Error('Expected argument of type aserto.directory.v2.GetRelRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_GetRelRequest(buffer_arg) {
-  return aserto_directory_v2_directory_pb.GetRelRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_GetRelResponse(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.GetRelResponse)) {
-    throw new Error('Expected argument of type aserto.directory.v2.GetRelResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_GetRelResponse(buffer_arg) {
-  return aserto_directory_v2_directory_pb.GetRelResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_GetRelTypeRequest(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.GetRelTypeRequest)) {
-    throw new Error('Expected argument of type aserto.directory.v2.GetRelTypeRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_GetRelTypeRequest(buffer_arg) {
-  return aserto_directory_v2_directory_pb.GetRelTypeRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_GetRelTypeResponse(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.GetRelTypeResponse)) {
-    throw new Error('Expected argument of type aserto.directory.v2.GetRelTypeResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_GetRelTypeResponse(buffer_arg) {
-  return aserto_directory_v2_directory_pb.GetRelTypeResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_aserto_directory_v2_GetRelationRequest(arg) {
   if (!(arg instanceof aserto_directory_v2_directory_pb.GetRelationRequest)) {
     throw new Error('Expected argument of type aserto.directory.v2.GetRelationRequest');
@@ -427,28 +273,6 @@ function serialize_aserto_directory_v2_GetRelationResponse(arg) {
 
 function deserialize_aserto_directory_v2_GetRelationResponse(buffer_arg) {
   return aserto_directory_v2_directory_pb.GetRelationResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_GetRelationTypePermissionRequest(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.GetRelationTypePermissionRequest)) {
-    throw new Error('Expected argument of type aserto.directory.v2.GetRelationTypePermissionRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_GetRelationTypePermissionRequest(buffer_arg) {
-  return aserto_directory_v2_directory_pb.GetRelationTypePermissionRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_GetRelationTypePermissionResponse(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.GetRelationTypePermissionResponse)) {
-    throw new Error('Expected argument of type aserto.directory.v2.GetRelationTypePermissionResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_GetRelationTypePermissionResponse(buffer_arg) {
-  return aserto_directory_v2_directory_pb.GetRelationTypePermissionResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_aserto_directory_v2_GetRelationTypeRequest(arg) {
@@ -493,28 +317,6 @@ function serialize_aserto_directory_v2_InfoResponse(arg) {
 
 function deserialize_aserto_directory_v2_InfoResponse(buffer_arg) {
   return aserto_directory_v2_directory_pb.InfoResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_ListObjectGraphRequest(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.ListObjectGraphRequest)) {
-    throw new Error('Expected argument of type aserto.directory.v2.ListObjectGraphRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_ListObjectGraphRequest(buffer_arg) {
-  return aserto_directory_v2_directory_pb.ListObjectGraphRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_ListObjectGraphResponse(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.ListObjectGraphResponse)) {
-    throw new Error('Expected argument of type aserto.directory.v2.ListObjectGraphResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_ListObjectGraphResponse(buffer_arg) {
-  return aserto_directory_v2_directory_pb.ListObjectGraphResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_aserto_directory_v2_ListObjectTypesRequest(arg) {
@@ -583,28 +385,6 @@ function deserialize_aserto_directory_v2_ListPermissionsResponse(buffer_arg) {
   return aserto_directory_v2_directory_pb.ListPermissionsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_aserto_directory_v2_ListRelationTypePermissionsRequest(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.ListRelationTypePermissionsRequest)) {
-    throw new Error('Expected argument of type aserto.directory.v2.ListRelationTypePermissionsRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_ListRelationTypePermissionsRequest(buffer_arg) {
-  return aserto_directory_v2_directory_pb.ListRelationTypePermissionsRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_ListRelationTypePermissionsResponse(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.ListRelationTypePermissionsResponse)) {
-    throw new Error('Expected argument of type aserto.directory.v2.ListRelationTypePermissionsResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_ListRelationTypePermissionsResponse(buffer_arg) {
-  return aserto_directory_v2_directory_pb.ListRelationTypePermissionsResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_aserto_directory_v2_ListRelationTypesRequest(arg) {
   if (!(arg instanceof aserto_directory_v2_directory_pb.ListRelationTypesRequest)) {
     throw new Error('Expected argument of type aserto.directory.v2.ListRelationTypesRequest');
@@ -647,28 +427,6 @@ function serialize_aserto_directory_v2_ListRelationsResponse(arg) {
 
 function deserialize_aserto_directory_v2_ListRelationsResponse(buffer_arg) {
   return aserto_directory_v2_directory_pb.ListRelationsResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_LoaderRequest(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.LoaderRequest)) {
-    throw new Error('Expected argument of type aserto.directory.v2.LoaderRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_LoaderRequest(buffer_arg) {
-  return aserto_directory_v2_directory_pb.LoaderRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_LoaderResponse(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.LoaderResponse)) {
-    throw new Error('Expected argument of type aserto.directory.v2.LoaderResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_LoaderResponse(buffer_arg) {
-  return aserto_directory_v2_directory_pb.LoaderResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_aserto_directory_v2_SetObjectRequest(arg) {
@@ -759,28 +517,6 @@ function deserialize_aserto_directory_v2_SetRelationResponse(buffer_arg) {
   return aserto_directory_v2_directory_pb.SetRelationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_aserto_directory_v2_SetRelationTypePermissionRequest(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.SetRelationTypePermissionRequest)) {
-    throw new Error('Expected argument of type aserto.directory.v2.SetRelationTypePermissionRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_SetRelationTypePermissionRequest(buffer_arg) {
-  return aserto_directory_v2_directory_pb.SetRelationTypePermissionRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_aserto_directory_v2_SetRelationTypePermissionResponse(arg) {
-  if (!(arg instanceof aserto_directory_v2_directory_pb.SetRelationTypePermissionResponse)) {
-    throw new Error('Expected argument of type aserto.directory.v2.SetRelationTypePermissionResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_aserto_directory_v2_SetRelationTypePermissionResponse(buffer_arg) {
-  return aserto_directory_v2_directory_pb.SetRelationTypePermissionResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_aserto_directory_v2_SetRelationTypeRequest(arg) {
   if (!(arg instanceof aserto_directory_v2_directory_pb.SetRelationTypeRequest)) {
     throw new Error('Expected argument of type aserto.directory.v2.SetRelationTypeRequest');
@@ -805,7 +541,8 @@ function deserialize_aserto_directory_v2_SetRelationTypeResponse(buffer_arg) {
 
 
 var DirectoryService = exports.DirectoryService = {
-  getObjectType: {
+  // object type metadata methods
+getObjectType: {
     path: '/aserto.directory.v2.Directory/GetObjectType',
     requestStream: false,
     responseStream: false,
@@ -841,7 +578,7 @@ var DirectoryService = exports.DirectoryService = {
   listObjectTypes: {
     path: '/aserto.directory.v2.Directory/ListObjectTypes',
     requestStream: false,
-    responseStream: true,
+    responseStream: false,
     requestType: aserto_directory_v2_directory_pb.ListObjectTypesRequest,
     responseType: aserto_directory_v2_directory_pb.ListObjectTypesResponse,
     requestSerialize: serialize_aserto_directory_v2_ListObjectTypesRequest,
@@ -849,18 +586,8 @@ var DirectoryService = exports.DirectoryService = {
     responseSerialize: serialize_aserto_directory_v2_ListObjectTypesResponse,
     responseDeserialize: deserialize_aserto_directory_v2_ListObjectTypesResponse,
   },
-  getObjType: {
-    path: '/aserto.directory.v2.Directory/GetObjType',
-    requestStream: false,
-    responseStream: false,
-    requestType: aserto_directory_v2_directory_pb.GetObjTypeRequest,
-    responseType: aserto_directory_v2_directory_pb.GetObjTypeResponse,
-    requestSerialize: serialize_aserto_directory_v2_GetObjTypeRequest,
-    requestDeserialize: deserialize_aserto_directory_v2_GetObjTypeRequest,
-    responseSerialize: serialize_aserto_directory_v2_GetObjTypeResponse,
-    responseDeserialize: deserialize_aserto_directory_v2_GetObjTypeResponse,
-  },
-  getRelationType: {
+  // relation type metadata methods
+getRelationType: {
     path: '/aserto.directory.v2.Directory/GetRelationType',
     requestStream: false,
     responseStream: false,
@@ -896,7 +623,7 @@ var DirectoryService = exports.DirectoryService = {
   listRelationTypes: {
     path: '/aserto.directory.v2.Directory/ListRelationTypes',
     requestStream: false,
-    responseStream: true,
+    responseStream: false,
     requestType: aserto_directory_v2_directory_pb.ListRelationTypesRequest,
     responseType: aserto_directory_v2_directory_pb.ListRelationTypesResponse,
     requestSerialize: serialize_aserto_directory_v2_ListRelationTypesRequest,
@@ -904,18 +631,8 @@ var DirectoryService = exports.DirectoryService = {
     responseSerialize: serialize_aserto_directory_v2_ListRelationTypesResponse,
     responseDeserialize: deserialize_aserto_directory_v2_ListRelationTypesResponse,
   },
-  getRelType: {
-    path: '/aserto.directory.v2.Directory/GetRelType',
-    requestStream: false,
-    responseStream: false,
-    requestType: aserto_directory_v2_directory_pb.GetRelTypeRequest,
-    responseType: aserto_directory_v2_directory_pb.GetRelTypeResponse,
-    requestSerialize: serialize_aserto_directory_v2_GetRelTypeRequest,
-    requestDeserialize: deserialize_aserto_directory_v2_GetRelTypeRequest,
-    responseSerialize: serialize_aserto_directory_v2_GetRelTypeResponse,
-    responseDeserialize: deserialize_aserto_directory_v2_GetRelTypeResponse,
-  },
-  getPermission: {
+  // permission metadata methods
+getPermission: {
     path: '/aserto.directory.v2.Directory/GetPermission',
     requestStream: false,
     responseStream: false,
@@ -951,7 +668,7 @@ var DirectoryService = exports.DirectoryService = {
   listPermissions: {
     path: '/aserto.directory.v2.Directory/ListPermissions',
     requestStream: false,
-    responseStream: true,
+    responseStream: false,
     requestType: aserto_directory_v2_directory_pb.ListPermissionsRequest,
     responseType: aserto_directory_v2_directory_pb.ListPermissionsResponse,
     requestSerialize: serialize_aserto_directory_v2_ListPermissionsRequest,
@@ -959,62 +676,8 @@ var DirectoryService = exports.DirectoryService = {
     responseSerialize: serialize_aserto_directory_v2_ListPermissionsResponse,
     responseDeserialize: deserialize_aserto_directory_v2_ListPermissionsResponse,
   },
-  getPerm: {
-    path: '/aserto.directory.v2.Directory/GetPerm',
-    requestStream: false,
-    responseStream: false,
-    requestType: aserto_directory_v2_directory_pb.GetPermRequest,
-    responseType: aserto_directory_v2_directory_pb.GetPermResponse,
-    requestSerialize: serialize_aserto_directory_v2_GetPermRequest,
-    requestDeserialize: deserialize_aserto_directory_v2_GetPermRequest,
-    responseSerialize: serialize_aserto_directory_v2_GetPermResponse,
-    responseDeserialize: deserialize_aserto_directory_v2_GetPermResponse,
-  },
-  getRelationTypePermission: {
-    path: '/aserto.directory.v2.Directory/GetRelationTypePermission',
-    requestStream: false,
-    responseStream: false,
-    requestType: aserto_directory_v2_directory_pb.GetRelationTypePermissionRequest,
-    responseType: aserto_directory_v2_directory_pb.GetRelationTypePermissionResponse,
-    requestSerialize: serialize_aserto_directory_v2_GetRelationTypePermissionRequest,
-    requestDeserialize: deserialize_aserto_directory_v2_GetRelationTypePermissionRequest,
-    responseSerialize: serialize_aserto_directory_v2_GetRelationTypePermissionResponse,
-    responseDeserialize: deserialize_aserto_directory_v2_GetRelationTypePermissionResponse,
-  },
-  setRelationTypePermission: {
-    path: '/aserto.directory.v2.Directory/SetRelationTypePermission',
-    requestStream: false,
-    responseStream: false,
-    requestType: aserto_directory_v2_directory_pb.SetRelationTypePermissionRequest,
-    responseType: aserto_directory_v2_directory_pb.SetRelationTypePermissionResponse,
-    requestSerialize: serialize_aserto_directory_v2_SetRelationTypePermissionRequest,
-    requestDeserialize: deserialize_aserto_directory_v2_SetRelationTypePermissionRequest,
-    responseSerialize: serialize_aserto_directory_v2_SetRelationTypePermissionResponse,
-    responseDeserialize: deserialize_aserto_directory_v2_SetRelationTypePermissionResponse,
-  },
-  deleteRelationTypePermission: {
-    path: '/aserto.directory.v2.Directory/DeleteRelationTypePermission',
-    requestStream: false,
-    responseStream: false,
-    requestType: aserto_directory_v2_directory_pb.DeleteRelationTypePermissionRequest,
-    responseType: aserto_directory_v2_directory_pb.DeleteRelationTypePermissionResponse,
-    requestSerialize: serialize_aserto_directory_v2_DeleteRelationTypePermissionRequest,
-    requestDeserialize: deserialize_aserto_directory_v2_DeleteRelationTypePermissionRequest,
-    responseSerialize: serialize_aserto_directory_v2_DeleteRelationTypePermissionResponse,
-    responseDeserialize: deserialize_aserto_directory_v2_DeleteRelationTypePermissionResponse,
-  },
-  listRelationTypePermissions: {
-    path: '/aserto.directory.v2.Directory/ListRelationTypePermissions',
-    requestStream: false,
-    responseStream: true,
-    requestType: aserto_directory_v2_directory_pb.ListRelationTypePermissionsRequest,
-    responseType: aserto_directory_v2_directory_pb.ListRelationTypePermissionsResponse,
-    requestSerialize: serialize_aserto_directory_v2_ListRelationTypePermissionsRequest,
-    requestDeserialize: deserialize_aserto_directory_v2_ListRelationTypePermissionsRequest,
-    responseSerialize: serialize_aserto_directory_v2_ListRelationTypePermissionsResponse,
-    responseDeserialize: deserialize_aserto_directory_v2_ListRelationTypePermissionsResponse,
-  },
-  getObject: {
+  // object methods
+getObject: {
     path: '/aserto.directory.v2.Directory/GetObject',
     requestStream: false,
     responseStream: false,
@@ -1050,7 +713,7 @@ var DirectoryService = exports.DirectoryService = {
   listObjects: {
     path: '/aserto.directory.v2.Directory/ListObjects',
     requestStream: false,
-    responseStream: true,
+    responseStream: false,
     requestType: aserto_directory_v2_directory_pb.ListObjectsRequest,
     responseType: aserto_directory_v2_directory_pb.ListObjectsResponse,
     requestSerialize: serialize_aserto_directory_v2_ListObjectsRequest,
@@ -1058,18 +721,8 @@ var DirectoryService = exports.DirectoryService = {
     responseSerialize: serialize_aserto_directory_v2_ListObjectsResponse,
     responseDeserialize: deserialize_aserto_directory_v2_ListObjectsResponse,
   },
-  getObj: {
-    path: '/aserto.directory.v2.Directory/GetObj',
-    requestStream: false,
-    responseStream: false,
-    requestType: aserto_directory_v2_directory_pb.GetObjRequest,
-    responseType: aserto_directory_v2_directory_pb.GetObjResponse,
-    requestSerialize: serialize_aserto_directory_v2_GetObjRequest,
-    requestDeserialize: deserialize_aserto_directory_v2_GetObjRequest,
-    responseSerialize: serialize_aserto_directory_v2_GetObjResponse,
-    responseDeserialize: deserialize_aserto_directory_v2_GetObjResponse,
-  },
-  getRelation: {
+  // relation methods
+getRelation: {
     path: '/aserto.directory.v2.Directory/GetRelation',
     requestStream: false,
     responseStream: false,
@@ -1105,7 +758,7 @@ var DirectoryService = exports.DirectoryService = {
   listRelations: {
     path: '/aserto.directory.v2.Directory/ListRelations',
     requestStream: false,
-    responseStream: true,
+    responseStream: false,
     requestType: aserto_directory_v2_directory_pb.ListRelationsRequest,
     responseType: aserto_directory_v2_directory_pb.ListRelationsResponse,
     requestSerialize: serialize_aserto_directory_v2_ListRelationsRequest,
@@ -1113,40 +766,8 @@ var DirectoryService = exports.DirectoryService = {
     responseSerialize: serialize_aserto_directory_v2_ListRelationsResponse,
     responseDeserialize: deserialize_aserto_directory_v2_ListRelationsResponse,
   },
-  getRel: {
-    path: '/aserto.directory.v2.Directory/GetRel',
-    requestStream: false,
-    responseStream: false,
-    requestType: aserto_directory_v2_directory_pb.GetRelRequest,
-    responseType: aserto_directory_v2_directory_pb.GetRelResponse,
-    requestSerialize: serialize_aserto_directory_v2_GetRelRequest,
-    requestDeserialize: deserialize_aserto_directory_v2_GetRelRequest,
-    responseSerialize: serialize_aserto_directory_v2_GetRelResponse,
-    responseDeserialize: deserialize_aserto_directory_v2_GetRelResponse,
-  },
-  loader: {
-    path: '/aserto.directory.v2.Directory/Loader',
-    requestStream: true,
-    responseStream: true,
-    requestType: aserto_directory_v2_directory_pb.LoaderRequest,
-    responseType: aserto_directory_v2_directory_pb.LoaderResponse,
-    requestSerialize: serialize_aserto_directory_v2_LoaderRequest,
-    requestDeserialize: deserialize_aserto_directory_v2_LoaderRequest,
-    responseSerialize: serialize_aserto_directory_v2_LoaderResponse,
-    responseDeserialize: deserialize_aserto_directory_v2_LoaderResponse,
-  },
-  listObjectGraph: {
-    path: '/aserto.directory.v2.Directory/ListObjectGraph',
-    requestStream: false,
-    responseStream: false,
-    requestType: aserto_directory_v2_directory_pb.ListObjectGraphRequest,
-    responseType: aserto_directory_v2_directory_pb.ListObjectGraphResponse,
-    requestSerialize: serialize_aserto_directory_v2_ListObjectGraphRequest,
-    requestDeserialize: deserialize_aserto_directory_v2_ListObjectGraphRequest,
-    responseSerialize: serialize_aserto_directory_v2_ListObjectGraphResponse,
-    responseDeserialize: deserialize_aserto_directory_v2_ListObjectGraphResponse,
-  },
-  getGraph: {
+  // graph methods
+getGraph: {
     path: '/aserto.directory.v2.Directory/GetGraph',
     requestStream: false,
     responseStream: false,
@@ -1157,18 +778,8 @@ var DirectoryService = exports.DirectoryService = {
     responseSerialize: serialize_aserto_directory_v2_GetGraphResponse,
     responseDeserialize: deserialize_aserto_directory_v2_GetGraphResponse,
   },
-  check: {
-    path: '/aserto.directory.v2.Directory/Check',
-    requestStream: false,
-    responseStream: false,
-    requestType: aserto_directory_v2_directory_pb.CheckRequest,
-    responseType: aserto_directory_v2_directory_pb.CheckResponse,
-    requestSerialize: serialize_aserto_directory_v2_CheckRequest,
-    requestDeserialize: deserialize_aserto_directory_v2_CheckRequest,
-    responseSerialize: serialize_aserto_directory_v2_CheckResponse,
-    responseDeserialize: deserialize_aserto_directory_v2_CheckResponse,
-  },
-  checkRelation: {
+  // check methods
+checkRelation: {
     path: '/aserto.directory.v2.Directory/CheckRelation',
     requestStream: false,
     responseStream: false,
@@ -1190,7 +801,8 @@ var DirectoryService = exports.DirectoryService = {
     responseSerialize: serialize_aserto_directory_v2_CheckPermissionResponse,
     responseDeserialize: deserialize_aserto_directory_v2_CheckPermissionResponse,
   },
-  info: {
+  // misc methods
+info: {
     path: '/aserto.directory.v2.Directory/Info',
     requestStream: false,
     responseStream: false,
