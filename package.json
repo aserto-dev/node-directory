@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Node gRPC bindings for the Aserto directory service",
   "scripts": {
-    "gen": "buf generate --include-imports buf.build/aserto-dev/directory:v0.0.5"
+    "gen": "buf generate --include-imports buf.build/aserto-dev/directory:v0.0.6"
   },
   "repository": {
     "type": "git",

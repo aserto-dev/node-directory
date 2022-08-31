@@ -4,9 +4,9 @@
 import * as jspb from "google-protobuf";
 import * as google_api_annotations_pb from "../../../google/api/annotations_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
-import * as google_rpc_status_pb from "../../../google/rpc/status_pb";
 import * as protoc_gen_openapiv2_options_annotations_pb from "../../../protoc-gen-openapiv2/options/annotations_pb";
 import * as aserto_common_info_v1_info_pb from "../../../aserto/common/info/v1/info_pb";
+import * as aserto_api_v1_pagination_pb from "../../../aserto/api/v1/pagination_pb";
 import * as aserto_directory_v2_object_pb from "../../../aserto/directory/v2/object_pb";
 import * as aserto_directory_v2_relation_pb from "../../../aserto/directory/v2/relation_pb";
 
@@ -45,95 +45,6 @@ export class InfoResponse extends jspb.Message {
 export namespace InfoResponse {
   export type AsObject = {
     build?: aserto_common_info_v1_info_pb.BuildInfo.AsObject,
-  }
-}
-
-export class LoaderRequest extends jspb.Message {
-  getOpCode(): OpcodeMap[keyof OpcodeMap];
-  setOpCode(value: OpcodeMap[keyof OpcodeMap]): void;
-
-  hasObject(): boolean;
-  clearObject(): void;
-  getObject(): aserto_directory_v2_object_pb.Object | undefined;
-  setObject(value?: aserto_directory_v2_object_pb.Object): void;
-
-  hasObjectType(): boolean;
-  clearObjectType(): void;
-  getObjectType(): aserto_directory_v2_object_pb.ObjectType | undefined;
-  setObjectType(value?: aserto_directory_v2_object_pb.ObjectType): void;
-
-  hasRelation(): boolean;
-  clearRelation(): void;
-  getRelation(): aserto_directory_v2_relation_pb.Relation | undefined;
-  setRelation(value?: aserto_directory_v2_relation_pb.Relation): void;
-
-  hasRelationType(): boolean;
-  clearRelationType(): void;
-  getRelationType(): aserto_directory_v2_relation_pb.RelationType | undefined;
-  setRelationType(value?: aserto_directory_v2_relation_pb.RelationType): void;
-
-  hasPermission(): boolean;
-  clearPermission(): void;
-  getPermission(): aserto_directory_v2_relation_pb.Permission | undefined;
-  setPermission(value?: aserto_directory_v2_relation_pb.Permission): void;
-
-  hasRelationTypePermission(): boolean;
-  clearRelationTypePermission(): void;
-  getRelationTypePermission(): aserto_directory_v2_relation_pb.RelationTypePermission | undefined;
-  setRelationTypePermission(value?: aserto_directory_v2_relation_pb.RelationTypePermission): void;
-
-  getMsgOneofCase(): LoaderRequest.MsgOneofCase;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LoaderRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: LoaderRequest): LoaderRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: LoaderRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LoaderRequest;
-  static deserializeBinaryFromReader(message: LoaderRequest, reader: jspb.BinaryReader): LoaderRequest;
-}
-
-export namespace LoaderRequest {
-  export type AsObject = {
-    opCode: OpcodeMap[keyof OpcodeMap],
-    object?: aserto_directory_v2_object_pb.Object.AsObject,
-    objectType?: aserto_directory_v2_object_pb.ObjectType.AsObject,
-    relation?: aserto_directory_v2_relation_pb.Relation.AsObject,
-    relationType?: aserto_directory_v2_relation_pb.RelationType.AsObject,
-    permission?: aserto_directory_v2_relation_pb.Permission.AsObject,
-    relationTypePermission?: aserto_directory_v2_relation_pb.RelationTypePermission.AsObject,
-  }
-
-  export enum MsgOneofCase {
-    MSG_ONEOF_NOT_SET = 0,
-    OBJECT = 2,
-    OBJECT_TYPE = 3,
-    RELATION = 4,
-    RELATION_TYPE = 5,
-    PERMISSION = 6,
-    RELATION_TYPE_PERMISSION = 7,
-  }
-}
-
-export class LoaderResponse extends jspb.Message {
-  hasError(): boolean;
-  clearError(): void;
-  getError(): google_rpc_status_pb.Status | undefined;
-  setError(value?: google_rpc_status_pb.Status): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LoaderResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: LoaderResponse): LoaderResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: LoaderResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LoaderResponse;
-  static deserializeBinaryFromReader(message: LoaderResponse, reader: jspb.BinaryReader): LoaderResponse;
-}
-
-export namespace LoaderResponse {
-  export type AsObject = {
-    error?: google_rpc_status_pb.Status.AsObject,
   }
 }
 
@@ -296,6 +207,11 @@ export namespace DeleteObjectTypeResponse {
 }
 
 export class ListObjectTypesRequest extends jspb.Message {
+  hasPage(): boolean;
+  clearPage(): void;
+  getPage(): aserto_api_v1_pagination_pb.PaginationRequest | undefined;
+  setPage(value?: aserto_api_v1_pagination_pb.PaginationRequest): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListObjectTypesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListObjectTypesRequest): ListObjectTypesRequest.AsObject;
@@ -308,14 +224,20 @@ export class ListObjectTypesRequest extends jspb.Message {
 
 export namespace ListObjectTypesRequest {
   export type AsObject = {
+    page?: aserto_api_v1_pagination_pb.PaginationRequest.AsObject,
   }
 }
 
 export class ListObjectTypesResponse extends jspb.Message {
-  hasResult(): boolean;
-  clearResult(): void;
-  getResult(): aserto_directory_v2_object_pb.ObjectType | undefined;
-  setResult(value?: aserto_directory_v2_object_pb.ObjectType): void;
+  clearResultsList(): void;
+  getResultsList(): Array<aserto_directory_v2_object_pb.ObjectType>;
+  setResultsList(value: Array<aserto_directory_v2_object_pb.ObjectType>): void;
+  addResults(value?: aserto_directory_v2_object_pb.ObjectType, index?: number): aserto_directory_v2_object_pb.ObjectType;
+
+  hasPage(): boolean;
+  clearPage(): void;
+  getPage(): aserto_api_v1_pagination_pb.PaginationResponse | undefined;
+  setPage(value?: aserto_api_v1_pagination_pb.PaginationResponse): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListObjectTypesResponse.AsObject;
@@ -329,7 +251,8 @@ export class ListObjectTypesResponse extends jspb.Message {
 
 export namespace ListObjectTypesResponse {
   export type AsObject = {
-    result?: aserto_directory_v2_object_pb.ObjectType.AsObject,
+    resultsList: Array<aserto_directory_v2_object_pb.ObjectType.AsObject>,
+    page?: aserto_api_v1_pagination_pb.PaginationResponse.AsObject,
   }
 }
 
@@ -480,10 +403,10 @@ export class DeleteRelationTypeRequest extends jspb.Message {
   getId(): number;
   setId(value: number): void;
 
-  hasName(): boolean;
-  clearName(): void;
-  getName(): string;
-  setName(value: string): void;
+  hasKey(): boolean;
+  clearKey(): void;
+  getKey(): aserto_directory_v2_relation_pb.RelationTypeKey | undefined;
+  setKey(value?: aserto_directory_v2_relation_pb.RelationTypeKey): void;
 
   getParamCase(): DeleteRelationTypeRequest.ParamCase;
   serializeBinary(): Uint8Array;
@@ -499,13 +422,13 @@ export class DeleteRelationTypeRequest extends jspb.Message {
 export namespace DeleteRelationTypeRequest {
   export type AsObject = {
     id: number,
-    name: string,
+    key?: aserto_directory_v2_relation_pb.RelationTypeKey.AsObject,
   }
 
   export enum ParamCase {
     PARAM_NOT_SET = 0,
     ID = 1,
-    NAME = 2,
+    KEY = 2,
   }
 }
 
@@ -534,8 +457,13 @@ export namespace DeleteRelationTypeResponse {
 export class ListRelationTypesRequest extends jspb.Message {
   hasObjectType(): boolean;
   clearObjectType(): void;
-  getObjectType(): number;
-  setObjectType(value: number): void;
+  getObjectType(): string;
+  setObjectType(value: string): void;
+
+  hasPage(): boolean;
+  clearPage(): void;
+  getPage(): aserto_api_v1_pagination_pb.PaginationRequest | undefined;
+  setPage(value?: aserto_api_v1_pagination_pb.PaginationRequest): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRelationTypesRequest.AsObject;
@@ -549,15 +477,21 @@ export class ListRelationTypesRequest extends jspb.Message {
 
 export namespace ListRelationTypesRequest {
   export type AsObject = {
-    objectType: number,
+    objectType: string,
+    page?: aserto_api_v1_pagination_pb.PaginationRequest.AsObject,
   }
 }
 
 export class ListRelationTypesResponse extends jspb.Message {
-  hasResult(): boolean;
-  clearResult(): void;
-  getResult(): aserto_directory_v2_relation_pb.RelationType | undefined;
-  setResult(value?: aserto_directory_v2_relation_pb.RelationType): void;
+  clearResultsList(): void;
+  getResultsList(): Array<aserto_directory_v2_relation_pb.RelationType>;
+  setResultsList(value: Array<aserto_directory_v2_relation_pb.RelationType>): void;
+  addResults(value?: aserto_directory_v2_relation_pb.RelationType, index?: number): aserto_directory_v2_relation_pb.RelationType;
+
+  hasPage(): boolean;
+  clearPage(): void;
+  getPage(): aserto_api_v1_pagination_pb.PaginationResponse | undefined;
+  setPage(value?: aserto_api_v1_pagination_pb.PaginationResponse): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRelationTypesResponse.AsObject;
@@ -571,7 +505,8 @@ export class ListRelationTypesResponse extends jspb.Message {
 
 export namespace ListRelationTypesResponse {
   export type AsObject = {
-    result?: aserto_directory_v2_relation_pb.RelationType.AsObject,
+    resultsList: Array<aserto_directory_v2_relation_pb.RelationType.AsObject>,
+    page?: aserto_api_v1_pagination_pb.PaginationResponse.AsObject,
   }
 }
 
@@ -780,8 +715,13 @@ export namespace DeleteObjectResponse {
 export class ListObjectsRequest extends jspb.Message {
   hasType(): boolean;
   clearType(): void;
-  getType(): number;
-  setType(value: number): void;
+  getType(): string;
+  setType(value: string): void;
+
+  hasPage(): boolean;
+  clearPage(): void;
+  getPage(): aserto_api_v1_pagination_pb.PaginationRequest | undefined;
+  setPage(value?: aserto_api_v1_pagination_pb.PaginationRequest): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListObjectsRequest.AsObject;
@@ -795,15 +735,21 @@ export class ListObjectsRequest extends jspb.Message {
 
 export namespace ListObjectsRequest {
   export type AsObject = {
-    type: number,
+    type: string,
+    page?: aserto_api_v1_pagination_pb.PaginationRequest.AsObject,
   }
 }
 
 export class ListObjectsResponse extends jspb.Message {
-  hasResult(): boolean;
-  clearResult(): void;
-  getResult(): aserto_directory_v2_object_pb.Object | undefined;
-  setResult(value?: aserto_directory_v2_object_pb.Object): void;
+  clearResultsList(): void;
+  getResultsList(): Array<aserto_directory_v2_object_pb.Object>;
+  setResultsList(value: Array<aserto_directory_v2_object_pb.Object>): void;
+  addResults(value?: aserto_directory_v2_object_pb.Object, index?: number): aserto_directory_v2_object_pb.Object;
+
+  hasPage(): boolean;
+  clearPage(): void;
+  getPage(): aserto_api_v1_pagination_pb.PaginationResponse | undefined;
+  setPage(value?: aserto_api_v1_pagination_pb.PaginationResponse): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListObjectsResponse.AsObject;
@@ -817,7 +763,8 @@ export class ListObjectsResponse extends jspb.Message {
 
 export namespace ListObjectsResponse {
   export type AsObject = {
-    result?: aserto_directory_v2_object_pb.Object.AsObject,
+    resultsList: Array<aserto_directory_v2_object_pb.Object.AsObject>,
+    page?: aserto_api_v1_pagination_pb.PaginationResponse.AsObject,
   }
 }
 
@@ -868,17 +815,17 @@ export namespace GetObjResponse {
 }
 
 export class GetRelationRequest extends jspb.Message {
-  getSourceType(): number;
-  setSourceType(value: number): void;
+  getSourceType(): string;
+  setSourceType(value: string): void;
 
   getSourceId(): string;
   setSourceId(value: string): void;
 
-  getRelation(): number;
-  setRelation(value: number): void;
+  getRelation(): string;
+  setRelation(value: string): void;
 
-  getTargetType(): number;
-  setTargetType(value: number): void;
+  getTargetType(): string;
+  setTargetType(value: string): void;
 
   getTargetId(): string;
   setTargetId(value: string): void;
@@ -895,10 +842,10 @@ export class GetRelationRequest extends jspb.Message {
 
 export namespace GetRelationRequest {
   export type AsObject = {
-    sourceType: number,
+    sourceType: string,
     sourceId: string,
-    relation: number,
-    targetType: number,
+    relation: string,
+    targetType: string,
     targetId: string,
   }
 }
@@ -970,17 +917,17 @@ export namespace SetRelationResponse {
 }
 
 export class DeleteRelationRequest extends jspb.Message {
-  getSourceType(): number;
-  setSourceType(value: number): void;
+  getSourceType(): string;
+  setSourceType(value: string): void;
 
   getSourceId(): string;
   setSourceId(value: string): void;
 
-  getRelation(): number;
-  setRelation(value: number): void;
+  getRelation(): string;
+  setRelation(value: string): void;
 
-  getTargetType(): number;
-  setTargetType(value: number): void;
+  getTargetType(): string;
+  setTargetType(value: string): void;
 
   getTargetId(): string;
   setTargetId(value: string): void;
@@ -997,10 +944,10 @@ export class DeleteRelationRequest extends jspb.Message {
 
 export namespace DeleteRelationRequest {
   export type AsObject = {
-    sourceType: number,
+    sourceType: string,
     sourceId: string,
-    relation: number,
-    targetType: number,
+    relation: string,
+    targetType: string,
     targetId: string,
   }
 }
@@ -1028,20 +975,25 @@ export namespace DeleteRelationResponse {
 }
 
 export class ListRelationsRequest extends jspb.Message {
-  getSourceType(): number;
-  setSourceType(value: number): void;
+  getSourceType(): string;
+  setSourceType(value: string): void;
 
   getSourceId(): string;
   setSourceId(value: string): void;
 
-  getRelation(): number;
-  setRelation(value: number): void;
+  getRelation(): string;
+  setRelation(value: string): void;
 
-  getTargetType(): number;
-  setTargetType(value: number): void;
+  getTargetType(): string;
+  setTargetType(value: string): void;
 
   getTargetId(): string;
   setTargetId(value: string): void;
+
+  hasPage(): boolean;
+  clearPage(): void;
+  getPage(): aserto_api_v1_pagination_pb.PaginationRequest | undefined;
+  setPage(value?: aserto_api_v1_pagination_pb.PaginationRequest): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRelationsRequest.AsObject;
@@ -1055,19 +1007,25 @@ export class ListRelationsRequest extends jspb.Message {
 
 export namespace ListRelationsRequest {
   export type AsObject = {
-    sourceType: number,
+    sourceType: string,
     sourceId: string,
-    relation: number,
-    targetType: number,
+    relation: string,
+    targetType: string,
     targetId: string,
+    page?: aserto_api_v1_pagination_pb.PaginationRequest.AsObject,
   }
 }
 
 export class ListRelationsResponse extends jspb.Message {
-  hasResult(): boolean;
-  clearResult(): void;
-  getResult(): aserto_directory_v2_relation_pb.Relation | undefined;
-  setResult(value?: aserto_directory_v2_relation_pb.Relation): void;
+  clearResultsList(): void;
+  getResultsList(): Array<aserto_directory_v2_relation_pb.Relation>;
+  setResultsList(value: Array<aserto_directory_v2_relation_pb.Relation>): void;
+  addResults(value?: aserto_directory_v2_relation_pb.Relation, index?: number): aserto_directory_v2_relation_pb.Relation;
+
+  hasPage(): boolean;
+  clearPage(): void;
+  getPage(): aserto_api_v1_pagination_pb.PaginationResponse | undefined;
+  setPage(value?: aserto_api_v1_pagination_pb.PaginationResponse): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRelationsResponse.AsObject;
@@ -1081,7 +1039,8 @@ export class ListRelationsResponse extends jspb.Message {
 
 export namespace ListRelationsResponse {
   export type AsObject = {
-    result?: aserto_directory_v2_relation_pb.Relation.AsObject,
+    resultsList: Array<aserto_directory_v2_relation_pb.Relation.AsObject>,
+    page?: aserto_api_v1_pagination_pb.PaginationResponse.AsObject,
   }
 }
 
@@ -1302,6 +1261,11 @@ export namespace DeletePermissionResponse {
 }
 
 export class ListPermissionsRequest extends jspb.Message {
+  hasPage(): boolean;
+  clearPage(): void;
+  getPage(): aserto_api_v1_pagination_pb.PaginationRequest | undefined;
+  setPage(value?: aserto_api_v1_pagination_pb.PaginationRequest): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPermissionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListPermissionsRequest): ListPermissionsRequest.AsObject;
@@ -1314,14 +1278,20 @@ export class ListPermissionsRequest extends jspb.Message {
 
 export namespace ListPermissionsRequest {
   export type AsObject = {
+    page?: aserto_api_v1_pagination_pb.PaginationRequest.AsObject,
   }
 }
 
 export class ListPermissionsResponse extends jspb.Message {
-  hasResult(): boolean;
-  clearResult(): void;
-  getResult(): aserto_directory_v2_relation_pb.Permission | undefined;
-  setResult(value?: aserto_directory_v2_relation_pb.Permission): void;
+  clearResultsList(): void;
+  getResultsList(): Array<aserto_directory_v2_relation_pb.Permission>;
+  setResultsList(value: Array<aserto_directory_v2_relation_pb.Permission>): void;
+  addResults(value?: aserto_directory_v2_relation_pb.Permission, index?: number): aserto_directory_v2_relation_pb.Permission;
+
+  hasPage(): boolean;
+  clearPage(): void;
+  getPage(): aserto_api_v1_pagination_pb.PaginationResponse | undefined;
+  setPage(value?: aserto_api_v1_pagination_pb.PaginationResponse): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPermissionsResponse.AsObject;
@@ -1335,7 +1305,8 @@ export class ListPermissionsResponse extends jspb.Message {
 
 export namespace ListPermissionsResponse {
   export type AsObject = {
-    result?: aserto_directory_v2_relation_pb.Permission.AsObject,
+    resultsList: Array<aserto_directory_v2_relation_pb.Permission.AsObject>,
+    page?: aserto_api_v1_pagination_pb.PaginationResponse.AsObject,
   }
 }
 
@@ -1376,180 +1347,6 @@ export class GetPermResponse extends jspb.Message {
 export namespace GetPermResponse {
   export type AsObject = {
     id: string,
-  }
-}
-
-export class GetRelationTypePermissionRequest extends jspb.Message {
-  getRelationId(): number;
-  setRelationId(value: number): void;
-
-  getPermissionId(): string;
-  setPermissionId(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetRelationTypePermissionRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetRelationTypePermissionRequest): GetRelationTypePermissionRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetRelationTypePermissionRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetRelationTypePermissionRequest;
-  static deserializeBinaryFromReader(message: GetRelationTypePermissionRequest, reader: jspb.BinaryReader): GetRelationTypePermissionRequest;
-}
-
-export namespace GetRelationTypePermissionRequest {
-  export type AsObject = {
-    relationId: number,
-    permissionId: string,
-  }
-}
-
-export class GetRelationTypePermissionResponse extends jspb.Message {
-  clearResultsList(): void;
-  getResultsList(): Array<aserto_directory_v2_relation_pb.RelationTypePermission>;
-  setResultsList(value: Array<aserto_directory_v2_relation_pb.RelationTypePermission>): void;
-  addResults(value?: aserto_directory_v2_relation_pb.RelationTypePermission, index?: number): aserto_directory_v2_relation_pb.RelationTypePermission;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetRelationTypePermissionResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetRelationTypePermissionResponse): GetRelationTypePermissionResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetRelationTypePermissionResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetRelationTypePermissionResponse;
-  static deserializeBinaryFromReader(message: GetRelationTypePermissionResponse, reader: jspb.BinaryReader): GetRelationTypePermissionResponse;
-}
-
-export namespace GetRelationTypePermissionResponse {
-  export type AsObject = {
-    resultsList: Array<aserto_directory_v2_relation_pb.RelationTypePermission.AsObject>,
-  }
-}
-
-export class SetRelationTypePermissionRequest extends jspb.Message {
-  hasRelationTypePermission(): boolean;
-  clearRelationTypePermission(): void;
-  getRelationTypePermission(): aserto_directory_v2_relation_pb.RelationTypePermission | undefined;
-  setRelationTypePermission(value?: aserto_directory_v2_relation_pb.RelationTypePermission): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SetRelationTypePermissionRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: SetRelationTypePermissionRequest): SetRelationTypePermissionRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SetRelationTypePermissionRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SetRelationTypePermissionRequest;
-  static deserializeBinaryFromReader(message: SetRelationTypePermissionRequest, reader: jspb.BinaryReader): SetRelationTypePermissionRequest;
-}
-
-export namespace SetRelationTypePermissionRequest {
-  export type AsObject = {
-    relationTypePermission?: aserto_directory_v2_relation_pb.RelationTypePermission.AsObject,
-  }
-}
-
-export class SetRelationTypePermissionResponse extends jspb.Message {
-  clearResultsList(): void;
-  getResultsList(): Array<aserto_directory_v2_relation_pb.RelationTypePermission>;
-  setResultsList(value: Array<aserto_directory_v2_relation_pb.RelationTypePermission>): void;
-  addResults(value?: aserto_directory_v2_relation_pb.RelationTypePermission, index?: number): aserto_directory_v2_relation_pb.RelationTypePermission;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SetRelationTypePermissionResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: SetRelationTypePermissionResponse): SetRelationTypePermissionResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SetRelationTypePermissionResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SetRelationTypePermissionResponse;
-  static deserializeBinaryFromReader(message: SetRelationTypePermissionResponse, reader: jspb.BinaryReader): SetRelationTypePermissionResponse;
-}
-
-export namespace SetRelationTypePermissionResponse {
-  export type AsObject = {
-    resultsList: Array<aserto_directory_v2_relation_pb.RelationTypePermission.AsObject>,
-  }
-}
-
-export class DeleteRelationTypePermissionRequest extends jspb.Message {
-  getRelationId(): number;
-  setRelationId(value: number): void;
-
-  getPermissionId(): string;
-  setPermissionId(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteRelationTypePermissionRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteRelationTypePermissionRequest): DeleteRelationTypePermissionRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DeleteRelationTypePermissionRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteRelationTypePermissionRequest;
-  static deserializeBinaryFromReader(message: DeleteRelationTypePermissionRequest, reader: jspb.BinaryReader): DeleteRelationTypePermissionRequest;
-}
-
-export namespace DeleteRelationTypePermissionRequest {
-  export type AsObject = {
-    relationId: number,
-    permissionId: string,
-  }
-}
-
-export class DeleteRelationTypePermissionResponse extends jspb.Message {
-  hasResult(): boolean;
-  clearResult(): void;
-  getResult(): google_protobuf_empty_pb.Empty | undefined;
-  setResult(value?: google_protobuf_empty_pb.Empty): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteRelationTypePermissionResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteRelationTypePermissionResponse): DeleteRelationTypePermissionResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DeleteRelationTypePermissionResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteRelationTypePermissionResponse;
-  static deserializeBinaryFromReader(message: DeleteRelationTypePermissionResponse, reader: jspb.BinaryReader): DeleteRelationTypePermissionResponse;
-}
-
-export namespace DeleteRelationTypePermissionResponse {
-  export type AsObject = {
-    result?: google_protobuf_empty_pb.Empty.AsObject,
-  }
-}
-
-export class ListRelationTypePermissionsRequest extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListRelationTypePermissionsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListRelationTypePermissionsRequest): ListRelationTypePermissionsRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListRelationTypePermissionsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListRelationTypePermissionsRequest;
-  static deserializeBinaryFromReader(message: ListRelationTypePermissionsRequest, reader: jspb.BinaryReader): ListRelationTypePermissionsRequest;
-}
-
-export namespace ListRelationTypePermissionsRequest {
-  export type AsObject = {
-  }
-}
-
-export class ListRelationTypePermissionsResponse extends jspb.Message {
-  hasResult(): boolean;
-  clearResult(): void;
-  getResult(): aserto_directory_v2_relation_pb.RelationTypePermission | undefined;
-  setResult(value?: aserto_directory_v2_relation_pb.RelationTypePermission): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListRelationTypePermissionsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListRelationTypePermissionsResponse): ListRelationTypePermissionsResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListRelationTypePermissionsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListRelationTypePermissionsResponse;
-  static deserializeBinaryFromReader(message: ListRelationTypePermissionsResponse, reader: jspb.BinaryReader): ListRelationTypePermissionsResponse;
-}
-
-export namespace ListRelationTypePermissionsResponse {
-  export type AsObject = {
-    result?: aserto_directory_v2_relation_pb.RelationTypePermission.AsObject,
   }
 }
 
