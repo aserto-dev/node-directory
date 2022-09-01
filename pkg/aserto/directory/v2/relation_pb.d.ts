@@ -5,17 +5,17 @@ import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class Relation extends jspb.Message {
-  getSourceType(): string;
-  setSourceType(value: string): void;
+  getSourceType(): number;
+  setSourceType(value: number): void;
 
   getSourceId(): string;
   setSourceId(value: string): void;
 
-  getRelation(): string;
-  setRelation(value: string): void;
+  getRelation(): number;
+  setRelation(value: number): void;
 
-  getTargetType(): string;
-  setTargetType(value: string): void;
+  getTargetType(): number;
+  setTargetType(value: number): void;
 
   getTargetId(): string;
   setTargetId(value: string): void;
@@ -50,10 +50,10 @@ export class Relation extends jspb.Message {
 
 export namespace Relation {
   export type AsObject = {
-    sourceType: string,
+    sourceType: number,
     sourceId: string,
-    relation: string,
-    targetType: string,
+    relation: number,
+    targetType: number,
     targetId: string,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -72,8 +72,8 @@ export class RelationType extends jspb.Message {
   getDisplayName(): string;
   setDisplayName(value: string): void;
 
-  getObjectType(): string;
-  setObjectType(value: string): void;
+  getObjectType(): number;
+  setObjectType(value: number): void;
 
   getOrdinal(): number;
   setOrdinal(value: number): void;
@@ -82,9 +82,9 @@ export class RelationType extends jspb.Message {
   setStatus(value: number): void;
 
   clearUnionsList(): void;
-  getUnionsList(): Array<string>;
-  setUnionsList(value: Array<string>): void;
-  addUnions(value: string, index?: number): string;
+  getUnionsList(): Array<number>;
+  setUnionsList(value: Array<number>): void;
+  addUnions(value: number, index?: number): number;
 
   clearPermissionsList(): void;
   getPermissionsList(): Array<string>;
@@ -116,10 +116,10 @@ export namespace RelationType {
     id: number,
     name: string,
     displayName: string,
-    objectType: string,
+    objectType: number,
     ordinal: number,
     status: number,
-    unionsList: Array<string>,
+    unionsList: Array<number>,
     permissionsList: Array<string>,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -166,12 +166,52 @@ export namespace Permission {
   }
 }
 
+export class RelationTypePermission extends jspb.Message {
+  getRelationId(): number;
+  setRelationId(value: number): void;
+
+  getPermissionId(): string;
+  setPermissionId(value: string): void;
+
+  getAllowed(): boolean;
+  setAllowed(value: boolean): void;
+
+  hasCreatedAt(): boolean;
+  clearCreatedAt(): void;
+  getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasUpdatedAt(): boolean;
+  clearUpdatedAt(): void;
+  getUpdatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setUpdatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RelationTypePermission.AsObject;
+  static toObject(includeInstance: boolean, msg: RelationTypePermission): RelationTypePermission.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RelationTypePermission, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RelationTypePermission;
+  static deserializeBinaryFromReader(message: RelationTypePermission, reader: jspb.BinaryReader): RelationTypePermission;
+}
+
+export namespace RelationTypePermission {
+  export type AsObject = {
+    relationId: number,
+    permissionId: string,
+    allowed: boolean,
+    createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
 export class RelationTypeKey extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getObjectType(): string;
-  setObjectType(value: string): void;
+  getObjectType(): number;
+  setObjectType(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RelationTypeKey.AsObject;
@@ -186,7 +226,7 @@ export class RelationTypeKey extends jspb.Message {
 export namespace RelationTypeKey {
   export type AsObject = {
     name: string,
-    objectType: string,
+    objectType: number,
   }
 }
 

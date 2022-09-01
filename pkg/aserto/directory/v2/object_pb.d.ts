@@ -9,8 +9,8 @@ export class Object extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  getType(): string;
-  setType(value: string): void;
+  getType(): number;
+  setType(value: number): void;
 
   getKey(): string;
   setKey(value: string): void;
@@ -54,7 +54,7 @@ export class Object extends jspb.Message {
 export namespace Object {
   export type AsObject = {
     id: string,
-    type: string,
+    type: number,
     key: string,
     displayName: string,
     properties?: google_protobuf_struct_pb.Struct.AsObject,
@@ -124,8 +124,11 @@ export namespace ObjectType {
 }
 
 export class ObjectDependency extends jspb.Message {
-  getSourceType(): string;
-  setSourceType(value: string): void;
+  getSourceType(): number;
+  setSourceType(value: number): void;
+
+  getSourceTypeName(): string;
+  setSourceTypeName(value: string): void;
 
   getSourceId(): string;
   setSourceId(value: string): void;
@@ -133,11 +136,17 @@ export class ObjectDependency extends jspb.Message {
   getSourceKey(): string;
   setSourceKey(value: string): void;
 
-  getRelation(): string;
-  setRelation(value: string): void;
+  getRelation(): number;
+  setRelation(value: number): void;
 
-  getTargetType(): string;
-  setTargetType(value: string): void;
+  getRelationName(): string;
+  setRelationName(value: string): void;
+
+  getTargetType(): number;
+  setTargetType(value: number): void;
+
+  getTargetTypeName(): string;
+  setTargetTypeName(value: string): void;
 
   getTargetId(): string;
   setTargetId(value: string): void;
@@ -166,11 +175,14 @@ export class ObjectDependency extends jspb.Message {
 
 export namespace ObjectDependency {
   export type AsObject = {
-    sourceType: string,
+    sourceType: number,
+    sourceTypeName: string,
     sourceId: string,
     sourceKey: string,
-    relation: string,
-    targetType: string,
+    relation: number,
+    relationName: string,
+    targetType: number,
+    targetTypeName: string,
     targetId: string,
     targetKey: string,
     depth: number,
@@ -180,8 +192,8 @@ export namespace ObjectDependency {
 }
 
 export class ObjectKey extends jspb.Message {
-  getType(): string;
-  setType(value: string): void;
+  getType(): number;
+  setType(value: number): void;
 
   getKey(): string;
   setKey(value: string): void;
@@ -198,7 +210,7 @@ export class ObjectKey extends jspb.Message {
 
 export namespace ObjectKey {
   export type AsObject = {
-    type: string,
+    type: number,
     key: string,
   }
 }

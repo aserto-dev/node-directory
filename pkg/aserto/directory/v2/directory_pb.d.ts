@@ -457,8 +457,8 @@ export namespace DeleteRelationTypeResponse {
 export class ListRelationTypesRequest extends jspb.Message {
   hasObjectType(): boolean;
   clearObjectType(): void;
-  getObjectType(): string;
-  setObjectType(value: string): void;
+  getObjectType(): number;
+  setObjectType(value: number): void;
 
   hasPage(): boolean;
   clearPage(): void;
@@ -477,7 +477,7 @@ export class ListRelationTypesRequest extends jspb.Message {
 
 export namespace ListRelationTypesRequest {
   export type AsObject = {
-    objectType: string,
+    objectType: number,
     page?: aserto_api_v1_pagination_pb.PaginationRequest.AsObject,
   }
 }
@@ -715,8 +715,8 @@ export namespace DeleteObjectResponse {
 export class ListObjectsRequest extends jspb.Message {
   hasType(): boolean;
   clearType(): void;
-  getType(): string;
-  setType(value: string): void;
+  getType(): number;
+  setType(value: number): void;
 
   hasPage(): boolean;
   clearPage(): void;
@@ -735,7 +735,7 @@ export class ListObjectsRequest extends jspb.Message {
 
 export namespace ListObjectsRequest {
   export type AsObject = {
-    type: string,
+    type: number,
     page?: aserto_api_v1_pagination_pb.PaginationRequest.AsObject,
   }
 }
@@ -815,17 +815,17 @@ export namespace GetObjResponse {
 }
 
 export class GetRelationRequest extends jspb.Message {
-  getSourceType(): string;
-  setSourceType(value: string): void;
+  getSourceType(): number;
+  setSourceType(value: number): void;
 
   getSourceId(): string;
   setSourceId(value: string): void;
 
-  getRelation(): string;
-  setRelation(value: string): void;
+  getRelation(): number;
+  setRelation(value: number): void;
 
-  getTargetType(): string;
-  setTargetType(value: string): void;
+  getTargetType(): number;
+  setTargetType(value: number): void;
 
   getTargetId(): string;
   setTargetId(value: string): void;
@@ -842,10 +842,10 @@ export class GetRelationRequest extends jspb.Message {
 
 export namespace GetRelationRequest {
   export type AsObject = {
-    sourceType: string,
+    sourceType: number,
     sourceId: string,
-    relation: string,
-    targetType: string,
+    relation: number,
+    targetType: number,
     targetId: string,
   }
 }
@@ -917,17 +917,17 @@ export namespace SetRelationResponse {
 }
 
 export class DeleteRelationRequest extends jspb.Message {
-  getSourceType(): string;
-  setSourceType(value: string): void;
+  getSourceType(): number;
+  setSourceType(value: number): void;
 
   getSourceId(): string;
   setSourceId(value: string): void;
 
-  getRelation(): string;
-  setRelation(value: string): void;
+  getRelation(): number;
+  setRelation(value: number): void;
 
-  getTargetType(): string;
-  setTargetType(value: string): void;
+  getTargetType(): number;
+  setTargetType(value: number): void;
 
   getTargetId(): string;
   setTargetId(value: string): void;
@@ -944,10 +944,10 @@ export class DeleteRelationRequest extends jspb.Message {
 
 export namespace DeleteRelationRequest {
   export type AsObject = {
-    sourceType: string,
+    sourceType: number,
     sourceId: string,
-    relation: string,
-    targetType: string,
+    relation: number,
+    targetType: number,
     targetId: string,
   }
 }
@@ -975,17 +975,17 @@ export namespace DeleteRelationResponse {
 }
 
 export class ListRelationsRequest extends jspb.Message {
-  getSourceType(): string;
-  setSourceType(value: string): void;
+  getSourceType(): number;
+  setSourceType(value: number): void;
 
   getSourceId(): string;
   setSourceId(value: string): void;
 
-  getRelation(): string;
-  setRelation(value: string): void;
+  getRelation(): number;
+  setRelation(value: number): void;
 
-  getTargetType(): string;
-  setTargetType(value: string): void;
+  getTargetType(): number;
+  setTargetType(value: number): void;
 
   getTargetId(): string;
   setTargetId(value: string): void;
@@ -1007,10 +1007,10 @@ export class ListRelationsRequest extends jspb.Message {
 
 export namespace ListRelationsRequest {
   export type AsObject = {
-    sourceType: string,
+    sourceType: number,
     sourceId: string,
-    relation: string,
-    targetType: string,
+    relation: number,
+    targetType: number,
     targetId: string,
     page?: aserto_api_v1_pagination_pb.PaginationRequest.AsObject,
   }
@@ -1347,6 +1347,192 @@ export class GetPermResponse extends jspb.Message {
 export namespace GetPermResponse {
   export type AsObject = {
     id: string,
+  }
+}
+
+export class GetRelationTypePermissionRequest extends jspb.Message {
+  getRelationId(): number;
+  setRelationId(value: number): void;
+
+  getPermissionId(): string;
+  setPermissionId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetRelationTypePermissionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetRelationTypePermissionRequest): GetRelationTypePermissionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetRelationTypePermissionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetRelationTypePermissionRequest;
+  static deserializeBinaryFromReader(message: GetRelationTypePermissionRequest, reader: jspb.BinaryReader): GetRelationTypePermissionRequest;
+}
+
+export namespace GetRelationTypePermissionRequest {
+  export type AsObject = {
+    relationId: number,
+    permissionId: string,
+  }
+}
+
+export class GetRelationTypePermissionResponse extends jspb.Message {
+  clearResultsList(): void;
+  getResultsList(): Array<aserto_directory_v2_relation_pb.RelationTypePermission>;
+  setResultsList(value: Array<aserto_directory_v2_relation_pb.RelationTypePermission>): void;
+  addResults(value?: aserto_directory_v2_relation_pb.RelationTypePermission, index?: number): aserto_directory_v2_relation_pb.RelationTypePermission;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetRelationTypePermissionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetRelationTypePermissionResponse): GetRelationTypePermissionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetRelationTypePermissionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetRelationTypePermissionResponse;
+  static deserializeBinaryFromReader(message: GetRelationTypePermissionResponse, reader: jspb.BinaryReader): GetRelationTypePermissionResponse;
+}
+
+export namespace GetRelationTypePermissionResponse {
+  export type AsObject = {
+    resultsList: Array<aserto_directory_v2_relation_pb.RelationTypePermission.AsObject>,
+  }
+}
+
+export class SetRelationTypePermissionRequest extends jspb.Message {
+  hasRelationTypePermission(): boolean;
+  clearRelationTypePermission(): void;
+  getRelationTypePermission(): aserto_directory_v2_relation_pb.RelationTypePermission | undefined;
+  setRelationTypePermission(value?: aserto_directory_v2_relation_pb.RelationTypePermission): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetRelationTypePermissionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SetRelationTypePermissionRequest): SetRelationTypePermissionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetRelationTypePermissionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetRelationTypePermissionRequest;
+  static deserializeBinaryFromReader(message: SetRelationTypePermissionRequest, reader: jspb.BinaryReader): SetRelationTypePermissionRequest;
+}
+
+export namespace SetRelationTypePermissionRequest {
+  export type AsObject = {
+    relationTypePermission?: aserto_directory_v2_relation_pb.RelationTypePermission.AsObject,
+  }
+}
+
+export class SetRelationTypePermissionResponse extends jspb.Message {
+  clearResultsList(): void;
+  getResultsList(): Array<aserto_directory_v2_relation_pb.RelationTypePermission>;
+  setResultsList(value: Array<aserto_directory_v2_relation_pb.RelationTypePermission>): void;
+  addResults(value?: aserto_directory_v2_relation_pb.RelationTypePermission, index?: number): aserto_directory_v2_relation_pb.RelationTypePermission;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetRelationTypePermissionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SetRelationTypePermissionResponse): SetRelationTypePermissionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetRelationTypePermissionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetRelationTypePermissionResponse;
+  static deserializeBinaryFromReader(message: SetRelationTypePermissionResponse, reader: jspb.BinaryReader): SetRelationTypePermissionResponse;
+}
+
+export namespace SetRelationTypePermissionResponse {
+  export type AsObject = {
+    resultsList: Array<aserto_directory_v2_relation_pb.RelationTypePermission.AsObject>,
+  }
+}
+
+export class DeleteRelationTypePermissionRequest extends jspb.Message {
+  getRelationId(): number;
+  setRelationId(value: number): void;
+
+  getPermissionId(): string;
+  setPermissionId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteRelationTypePermissionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteRelationTypePermissionRequest): DeleteRelationTypePermissionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteRelationTypePermissionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteRelationTypePermissionRequest;
+  static deserializeBinaryFromReader(message: DeleteRelationTypePermissionRequest, reader: jspb.BinaryReader): DeleteRelationTypePermissionRequest;
+}
+
+export namespace DeleteRelationTypePermissionRequest {
+  export type AsObject = {
+    relationId: number,
+    permissionId: string,
+  }
+}
+
+export class DeleteRelationTypePermissionResponse extends jspb.Message {
+  hasResult(): boolean;
+  clearResult(): void;
+  getResult(): google_protobuf_empty_pb.Empty | undefined;
+  setResult(value?: google_protobuf_empty_pb.Empty): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteRelationTypePermissionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteRelationTypePermissionResponse): DeleteRelationTypePermissionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteRelationTypePermissionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteRelationTypePermissionResponse;
+  static deserializeBinaryFromReader(message: DeleteRelationTypePermissionResponse, reader: jspb.BinaryReader): DeleteRelationTypePermissionResponse;
+}
+
+export namespace DeleteRelationTypePermissionResponse {
+  export type AsObject = {
+    result?: google_protobuf_empty_pb.Empty.AsObject,
+  }
+}
+
+export class ListRelationTypePermissionsRequest extends jspb.Message {
+  hasPage(): boolean;
+  clearPage(): void;
+  getPage(): aserto_api_v1_pagination_pb.PaginationRequest | undefined;
+  setPage(value?: aserto_api_v1_pagination_pb.PaginationRequest): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListRelationTypePermissionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListRelationTypePermissionsRequest): ListRelationTypePermissionsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListRelationTypePermissionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListRelationTypePermissionsRequest;
+  static deserializeBinaryFromReader(message: ListRelationTypePermissionsRequest, reader: jspb.BinaryReader): ListRelationTypePermissionsRequest;
+}
+
+export namespace ListRelationTypePermissionsRequest {
+  export type AsObject = {
+    page?: aserto_api_v1_pagination_pb.PaginationRequest.AsObject,
+  }
+}
+
+export class ListRelationTypePermissionsResponse extends jspb.Message {
+  clearResultsList(): void;
+  getResultsList(): Array<aserto_directory_v2_relation_pb.RelationTypePermission>;
+  setResultsList(value: Array<aserto_directory_v2_relation_pb.RelationTypePermission>): void;
+  addResults(value?: aserto_directory_v2_relation_pb.RelationTypePermission, index?: number): aserto_directory_v2_relation_pb.RelationTypePermission;
+
+  hasPage(): boolean;
+  clearPage(): void;
+  getPage(): aserto_api_v1_pagination_pb.PaginationResponse | undefined;
+  setPage(value?: aserto_api_v1_pagination_pb.PaginationResponse): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListRelationTypePermissionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListRelationTypePermissionsResponse): ListRelationTypePermissionsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListRelationTypePermissionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListRelationTypePermissionsResponse;
+  static deserializeBinaryFromReader(message: ListRelationTypePermissionsResponse, reader: jspb.BinaryReader): ListRelationTypePermissionsResponse;
+}
+
+export namespace ListRelationTypePermissionsResponse {
+  export type AsObject = {
+    resultsList: Array<aserto_directory_v2_relation_pb.RelationTypePermission.AsObject>,
+    page?: aserto_api_v1_pagination_pb.PaginationResponse.AsObject,
   }
 }
 
