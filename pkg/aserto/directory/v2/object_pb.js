@@ -147,7 +147,7 @@ proto.aserto.directory.v2.Object.prototype.toObject = function(opt_includeInstan
 proto.aserto.directory.v2.Object.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    type: jspb.Message.getFieldWithDefault(msg, 2, 0),
     key: jspb.Message.getFieldWithDefault(msg, 3, ""),
     displayName: jspb.Message.getFieldWithDefault(msg, 4, ""),
     properties: (f = msg.getProperties()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f),
@@ -196,7 +196,7 @@ proto.aserto.directory.v2.Object.deserializeBinaryFromReader = function(msg, rea
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setType(value);
       break;
     case 3:
@@ -268,8 +268,8 @@ proto.aserto.directory.v2.Object.serializeBinaryToWriter = function(message, wri
     );
   }
   f = message.getType();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeInt32(
       2,
       f
     );
@@ -349,20 +349,20 @@ proto.aserto.directory.v2.Object.prototype.setId = function(value) {
 
 
 /**
- * optional string type = 2;
- * @return {string}
+ * optional int32 type = 2;
+ * @return {number}
  */
 proto.aserto.directory.v2.Object.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.aserto.directory.v2.Object} returns this
  */
 proto.aserto.directory.v2.Object.prototype.setType = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -1033,11 +1033,14 @@ proto.aserto.directory.v2.ObjectDependency.prototype.toObject = function(opt_inc
  */
 proto.aserto.directory.v2.ObjectDependency.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sourceType: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    sourceType: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    sourceTypeName: jspb.Message.getFieldWithDefault(msg, 2, ""),
     sourceId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     sourceKey: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    relation: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    targetType: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    relation: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    relationName: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    targetType: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    targetTypeName: jspb.Message.getFieldWithDefault(msg, 8, ""),
     targetId: jspb.Message.getFieldWithDefault(msg, 9, ""),
     targetKey: jspb.Message.getFieldWithDefault(msg, 10, ""),
     depth: jspb.Message.getFieldWithDefault(msg, 11, 0),
@@ -1080,8 +1083,12 @@ proto.aserto.directory.v2.ObjectDependency.deserializeBinaryFromReader = functio
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setSourceType(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSourceTypeName(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -1092,12 +1099,20 @@ proto.aserto.directory.v2.ObjectDependency.deserializeBinaryFromReader = functio
       msg.setSourceKey(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setRelation(value);
       break;
-    case 7:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
+      msg.setRelationName(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setTargetType(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTargetTypeName(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
@@ -1149,9 +1164,16 @@ proto.aserto.directory.v2.ObjectDependency.prototype.serializeBinary = function(
 proto.aserto.directory.v2.ObjectDependency.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getSourceType();
+  if (f !== 0) {
+    writer.writeInt32(
+      1,
+      f
+    );
+  }
+  f = message.getSourceTypeName();
   if (f.length > 0) {
     writer.writeString(
-      1,
+      2,
       f
     );
   }
@@ -1170,16 +1192,30 @@ proto.aserto.directory.v2.ObjectDependency.serializeBinaryToWriter = function(me
     );
   }
   f = message.getRelation();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeInt32(
       5,
       f
     );
   }
-  f = message.getTargetType();
+  f = message.getRelationName();
   if (f.length > 0) {
     writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getTargetType();
+  if (f !== 0) {
+    writer.writeInt32(
       7,
+      f
+    );
+  }
+  f = message.getTargetTypeName();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -1222,11 +1258,29 @@ proto.aserto.directory.v2.ObjectDependency.serializeBinaryToWriter = function(me
 
 
 /**
- * optional string source_type = 1;
- * @return {string}
+ * optional int32 source_type = 1;
+ * @return {number}
  */
 proto.aserto.directory.v2.ObjectDependency.prototype.getSourceType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.aserto.directory.v2.ObjectDependency} returns this
+ */
+proto.aserto.directory.v2.ObjectDependency.prototype.setSourceType = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string source_type_name = 2;
+ * @return {string}
+ */
+proto.aserto.directory.v2.ObjectDependency.prototype.getSourceTypeName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1234,8 +1288,8 @@ proto.aserto.directory.v2.ObjectDependency.prototype.getSourceType = function() 
  * @param {string} value
  * @return {!proto.aserto.directory.v2.ObjectDependency} returns this
  */
-proto.aserto.directory.v2.ObjectDependency.prototype.setSourceType = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.aserto.directory.v2.ObjectDependency.prototype.setSourceTypeName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1276,29 +1330,29 @@ proto.aserto.directory.v2.ObjectDependency.prototype.setSourceKey = function(val
 
 
 /**
- * optional string relation = 5;
- * @return {string}
+ * optional int32 relation = 5;
+ * @return {number}
  */
 proto.aserto.directory.v2.ObjectDependency.prototype.getRelation = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.aserto.directory.v2.ObjectDependency} returns this
  */
 proto.aserto.directory.v2.ObjectDependency.prototype.setRelation = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
 /**
- * optional string target_type = 7;
+ * optional string relation_name = 6;
  * @return {string}
  */
-proto.aserto.directory.v2.ObjectDependency.prototype.getTargetType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+proto.aserto.directory.v2.ObjectDependency.prototype.getRelationName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -1306,8 +1360,44 @@ proto.aserto.directory.v2.ObjectDependency.prototype.getTargetType = function() 
  * @param {string} value
  * @return {!proto.aserto.directory.v2.ObjectDependency} returns this
  */
+proto.aserto.directory.v2.ObjectDependency.prototype.setRelationName = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional int32 target_type = 7;
+ * @return {number}
+ */
+proto.aserto.directory.v2.ObjectDependency.prototype.getTargetType = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.aserto.directory.v2.ObjectDependency} returns this
+ */
 proto.aserto.directory.v2.ObjectDependency.prototype.setTargetType = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * optional string target_type_name = 8;
+ * @return {string}
+ */
+proto.aserto.directory.v2.ObjectDependency.prototype.getTargetTypeName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.aserto.directory.v2.ObjectDependency} returns this
+ */
+proto.aserto.directory.v2.ObjectDependency.prototype.setTargetTypeName = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
@@ -1433,7 +1523,7 @@ proto.aserto.directory.v2.ObjectKey.prototype.toObject = function(opt_includeIns
  */
 proto.aserto.directory.v2.ObjectKey.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    type: jspb.Message.getFieldWithDefault(msg, 1, 0),
     key: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1472,7 +1562,7 @@ proto.aserto.directory.v2.ObjectKey.deserializeBinaryFromReader = function(msg, 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setType(value);
       break;
     case 2:
@@ -1509,8 +1599,8 @@ proto.aserto.directory.v2.ObjectKey.prototype.serializeBinary = function() {
 proto.aserto.directory.v2.ObjectKey.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getType();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeInt32(
       1,
       f
     );
@@ -1526,20 +1616,20 @@ proto.aserto.directory.v2.ObjectKey.serializeBinaryToWriter = function(message, 
 
 
 /**
- * optional string type = 1;
- * @return {string}
+ * optional int32 type = 1;
+ * @return {number}
  */
 proto.aserto.directory.v2.ObjectKey.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.aserto.directory.v2.ObjectKey} returns this
  */
 proto.aserto.directory.v2.ObjectKey.prototype.setType = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
