@@ -9,8 +9,8 @@ export class Object extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  getType(): number;
-  setType(value: number): void;
+  getType(): string;
+  setType(value: string): void;
 
   getKey(): string;
   setKey(value: string): void;
@@ -54,7 +54,7 @@ export class Object extends jspb.Message {
 export namespace Object {
   export type AsObject = {
     id: string,
-    type: number,
+    type: string,
     key: string,
     displayName: string,
     properties?: google_protobuf_struct_pb.Struct.AsObject,
@@ -99,6 +99,9 @@ export class ObjectType extends jspb.Message {
   getUpdatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getHash(): string;
+  setHash(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ObjectType.AsObject;
   static toObject(includeInstance: boolean, msg: ObjectType): ObjectType.AsObject;
@@ -120,15 +123,13 @@ export namespace ObjectType {
     schema?: google_protobuf_struct_pb.Struct.AsObject,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    hash: string,
   }
 }
 
 export class ObjectDependency extends jspb.Message {
-  getSourceType(): number;
-  setSourceType(value: number): void;
-
-  getSourceTypeName(): string;
-  setSourceTypeName(value: string): void;
+  getSourceType(): string;
+  setSourceType(value: string): void;
 
   getSourceId(): string;
   setSourceId(value: string): void;
@@ -136,17 +137,11 @@ export class ObjectDependency extends jspb.Message {
   getSourceKey(): string;
   setSourceKey(value: string): void;
 
-  getRelation(): number;
-  setRelation(value: number): void;
+  getRelation(): string;
+  setRelation(value: string): void;
 
-  getRelationName(): string;
-  setRelationName(value: string): void;
-
-  getTargetType(): number;
-  setTargetType(value: number): void;
-
-  getTargetTypeName(): string;
-  setTargetTypeName(value: string): void;
+  getTargetType(): string;
+  setTargetType(value: string): void;
 
   getTargetId(): string;
   setTargetId(value: string): void;
@@ -175,14 +170,11 @@ export class ObjectDependency extends jspb.Message {
 
 export namespace ObjectDependency {
   export type AsObject = {
-    sourceType: number,
-    sourceTypeName: string,
+    sourceType: string,
     sourceId: string,
     sourceKey: string,
-    relation: number,
-    relationName: string,
-    targetType: number,
-    targetTypeName: string,
+    relation: string,
+    targetType: string,
     targetId: string,
     targetKey: string,
     depth: number,
@@ -192,8 +184,8 @@ export namespace ObjectDependency {
 }
 
 export class ObjectKey extends jspb.Message {
-  getType(): number;
-  setType(value: number): void;
+  getType(): string;
+  setType(value: string): void;
 
   getKey(): string;
   setKey(value: string): void;
@@ -210,7 +202,7 @@ export class ObjectKey extends jspb.Message {
 
 export namespace ObjectKey {
   export type AsObject = {
-    type: number,
+    type: string,
     key: string,
   }
 }

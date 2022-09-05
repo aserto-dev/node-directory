@@ -2,7 +2,6 @@
 // file: aserto/directory/importer/v2/importer.proto
 
 import * as jspb from "google-protobuf";
-import * as google_rpc_status_pb from "../../../../google/rpc/status_pb";
 import * as aserto_directory_v2_object_pb from "../../../../aserto/directory/v2/object_pb";
 import * as aserto_directory_v2_relation_pb from "../../../../aserto/directory/v2/relation_pb";
 
@@ -10,30 +9,30 @@ export class ImportRequest extends jspb.Message {
   getOpCode(): OpcodeMap[keyof OpcodeMap];
   setOpCode(value: OpcodeMap[keyof OpcodeMap]): void;
 
-  hasObject(): boolean;
-  clearObject(): void;
-  getObject(): aserto_directory_v2_object_pb.Object | undefined;
-  setObject(value?: aserto_directory_v2_object_pb.Object): void;
-
   hasObjectType(): boolean;
   clearObjectType(): void;
   getObjectType(): aserto_directory_v2_object_pb.ObjectType | undefined;
   setObjectType(value?: aserto_directory_v2_object_pb.ObjectType): void;
 
-  hasRelation(): boolean;
-  clearRelation(): void;
-  getRelation(): aserto_directory_v2_relation_pb.Relation | undefined;
-  setRelation(value?: aserto_directory_v2_relation_pb.Relation): void;
+  hasPermission(): boolean;
+  clearPermission(): void;
+  getPermission(): aserto_directory_v2_relation_pb.Permission | undefined;
+  setPermission(value?: aserto_directory_v2_relation_pb.Permission): void;
 
   hasRelationType(): boolean;
   clearRelationType(): void;
   getRelationType(): aserto_directory_v2_relation_pb.RelationType | undefined;
   setRelationType(value?: aserto_directory_v2_relation_pb.RelationType): void;
 
-  hasPermission(): boolean;
-  clearPermission(): void;
-  getPermission(): aserto_directory_v2_relation_pb.Permission | undefined;
-  setPermission(value?: aserto_directory_v2_relation_pb.Permission): void;
+  hasObject(): boolean;
+  clearObject(): void;
+  getObject(): aserto_directory_v2_object_pb.Object | undefined;
+  setObject(value?: aserto_directory_v2_object_pb.Object): void;
+
+  hasRelation(): boolean;
+  clearRelation(): void;
+  getRelation(): aserto_directory_v2_relation_pb.Relation | undefined;
+  setRelation(value?: aserto_directory_v2_relation_pb.Relation): void;
 
   getMsgOneofCase(): ImportRequest.MsgOneofCase;
   serializeBinary(): Uint8Array;
@@ -49,28 +48,48 @@ export class ImportRequest extends jspb.Message {
 export namespace ImportRequest {
   export type AsObject = {
     opCode: OpcodeMap[keyof OpcodeMap],
-    object?: aserto_directory_v2_object_pb.Object.AsObject,
     objectType?: aserto_directory_v2_object_pb.ObjectType.AsObject,
-    relation?: aserto_directory_v2_relation_pb.Relation.AsObject,
-    relationType?: aserto_directory_v2_relation_pb.RelationType.AsObject,
     permission?: aserto_directory_v2_relation_pb.Permission.AsObject,
+    relationType?: aserto_directory_v2_relation_pb.RelationType.AsObject,
+    object?: aserto_directory_v2_object_pb.Object.AsObject,
+    relation?: aserto_directory_v2_relation_pb.Relation.AsObject,
   }
 
   export enum MsgOneofCase {
     MSG_ONEOF_NOT_SET = 0,
-    OBJECT = 2,
-    OBJECT_TYPE = 3,
-    RELATION = 4,
-    RELATION_TYPE = 5,
-    PERMISSION = 6,
+    OBJECT_TYPE = 2,
+    PERMISSION = 3,
+    RELATION_TYPE = 4,
+    OBJECT = 5,
+    RELATION = 6,
   }
 }
 
 export class ImportResponse extends jspb.Message {
-  hasError(): boolean;
-  clearError(): void;
-  getError(): google_rpc_status_pb.Status | undefined;
-  setError(value?: google_rpc_status_pb.Status): void;
+  hasObjectType(): boolean;
+  clearObjectType(): void;
+  getObjectType(): ImportCounter | undefined;
+  setObjectType(value?: ImportCounter): void;
+
+  hasPermission(): boolean;
+  clearPermission(): void;
+  getPermission(): ImportCounter | undefined;
+  setPermission(value?: ImportCounter): void;
+
+  hasRelationType(): boolean;
+  clearRelationType(): void;
+  getRelationType(): ImportCounter | undefined;
+  setRelationType(value?: ImportCounter): void;
+
+  hasObject(): boolean;
+  clearObject(): void;
+  getObject(): ImportCounter | undefined;
+  setObject(value?: ImportCounter): void;
+
+  hasRelation(): boolean;
+  clearRelation(): void;
+  getRelation(): ImportCounter | undefined;
+  setRelation(value?: ImportCounter): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ImportResponse.AsObject;
@@ -84,7 +103,43 @@ export class ImportResponse extends jspb.Message {
 
 export namespace ImportResponse {
   export type AsObject = {
-    error?: google_rpc_status_pb.Status.AsObject,
+    objectType?: ImportCounter.AsObject,
+    permission?: ImportCounter.AsObject,
+    relationType?: ImportCounter.AsObject,
+    object?: ImportCounter.AsObject,
+    relation?: ImportCounter.AsObject,
+  }
+}
+
+export class ImportCounter extends jspb.Message {
+  getRecv(): number;
+  setRecv(value: number): void;
+
+  getSet(): number;
+  setSet(value: number): void;
+
+  getDelete(): number;
+  setDelete(value: number): void;
+
+  getError(): number;
+  setError(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ImportCounter.AsObject;
+  static toObject(includeInstance: boolean, msg: ImportCounter): ImportCounter.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ImportCounter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ImportCounter;
+  static deserializeBinaryFromReader(message: ImportCounter, reader: jspb.BinaryReader): ImportCounter;
+}
+
+export namespace ImportCounter {
+  export type AsObject = {
+    recv: number,
+    set: number,
+    pb_delete: number,
+    error: number,
   }
 }
 
