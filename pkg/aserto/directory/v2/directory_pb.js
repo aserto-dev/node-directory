@@ -13,22 +13,16 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = (function() {
-  if (this) { return this; }
-  if (typeof window !== 'undefined') { return window; }
-  if (typeof global !== 'undefined') { return global; }
-  if (typeof self !== 'undefined') { return self; }
-  return Function('return this')();
-}.call(null));
+var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 goog.object.extend(proto, google_protobuf_empty_pb);
+var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
+goog.object.extend(proto, google_protobuf_struct_pb);
 var protoc$gen$openapiv2_options_annotations_pb = require('../../../protoc-gen-openapiv2/options/annotations_pb.js');
 goog.object.extend(proto, protoc$gen$openapiv2_options_annotations_pb);
-var aserto_common_info_v1_info_pb = require('../../../aserto/common/info/v1/info_pb.js');
-goog.object.extend(proto, aserto_common_info_v1_info_pb);
 var aserto_api_v1_pagination_pb = require('../../../aserto/api/v1/pagination_pb.js');
 goog.object.extend(proto, aserto_api_v1_pagination_pb);
 var aserto_directory_v2_object_pb = require('../../../aserto/directory/v2/object_pb.js');
@@ -39,9 +33,6 @@ goog.exportSymbol('proto.aserto.directory.v2.CheckPermissionRequest', null, glob
 goog.exportSymbol('proto.aserto.directory.v2.CheckPermissionResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.CheckRelationRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.CheckRelationResponse', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.CheckRequest', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.CheckRequest.CheckCase', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.CheckResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.DeleteObjectRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.DeleteObjectRequest.ParamCase', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.DeleteObjectResponse', null, global);
@@ -53,56 +44,37 @@ goog.exportSymbol('proto.aserto.directory.v2.DeletePermissionRequest.ParamCase',
 goog.exportSymbol('proto.aserto.directory.v2.DeletePermissionResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.DeleteRelationRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.DeleteRelationResponse', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.DeleteRelationTypePermissionRequest', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.DeleteRelationTypePermissionResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.DeleteRelationTypeRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.DeleteRelationTypeRequest.ParamCase', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.DeleteRelationTypeResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.GetGraphRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.GetGraphResponse', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.GetObjRequest', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.GetObjResponse', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.GetObjTypeRequest', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.GetObjTypeResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.GetObjectRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.GetObjectRequest.ParamCase', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.GetObjectResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.GetObjectTypeRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.GetObjectTypeRequest.ParamCase', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.GetObjectTypeResponse', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.GetPermRequest', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.GetPermResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.GetPermissionRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.GetPermissionRequest.ParamCase', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.GetPermissionResponse', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.GetRelRequest', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.GetRelResponse', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.GetRelTypeRequest', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.GetRelTypeResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.GetRelationRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.GetRelationResponse', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.GetRelationTypePermissionRequest', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.GetRelationTypePermissionResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.GetRelationTypeRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.GetRelationTypeRequest.ParamCase', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.GetRelationTypeResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.InfoRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.InfoResponse', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.ListObjectGraphRequest', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.ListObjectGraphResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.ListObjectTypesRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.ListObjectTypesResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.ListObjectsRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.ListObjectsResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.ListPermissionsRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.ListPermissionsResponse', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.ListRelationTypePermissionsRequest', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.ListRelationTypePermissionsResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.ListRelationTypesRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.ListRelationTypesResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.ListRelationsRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.ListRelationsResponse', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.Opcode', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.SetObjectRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.SetObjectResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.SetObjectTypeRequest', null, global);
@@ -111,8 +83,6 @@ goog.exportSymbol('proto.aserto.directory.v2.SetPermissionRequest', null, global
 goog.exportSymbol('proto.aserto.directory.v2.SetPermissionResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.SetRelationRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.SetRelationResponse', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.SetRelationTypePermissionRequest', null, global);
-goog.exportSymbol('proto.aserto.directory.v2.SetRelationTypePermissionResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.SetRelationTypeRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.v2.SetRelationTypeResponse', null, global);
 /**
@@ -335,48 +305,6 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.aserto.directory.v2.GetObjTypeRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.aserto.directory.v2.GetObjTypeRequest, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.GetObjTypeRequest.displayName = 'proto.aserto.directory.v2.GetObjTypeRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.GetObjTypeResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.aserto.directory.v2.GetObjTypeResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.GetObjTypeResponse.displayName = 'proto.aserto.directory.v2.GetObjTypeResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
 proto.aserto.directory.v2.GetRelationTypeRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, proto.aserto.directory.v2.GetRelationTypeRequest.oneofGroups_);
 };
@@ -534,48 +462,6 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.aserto.directory.v2.ListRelationTypesResponse.displayName = 'proto.aserto.directory.v2.ListRelationTypesResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.GetRelTypeRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.aserto.directory.v2.GetRelTypeRequest, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.GetRelTypeRequest.displayName = 'proto.aserto.directory.v2.GetRelTypeRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.GetRelTypeResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.aserto.directory.v2.GetRelTypeResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.GetRelTypeResponse.displayName = 'proto.aserto.directory.v2.GetRelTypeResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -755,48 +641,6 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.aserto.directory.v2.GetObjRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.aserto.directory.v2.GetObjRequest, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.GetObjRequest.displayName = 'proto.aserto.directory.v2.GetObjRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.GetObjResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.aserto.directory.v2.GetObjResponse.repeatedFields_, null);
-};
-goog.inherits(proto.aserto.directory.v2.GetObjResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.GetObjResponse.displayName = 'proto.aserto.directory.v2.GetObjResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
 proto.aserto.directory.v2.GetRelationRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -954,48 +798,6 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.aserto.directory.v2.ListRelationsResponse.displayName = 'proto.aserto.directory.v2.ListRelationsResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.GetRelRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.aserto.directory.v2.GetRelRequest, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.GetRelRequest.displayName = 'proto.aserto.directory.v2.GetRelRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.GetRelResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.aserto.directory.v2.GetRelResponse.repeatedFields_, null);
-};
-goog.inherits(proto.aserto.directory.v2.GetRelResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.GetRelResponse.displayName = 'proto.aserto.directory.v2.GetRelResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1175,258 +977,6 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.aserto.directory.v2.GetPermRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.aserto.directory.v2.GetPermRequest, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.GetPermRequest.displayName = 'proto.aserto.directory.v2.GetPermRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.GetPermResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.aserto.directory.v2.GetPermResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.GetPermResponse.displayName = 'proto.aserto.directory.v2.GetPermResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.GetRelationTypePermissionRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.aserto.directory.v2.GetRelationTypePermissionRequest, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.GetRelationTypePermissionRequest.displayName = 'proto.aserto.directory.v2.GetRelationTypePermissionRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.GetRelationTypePermissionResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.aserto.directory.v2.GetRelationTypePermissionResponse.repeatedFields_, null);
-};
-goog.inherits(proto.aserto.directory.v2.GetRelationTypePermissionResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.GetRelationTypePermissionResponse.displayName = 'proto.aserto.directory.v2.GetRelationTypePermissionResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.SetRelationTypePermissionRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.aserto.directory.v2.SetRelationTypePermissionRequest, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.SetRelationTypePermissionRequest.displayName = 'proto.aserto.directory.v2.SetRelationTypePermissionRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.SetRelationTypePermissionResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.aserto.directory.v2.SetRelationTypePermissionResponse.repeatedFields_, null);
-};
-goog.inherits(proto.aserto.directory.v2.SetRelationTypePermissionResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.SetRelationTypePermissionResponse.displayName = 'proto.aserto.directory.v2.SetRelationTypePermissionResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.aserto.directory.v2.DeleteRelationTypePermissionRequest, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.DeleteRelationTypePermissionRequest.displayName = 'proto.aserto.directory.v2.DeleteRelationTypePermissionRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.aserto.directory.v2.DeleteRelationTypePermissionResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.DeleteRelationTypePermissionResponse.displayName = 'proto.aserto.directory.v2.DeleteRelationTypePermissionResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.aserto.directory.v2.ListRelationTypePermissionsRequest, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.ListRelationTypePermissionsRequest.displayName = 'proto.aserto.directory.v2.ListRelationTypePermissionsRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.aserto.directory.v2.ListRelationTypePermissionsResponse.repeatedFields_, null);
-};
-goog.inherits(proto.aserto.directory.v2.ListRelationTypePermissionsResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.ListRelationTypePermissionsResponse.displayName = 'proto.aserto.directory.v2.ListRelationTypePermissionsResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.CheckRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.aserto.directory.v2.CheckRequest.oneofGroups_);
-};
-goog.inherits(proto.aserto.directory.v2.CheckRequest, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.CheckRequest.displayName = 'proto.aserto.directory.v2.CheckRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.CheckResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.aserto.directory.v2.CheckResponse.repeatedFields_, null);
-};
-goog.inherits(proto.aserto.directory.v2.CheckResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.CheckResponse.displayName = 'proto.aserto.directory.v2.CheckResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
 proto.aserto.directory.v2.CheckRelationRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -1500,48 +1050,6 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.aserto.directory.v2.CheckPermissionResponse.displayName = 'proto.aserto.directory.v2.CheckPermissionResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.ListObjectGraphRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.aserto.directory.v2.ListObjectGraphRequest, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.ListObjectGraphRequest.displayName = 'proto.aserto.directory.v2.ListObjectGraphRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.aserto.directory.v2.ListObjectGraphResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.aserto.directory.v2.ListObjectGraphResponse.repeatedFields_, null);
-};
-goog.inherits(proto.aserto.directory.v2.ListObjectGraphResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.aserto.directory.v2.ListObjectGraphResponse.displayName = 'proto.aserto.directory.v2.ListObjectGraphResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1718,7 +1226,7 @@ proto.aserto.directory.v2.InfoResponse.prototype.toObject = function(opt_include
  */
 proto.aserto.directory.v2.InfoResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    build: (f = msg.getBuild()) && aserto_common_info_v1_info_pb.BuildInfo.toObject(includeInstance, f)
+    info: (f = msg.getInfo()) && google_protobuf_struct_pb.Struct.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1755,10 +1263,10 @@ proto.aserto.directory.v2.InfoResponse.deserializeBinaryFromReader = function(ms
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 3:
-      var value = new aserto_common_info_v1_info_pb.BuildInfo;
-      reader.readMessage(value,aserto_common_info_v1_info_pb.BuildInfo.deserializeBinaryFromReader);
-      msg.setBuild(value);
+    case 1:
+      var value = new google_protobuf_struct_pb.Struct;
+      reader.readMessage(value,google_protobuf_struct_pb.Struct.deserializeBinaryFromReader);
+      msg.setInfo(value);
       break;
     default:
       reader.skipField();
@@ -1789,33 +1297,33 @@ proto.aserto.directory.v2.InfoResponse.prototype.serializeBinary = function() {
  */
 proto.aserto.directory.v2.InfoResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getBuild();
+  f = message.getInfo();
   if (f != null) {
     writer.writeMessage(
-      3,
+      1,
       f,
-      aserto_common_info_v1_info_pb.BuildInfo.serializeBinaryToWriter
+      google_protobuf_struct_pb.Struct.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional aserto.common.info.v1.BuildInfo build = 3;
- * @return {?proto.aserto.common.info.v1.BuildInfo}
+ * optional google.protobuf.Struct info = 1;
+ * @return {?proto.google.protobuf.Struct}
  */
-proto.aserto.directory.v2.InfoResponse.prototype.getBuild = function() {
-  return /** @type{?proto.aserto.common.info.v1.BuildInfo} */ (
-    jspb.Message.getWrapperField(this, aserto_common_info_v1_info_pb.BuildInfo, 3));
+proto.aserto.directory.v2.InfoResponse.prototype.getInfo = function() {
+  return /** @type{?proto.google.protobuf.Struct} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Struct, 1));
 };
 
 
 /**
- * @param {?proto.aserto.common.info.v1.BuildInfo|undefined} value
+ * @param {?proto.google.protobuf.Struct|undefined} value
  * @return {!proto.aserto.directory.v2.InfoResponse} returns this
 */
-proto.aserto.directory.v2.InfoResponse.prototype.setBuild = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+proto.aserto.directory.v2.InfoResponse.prototype.setInfo = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -1823,8 +1331,8 @@ proto.aserto.directory.v2.InfoResponse.prototype.setBuild = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.aserto.directory.v2.InfoResponse} returns this
  */
-proto.aserto.directory.v2.InfoResponse.prototype.clearBuild = function() {
-  return this.setBuild(undefined);
+proto.aserto.directory.v2.InfoResponse.prototype.clearInfo = function() {
+  return this.setInfo(undefined);
 };
 
 
@@ -1832,8 +1340,8 @@ proto.aserto.directory.v2.InfoResponse.prototype.clearBuild = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.aserto.directory.v2.InfoResponse.prototype.hasBuild = function() {
-  return jspb.Message.getField(this, 3) != null;
+proto.aserto.directory.v2.InfoResponse.prototype.hasInfo = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -3266,266 +2774,6 @@ proto.aserto.directory.v2.ListObjectTypesResponse.prototype.hasPage = function()
 
 
 
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.GetObjTypeRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.GetObjTypeRequest.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.GetObjTypeRequest} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetObjTypeRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.GetObjTypeRequest}
- */
-proto.aserto.directory.v2.GetObjTypeRequest.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.GetObjTypeRequest;
-  return proto.aserto.directory.v2.GetObjTypeRequest.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.GetObjTypeRequest} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.GetObjTypeRequest}
- */
-proto.aserto.directory.v2.GetObjTypeRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.GetObjTypeRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.GetObjTypeRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.GetObjTypeRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetObjTypeRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string name = 1;
- * @return {string}
- */
-proto.aserto.directory.v2.GetObjTypeRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.GetObjTypeRequest} returns this
- */
-proto.aserto.directory.v2.GetObjTypeRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.GetObjTypeResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.GetObjTypeResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.GetObjTypeResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetObjTypeResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.GetObjTypeResponse}
- */
-proto.aserto.directory.v2.GetObjTypeResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.GetObjTypeResponse;
-  return proto.aserto.directory.v2.GetObjTypeResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.GetObjTypeResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.GetObjTypeResponse}
- */
-proto.aserto.directory.v2.GetObjTypeResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setId(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.GetObjTypeResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.GetObjTypeResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.GetObjTypeResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetObjTypeResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getId();
-  if (f !== 0) {
-    writer.writeInt32(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional int32 id = 1;
- * @return {number}
- */
-proto.aserto.directory.v2.GetObjTypeResponse.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.aserto.directory.v2.GetObjTypeResponse} returns this
- */
-proto.aserto.directory.v2.GetObjTypeResponse.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
-};
-
-
-
 /**
  * Oneof group definitions for this message. Each group defines the field
  * numbers belonging to that group. When of these fields' value is set, all
@@ -4629,7 +3877,7 @@ proto.aserto.directory.v2.ListRelationTypesRequest.prototype.toObject = function
  */
 proto.aserto.directory.v2.ListRelationTypesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    objectType: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    objectType: jspb.Message.getFieldWithDefault(msg, 1, ""),
     page: (f = msg.getPage()) && aserto_api_v1_pagination_pb.PaginationRequest.toObject(includeInstance, f)
   };
 
@@ -4668,7 +3916,7 @@ proto.aserto.directory.v2.ListRelationTypesRequest.deserializeBinaryFromReader =
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setObjectType(value);
       break;
     case 9:
@@ -4705,9 +3953,9 @@ proto.aserto.directory.v2.ListRelationTypesRequest.prototype.serializeBinary = f
  */
 proto.aserto.directory.v2.ListRelationTypesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       1,
       f
     );
@@ -4724,16 +3972,16 @@ proto.aserto.directory.v2.ListRelationTypesRequest.serializeBinaryToWriter = fun
 
 
 /**
- * optional int32 object_type = 1;
- * @return {number}
+ * optional string object_type = 1;
+ * @return {string}
  */
 proto.aserto.directory.v2.ListRelationTypesRequest.prototype.getObjectType = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.aserto.directory.v2.ListRelationTypesRequest} returns this
  */
 proto.aserto.directory.v2.ListRelationTypesRequest.prototype.setObjectType = function(value) {
@@ -5004,296 +4252,6 @@ proto.aserto.directory.v2.ListRelationTypesResponse.prototype.clearPage = functi
  */
 proto.aserto.directory.v2.ListRelationTypesResponse.prototype.hasPage = function() {
   return jspb.Message.getField(this, 9) != null;
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.GetRelTypeRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.GetRelTypeRequest.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.GetRelTypeRequest} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetRelTypeRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    objectType: jspb.Message.getFieldWithDefault(msg, 2, "")
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.GetRelTypeRequest}
- */
-proto.aserto.directory.v2.GetRelTypeRequest.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.GetRelTypeRequest;
-  return proto.aserto.directory.v2.GetRelTypeRequest.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.GetRelTypeRequest} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.GetRelTypeRequest}
- */
-proto.aserto.directory.v2.GetRelTypeRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setObjectType(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.GetRelTypeRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.GetRelTypeRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.GetRelTypeRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetRelTypeRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getObjectType();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string name = 1;
- * @return {string}
- */
-proto.aserto.directory.v2.GetRelTypeRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.GetRelTypeRequest} returns this
- */
-proto.aserto.directory.v2.GetRelTypeRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string object_type = 2;
- * @return {string}
- */
-proto.aserto.directory.v2.GetRelTypeRequest.prototype.getObjectType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.GetRelTypeRequest} returns this
- */
-proto.aserto.directory.v2.GetRelTypeRequest.prototype.setObjectType = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.GetRelTypeResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.GetRelTypeResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.GetRelTypeResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetRelTypeResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.GetRelTypeResponse}
- */
-proto.aserto.directory.v2.GetRelTypeResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.GetRelTypeResponse;
-  return proto.aserto.directory.v2.GetRelTypeResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.GetRelTypeResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.GetRelTypeResponse}
- */
-proto.aserto.directory.v2.GetRelTypeResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setId(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.GetRelTypeResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.GetRelTypeResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.GetRelTypeResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetRelTypeResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getId();
-  if (f !== 0) {
-    writer.writeInt32(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional int32 id = 1;
- * @return {number}
- */
-proto.aserto.directory.v2.GetRelTypeResponse.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.aserto.directory.v2.GetRelTypeResponse} returns this
- */
-proto.aserto.directory.v2.GetRelTypeResponse.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -6401,7 +5359,7 @@ proto.aserto.directory.v2.ListObjectsRequest.prototype.toObject = function(opt_i
  */
 proto.aserto.directory.v2.ListObjectsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    type: jspb.Message.getFieldWithDefault(msg, 1, ""),
     page: (f = msg.getPage()) && aserto_api_v1_pagination_pb.PaginationRequest.toObject(includeInstance, f)
   };
 
@@ -6440,7 +5398,7 @@ proto.aserto.directory.v2.ListObjectsRequest.deserializeBinaryFromReader = funct
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setType(value);
       break;
     case 9:
@@ -6477,9 +5435,9 @@ proto.aserto.directory.v2.ListObjectsRequest.prototype.serializeBinary = functio
  */
 proto.aserto.directory.v2.ListObjectsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       1,
       f
     );
@@ -6496,16 +5454,16 @@ proto.aserto.directory.v2.ListObjectsRequest.serializeBinaryToWriter = function(
 
 
 /**
- * optional int32 type = 1;
- * @return {number}
+ * optional string type = 1;
+ * @return {string}
  */
 proto.aserto.directory.v2.ListObjectsRequest.prototype.getType = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.aserto.directory.v2.ListObjectsRequest} returns this
  */
 proto.aserto.directory.v2.ListObjectsRequest.prototype.setType = function(value) {
@@ -6795,326 +5753,6 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.aserto.directory.v2.GetObjRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.GetObjRequest.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.GetObjRequest} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetObjRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    typeName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 3, "")
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.GetObjRequest}
- */
-proto.aserto.directory.v2.GetObjRequest.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.GetObjRequest;
-  return proto.aserto.directory.v2.GetObjRequest.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.GetObjRequest} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.GetObjRequest}
- */
-proto.aserto.directory.v2.GetObjRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTypeName(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setValue(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.GetObjRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.GetObjRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.GetObjRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetObjRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getTypeName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getValue();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string type_name = 2;
- * @return {string}
- */
-proto.aserto.directory.v2.GetObjRequest.prototype.getTypeName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.GetObjRequest} returns this
- */
-proto.aserto.directory.v2.GetObjRequest.prototype.setTypeName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string value = 3;
- * @return {string}
- */
-proto.aserto.directory.v2.GetObjRequest.prototype.getValue = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.GetObjRequest} returns this
- */
-proto.aserto.directory.v2.GetObjRequest.prototype.setValue = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.aserto.directory.v2.GetObjResponse.repeatedFields_ = [1];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.GetObjResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.GetObjResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.GetObjResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetObjResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
-    aserto_directory_v2_object_pb.Object.toObject, includeInstance)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.GetObjResponse}
- */
-proto.aserto.directory.v2.GetObjResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.GetObjResponse;
-  return proto.aserto.directory.v2.GetObjResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.GetObjResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.GetObjResponse}
- */
-proto.aserto.directory.v2.GetObjResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new aserto_directory_v2_object_pb.Object;
-      reader.readMessage(value,aserto_directory_v2_object_pb.Object.deserializeBinaryFromReader);
-      msg.addResults(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.GetObjResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.GetObjResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.GetObjResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetObjResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getResultsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      1,
-      f,
-      aserto_directory_v2_object_pb.Object.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * repeated Object results = 1;
- * @return {!Array<!proto.aserto.directory.v2.Object>}
- */
-proto.aserto.directory.v2.GetObjResponse.prototype.getResultsList = function() {
-  return /** @type{!Array<!proto.aserto.directory.v2.Object>} */ (
-    jspb.Message.getRepeatedWrapperField(this, aserto_directory_v2_object_pb.Object, 1));
-};
-
-
-/**
- * @param {!Array<!proto.aserto.directory.v2.Object>} value
- * @return {!proto.aserto.directory.v2.GetObjResponse} returns this
-*/
-proto.aserto.directory.v2.GetObjResponse.prototype.setResultsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
-};
-
-
-/**
- * @param {!proto.aserto.directory.v2.Object=} opt_value
- * @param {number=} opt_index
- * @return {!proto.aserto.directory.v2.Object}
- */
-proto.aserto.directory.v2.GetObjResponse.prototype.addResults = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.aserto.directory.v2.Object, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.aserto.directory.v2.GetObjResponse} returns this
- */
-proto.aserto.directory.v2.GetObjResponse.prototype.clearResultsList = function() {
-  return this.setResultsList([]);
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
 proto.aserto.directory.v2.GetRelationRequest.prototype.toObject = function(opt_includeInstance) {
   return proto.aserto.directory.v2.GetRelationRequest.toObject(opt_includeInstance, this);
 };
@@ -7131,10 +5769,10 @@ proto.aserto.directory.v2.GetRelationRequest.prototype.toObject = function(opt_i
  */
 proto.aserto.directory.v2.GetRelationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sourceType: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    sourceType: jspb.Message.getFieldWithDefault(msg, 1, ""),
     sourceId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    relation: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    targetType: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    relation: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    targetType: jspb.Message.getFieldWithDefault(msg, 4, ""),
     targetId: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
@@ -7173,7 +5811,7 @@ proto.aserto.directory.v2.GetRelationRequest.deserializeBinaryFromReader = funct
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setSourceType(value);
       break;
     case 2:
@@ -7181,11 +5819,11 @@ proto.aserto.directory.v2.GetRelationRequest.deserializeBinaryFromReader = funct
       msg.setSourceId(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setRelation(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setTargetType(value);
       break;
     case 5:
@@ -7222,8 +5860,8 @@ proto.aserto.directory.v2.GetRelationRequest.prototype.serializeBinary = functio
 proto.aserto.directory.v2.GetRelationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getSourceType();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -7236,15 +5874,15 @@ proto.aserto.directory.v2.GetRelationRequest.serializeBinaryToWriter = function(
     );
   }
   f = message.getRelation();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
   }
   f = message.getTargetType();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
@@ -7260,20 +5898,20 @@ proto.aserto.directory.v2.GetRelationRequest.serializeBinaryToWriter = function(
 
 
 /**
- * optional int32 source_type = 1;
- * @return {number}
+ * optional string source_type = 1;
+ * @return {string}
  */
 proto.aserto.directory.v2.GetRelationRequest.prototype.getSourceType = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.aserto.directory.v2.GetRelationRequest} returns this
  */
 proto.aserto.directory.v2.GetRelationRequest.prototype.setSourceType = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -7296,38 +5934,38 @@ proto.aserto.directory.v2.GetRelationRequest.prototype.setSourceId = function(va
 
 
 /**
- * optional int32 relation = 3;
- * @return {number}
+ * optional string relation = 3;
+ * @return {string}
  */
 proto.aserto.directory.v2.GetRelationRequest.prototype.getRelation = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.aserto.directory.v2.GetRelationRequest} returns this
  */
 proto.aserto.directory.v2.GetRelationRequest.prototype.setRelation = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional int32 target_type = 4;
- * @return {number}
+ * optional string target_type = 4;
+ * @return {string}
  */
 proto.aserto.directory.v2.GetRelationRequest.prototype.getTargetType = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.aserto.directory.v2.GetRelationRequest} returns this
  */
 proto.aserto.directory.v2.GetRelationRequest.prototype.setTargetType = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -7852,10 +6490,10 @@ proto.aserto.directory.v2.DeleteRelationRequest.prototype.toObject = function(op
  */
 proto.aserto.directory.v2.DeleteRelationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sourceType: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    sourceType: jspb.Message.getFieldWithDefault(msg, 1, ""),
     sourceId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    relation: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    targetType: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    relation: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    targetType: jspb.Message.getFieldWithDefault(msg, 4, ""),
     targetId: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
@@ -7894,7 +6532,7 @@ proto.aserto.directory.v2.DeleteRelationRequest.deserializeBinaryFromReader = fu
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setSourceType(value);
       break;
     case 2:
@@ -7902,11 +6540,11 @@ proto.aserto.directory.v2.DeleteRelationRequest.deserializeBinaryFromReader = fu
       msg.setSourceId(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setRelation(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setTargetType(value);
       break;
     case 5:
@@ -7943,8 +6581,8 @@ proto.aserto.directory.v2.DeleteRelationRequest.prototype.serializeBinary = func
 proto.aserto.directory.v2.DeleteRelationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getSourceType();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -7957,15 +6595,15 @@ proto.aserto.directory.v2.DeleteRelationRequest.serializeBinaryToWriter = functi
     );
   }
   f = message.getRelation();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
   }
   f = message.getTargetType();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
@@ -7981,20 +6619,20 @@ proto.aserto.directory.v2.DeleteRelationRequest.serializeBinaryToWriter = functi
 
 
 /**
- * optional int32 source_type = 1;
- * @return {number}
+ * optional string source_type = 1;
+ * @return {string}
  */
 proto.aserto.directory.v2.DeleteRelationRequest.prototype.getSourceType = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.aserto.directory.v2.DeleteRelationRequest} returns this
  */
 proto.aserto.directory.v2.DeleteRelationRequest.prototype.setSourceType = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -8017,38 +6655,38 @@ proto.aserto.directory.v2.DeleteRelationRequest.prototype.setSourceId = function
 
 
 /**
- * optional int32 relation = 3;
- * @return {number}
+ * optional string relation = 3;
+ * @return {string}
  */
 proto.aserto.directory.v2.DeleteRelationRequest.prototype.getRelation = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.aserto.directory.v2.DeleteRelationRequest} returns this
  */
 proto.aserto.directory.v2.DeleteRelationRequest.prototype.setRelation = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional int32 target_type = 4;
- * @return {number}
+ * optional string target_type = 4;
+ * @return {string}
  */
 proto.aserto.directory.v2.DeleteRelationRequest.prototype.getTargetType = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.aserto.directory.v2.DeleteRelationRequest} returns this
  */
 proto.aserto.directory.v2.DeleteRelationRequest.prototype.setTargetType = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -8253,10 +6891,10 @@ proto.aserto.directory.v2.ListRelationsRequest.prototype.toObject = function(opt
  */
 proto.aserto.directory.v2.ListRelationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sourceType: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    sourceType: jspb.Message.getFieldWithDefault(msg, 1, ""),
     sourceId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    relation: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    targetType: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    relation: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    targetType: jspb.Message.getFieldWithDefault(msg, 4, ""),
     targetId: jspb.Message.getFieldWithDefault(msg, 5, ""),
     page: (f = msg.getPage()) && aserto_api_v1_pagination_pb.PaginationRequest.toObject(includeInstance, f)
   };
@@ -8296,7 +6934,7 @@ proto.aserto.directory.v2.ListRelationsRequest.deserializeBinaryFromReader = fun
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setSourceType(value);
       break;
     case 2:
@@ -8304,11 +6942,11 @@ proto.aserto.directory.v2.ListRelationsRequest.deserializeBinaryFromReader = fun
       msg.setSourceId(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setRelation(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setTargetType(value);
       break;
     case 5:
@@ -8350,8 +6988,8 @@ proto.aserto.directory.v2.ListRelationsRequest.prototype.serializeBinary = funct
 proto.aserto.directory.v2.ListRelationsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getSourceType();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -8364,15 +7002,15 @@ proto.aserto.directory.v2.ListRelationsRequest.serializeBinaryToWriter = functio
     );
   }
   f = message.getRelation();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       3,
       f
     );
   }
   f = message.getTargetType();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
@@ -8396,20 +7034,20 @@ proto.aserto.directory.v2.ListRelationsRequest.serializeBinaryToWriter = functio
 
 
 /**
- * optional int32 source_type = 1;
- * @return {number}
+ * optional string source_type = 1;
+ * @return {string}
  */
 proto.aserto.directory.v2.ListRelationsRequest.prototype.getSourceType = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.aserto.directory.v2.ListRelationsRequest} returns this
  */
 proto.aserto.directory.v2.ListRelationsRequest.prototype.setSourceType = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -8432,38 +7070,38 @@ proto.aserto.directory.v2.ListRelationsRequest.prototype.setSourceId = function(
 
 
 /**
- * optional int32 relation = 3;
- * @return {number}
+ * optional string relation = 3;
+ * @return {string}
  */
 proto.aserto.directory.v2.ListRelationsRequest.prototype.getRelation = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.aserto.directory.v2.ListRelationsRequest} returns this
  */
 proto.aserto.directory.v2.ListRelationsRequest.prototype.setRelation = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional int32 target_type = 4;
- * @return {number}
+ * optional string target_type = 4;
+ * @return {string}
  */
 proto.aserto.directory.v2.ListRelationsRequest.prototype.getTargetType = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.aserto.directory.v2.ListRelationsRequest} returns this
  */
 proto.aserto.directory.v2.ListRelationsRequest.prototype.setTargetType = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -8730,416 +7368,6 @@ proto.aserto.directory.v2.ListRelationsResponse.prototype.clearPage = function()
  */
 proto.aserto.directory.v2.ListRelationsResponse.prototype.hasPage = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.GetRelRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.GetRelRequest.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.GetRelRequest} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetRelRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    sourceType: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sourceId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    relation: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    targetType: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    targetId: jspb.Message.getFieldWithDefault(msg, 5, "")
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.GetRelRequest}
- */
-proto.aserto.directory.v2.GetRelRequest.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.GetRelRequest;
-  return proto.aserto.directory.v2.GetRelRequest.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.GetRelRequest} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.GetRelRequest}
- */
-proto.aserto.directory.v2.GetRelRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSourceType(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSourceId(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setRelation(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTargetType(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTargetId(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.GetRelRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.GetRelRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.GetRelRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetRelRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getSourceType();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getSourceId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getRelation();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getTargetType();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = message.getTargetId();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string source_type = 1;
- * @return {string}
- */
-proto.aserto.directory.v2.GetRelRequest.prototype.getSourceType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.GetRelRequest} returns this
- */
-proto.aserto.directory.v2.GetRelRequest.prototype.setSourceType = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string source_id = 2;
- * @return {string}
- */
-proto.aserto.directory.v2.GetRelRequest.prototype.getSourceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.GetRelRequest} returns this
- */
-proto.aserto.directory.v2.GetRelRequest.prototype.setSourceId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string relation = 3;
- * @return {string}
- */
-proto.aserto.directory.v2.GetRelRequest.prototype.getRelation = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.GetRelRequest} returns this
- */
-proto.aserto.directory.v2.GetRelRequest.prototype.setRelation = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string target_type = 4;
- * @return {string}
- */
-proto.aserto.directory.v2.GetRelRequest.prototype.getTargetType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.GetRelRequest} returns this
- */
-proto.aserto.directory.v2.GetRelRequest.prototype.setTargetType = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional string target_id = 5;
- * @return {string}
- */
-proto.aserto.directory.v2.GetRelRequest.prototype.getTargetId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.GetRelRequest} returns this
- */
-proto.aserto.directory.v2.GetRelRequest.prototype.setTargetId = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.aserto.directory.v2.GetRelResponse.repeatedFields_ = [1];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.GetRelResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.GetRelResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.GetRelResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetRelResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
-    aserto_directory_v2_relation_pb.Relation.toObject, includeInstance)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.GetRelResponse}
- */
-proto.aserto.directory.v2.GetRelResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.GetRelResponse;
-  return proto.aserto.directory.v2.GetRelResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.GetRelResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.GetRelResponse}
- */
-proto.aserto.directory.v2.GetRelResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new aserto_directory_v2_relation_pb.Relation;
-      reader.readMessage(value,aserto_directory_v2_relation_pb.Relation.deserializeBinaryFromReader);
-      msg.addResults(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.GetRelResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.GetRelResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.GetRelResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetRelResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getResultsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      1,
-      f,
-      aserto_directory_v2_relation_pb.Relation.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * repeated Relation results = 1;
- * @return {!Array<!proto.aserto.directory.v2.Relation>}
- */
-proto.aserto.directory.v2.GetRelResponse.prototype.getResultsList = function() {
-  return /** @type{!Array<!proto.aserto.directory.v2.Relation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, aserto_directory_v2_relation_pb.Relation, 1));
-};
-
-
-/**
- * @param {!Array<!proto.aserto.directory.v2.Relation>} value
- * @return {!proto.aserto.directory.v2.GetRelResponse} returns this
-*/
-proto.aserto.directory.v2.GetRelResponse.prototype.setResultsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
-};
-
-
-/**
- * @param {!proto.aserto.directory.v2.Relation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.aserto.directory.v2.Relation}
- */
-proto.aserto.directory.v2.GetRelResponse.prototype.addResults = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.aserto.directory.v2.Relation, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.aserto.directory.v2.GetRelResponse} returns this
- */
-proto.aserto.directory.v2.GetRelResponse.prototype.clearResultsList = function() {
-  return this.setResultsList([]);
 };
 
 
@@ -10587,2068 +8815,6 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.aserto.directory.v2.GetPermRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.GetPermRequest.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.GetPermRequest} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetPermRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.GetPermRequest}
- */
-proto.aserto.directory.v2.GetPermRequest.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.GetPermRequest;
-  return proto.aserto.directory.v2.GetPermRequest.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.GetPermRequest} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.GetPermRequest}
- */
-proto.aserto.directory.v2.GetPermRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.GetPermRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.GetPermRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.GetPermRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetPermRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string name = 1;
- * @return {string}
- */
-proto.aserto.directory.v2.GetPermRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.GetPermRequest} returns this
- */
-proto.aserto.directory.v2.GetPermRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.GetPermResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.GetPermResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.GetPermResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetPermResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, "")
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.GetPermResponse}
- */
-proto.aserto.directory.v2.GetPermResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.GetPermResponse;
-  return proto.aserto.directory.v2.GetPermResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.GetPermResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.GetPermResponse}
- */
-proto.aserto.directory.v2.GetPermResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.GetPermResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.GetPermResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.GetPermResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetPermResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string id = 1;
- * @return {string}
- */
-proto.aserto.directory.v2.GetPermResponse.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.GetPermResponse} returns this
- */
-proto.aserto.directory.v2.GetPermResponse.prototype.setId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.GetRelationTypePermissionRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.GetRelationTypePermissionRequest.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.GetRelationTypePermissionRequest} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetRelationTypePermissionRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    relationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    permissionId: jspb.Message.getFieldWithDefault(msg, 2, "")
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.GetRelationTypePermissionRequest}
- */
-proto.aserto.directory.v2.GetRelationTypePermissionRequest.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.GetRelationTypePermissionRequest;
-  return proto.aserto.directory.v2.GetRelationTypePermissionRequest.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.GetRelationTypePermissionRequest} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.GetRelationTypePermissionRequest}
- */
-proto.aserto.directory.v2.GetRelationTypePermissionRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setRelationId(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPermissionId(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.GetRelationTypePermissionRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.GetRelationTypePermissionRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.GetRelationTypePermissionRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetRelationTypePermissionRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getRelationId();
-  if (f !== 0) {
-    writer.writeInt32(
-      1,
-      f
-    );
-  }
-  f = message.getPermissionId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-};
-
-
-/**
- * optional int32 relation_id = 1;
- * @return {number}
- */
-proto.aserto.directory.v2.GetRelationTypePermissionRequest.prototype.getRelationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.aserto.directory.v2.GetRelationTypePermissionRequest} returns this
- */
-proto.aserto.directory.v2.GetRelationTypePermissionRequest.prototype.setRelationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
-};
-
-
-/**
- * optional string permission_id = 2;
- * @return {string}
- */
-proto.aserto.directory.v2.GetRelationTypePermissionRequest.prototype.getPermissionId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.GetRelationTypePermissionRequest} returns this
- */
-proto.aserto.directory.v2.GetRelationTypePermissionRequest.prototype.setPermissionId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.aserto.directory.v2.GetRelationTypePermissionResponse.repeatedFields_ = [1];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.GetRelationTypePermissionResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.GetRelationTypePermissionResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.GetRelationTypePermissionResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetRelationTypePermissionResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
-    aserto_directory_v2_relation_pb.RelationTypePermission.toObject, includeInstance)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.GetRelationTypePermissionResponse}
- */
-proto.aserto.directory.v2.GetRelationTypePermissionResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.GetRelationTypePermissionResponse;
-  return proto.aserto.directory.v2.GetRelationTypePermissionResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.GetRelationTypePermissionResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.GetRelationTypePermissionResponse}
- */
-proto.aserto.directory.v2.GetRelationTypePermissionResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new aserto_directory_v2_relation_pb.RelationTypePermission;
-      reader.readMessage(value,aserto_directory_v2_relation_pb.RelationTypePermission.deserializeBinaryFromReader);
-      msg.addResults(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.GetRelationTypePermissionResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.GetRelationTypePermissionResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.GetRelationTypePermissionResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.GetRelationTypePermissionResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getResultsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      1,
-      f,
-      aserto_directory_v2_relation_pb.RelationTypePermission.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * repeated RelationTypePermission results = 1;
- * @return {!Array<!proto.aserto.directory.v2.RelationTypePermission>}
- */
-proto.aserto.directory.v2.GetRelationTypePermissionResponse.prototype.getResultsList = function() {
-  return /** @type{!Array<!proto.aserto.directory.v2.RelationTypePermission>} */ (
-    jspb.Message.getRepeatedWrapperField(this, aserto_directory_v2_relation_pb.RelationTypePermission, 1));
-};
-
-
-/**
- * @param {!Array<!proto.aserto.directory.v2.RelationTypePermission>} value
- * @return {!proto.aserto.directory.v2.GetRelationTypePermissionResponse} returns this
-*/
-proto.aserto.directory.v2.GetRelationTypePermissionResponse.prototype.setResultsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
-};
-
-
-/**
- * @param {!proto.aserto.directory.v2.RelationTypePermission=} opt_value
- * @param {number=} opt_index
- * @return {!proto.aserto.directory.v2.RelationTypePermission}
- */
-proto.aserto.directory.v2.GetRelationTypePermissionResponse.prototype.addResults = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.aserto.directory.v2.RelationTypePermission, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.aserto.directory.v2.GetRelationTypePermissionResponse} returns this
- */
-proto.aserto.directory.v2.GetRelationTypePermissionResponse.prototype.clearResultsList = function() {
-  return this.setResultsList([]);
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.SetRelationTypePermissionRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.SetRelationTypePermissionRequest.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.SetRelationTypePermissionRequest} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.SetRelationTypePermissionRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    relationTypePermission: (f = msg.getRelationTypePermission()) && aserto_directory_v2_relation_pb.RelationTypePermission.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.SetRelationTypePermissionRequest}
- */
-proto.aserto.directory.v2.SetRelationTypePermissionRequest.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.SetRelationTypePermissionRequest;
-  return proto.aserto.directory.v2.SetRelationTypePermissionRequest.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.SetRelationTypePermissionRequest} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.SetRelationTypePermissionRequest}
- */
-proto.aserto.directory.v2.SetRelationTypePermissionRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new aserto_directory_v2_relation_pb.RelationTypePermission;
-      reader.readMessage(value,aserto_directory_v2_relation_pb.RelationTypePermission.deserializeBinaryFromReader);
-      msg.setRelationTypePermission(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.SetRelationTypePermissionRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.SetRelationTypePermissionRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.SetRelationTypePermissionRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.SetRelationTypePermissionRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getRelationTypePermission();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      aserto_directory_v2_relation_pb.RelationTypePermission.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional RelationTypePermission relation_type_permission = 1;
- * @return {?proto.aserto.directory.v2.RelationTypePermission}
- */
-proto.aserto.directory.v2.SetRelationTypePermissionRequest.prototype.getRelationTypePermission = function() {
-  return /** @type{?proto.aserto.directory.v2.RelationTypePermission} */ (
-    jspb.Message.getWrapperField(this, aserto_directory_v2_relation_pb.RelationTypePermission, 1));
-};
-
-
-/**
- * @param {?proto.aserto.directory.v2.RelationTypePermission|undefined} value
- * @return {!proto.aserto.directory.v2.SetRelationTypePermissionRequest} returns this
-*/
-proto.aserto.directory.v2.SetRelationTypePermissionRequest.prototype.setRelationTypePermission = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.aserto.directory.v2.SetRelationTypePermissionRequest} returns this
- */
-proto.aserto.directory.v2.SetRelationTypePermissionRequest.prototype.clearRelationTypePermission = function() {
-  return this.setRelationTypePermission(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.aserto.directory.v2.SetRelationTypePermissionRequest.prototype.hasRelationTypePermission = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.aserto.directory.v2.SetRelationTypePermissionResponse.repeatedFields_ = [1];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.SetRelationTypePermissionResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.SetRelationTypePermissionResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.SetRelationTypePermissionResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.SetRelationTypePermissionResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
-    aserto_directory_v2_relation_pb.RelationTypePermission.toObject, includeInstance)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.SetRelationTypePermissionResponse}
- */
-proto.aserto.directory.v2.SetRelationTypePermissionResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.SetRelationTypePermissionResponse;
-  return proto.aserto.directory.v2.SetRelationTypePermissionResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.SetRelationTypePermissionResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.SetRelationTypePermissionResponse}
- */
-proto.aserto.directory.v2.SetRelationTypePermissionResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new aserto_directory_v2_relation_pb.RelationTypePermission;
-      reader.readMessage(value,aserto_directory_v2_relation_pb.RelationTypePermission.deserializeBinaryFromReader);
-      msg.addResults(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.SetRelationTypePermissionResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.SetRelationTypePermissionResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.SetRelationTypePermissionResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.SetRelationTypePermissionResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getResultsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      1,
-      f,
-      aserto_directory_v2_relation_pb.RelationTypePermission.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * repeated RelationTypePermission results = 1;
- * @return {!Array<!proto.aserto.directory.v2.RelationTypePermission>}
- */
-proto.aserto.directory.v2.SetRelationTypePermissionResponse.prototype.getResultsList = function() {
-  return /** @type{!Array<!proto.aserto.directory.v2.RelationTypePermission>} */ (
-    jspb.Message.getRepeatedWrapperField(this, aserto_directory_v2_relation_pb.RelationTypePermission, 1));
-};
-
-
-/**
- * @param {!Array<!proto.aserto.directory.v2.RelationTypePermission>} value
- * @return {!proto.aserto.directory.v2.SetRelationTypePermissionResponse} returns this
-*/
-proto.aserto.directory.v2.SetRelationTypePermissionResponse.prototype.setResultsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
-};
-
-
-/**
- * @param {!proto.aserto.directory.v2.RelationTypePermission=} opt_value
- * @param {number=} opt_index
- * @return {!proto.aserto.directory.v2.RelationTypePermission}
- */
-proto.aserto.directory.v2.SetRelationTypePermissionResponse.prototype.addResults = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.aserto.directory.v2.RelationTypePermission, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.aserto.directory.v2.SetRelationTypePermissionResponse} returns this
- */
-proto.aserto.directory.v2.SetRelationTypePermissionResponse.prototype.clearResultsList = function() {
-  return this.setResultsList([]);
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.DeleteRelationTypePermissionRequest.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.DeleteRelationTypePermissionRequest} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    relationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    permissionId: jspb.Message.getFieldWithDefault(msg, 2, "")
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.DeleteRelationTypePermissionRequest}
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionRequest.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.DeleteRelationTypePermissionRequest;
-  return proto.aserto.directory.v2.DeleteRelationTypePermissionRequest.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.DeleteRelationTypePermissionRequest} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.DeleteRelationTypePermissionRequest}
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setRelationId(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPermissionId(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.DeleteRelationTypePermissionRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.DeleteRelationTypePermissionRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getRelationId();
-  if (f !== 0) {
-    writer.writeInt32(
-      1,
-      f
-    );
-  }
-  f = message.getPermissionId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-};
-
-
-/**
- * optional int32 relation_id = 1;
- * @return {number}
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionRequest.prototype.getRelationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.aserto.directory.v2.DeleteRelationTypePermissionRequest} returns this
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionRequest.prototype.setRelationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
-};
-
-
-/**
- * optional string permission_id = 2;
- * @return {string}
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionRequest.prototype.getPermissionId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.DeleteRelationTypePermissionRequest} returns this
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionRequest.prototype.setPermissionId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.DeleteRelationTypePermissionResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.DeleteRelationTypePermissionResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    result: (f = msg.getResult()) && google_protobuf_empty_pb.Empty.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.DeleteRelationTypePermissionResponse}
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.DeleteRelationTypePermissionResponse;
-  return proto.aserto.directory.v2.DeleteRelationTypePermissionResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.DeleteRelationTypePermissionResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.DeleteRelationTypePermissionResponse}
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new google_protobuf_empty_pb.Empty;
-      reader.readMessage(value,google_protobuf_empty_pb.Empty.deserializeBinaryFromReader);
-      msg.setResult(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.DeleteRelationTypePermissionResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.DeleteRelationTypePermissionResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getResult();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      google_protobuf_empty_pb.Empty.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional google.protobuf.Empty result = 1;
- * @return {?proto.google.protobuf.Empty}
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionResponse.prototype.getResult = function() {
-  return /** @type{?proto.google.protobuf.Empty} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_empty_pb.Empty, 1));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Empty|undefined} value
- * @return {!proto.aserto.directory.v2.DeleteRelationTypePermissionResponse} returns this
-*/
-proto.aserto.directory.v2.DeleteRelationTypePermissionResponse.prototype.setResult = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.aserto.directory.v2.DeleteRelationTypePermissionResponse} returns this
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionResponse.prototype.clearResult = function() {
-  return this.setResult(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.aserto.directory.v2.DeleteRelationTypePermissionResponse.prototype.hasResult = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.ListRelationTypePermissionsRequest.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.ListRelationTypePermissionsRequest} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    page: (f = msg.getPage()) && aserto_api_v1_pagination_pb.PaginationRequest.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.ListRelationTypePermissionsRequest}
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsRequest.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.ListRelationTypePermissionsRequest;
-  return proto.aserto.directory.v2.ListRelationTypePermissionsRequest.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.ListRelationTypePermissionsRequest} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.ListRelationTypePermissionsRequest}
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 9:
-      var value = new aserto_api_v1_pagination_pb.PaginationRequest;
-      reader.readMessage(value,aserto_api_v1_pagination_pb.PaginationRequest.deserializeBinaryFromReader);
-      msg.setPage(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.ListRelationTypePermissionsRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.ListRelationTypePermissionsRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getPage();
-  if (f != null) {
-    writer.writeMessage(
-      9,
-      f,
-      aserto_api_v1_pagination_pb.PaginationRequest.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional aserto.api.v1.PaginationRequest page = 9;
- * @return {?proto.aserto.api.v1.PaginationRequest}
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsRequest.prototype.getPage = function() {
-  return /** @type{?proto.aserto.api.v1.PaginationRequest} */ (
-    jspb.Message.getWrapperField(this, aserto_api_v1_pagination_pb.PaginationRequest, 9));
-};
-
-
-/**
- * @param {?proto.aserto.api.v1.PaginationRequest|undefined} value
- * @return {!proto.aserto.directory.v2.ListRelationTypePermissionsRequest} returns this
-*/
-proto.aserto.directory.v2.ListRelationTypePermissionsRequest.prototype.setPage = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.aserto.directory.v2.ListRelationTypePermissionsRequest} returns this
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsRequest.prototype.clearPage = function() {
-  return this.setPage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsRequest.prototype.hasPage = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsResponse.repeatedFields_ = [1];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.ListRelationTypePermissionsResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.ListRelationTypePermissionsResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
-    aserto_directory_v2_relation_pb.RelationTypePermission.toObject, includeInstance),
-    page: (f = msg.getPage()) && aserto_api_v1_pagination_pb.PaginationResponse.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.ListRelationTypePermissionsResponse}
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.ListRelationTypePermissionsResponse;
-  return proto.aserto.directory.v2.ListRelationTypePermissionsResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.ListRelationTypePermissionsResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.ListRelationTypePermissionsResponse}
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new aserto_directory_v2_relation_pb.RelationTypePermission;
-      reader.readMessage(value,aserto_directory_v2_relation_pb.RelationTypePermission.deserializeBinaryFromReader);
-      msg.addResults(value);
-      break;
-    case 9:
-      var value = new aserto_api_v1_pagination_pb.PaginationResponse;
-      reader.readMessage(value,aserto_api_v1_pagination_pb.PaginationResponse.deserializeBinaryFromReader);
-      msg.setPage(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.ListRelationTypePermissionsResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.ListRelationTypePermissionsResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getResultsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      1,
-      f,
-      aserto_directory_v2_relation_pb.RelationTypePermission.serializeBinaryToWriter
-    );
-  }
-  f = message.getPage();
-  if (f != null) {
-    writer.writeMessage(
-      9,
-      f,
-      aserto_api_v1_pagination_pb.PaginationResponse.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * repeated RelationTypePermission results = 1;
- * @return {!Array<!proto.aserto.directory.v2.RelationTypePermission>}
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsResponse.prototype.getResultsList = function() {
-  return /** @type{!Array<!proto.aserto.directory.v2.RelationTypePermission>} */ (
-    jspb.Message.getRepeatedWrapperField(this, aserto_directory_v2_relation_pb.RelationTypePermission, 1));
-};
-
-
-/**
- * @param {!Array<!proto.aserto.directory.v2.RelationTypePermission>} value
- * @return {!proto.aserto.directory.v2.ListRelationTypePermissionsResponse} returns this
-*/
-proto.aserto.directory.v2.ListRelationTypePermissionsResponse.prototype.setResultsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
-};
-
-
-/**
- * @param {!proto.aserto.directory.v2.RelationTypePermission=} opt_value
- * @param {number=} opt_index
- * @return {!proto.aserto.directory.v2.RelationTypePermission}
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsResponse.prototype.addResults = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.aserto.directory.v2.RelationTypePermission, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.aserto.directory.v2.ListRelationTypePermissionsResponse} returns this
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsResponse.prototype.clearResultsList = function() {
-  return this.setResultsList([]);
-};
-
-
-/**
- * optional aserto.api.v1.PaginationResponse page = 9;
- * @return {?proto.aserto.api.v1.PaginationResponse}
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsResponse.prototype.getPage = function() {
-  return /** @type{?proto.aserto.api.v1.PaginationResponse} */ (
-    jspb.Message.getWrapperField(this, aserto_api_v1_pagination_pb.PaginationResponse, 9));
-};
-
-
-/**
- * @param {?proto.aserto.api.v1.PaginationResponse|undefined} value
- * @return {!proto.aserto.directory.v2.ListRelationTypePermissionsResponse} returns this
-*/
-proto.aserto.directory.v2.ListRelationTypePermissionsResponse.prototype.setPage = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.aserto.directory.v2.ListRelationTypePermissionsResponse} returns this
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsResponse.prototype.clearPage = function() {
-  return this.setPage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.aserto.directory.v2.ListRelationTypePermissionsResponse.prototype.hasPage = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-
-/**
- * Oneof group definitions for this message. Each group defines the field
- * numbers belonging to that group. When of these fields' value is set, all
- * other fields in the group are cleared. During deserialization, if multiple
- * fields are encountered for a group, only the last value seen will be kept.
- * @private {!Array<!Array<number>>}
- * @const
- */
-proto.aserto.directory.v2.CheckRequest.oneofGroups_ = [[2,3]];
-
-/**
- * @enum {number}
- */
-proto.aserto.directory.v2.CheckRequest.CheckCase = {
-  CHECK_NOT_SET: 0,
-  RELATION_ID: 2,
-  PERMISSION_ID: 3
-};
-
-/**
- * @return {proto.aserto.directory.v2.CheckRequest.CheckCase}
- */
-proto.aserto.directory.v2.CheckRequest.prototype.getCheckCase = function() {
-  return /** @type {proto.aserto.directory.v2.CheckRequest.CheckCase} */(jspb.Message.computeOneofCase(this, proto.aserto.directory.v2.CheckRequest.oneofGroups_[0]));
-};
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.CheckRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.CheckRequest.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.CheckRequest} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.CheckRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    subjectId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    relationId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    permissionId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    objectId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    trace: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.CheckRequest}
- */
-proto.aserto.directory.v2.CheckRequest.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.CheckRequest;
-  return proto.aserto.directory.v2.CheckRequest.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.CheckRequest} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.CheckRequest}
- */
-proto.aserto.directory.v2.CheckRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSubjectId(value);
-      break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setRelationId(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPermissionId(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setObjectId(value);
-      break;
-    case 5:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setTrace(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.CheckRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.CheckRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.CheckRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.CheckRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getSubjectId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeInt32(
-      2,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getObjectId();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = message.getTrace();
-  if (f) {
-    writer.writeBool(
-      5,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string subject_id = 1;
- * @return {string}
- */
-proto.aserto.directory.v2.CheckRequest.prototype.getSubjectId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.CheckRequest} returns this
- */
-proto.aserto.directory.v2.CheckRequest.prototype.setSubjectId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional int32 relation_id = 2;
- * @return {number}
- */
-proto.aserto.directory.v2.CheckRequest.prototype.getRelationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.aserto.directory.v2.CheckRequest} returns this
- */
-proto.aserto.directory.v2.CheckRequest.prototype.setRelationId = function(value) {
-  return jspb.Message.setOneofField(this, 2, proto.aserto.directory.v2.CheckRequest.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.aserto.directory.v2.CheckRequest} returns this
- */
-proto.aserto.directory.v2.CheckRequest.prototype.clearRelationId = function() {
-  return jspb.Message.setOneofField(this, 2, proto.aserto.directory.v2.CheckRequest.oneofGroups_[0], undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.aserto.directory.v2.CheckRequest.prototype.hasRelationId = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string permission_id = 3;
- * @return {string}
- */
-proto.aserto.directory.v2.CheckRequest.prototype.getPermissionId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.CheckRequest} returns this
- */
-proto.aserto.directory.v2.CheckRequest.prototype.setPermissionId = function(value) {
-  return jspb.Message.setOneofField(this, 3, proto.aserto.directory.v2.CheckRequest.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.aserto.directory.v2.CheckRequest} returns this
- */
-proto.aserto.directory.v2.CheckRequest.prototype.clearPermissionId = function() {
-  return jspb.Message.setOneofField(this, 3, proto.aserto.directory.v2.CheckRequest.oneofGroups_[0], undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.aserto.directory.v2.CheckRequest.prototype.hasPermissionId = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string object_id = 4;
- * @return {string}
- */
-proto.aserto.directory.v2.CheckRequest.prototype.getObjectId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.CheckRequest} returns this
- */
-proto.aserto.directory.v2.CheckRequest.prototype.setObjectId = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional bool trace = 5;
- * @return {boolean}
- */
-proto.aserto.directory.v2.CheckRequest.prototype.getTrace = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.aserto.directory.v2.CheckRequest} returns this
- */
-proto.aserto.directory.v2.CheckRequest.prototype.setTrace = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 5, value);
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.aserto.directory.v2.CheckResponse.repeatedFields_ = [2];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.CheckResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.CheckResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.CheckResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.CheckResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    check: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    traceList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.CheckResponse}
- */
-proto.aserto.directory.v2.CheckResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.CheckResponse;
-  return proto.aserto.directory.v2.CheckResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.CheckResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.CheckResponse}
- */
-proto.aserto.directory.v2.CheckResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setCheck(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addTrace(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.CheckResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.CheckResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.CheckResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.CheckResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getCheck();
-  if (f) {
-    writer.writeBool(
-      1,
-      f
-    );
-  }
-  f = message.getTraceList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      2,
-      f
-    );
-  }
-};
-
-
-/**
- * optional bool check = 1;
- * @return {boolean}
- */
-proto.aserto.directory.v2.CheckResponse.prototype.getCheck = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.aserto.directory.v2.CheckResponse} returns this
- */
-proto.aserto.directory.v2.CheckResponse.prototype.setCheck = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 1, value);
-};
-
-
-/**
- * repeated string trace = 2;
- * @return {!Array<string>}
- */
-proto.aserto.directory.v2.CheckResponse.prototype.getTraceList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.aserto.directory.v2.CheckResponse} returns this
- */
-proto.aserto.directory.v2.CheckResponse.prototype.setTraceList = function(value) {
-  return jspb.Message.setField(this, 2, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.aserto.directory.v2.CheckResponse} returns this
- */
-proto.aserto.directory.v2.CheckResponse.prototype.addTrace = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.aserto.directory.v2.CheckResponse} returns this
- */
-proto.aserto.directory.v2.CheckResponse.prototype.clearTraceList = function() {
-  return this.setTraceList([]);
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
 proto.aserto.directory.v2.CheckRelationRequest.prototype.toObject = function(opt_includeInstance) {
   return proto.aserto.directory.v2.CheckRelationRequest.toObject(opt_includeInstance, this);
 };
@@ -13521,446 +9687,6 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.aserto.directory.v2.ListObjectGraphRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.ListObjectGraphRequest.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.ListObjectGraphRequest} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.ListObjectGraphRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    anchorId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sourceType: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    sourceId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    relation: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    targetType: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    targetId: jspb.Message.getFieldWithDefault(msg, 6, "")
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.ListObjectGraphRequest}
- */
-proto.aserto.directory.v2.ListObjectGraphRequest.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.ListObjectGraphRequest;
-  return proto.aserto.directory.v2.ListObjectGraphRequest.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.ListObjectGraphRequest} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.ListObjectGraphRequest}
- */
-proto.aserto.directory.v2.ListObjectGraphRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAnchorId(value);
-      break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setSourceType(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSourceId(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setRelation(value);
-      break;
-    case 5:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setTargetType(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTargetId(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.ListObjectGraphRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.ListObjectGraphRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.ListObjectGraphRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.ListObjectGraphRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getAnchorId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getSourceType();
-  if (f !== 0) {
-    writer.writeInt32(
-      2,
-      f
-    );
-  }
-  f = message.getSourceId();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getRelation();
-  if (f !== 0) {
-    writer.writeInt32(
-      4,
-      f
-    );
-  }
-  f = message.getTargetType();
-  if (f !== 0) {
-    writer.writeInt32(
-      5,
-      f
-    );
-  }
-  f = message.getTargetId();
-  if (f.length > 0) {
-    writer.writeString(
-      6,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string anchor_id = 1;
- * @return {string}
- */
-proto.aserto.directory.v2.ListObjectGraphRequest.prototype.getAnchorId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.ListObjectGraphRequest} returns this
- */
-proto.aserto.directory.v2.ListObjectGraphRequest.prototype.setAnchorId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional int32 source_type = 2;
- * @return {number}
- */
-proto.aserto.directory.v2.ListObjectGraphRequest.prototype.getSourceType = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.aserto.directory.v2.ListObjectGraphRequest} returns this
- */
-proto.aserto.directory.v2.ListObjectGraphRequest.prototype.setSourceType = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
-};
-
-
-/**
- * optional string source_id = 3;
- * @return {string}
- */
-proto.aserto.directory.v2.ListObjectGraphRequest.prototype.getSourceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.ListObjectGraphRequest} returns this
- */
-proto.aserto.directory.v2.ListObjectGraphRequest.prototype.setSourceId = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional int32 relation = 4;
- * @return {number}
- */
-proto.aserto.directory.v2.ListObjectGraphRequest.prototype.getRelation = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.aserto.directory.v2.ListObjectGraphRequest} returns this
- */
-proto.aserto.directory.v2.ListObjectGraphRequest.prototype.setRelation = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
-};
-
-
-/**
- * optional int32 target_type = 5;
- * @return {number}
- */
-proto.aserto.directory.v2.ListObjectGraphRequest.prototype.getTargetType = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.aserto.directory.v2.ListObjectGraphRequest} returns this
- */
-proto.aserto.directory.v2.ListObjectGraphRequest.prototype.setTargetType = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
-};
-
-
-/**
- * optional string target_id = 6;
- * @return {string}
- */
-proto.aserto.directory.v2.ListObjectGraphRequest.prototype.getTargetId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.v2.ListObjectGraphRequest} returns this
- */
-proto.aserto.directory.v2.ListObjectGraphRequest.prototype.setTargetId = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.aserto.directory.v2.ListObjectGraphResponse.repeatedFields_ = [1];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.aserto.directory.v2.ListObjectGraphResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.aserto.directory.v2.ListObjectGraphResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.aserto.directory.v2.ListObjectGraphResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.ListObjectGraphResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
-    aserto_directory_v2_object_pb.ObjectDependency.toObject, includeInstance)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.aserto.directory.v2.ListObjectGraphResponse}
- */
-proto.aserto.directory.v2.ListObjectGraphResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.aserto.directory.v2.ListObjectGraphResponse;
-  return proto.aserto.directory.v2.ListObjectGraphResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.aserto.directory.v2.ListObjectGraphResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.aserto.directory.v2.ListObjectGraphResponse}
- */
-proto.aserto.directory.v2.ListObjectGraphResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new aserto_directory_v2_object_pb.ObjectDependency;
-      reader.readMessage(value,aserto_directory_v2_object_pb.ObjectDependency.deserializeBinaryFromReader);
-      msg.addResults(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.aserto.directory.v2.ListObjectGraphResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.aserto.directory.v2.ListObjectGraphResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.aserto.directory.v2.ListObjectGraphResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.aserto.directory.v2.ListObjectGraphResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getResultsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      1,
-      f,
-      aserto_directory_v2_object_pb.ObjectDependency.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * repeated ObjectDependency results = 1;
- * @return {!Array<!proto.aserto.directory.v2.ObjectDependency>}
- */
-proto.aserto.directory.v2.ListObjectGraphResponse.prototype.getResultsList = function() {
-  return /** @type{!Array<!proto.aserto.directory.v2.ObjectDependency>} */ (
-    jspb.Message.getRepeatedWrapperField(this, aserto_directory_v2_object_pb.ObjectDependency, 1));
-};
-
-
-/**
- * @param {!Array<!proto.aserto.directory.v2.ObjectDependency>} value
- * @return {!proto.aserto.directory.v2.ListObjectGraphResponse} returns this
-*/
-proto.aserto.directory.v2.ListObjectGraphResponse.prototype.setResultsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
-};
-
-
-/**
- * @param {!proto.aserto.directory.v2.ObjectDependency=} opt_value
- * @param {number=} opt_index
- * @return {!proto.aserto.directory.v2.ObjectDependency}
- */
-proto.aserto.directory.v2.ListObjectGraphResponse.prototype.addResults = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.aserto.directory.v2.ObjectDependency, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.aserto.directory.v2.ListObjectGraphResponse} returns this
- */
-proto.aserto.directory.v2.ListObjectGraphResponse.prototype.clearResultsList = function() {
-  return this.setResultsList([]);
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
 proto.aserto.directory.v2.GetGraphRequest.prototype.toObject = function(opt_includeInstance) {
   return proto.aserto.directory.v2.GetGraphRequest.toObject(opt_includeInstance, this);
 };
@@ -14384,14 +10110,5 @@ proto.aserto.directory.v2.GetGraphResponse.prototype.clearResultsList = function
   return this.setResultsList([]);
 };
 
-
-/**
- * @enum {number}
- */
-proto.aserto.directory.v2.Opcode = {
-  OPCODE_UNKNOWN: 0,
-  OPCODE_SET: 1,
-  OPCODE_DELETE: 2
-};
 
 goog.object.extend(exports, proto.aserto.directory.v2);

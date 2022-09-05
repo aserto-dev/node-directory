@@ -6,6 +6,9 @@ import * as aserto_directory_v2_object_pb from "../../../../aserto/directory/v2/
 import * as aserto_directory_v2_relation_pb from "../../../../aserto/directory/v2/relation_pb";
 
 export class ExportRequest extends jspb.Message {
+  getOptions(): number;
+  setOptions(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExportRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ExportRequest): ExportRequest.AsObject;
@@ -18,6 +21,7 @@ export class ExportRequest extends jspb.Message {
 
 export namespace ExportRequest {
   export type AsObject = {
+    options: number,
   }
 }
 
@@ -76,4 +80,18 @@ export namespace ExportResponse {
     PERMISSION = 6,
   }
 }
+
+export interface OptionMap {
+  OPTION_UNKNOWN: 0;
+  OPTION_METADATA_OBJECT_TYPES: 1;
+  OPTION_METADATA_RELATION_TYPES: 2;
+  OPTION_METADATA_PERMISSIONS: 4;
+  OPTION_METADATA: 7;
+  OPTION_DATA_OBJECTS: 8;
+  OPTION_DATA_RELATIONS: 16;
+  OPTION_DATA: 24;
+  OPTION_ALL: 31;
+}
+
+export const Option: OptionMap;
 
