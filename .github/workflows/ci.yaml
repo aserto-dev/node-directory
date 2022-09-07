@@ -50,6 +50,9 @@ jobs:
     - name: Install Buf
       run: brew install bufbuild/buf/buf
 
+    - name: Install protoc
+      run: brew install protobuf
+
     - name: Setup Buf Registry
       run: echo -e "machine buf.build\npassword ${ASERTO_BUF_TOKEN}" >> ~/.netrc
 
