@@ -47,10 +47,13 @@ jobs:
     - name: Clean generated code
       run: rm -rf pkg
 
+    - name: Install Buf
+      run: brew install bufbuild/buf/buf
+
     - name: Setup Buf Registry
       run: echo -e "machine buf.build\npassword ${ASERTO_BUF_TOKEN}" >> ~/.netrc
 
-    - name: Install
+    - name: Yarn Install
       run: yarn install
 
     - name: Generate
