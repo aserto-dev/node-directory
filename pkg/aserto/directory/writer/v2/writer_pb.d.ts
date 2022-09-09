@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
 import * as aserto_directory_v2_object_pb from "../../../../aserto/directory/v2/object_pb";
+import * as aserto_directory_v2_permission_pb from "../../../../aserto/directory/v2/permission_pb";
 import * as aserto_directory_v2_relation_pb from "../../../../aserto/directory/v2/relation_pb";
 
 export class SetObjectTypeRequest extends jspb.Message {
@@ -51,17 +52,11 @@ export namespace SetObjectTypeResponse {
 }
 
 export class DeleteObjectTypeRequest extends jspb.Message {
-  hasId(): boolean;
-  clearId(): void;
-  getId(): number;
-  setId(value: number): void;
+  hasParam(): boolean;
+  clearParam(): void;
+  getParam(): aserto_directory_v2_object_pb.ObjectTypeParam | undefined;
+  setParam(value?: aserto_directory_v2_object_pb.ObjectTypeParam): void;
 
-  hasName(): boolean;
-  clearName(): void;
-  getName(): string;
-  setName(value: string): void;
-
-  getParamCase(): DeleteObjectTypeRequest.ParamCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteObjectTypeRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DeleteObjectTypeRequest): DeleteObjectTypeRequest.AsObject;
@@ -74,14 +69,7 @@ export class DeleteObjectTypeRequest extends jspb.Message {
 
 export namespace DeleteObjectTypeRequest {
   export type AsObject = {
-    id: number,
-    name: string,
-  }
-
-  export enum ParamCase {
-    PARAM_NOT_SET = 0,
-    ID = 1,
-    NAME = 2,
+    param?: aserto_directory_v2_object_pb.ObjectTypeParam.AsObject,
   }
 }
 
@@ -152,17 +140,11 @@ export namespace SetRelationTypeResponse {
 }
 
 export class DeleteRelationTypeRequest extends jspb.Message {
-  hasId(): boolean;
-  clearId(): void;
-  getId(): number;
-  setId(value: number): void;
+  hasParam(): boolean;
+  clearParam(): void;
+  getParam(): aserto_directory_v2_relation_pb.RelationTypeParam | undefined;
+  setParam(value?: aserto_directory_v2_relation_pb.RelationTypeParam): void;
 
-  hasKey(): boolean;
-  clearKey(): void;
-  getKey(): aserto_directory_v2_relation_pb.RelationTypeKey | undefined;
-  setKey(value?: aserto_directory_v2_relation_pb.RelationTypeKey): void;
-
-  getParamCase(): DeleteRelationTypeRequest.ParamCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteRelationTypeRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DeleteRelationTypeRequest): DeleteRelationTypeRequest.AsObject;
@@ -175,14 +157,7 @@ export class DeleteRelationTypeRequest extends jspb.Message {
 
 export namespace DeleteRelationTypeRequest {
   export type AsObject = {
-    id: number,
-    key?: aserto_directory_v2_relation_pb.RelationTypeKey.AsObject,
-  }
-
-  export enum ParamCase {
-    PARAM_NOT_SET = 0,
-    ID = 1,
-    KEY = 2,
+    param?: aserto_directory_v2_relation_pb.RelationTypeParam.AsObject,
   }
 }
 
@@ -211,8 +186,8 @@ export namespace DeleteRelationTypeResponse {
 export class SetPermissionRequest extends jspb.Message {
   hasPermission(): boolean;
   clearPermission(): void;
-  getPermission(): aserto_directory_v2_relation_pb.Permission | undefined;
-  setPermission(value?: aserto_directory_v2_relation_pb.Permission): void;
+  getPermission(): aserto_directory_v2_permission_pb.Permission | undefined;
+  setPermission(value?: aserto_directory_v2_permission_pb.Permission): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetPermissionRequest.AsObject;
@@ -226,15 +201,15 @@ export class SetPermissionRequest extends jspb.Message {
 
 export namespace SetPermissionRequest {
   export type AsObject = {
-    permission?: aserto_directory_v2_relation_pb.Permission.AsObject,
+    permission?: aserto_directory_v2_permission_pb.Permission.AsObject,
   }
 }
 
 export class SetPermissionResponse extends jspb.Message {
   clearResultsList(): void;
-  getResultsList(): Array<aserto_directory_v2_relation_pb.Permission>;
-  setResultsList(value: Array<aserto_directory_v2_relation_pb.Permission>): void;
-  addResults(value?: aserto_directory_v2_relation_pb.Permission, index?: number): aserto_directory_v2_relation_pb.Permission;
+  getResultsList(): Array<aserto_directory_v2_permission_pb.Permission>;
+  setResultsList(value: Array<aserto_directory_v2_permission_pb.Permission>): void;
+  addResults(value?: aserto_directory_v2_permission_pb.Permission, index?: number): aserto_directory_v2_permission_pb.Permission;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetPermissionResponse.AsObject;
@@ -248,22 +223,16 @@ export class SetPermissionResponse extends jspb.Message {
 
 export namespace SetPermissionResponse {
   export type AsObject = {
-    resultsList: Array<aserto_directory_v2_relation_pb.Permission.AsObject>,
+    resultsList: Array<aserto_directory_v2_permission_pb.Permission.AsObject>,
   }
 }
 
 export class DeletePermissionRequest extends jspb.Message {
-  hasId(): boolean;
-  clearId(): void;
-  getId(): string;
-  setId(value: string): void;
+  hasParam(): boolean;
+  clearParam(): void;
+  getParam(): aserto_directory_v2_permission_pb.PermissionParam | undefined;
+  setParam(value?: aserto_directory_v2_permission_pb.PermissionParam): void;
 
-  hasPermission(): boolean;
-  clearPermission(): void;
-  getPermission(): string;
-  setPermission(value: string): void;
-
-  getParamCase(): DeletePermissionRequest.ParamCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeletePermissionRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DeletePermissionRequest): DeletePermissionRequest.AsObject;
@@ -276,14 +245,7 @@ export class DeletePermissionRequest extends jspb.Message {
 
 export namespace DeletePermissionRequest {
   export type AsObject = {
-    id: string,
-    permission: string,
-  }
-
-  export enum ParamCase {
-    PARAM_NOT_SET = 0,
-    ID = 1,
-    PERMISSION = 2,
+    param?: aserto_directory_v2_permission_pb.PermissionParam.AsObject,
   }
 }
 
@@ -354,17 +316,11 @@ export namespace SetObjectResponse {
 }
 
 export class DeleteObjectRequest extends jspb.Message {
-  hasId(): boolean;
-  clearId(): void;
-  getId(): string;
-  setId(value: string): void;
+  hasParam(): boolean;
+  clearParam(): void;
+  getParam(): aserto_directory_v2_object_pb.ObjectParam | undefined;
+  setParam(value?: aserto_directory_v2_object_pb.ObjectParam): void;
 
-  hasKey(): boolean;
-  clearKey(): void;
-  getKey(): aserto_directory_v2_object_pb.ObjectKey | undefined;
-  setKey(value?: aserto_directory_v2_object_pb.ObjectKey): void;
-
-  getParamCase(): DeleteObjectRequest.ParamCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteObjectRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DeleteObjectRequest): DeleteObjectRequest.AsObject;
@@ -377,14 +333,7 @@ export class DeleteObjectRequest extends jspb.Message {
 
 export namespace DeleteObjectRequest {
   export type AsObject = {
-    id: string,
-    key?: aserto_directory_v2_object_pb.ObjectKey.AsObject,
-  }
-
-  export enum ParamCase {
-    PARAM_NOT_SET = 0,
-    ID = 1,
-    KEY = 4,
+    param?: aserto_directory_v2_object_pb.ObjectParam.AsObject,
   }
 }
 
@@ -455,20 +404,10 @@ export namespace SetRelationResponse {
 }
 
 export class DeleteRelationRequest extends jspb.Message {
-  getSourceType(): string;
-  setSourceType(value: string): void;
-
-  getSourceId(): string;
-  setSourceId(value: string): void;
-
-  getRelation(): string;
-  setRelation(value: string): void;
-
-  getTargetType(): string;
-  setTargetType(value: string): void;
-
-  getTargetId(): string;
-  setTargetId(value: string): void;
+  hasParam(): boolean;
+  clearParam(): void;
+  getParam(): aserto_directory_v2_relation_pb.RelationParam | undefined;
+  setParam(value?: aserto_directory_v2_relation_pb.RelationParam): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteRelationRequest.AsObject;
@@ -482,11 +421,7 @@ export class DeleteRelationRequest extends jspb.Message {
 
 export namespace DeleteRelationRequest {
   export type AsObject = {
-    sourceType: string,
-    sourceId: string,
-    relation: string,
-    targetType: string,
-    targetId: string,
+    param?: aserto_directory_v2_relation_pb.RelationParam.AsObject,
   }
 }
 

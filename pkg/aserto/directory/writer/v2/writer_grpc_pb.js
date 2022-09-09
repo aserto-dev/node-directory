@@ -5,6 +5,7 @@ var grpc = require('@grpc/grpc-js');
 var aserto_directory_writer_v2_writer_pb = require('../../../../aserto/directory/writer/v2/writer_pb.js');
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 var aserto_directory_v2_object_pb = require('../../../../aserto/directory/v2/object_pb.js');
+var aserto_directory_v2_permission_pb = require('../../../../aserto/directory/v2/permission_pb.js');
 var aserto_directory_v2_relation_pb = require('../../../../aserto/directory/v2/relation_pb.js');
 
 function serialize_aserto_directory_writer_v2_DeleteObjectRequest(arg) {

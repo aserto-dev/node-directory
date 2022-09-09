@@ -19,21 +19,19 @@ var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb
 goog.object.extend(proto, google_protobuf_empty_pb);
 var aserto_directory_v2_object_pb = require('../../../../aserto/directory/v2/object_pb.js');
 goog.object.extend(proto, aserto_directory_v2_object_pb);
+var aserto_directory_v2_permission_pb = require('../../../../aserto/directory/v2/permission_pb.js');
+goog.object.extend(proto, aserto_directory_v2_permission_pb);
 var aserto_directory_v2_relation_pb = require('../../../../aserto/directory/v2/relation_pb.js');
 goog.object.extend(proto, aserto_directory_v2_relation_pb);
 goog.exportSymbol('proto.aserto.directory.writer.v2.DeleteObjectRequest', null, global);
-goog.exportSymbol('proto.aserto.directory.writer.v2.DeleteObjectRequest.ParamCase', null, global);
 goog.exportSymbol('proto.aserto.directory.writer.v2.DeleteObjectResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.writer.v2.DeleteObjectTypeRequest', null, global);
-goog.exportSymbol('proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.ParamCase', null, global);
 goog.exportSymbol('proto.aserto.directory.writer.v2.DeleteObjectTypeResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.writer.v2.DeletePermissionRequest', null, global);
-goog.exportSymbol('proto.aserto.directory.writer.v2.DeletePermissionRequest.ParamCase', null, global);
 goog.exportSymbol('proto.aserto.directory.writer.v2.DeletePermissionResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.writer.v2.DeleteRelationRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.writer.v2.DeleteRelationResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.writer.v2.DeleteRelationTypeRequest', null, global);
-goog.exportSymbol('proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.ParamCase', null, global);
 goog.exportSymbol('proto.aserto.directory.writer.v2.DeleteRelationTypeResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.writer.v2.SetObjectRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.writer.v2.SetObjectResponse', null, global);
@@ -98,7 +96,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.aserto.directory.writer.v2.DeleteObjectTypeRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.oneofGroups_);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.aserto.directory.writer.v2.DeleteObjectTypeRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -182,7 +180,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.aserto.directory.writer.v2.DeleteRelationTypeRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.oneofGroups_);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.aserto.directory.writer.v2.DeleteRelationTypeRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -266,7 +264,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.aserto.directory.writer.v2.DeletePermissionRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.aserto.directory.writer.v2.DeletePermissionRequest.oneofGroups_);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.aserto.directory.writer.v2.DeletePermissionRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -350,7 +348,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.aserto.directory.writer.v2.DeleteObjectRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.aserto.directory.writer.v2.DeleteObjectRequest.oneofGroups_);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.aserto.directory.writer.v2.DeleteObjectRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -777,32 +775,6 @@ proto.aserto.directory.writer.v2.SetObjectTypeResponse.prototype.clearResultsLis
 
 
 
-/**
- * Oneof group definitions for this message. Each group defines the field
- * numbers belonging to that group. When of these fields' value is set, all
- * other fields in the group are cleared. During deserialization, if multiple
- * fields are encountered for a group, only the last value seen will be kept.
- * @private {!Array<!Array<number>>}
- * @const
- */
-proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.oneofGroups_ = [[1,2]];
-
-/**
- * @enum {number}
- */
-proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.ParamCase = {
-  PARAM_NOT_SET: 0,
-  ID: 1,
-  NAME: 2
-};
-
-/**
- * @return {proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.ParamCase}
- */
-proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.prototype.getParamCase = function() {
-  return /** @type {proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.ParamCase} */(jspb.Message.computeOneofCase(this, proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.oneofGroups_[0]));
-};
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -834,8 +806,7 @@ proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.prototype.toObject = fu
  */
 proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+    param: (f = msg.getParam()) && aserto_directory_v2_object_pb.ObjectTypeParam.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -873,12 +844,9 @@ proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.deserializeBinaryFromRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setId(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      var value = new aserto_directory_v2_object_pb.ObjectTypeParam;
+      reader.readMessage(value,aserto_directory_v2_object_pb.ObjectTypeParam.deserializeBinaryFromReader);
+      msg.setParam(value);
       break;
     default:
       reader.skipField();
@@ -909,47 +877,42 @@ proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.prototype.serializeBina
  */
 proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  f = message.getParam();
   if (f != null) {
-    writer.writeInt32(
+    writer.writeMessage(
       1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
+      f,
+      aserto_directory_v2_object_pb.ObjectTypeParam.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional int32 id = 1;
- * @return {number}
+ * optional aserto.directory.v2.ObjectTypeParam param = 1;
+ * @return {?proto.aserto.directory.v2.ObjectTypeParam}
  */
-proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.prototype.getParam = function() {
+  return /** @type{?proto.aserto.directory.v2.ObjectTypeParam} */ (
+    jspb.Message.getWrapperField(this, aserto_directory_v2_object_pb.ObjectTypeParam, 1));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.aserto.directory.v2.ObjectTypeParam|undefined} value
  * @return {!proto.aserto.directory.writer.v2.DeleteObjectTypeRequest} returns this
- */
-proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.prototype.setId = function(value) {
-  return jspb.Message.setOneofField(this, 1, proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.oneofGroups_[0], value);
+*/
+proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.prototype.setParam = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.aserto.directory.writer.v2.DeleteObjectTypeRequest} returns this
  */
-proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.prototype.clearId = function() {
-  return jspb.Message.setOneofField(this, 1, proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.oneofGroups_[0], undefined);
+proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.prototype.clearParam = function() {
+  return this.setParam(undefined);
 };
 
 
@@ -957,44 +920,8 @@ proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.prototype.clearId = fun
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.prototype.hasId = function() {
+proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.prototype.hasParam = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.writer.v2.DeleteObjectTypeRequest} returns this
- */
-proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.prototype.setName = function(value) {
-  return jspb.Message.setOneofField(this, 2, proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.aserto.directory.writer.v2.DeleteObjectTypeRequest} returns this
- */
-proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.prototype.clearName = function() {
-  return jspb.Message.setOneofField(this, 2, proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.oneofGroups_[0], undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.aserto.directory.writer.v2.DeleteObjectTypeRequest.prototype.hasName = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -1461,32 +1388,6 @@ proto.aserto.directory.writer.v2.SetRelationTypeResponse.prototype.clearResultsL
 
 
 
-/**
- * Oneof group definitions for this message. Each group defines the field
- * numbers belonging to that group. When of these fields' value is set, all
- * other fields in the group are cleared. During deserialization, if multiple
- * fields are encountered for a group, only the last value seen will be kept.
- * @private {!Array<!Array<number>>}
- * @const
- */
-proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.oneofGroups_ = [[1,2]];
-
-/**
- * @enum {number}
- */
-proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.ParamCase = {
-  PARAM_NOT_SET: 0,
-  ID: 1,
-  KEY: 2
-};
-
-/**
- * @return {proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.ParamCase}
- */
-proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.prototype.getParamCase = function() {
-  return /** @type {proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.ParamCase} */(jspb.Message.computeOneofCase(this, proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.oneofGroups_[0]));
-};
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1518,8 +1419,7 @@ proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.prototype.toObject = 
  */
 proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    key: (f = msg.getKey()) && aserto_directory_v2_relation_pb.RelationTypeKey.toObject(includeInstance, f)
+    param: (f = msg.getParam()) && aserto_directory_v2_relation_pb.RelationTypeParam.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1557,13 +1457,9 @@ proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.deserializeBinaryFrom
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setId(value);
-      break;
-    case 2:
-      var value = new aserto_directory_v2_relation_pb.RelationTypeKey;
-      reader.readMessage(value,aserto_directory_v2_relation_pb.RelationTypeKey.deserializeBinaryFromReader);
-      msg.setKey(value);
+      var value = new aserto_directory_v2_relation_pb.RelationTypeParam;
+      reader.readMessage(value,aserto_directory_v2_relation_pb.RelationTypeParam.deserializeBinaryFromReader);
+      msg.setParam(value);
       break;
     default:
       reader.skipField();
@@ -1594,76 +1490,33 @@ proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.prototype.serializeBi
  */
 proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeInt32(
-      1,
-      f
-    );
-  }
-  f = message.getKey();
+  f = message.getParam();
   if (f != null) {
     writer.writeMessage(
-      2,
+      1,
       f,
-      aserto_directory_v2_relation_pb.RelationTypeKey.serializeBinaryToWriter
+      aserto_directory_v2_relation_pb.RelationTypeParam.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional int32 id = 1;
- * @return {number}
+ * optional aserto.directory.v2.RelationTypeParam param = 1;
+ * @return {?proto.aserto.directory.v2.RelationTypeParam}
  */
-proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.prototype.getParam = function() {
+  return /** @type{?proto.aserto.directory.v2.RelationTypeParam} */ (
+    jspb.Message.getWrapperField(this, aserto_directory_v2_relation_pb.RelationTypeParam, 1));
 };
 
 
 /**
- * @param {number} value
- * @return {!proto.aserto.directory.writer.v2.DeleteRelationTypeRequest} returns this
- */
-proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.prototype.setId = function(value) {
-  return jspb.Message.setOneofField(this, 1, proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.aserto.directory.writer.v2.DeleteRelationTypeRequest} returns this
- */
-proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.prototype.clearId = function() {
-  return jspb.Message.setOneofField(this, 1, proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.oneofGroups_[0], undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.prototype.hasId = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional aserto.directory.v2.RelationTypeKey key = 2;
- * @return {?proto.aserto.directory.v2.RelationTypeKey}
- */
-proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.prototype.getKey = function() {
-  return /** @type{?proto.aserto.directory.v2.RelationTypeKey} */ (
-    jspb.Message.getWrapperField(this, aserto_directory_v2_relation_pb.RelationTypeKey, 2));
-};
-
-
-/**
- * @param {?proto.aserto.directory.v2.RelationTypeKey|undefined} value
+ * @param {?proto.aserto.directory.v2.RelationTypeParam|undefined} value
  * @return {!proto.aserto.directory.writer.v2.DeleteRelationTypeRequest} returns this
 */
-proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.prototype.setKey = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 2, proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.oneofGroups_[0], value);
+proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.prototype.setParam = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -1671,8 +1524,8 @@ proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.prototype.setKey = fu
  * Clears the message field making it undefined.
  * @return {!proto.aserto.directory.writer.v2.DeleteRelationTypeRequest} returns this
  */
-proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.prototype.clearKey = function() {
-  return this.setKey(undefined);
+proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.prototype.clearParam = function() {
+  return this.setParam(undefined);
 };
 
 
@@ -1680,8 +1533,8 @@ proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.prototype.clearKey = 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.prototype.hasKey = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.aserto.directory.writer.v2.DeleteRelationTypeRequest.prototype.hasParam = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -1868,7 +1721,7 @@ proto.aserto.directory.writer.v2.SetPermissionRequest.prototype.toObject = funct
  */
 proto.aserto.directory.writer.v2.SetPermissionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    permission: (f = msg.getPermission()) && aserto_directory_v2_relation_pb.Permission.toObject(includeInstance, f)
+    permission: (f = msg.getPermission()) && aserto_directory_v2_permission_pb.Permission.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1906,8 +1759,8 @@ proto.aserto.directory.writer.v2.SetPermissionRequest.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new aserto_directory_v2_relation_pb.Permission;
-      reader.readMessage(value,aserto_directory_v2_relation_pb.Permission.deserializeBinaryFromReader);
+      var value = new aserto_directory_v2_permission_pb.Permission;
+      reader.readMessage(value,aserto_directory_v2_permission_pb.Permission.deserializeBinaryFromReader);
       msg.setPermission(value);
       break;
     default:
@@ -1944,7 +1797,7 @@ proto.aserto.directory.writer.v2.SetPermissionRequest.serializeBinaryToWriter = 
     writer.writeMessage(
       1,
       f,
-      aserto_directory_v2_relation_pb.Permission.serializeBinaryToWriter
+      aserto_directory_v2_permission_pb.Permission.serializeBinaryToWriter
     );
   }
 };
@@ -1956,7 +1809,7 @@ proto.aserto.directory.writer.v2.SetPermissionRequest.serializeBinaryToWriter = 
  */
 proto.aserto.directory.writer.v2.SetPermissionRequest.prototype.getPermission = function() {
   return /** @type{?proto.aserto.directory.v2.Permission} */ (
-    jspb.Message.getWrapperField(this, aserto_directory_v2_relation_pb.Permission, 1));
+    jspb.Message.getWrapperField(this, aserto_directory_v2_permission_pb.Permission, 1));
 };
 
 
@@ -2027,7 +1880,7 @@ proto.aserto.directory.writer.v2.SetPermissionResponse.prototype.toObject = func
 proto.aserto.directory.writer.v2.SetPermissionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     resultsList: jspb.Message.toObjectList(msg.getResultsList(),
-    aserto_directory_v2_relation_pb.Permission.toObject, includeInstance)
+    aserto_directory_v2_permission_pb.Permission.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2065,8 +1918,8 @@ proto.aserto.directory.writer.v2.SetPermissionResponse.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new aserto_directory_v2_relation_pb.Permission;
-      reader.readMessage(value,aserto_directory_v2_relation_pb.Permission.deserializeBinaryFromReader);
+      var value = new aserto_directory_v2_permission_pb.Permission;
+      reader.readMessage(value,aserto_directory_v2_permission_pb.Permission.deserializeBinaryFromReader);
       msg.addResults(value);
       break;
     default:
@@ -2103,7 +1956,7 @@ proto.aserto.directory.writer.v2.SetPermissionResponse.serializeBinaryToWriter =
     writer.writeRepeatedMessage(
       1,
       f,
-      aserto_directory_v2_relation_pb.Permission.serializeBinaryToWriter
+      aserto_directory_v2_permission_pb.Permission.serializeBinaryToWriter
     );
   }
 };
@@ -2115,7 +1968,7 @@ proto.aserto.directory.writer.v2.SetPermissionResponse.serializeBinaryToWriter =
  */
 proto.aserto.directory.writer.v2.SetPermissionResponse.prototype.getResultsList = function() {
   return /** @type{!Array<!proto.aserto.directory.v2.Permission>} */ (
-    jspb.Message.getRepeatedWrapperField(this, aserto_directory_v2_relation_pb.Permission, 1));
+    jspb.Message.getRepeatedWrapperField(this, aserto_directory_v2_permission_pb.Permission, 1));
 };
 
 
@@ -2148,32 +2001,6 @@ proto.aserto.directory.writer.v2.SetPermissionResponse.prototype.clearResultsLis
 
 
 
-/**
- * Oneof group definitions for this message. Each group defines the field
- * numbers belonging to that group. When of these fields' value is set, all
- * other fields in the group are cleared. During deserialization, if multiple
- * fields are encountered for a group, only the last value seen will be kept.
- * @private {!Array<!Array<number>>}
- * @const
- */
-proto.aserto.directory.writer.v2.DeletePermissionRequest.oneofGroups_ = [[1,2]];
-
-/**
- * @enum {number}
- */
-proto.aserto.directory.writer.v2.DeletePermissionRequest.ParamCase = {
-  PARAM_NOT_SET: 0,
-  ID: 1,
-  PERMISSION: 2
-};
-
-/**
- * @return {proto.aserto.directory.writer.v2.DeletePermissionRequest.ParamCase}
- */
-proto.aserto.directory.writer.v2.DeletePermissionRequest.prototype.getParamCase = function() {
-  return /** @type {proto.aserto.directory.writer.v2.DeletePermissionRequest.ParamCase} */(jspb.Message.computeOneofCase(this, proto.aserto.directory.writer.v2.DeletePermissionRequest.oneofGroups_[0]));
-};
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -2205,8 +2032,7 @@ proto.aserto.directory.writer.v2.DeletePermissionRequest.prototype.toObject = fu
  */
 proto.aserto.directory.writer.v2.DeletePermissionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    permission: jspb.Message.getFieldWithDefault(msg, 2, "")
+    param: (f = msg.getParam()) && aserto_directory_v2_permission_pb.PermissionParam.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2244,12 +2070,9 @@ proto.aserto.directory.writer.v2.DeletePermissionRequest.deserializeBinaryFromRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPermission(value);
+      var value = new aserto_directory_v2_permission_pb.PermissionParam;
+      reader.readMessage(value,aserto_directory_v2_permission_pb.PermissionParam.deserializeBinaryFromReader);
+      msg.setParam(value);
       break;
     default:
       reader.skipField();
@@ -2280,47 +2103,42 @@ proto.aserto.directory.writer.v2.DeletePermissionRequest.prototype.serializeBina
  */
 proto.aserto.directory.writer.v2.DeletePermissionRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  f = message.getParam();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
+      f,
+      aserto_directory_v2_permission_pb.PermissionParam.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string id = 1;
- * @return {string}
+ * optional aserto.directory.v2.PermissionParam param = 1;
+ * @return {?proto.aserto.directory.v2.PermissionParam}
  */
-proto.aserto.directory.writer.v2.DeletePermissionRequest.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.aserto.directory.writer.v2.DeletePermissionRequest.prototype.getParam = function() {
+  return /** @type{?proto.aserto.directory.v2.PermissionParam} */ (
+    jspb.Message.getWrapperField(this, aserto_directory_v2_permission_pb.PermissionParam, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.aserto.directory.v2.PermissionParam|undefined} value
  * @return {!proto.aserto.directory.writer.v2.DeletePermissionRequest} returns this
- */
-proto.aserto.directory.writer.v2.DeletePermissionRequest.prototype.setId = function(value) {
-  return jspb.Message.setOneofField(this, 1, proto.aserto.directory.writer.v2.DeletePermissionRequest.oneofGroups_[0], value);
+*/
+proto.aserto.directory.writer.v2.DeletePermissionRequest.prototype.setParam = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.aserto.directory.writer.v2.DeletePermissionRequest} returns this
  */
-proto.aserto.directory.writer.v2.DeletePermissionRequest.prototype.clearId = function() {
-  return jspb.Message.setOneofField(this, 1, proto.aserto.directory.writer.v2.DeletePermissionRequest.oneofGroups_[0], undefined);
+proto.aserto.directory.writer.v2.DeletePermissionRequest.prototype.clearParam = function() {
+  return this.setParam(undefined);
 };
 
 
@@ -2328,44 +2146,8 @@ proto.aserto.directory.writer.v2.DeletePermissionRequest.prototype.clearId = fun
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.aserto.directory.writer.v2.DeletePermissionRequest.prototype.hasId = function() {
+proto.aserto.directory.writer.v2.DeletePermissionRequest.prototype.hasParam = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string permission = 2;
- * @return {string}
- */
-proto.aserto.directory.writer.v2.DeletePermissionRequest.prototype.getPermission = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.writer.v2.DeletePermissionRequest} returns this
- */
-proto.aserto.directory.writer.v2.DeletePermissionRequest.prototype.setPermission = function(value) {
-  return jspb.Message.setOneofField(this, 2, proto.aserto.directory.writer.v2.DeletePermissionRequest.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.aserto.directory.writer.v2.DeletePermissionRequest} returns this
- */
-proto.aserto.directory.writer.v2.DeletePermissionRequest.prototype.clearPermission = function() {
-  return jspb.Message.setOneofField(this, 2, proto.aserto.directory.writer.v2.DeletePermissionRequest.oneofGroups_[0], undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.aserto.directory.writer.v2.DeletePermissionRequest.prototype.hasPermission = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -2832,32 +2614,6 @@ proto.aserto.directory.writer.v2.SetObjectResponse.prototype.clearResultsList = 
 
 
 
-/**
- * Oneof group definitions for this message. Each group defines the field
- * numbers belonging to that group. When of these fields' value is set, all
- * other fields in the group are cleared. During deserialization, if multiple
- * fields are encountered for a group, only the last value seen will be kept.
- * @private {!Array<!Array<number>>}
- * @const
- */
-proto.aserto.directory.writer.v2.DeleteObjectRequest.oneofGroups_ = [[1,4]];
-
-/**
- * @enum {number}
- */
-proto.aserto.directory.writer.v2.DeleteObjectRequest.ParamCase = {
-  PARAM_NOT_SET: 0,
-  ID: 1,
-  KEY: 4
-};
-
-/**
- * @return {proto.aserto.directory.writer.v2.DeleteObjectRequest.ParamCase}
- */
-proto.aserto.directory.writer.v2.DeleteObjectRequest.prototype.getParamCase = function() {
-  return /** @type {proto.aserto.directory.writer.v2.DeleteObjectRequest.ParamCase} */(jspb.Message.computeOneofCase(this, proto.aserto.directory.writer.v2.DeleteObjectRequest.oneofGroups_[0]));
-};
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -2889,8 +2645,7 @@ proto.aserto.directory.writer.v2.DeleteObjectRequest.prototype.toObject = functi
  */
 proto.aserto.directory.writer.v2.DeleteObjectRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    key: (f = msg.getKey()) && aserto_directory_v2_object_pb.ObjectKey.toObject(includeInstance, f)
+    param: (f = msg.getParam()) && aserto_directory_v2_object_pb.ObjectParam.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2928,13 +2683,9 @@ proto.aserto.directory.writer.v2.DeleteObjectRequest.deserializeBinaryFromReader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
-    case 4:
-      var value = new aserto_directory_v2_object_pb.ObjectKey;
-      reader.readMessage(value,aserto_directory_v2_object_pb.ObjectKey.deserializeBinaryFromReader);
-      msg.setKey(value);
+      var value = new aserto_directory_v2_object_pb.ObjectParam;
+      reader.readMessage(value,aserto_directory_v2_object_pb.ObjectParam.deserializeBinaryFromReader);
+      msg.setParam(value);
       break;
     default:
       reader.skipField();
@@ -2965,76 +2716,33 @@ proto.aserto.directory.writer.v2.DeleteObjectRequest.prototype.serializeBinary =
  */
 proto.aserto.directory.writer.v2.DeleteObjectRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getKey();
+  f = message.getParam();
   if (f != null) {
     writer.writeMessage(
-      4,
+      1,
       f,
-      aserto_directory_v2_object_pb.ObjectKey.serializeBinaryToWriter
+      aserto_directory_v2_object_pb.ObjectParam.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string id = 1;
- * @return {string}
+ * optional aserto.directory.v2.ObjectParam param = 1;
+ * @return {?proto.aserto.directory.v2.ObjectParam}
  */
-proto.aserto.directory.writer.v2.DeleteObjectRequest.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.aserto.directory.writer.v2.DeleteObjectRequest.prototype.getParam = function() {
+  return /** @type{?proto.aserto.directory.v2.ObjectParam} */ (
+    jspb.Message.getWrapperField(this, aserto_directory_v2_object_pb.ObjectParam, 1));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.aserto.directory.writer.v2.DeleteObjectRequest} returns this
- */
-proto.aserto.directory.writer.v2.DeleteObjectRequest.prototype.setId = function(value) {
-  return jspb.Message.setOneofField(this, 1, proto.aserto.directory.writer.v2.DeleteObjectRequest.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.aserto.directory.writer.v2.DeleteObjectRequest} returns this
- */
-proto.aserto.directory.writer.v2.DeleteObjectRequest.prototype.clearId = function() {
-  return jspb.Message.setOneofField(this, 1, proto.aserto.directory.writer.v2.DeleteObjectRequest.oneofGroups_[0], undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.aserto.directory.writer.v2.DeleteObjectRequest.prototype.hasId = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional aserto.directory.v2.ObjectKey key = 4;
- * @return {?proto.aserto.directory.v2.ObjectKey}
- */
-proto.aserto.directory.writer.v2.DeleteObjectRequest.prototype.getKey = function() {
-  return /** @type{?proto.aserto.directory.v2.ObjectKey} */ (
-    jspb.Message.getWrapperField(this, aserto_directory_v2_object_pb.ObjectKey, 4));
-};
-
-
-/**
- * @param {?proto.aserto.directory.v2.ObjectKey|undefined} value
+ * @param {?proto.aserto.directory.v2.ObjectParam|undefined} value
  * @return {!proto.aserto.directory.writer.v2.DeleteObjectRequest} returns this
 */
-proto.aserto.directory.writer.v2.DeleteObjectRequest.prototype.setKey = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 4, proto.aserto.directory.writer.v2.DeleteObjectRequest.oneofGroups_[0], value);
+proto.aserto.directory.writer.v2.DeleteObjectRequest.prototype.setParam = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -3042,8 +2750,8 @@ proto.aserto.directory.writer.v2.DeleteObjectRequest.prototype.setKey = function
  * Clears the message field making it undefined.
  * @return {!proto.aserto.directory.writer.v2.DeleteObjectRequest} returns this
  */
-proto.aserto.directory.writer.v2.DeleteObjectRequest.prototype.clearKey = function() {
-  return this.setKey(undefined);
+proto.aserto.directory.writer.v2.DeleteObjectRequest.prototype.clearParam = function() {
+  return this.setParam(undefined);
 };
 
 
@@ -3051,8 +2759,8 @@ proto.aserto.directory.writer.v2.DeleteObjectRequest.prototype.clearKey = functi
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.aserto.directory.writer.v2.DeleteObjectRequest.prototype.hasKey = function() {
-  return jspb.Message.getField(this, 4) != null;
+proto.aserto.directory.writer.v2.DeleteObjectRequest.prototype.hasParam = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -3550,11 +3258,7 @@ proto.aserto.directory.writer.v2.DeleteRelationRequest.prototype.toObject = func
  */
 proto.aserto.directory.writer.v2.DeleteRelationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sourceType: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sourceId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    relation: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    targetType: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    targetId: jspb.Message.getFieldWithDefault(msg, 5, "")
+    param: (f = msg.getParam()) && aserto_directory_v2_relation_pb.RelationParam.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3592,24 +3296,9 @@ proto.aserto.directory.writer.v2.DeleteRelationRequest.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSourceType(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSourceId(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setRelation(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTargetType(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTargetId(value);
+      var value = new aserto_directory_v2_relation_pb.RelationParam;
+      reader.readMessage(value,aserto_directory_v2_relation_pb.RelationParam.deserializeBinaryFromReader);
+      msg.setParam(value);
       break;
     default:
       reader.skipField();
@@ -3640,131 +3329,51 @@ proto.aserto.directory.writer.v2.DeleteRelationRequest.prototype.serializeBinary
  */
 proto.aserto.directory.writer.v2.DeleteRelationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSourceType();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getParam();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
-    );
-  }
-  f = message.getSourceId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getRelation();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getTargetType();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = message.getTargetId();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
+      f,
+      aserto_directory_v2_relation_pb.RelationParam.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string source_type = 1;
- * @return {string}
+ * optional aserto.directory.v2.RelationParam param = 1;
+ * @return {?proto.aserto.directory.v2.RelationParam}
  */
-proto.aserto.directory.writer.v2.DeleteRelationRequest.prototype.getSourceType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.aserto.directory.writer.v2.DeleteRelationRequest.prototype.getParam = function() {
+  return /** @type{?proto.aserto.directory.v2.RelationParam} */ (
+    jspb.Message.getWrapperField(this, aserto_directory_v2_relation_pb.RelationParam, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.aserto.directory.v2.RelationParam|undefined} value
+ * @return {!proto.aserto.directory.writer.v2.DeleteRelationRequest} returns this
+*/
+proto.aserto.directory.writer.v2.DeleteRelationRequest.prototype.setParam = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.aserto.directory.writer.v2.DeleteRelationRequest} returns this
  */
-proto.aserto.directory.writer.v2.DeleteRelationRequest.prototype.setSourceType = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.aserto.directory.writer.v2.DeleteRelationRequest.prototype.clearParam = function() {
+  return this.setParam(undefined);
 };
 
 
 /**
- * optional string source_id = 2;
- * @return {string}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.aserto.directory.writer.v2.DeleteRelationRequest.prototype.getSourceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.writer.v2.DeleteRelationRequest} returns this
- */
-proto.aserto.directory.writer.v2.DeleteRelationRequest.prototype.setSourceId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string relation = 3;
- * @return {string}
- */
-proto.aserto.directory.writer.v2.DeleteRelationRequest.prototype.getRelation = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.writer.v2.DeleteRelationRequest} returns this
- */
-proto.aserto.directory.writer.v2.DeleteRelationRequest.prototype.setRelation = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string target_type = 4;
- * @return {string}
- */
-proto.aserto.directory.writer.v2.DeleteRelationRequest.prototype.getTargetType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.writer.v2.DeleteRelationRequest} returns this
- */
-proto.aserto.directory.writer.v2.DeleteRelationRequest.prototype.setTargetType = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional string target_id = 5;
- * @return {string}
- */
-proto.aserto.directory.writer.v2.DeleteRelationRequest.prototype.getTargetId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.writer.v2.DeleteRelationRequest} returns this
- */
-proto.aserto.directory.writer.v2.DeleteRelationRequest.prototype.setTargetId = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+proto.aserto.directory.writer.v2.DeleteRelationRequest.prototype.hasParam = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

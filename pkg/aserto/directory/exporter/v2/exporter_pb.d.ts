@@ -2,12 +2,19 @@
 // file: aserto/directory/exporter/v2/exporter.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as aserto_directory_v2_object_pb from "../../../../aserto/directory/v2/object_pb";
+import * as aserto_directory_v2_permission_pb from "../../../../aserto/directory/v2/permission_pb";
 import * as aserto_directory_v2_relation_pb from "../../../../aserto/directory/v2/relation_pb";
 
 export class ExportRequest extends jspb.Message {
   getOptions(): number;
   setOptions(value: number): void;
+
+  hasStartAt(): boolean;
+  clearStartAt(): void;
+  getStartAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExportRequest.AsObject;
@@ -22,6 +29,7 @@ export class ExportRequest extends jspb.Message {
 export namespace ExportRequest {
   export type AsObject = {
     options: number,
+    startAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -48,10 +56,10 @@ export class ExportResponse extends jspb.Message {
 
   hasPermission(): boolean;
   clearPermission(): void;
-  getPermission(): aserto_directory_v2_relation_pb.Permission | undefined;
-  setPermission(value?: aserto_directory_v2_relation_pb.Permission): void;
+  getPermission(): aserto_directory_v2_permission_pb.Permission | undefined;
+  setPermission(value?: aserto_directory_v2_permission_pb.Permission): void;
 
-  getMsgOneofCase(): ExportResponse.MsgOneofCase;
+  getMsgCase(): ExportResponse.MsgCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExportResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ExportResponse): ExportResponse.AsObject;
@@ -68,11 +76,11 @@ export namespace ExportResponse {
     objectType?: aserto_directory_v2_object_pb.ObjectType.AsObject,
     relation?: aserto_directory_v2_relation_pb.Relation.AsObject,
     relationType?: aserto_directory_v2_relation_pb.RelationType.AsObject,
-    permission?: aserto_directory_v2_relation_pb.Permission.AsObject,
+    permission?: aserto_directory_v2_permission_pb.Permission.AsObject,
   }
 
-  export enum MsgOneofCase {
-    MSG_ONEOF_NOT_SET = 0,
+  export enum MsgCase {
+    MSG_NOT_SET = 0,
     OBJECT = 2,
     OBJECT_TYPE = 3,
     RELATION = 4,

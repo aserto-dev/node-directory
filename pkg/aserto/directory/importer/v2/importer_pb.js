@@ -17,11 +17,13 @@ var global = (function() { return this || window || global || self || Function('
 
 var aserto_directory_v2_object_pb = require('../../../../aserto/directory/v2/object_pb.js');
 goog.object.extend(proto, aserto_directory_v2_object_pb);
+var aserto_directory_v2_permission_pb = require('../../../../aserto/directory/v2/permission_pb.js');
+goog.object.extend(proto, aserto_directory_v2_permission_pb);
 var aserto_directory_v2_relation_pb = require('../../../../aserto/directory/v2/relation_pb.js');
 goog.object.extend(proto, aserto_directory_v2_relation_pb);
 goog.exportSymbol('proto.aserto.directory.importer.v2.ImportCounter', null, global);
 goog.exportSymbol('proto.aserto.directory.importer.v2.ImportRequest', null, global);
-goog.exportSymbol('proto.aserto.directory.importer.v2.ImportRequest.MsgOneofCase', null, global);
+goog.exportSymbol('proto.aserto.directory.importer.v2.ImportRequest.MsgCase', null, global);
 goog.exportSymbol('proto.aserto.directory.importer.v2.ImportResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.importer.v2.Opcode', null, global);
 /**
@@ -101,8 +103,8 @@ proto.aserto.directory.importer.v2.ImportRequest.oneofGroups_ = [[2,3,4,5,6]];
 /**
  * @enum {number}
  */
-proto.aserto.directory.importer.v2.ImportRequest.MsgOneofCase = {
-  MSG_ONEOF_NOT_SET: 0,
+proto.aserto.directory.importer.v2.ImportRequest.MsgCase = {
+  MSG_NOT_SET: 0,
   OBJECT_TYPE: 2,
   PERMISSION: 3,
   RELATION_TYPE: 4,
@@ -111,10 +113,10 @@ proto.aserto.directory.importer.v2.ImportRequest.MsgOneofCase = {
 };
 
 /**
- * @return {proto.aserto.directory.importer.v2.ImportRequest.MsgOneofCase}
+ * @return {proto.aserto.directory.importer.v2.ImportRequest.MsgCase}
  */
-proto.aserto.directory.importer.v2.ImportRequest.prototype.getMsgOneofCase = function() {
-  return /** @type {proto.aserto.directory.importer.v2.ImportRequest.MsgOneofCase} */(jspb.Message.computeOneofCase(this, proto.aserto.directory.importer.v2.ImportRequest.oneofGroups_[0]));
+proto.aserto.directory.importer.v2.ImportRequest.prototype.getMsgCase = function() {
+  return /** @type {proto.aserto.directory.importer.v2.ImportRequest.MsgCase} */(jspb.Message.computeOneofCase(this, proto.aserto.directory.importer.v2.ImportRequest.oneofGroups_[0]));
 };
 
 
@@ -150,7 +152,7 @@ proto.aserto.directory.importer.v2.ImportRequest.toObject = function(includeInst
   var f, obj = {
     opCode: jspb.Message.getFieldWithDefault(msg, 1, 0),
     objectType: (f = msg.getObjectType()) && aserto_directory_v2_object_pb.ObjectType.toObject(includeInstance, f),
-    permission: (f = msg.getPermission()) && aserto_directory_v2_relation_pb.Permission.toObject(includeInstance, f),
+    permission: (f = msg.getPermission()) && aserto_directory_v2_permission_pb.Permission.toObject(includeInstance, f),
     relationType: (f = msg.getRelationType()) && aserto_directory_v2_relation_pb.RelationType.toObject(includeInstance, f),
     object: (f = msg.getObject()) && aserto_directory_v2_object_pb.Object.toObject(includeInstance, f),
     relation: (f = msg.getRelation()) && aserto_directory_v2_relation_pb.Relation.toObject(includeInstance, f)
@@ -200,8 +202,8 @@ proto.aserto.directory.importer.v2.ImportRequest.deserializeBinaryFromReader = f
       msg.setObjectType(value);
       break;
     case 3:
-      var value = new aserto_directory_v2_relation_pb.Permission;
-      reader.readMessage(value,aserto_directory_v2_relation_pb.Permission.deserializeBinaryFromReader);
+      var value = new aserto_directory_v2_permission_pb.Permission;
+      reader.readMessage(value,aserto_directory_v2_permission_pb.Permission.deserializeBinaryFromReader);
       msg.setPermission(value);
       break;
     case 4:
@@ -268,7 +270,7 @@ proto.aserto.directory.importer.v2.ImportRequest.serializeBinaryToWriter = funct
     writer.writeMessage(
       3,
       f,
-      aserto_directory_v2_relation_pb.Permission.serializeBinaryToWriter
+      aserto_directory_v2_permission_pb.Permission.serializeBinaryToWriter
     );
   }
   f = message.getRelationType();
@@ -359,7 +361,7 @@ proto.aserto.directory.importer.v2.ImportRequest.prototype.hasObjectType = funct
  */
 proto.aserto.directory.importer.v2.ImportRequest.prototype.getPermission = function() {
   return /** @type{?proto.aserto.directory.v2.Permission} */ (
-    jspb.Message.getWrapperField(this, aserto_directory_v2_relation_pb.Permission, 3));
+    jspb.Message.getWrapperField(this, aserto_directory_v2_permission_pb.Permission, 3));
 };
 
 
