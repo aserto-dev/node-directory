@@ -99,6 +99,11 @@ export class ObjectType extends jspb.Message {
   getUpdatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasDeletedAt(): boolean;
+  clearDeletedAt(): void;
+  getDeletedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setDeletedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   getHash(): string;
   setHash(value: string): void;
 
@@ -123,31 +128,32 @@ export namespace ObjectType {
     schema?: google_protobuf_struct_pb.Struct.AsObject,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    deletedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     hash: string,
   }
 }
 
 export class ObjectDependency extends jspb.Message {
-  getSourceType(): string;
-  setSourceType(value: string): void;
+  getObjectType(): string;
+  setObjectType(value: string): void;
 
-  getSourceId(): string;
-  setSourceId(value: string): void;
+  getObjectId(): string;
+  setObjectId(value: string): void;
 
-  getSourceKey(): string;
-  setSourceKey(value: string): void;
+  getObjectKey(): string;
+  setObjectKey(value: string): void;
 
   getRelation(): string;
   setRelation(value: string): void;
 
-  getTargetType(): string;
-  setTargetType(value: string): void;
+  getSubjectType(): string;
+  setSubjectType(value: string): void;
 
-  getTargetId(): string;
-  setTargetId(value: string): void;
+  getSubjectId(): string;
+  setSubjectId(value: string): void;
 
-  getTargetKey(): string;
-  setTargetKey(value: string): void;
+  getSubjectKey(): string;
+  setSubjectKey(value: string): void;
 
   getDepth(): number;
   setDepth(value: number): void;
@@ -170,13 +176,13 @@ export class ObjectDependency extends jspb.Message {
 
 export namespace ObjectDependency {
   export type AsObject = {
-    sourceType: string,
-    sourceId: string,
-    sourceKey: string,
+    objectType: string,
+    objectId: string,
+    objectKey: string,
     relation: string,
-    targetType: string,
-    targetId: string,
-    targetKey: string,
+    subjectType: string,
+    subjectId: string,
+    subjectKey: string,
     depth: number,
     isCycle: boolean,
     path: string,
@@ -204,6 +210,76 @@ export namespace ObjectKey {
   export type AsObject = {
     type: string,
     key: string,
+  }
+}
+
+export class ObjectParam extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): string;
+  setId(value: string): void;
+
+  hasKey(): boolean;
+  clearKey(): void;
+  getKey(): ObjectKey | undefined;
+  setKey(value?: ObjectKey): void;
+
+  getOptCase(): ObjectParam.OptCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ObjectParam.AsObject;
+  static toObject(includeInstance: boolean, msg: ObjectParam): ObjectParam.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ObjectParam, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ObjectParam;
+  static deserializeBinaryFromReader(message: ObjectParam, reader: jspb.BinaryReader): ObjectParam;
+}
+
+export namespace ObjectParam {
+  export type AsObject = {
+    id: string,
+    key?: ObjectKey.AsObject,
+  }
+
+  export enum OptCase {
+    OPT_NOT_SET = 0,
+    ID = 1,
+    KEY = 2,
+  }
+}
+
+export class ObjectTypeParam extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): number;
+  setId(value: number): void;
+
+  hasName(): boolean;
+  clearName(): void;
+  getName(): string;
+  setName(value: string): void;
+
+  getOptCase(): ObjectTypeParam.OptCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ObjectTypeParam.AsObject;
+  static toObject(includeInstance: boolean, msg: ObjectTypeParam): ObjectTypeParam.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ObjectTypeParam, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ObjectTypeParam;
+  static deserializeBinaryFromReader(message: ObjectTypeParam, reader: jspb.BinaryReader): ObjectTypeParam;
+}
+
+export namespace ObjectTypeParam {
+  export type AsObject = {
+    id: number,
+    name: string,
+  }
+
+  export enum OptCase {
+    OPT_NOT_SET = 0,
+    ID = 1,
+    NAME = 2,
   }
 }
 

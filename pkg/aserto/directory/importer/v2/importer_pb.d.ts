@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as aserto_directory_v2_object_pb from "../../../../aserto/directory/v2/object_pb";
+import * as aserto_directory_v2_permission_pb from "../../../../aserto/directory/v2/permission_pb";
 import * as aserto_directory_v2_relation_pb from "../../../../aserto/directory/v2/relation_pb";
 
 export class ImportRequest extends jspb.Message {
@@ -16,8 +17,8 @@ export class ImportRequest extends jspb.Message {
 
   hasPermission(): boolean;
   clearPermission(): void;
-  getPermission(): aserto_directory_v2_relation_pb.Permission | undefined;
-  setPermission(value?: aserto_directory_v2_relation_pb.Permission): void;
+  getPermission(): aserto_directory_v2_permission_pb.Permission | undefined;
+  setPermission(value?: aserto_directory_v2_permission_pb.Permission): void;
 
   hasRelationType(): boolean;
   clearRelationType(): void;
@@ -34,7 +35,7 @@ export class ImportRequest extends jspb.Message {
   getRelation(): aserto_directory_v2_relation_pb.Relation | undefined;
   setRelation(value?: aserto_directory_v2_relation_pb.Relation): void;
 
-  getMsgOneofCase(): ImportRequest.MsgOneofCase;
+  getMsgCase(): ImportRequest.MsgCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ImportRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ImportRequest): ImportRequest.AsObject;
@@ -49,14 +50,14 @@ export namespace ImportRequest {
   export type AsObject = {
     opCode: OpcodeMap[keyof OpcodeMap],
     objectType?: aserto_directory_v2_object_pb.ObjectType.AsObject,
-    permission?: aserto_directory_v2_relation_pb.Permission.AsObject,
+    permission?: aserto_directory_v2_permission_pb.Permission.AsObject,
     relationType?: aserto_directory_v2_relation_pb.RelationType.AsObject,
     object?: aserto_directory_v2_object_pb.Object.AsObject,
     relation?: aserto_directory_v2_relation_pb.Relation.AsObject,
   }
 
-  export enum MsgOneofCase {
-    MSG_ONEOF_NOT_SET = 0,
+  export enum MsgCase {
+    MSG_NOT_SET = 0,
     OBJECT_TYPE = 2,
     PERMISSION = 3,
     RELATION_TYPE = 4,

@@ -1,5 +1,5 @@
-// package: aserto.api.v1
-// file: aserto/api/v1/pagination.proto
+// package: aserto.api.v2
+// file: aserto/api/v2/pagination.proto
 
 import * as jspb from "google-protobuf";
 
@@ -34,9 +34,6 @@ export class PaginationResponse extends jspb.Message {
   getResultSize(): number;
   setResultSize(value: number): void;
 
-  getTotalSize(): number;
-  setTotalSize(value: number): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PaginationResponse.AsObject;
   static toObject(includeInstance: boolean, msg: PaginationResponse): PaginationResponse.AsObject;
@@ -51,7 +48,6 @@ export namespace PaginationResponse {
   export type AsObject = {
     nextToken: string,
     resultSize: number,
-    totalSize: number,
   }
 }
 

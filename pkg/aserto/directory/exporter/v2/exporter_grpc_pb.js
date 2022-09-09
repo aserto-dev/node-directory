@@ -3,7 +3,9 @@
 'use strict';
 var grpc = require('@grpc/grpc-js');
 var aserto_directory_exporter_v2_exporter_pb = require('../../../../aserto/directory/exporter/v2/exporter_pb.js');
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 var aserto_directory_v2_object_pb = require('../../../../aserto/directory/v2/object_pb.js');
+var aserto_directory_v2_permission_pb = require('../../../../aserto/directory/v2/permission_pb.js');
 var aserto_directory_v2_relation_pb = require('../../../../aserto/directory/v2/relation_pb.js');
 
 function serialize_aserto_directory_exporter_v2_ExportRequest(arg) {
