@@ -55,6 +55,28 @@ function deserialize_aserto_directory_v2_GetGraphResponse(buffer_arg) {
   return aserto_directory_v2_directory_pb.GetGraphResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_aserto_directory_v2_GetObjectManyRequest(arg) {
+  if (!(arg instanceof aserto_directory_v2_directory_pb.GetObjectManyRequest)) {
+    throw new Error('Expected argument of type aserto.directory.v2.GetObjectManyRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_aserto_directory_v2_GetObjectManyRequest(buffer_arg) {
+  return aserto_directory_v2_directory_pb.GetObjectManyRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_aserto_directory_v2_GetObjectManyResponse(arg) {
+  if (!(arg instanceof aserto_directory_v2_directory_pb.GetObjectManyResponse)) {
+    throw new Error('Expected argument of type aserto.directory.v2.GetObjectManyResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_aserto_directory_v2_GetObjectManyResponse(buffer_arg) {
+  return aserto_directory_v2_directory_pb.GetObjectManyResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_aserto_directory_v2_GetObjectRequest(arg) {
   if (!(arg instanceof aserto_directory_v2_directory_pb.GetObjectRequest)) {
     throw new Error('Expected argument of type aserto.directory.v2.GetObjectRequest');
@@ -379,6 +401,17 @@ getObject: {
     requestDeserialize: deserialize_aserto_directory_v2_GetObjectRequest,
     responseSerialize: serialize_aserto_directory_v2_GetObjectResponse,
     responseDeserialize: deserialize_aserto_directory_v2_GetObjectResponse,
+  },
+  getObjectMany: {
+    path: '/aserto.directory.v2.Directory/GetObjectMany',
+    requestStream: false,
+    responseStream: false,
+    requestType: aserto_directory_v2_directory_pb.GetObjectManyRequest,
+    responseType: aserto_directory_v2_directory_pb.GetObjectManyResponse,
+    requestSerialize: serialize_aserto_directory_v2_GetObjectManyRequest,
+    requestDeserialize: deserialize_aserto_directory_v2_GetObjectManyRequest,
+    responseSerialize: serialize_aserto_directory_v2_GetObjectManyResponse,
+    responseDeserialize: deserialize_aserto_directory_v2_GetObjectManyResponse,
   },
   listObjects: {
     path: '/aserto.directory.v2.Directory/ListObjects',

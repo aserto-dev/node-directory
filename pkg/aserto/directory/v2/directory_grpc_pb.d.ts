@@ -14,6 +14,7 @@ interface IDirectoryService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
   getPermission: grpc.MethodDefinition<aserto_directory_v2_directory_pb.GetPermissionRequest, aserto_directory_v2_directory_pb.GetPermissionResponse>;
   listPermissions: grpc.MethodDefinition<aserto_directory_v2_directory_pb.ListPermissionsRequest, aserto_directory_v2_directory_pb.ListPermissionsResponse>;
   getObject: grpc.MethodDefinition<aserto_directory_v2_directory_pb.GetObjectRequest, aserto_directory_v2_directory_pb.GetObjectResponse>;
+  getObjectMany: grpc.MethodDefinition<aserto_directory_v2_directory_pb.GetObjectManyRequest, aserto_directory_v2_directory_pb.GetObjectManyResponse>;
   listObjects: grpc.MethodDefinition<aserto_directory_v2_directory_pb.ListObjectsRequest, aserto_directory_v2_directory_pb.ListObjectsResponse>;
   getRelation: grpc.MethodDefinition<aserto_directory_v2_directory_pb.GetRelationRequest, aserto_directory_v2_directory_pb.GetRelationResponse>;
   listRelations: grpc.MethodDefinition<aserto_directory_v2_directory_pb.ListRelationsRequest, aserto_directory_v2_directory_pb.ListRelationsResponse>;
@@ -32,6 +33,7 @@ export interface IDirectoryServer extends grpc.UntypedServiceImplementation {
   getPermission: grpc.handleUnaryCall<aserto_directory_v2_directory_pb.GetPermissionRequest, aserto_directory_v2_directory_pb.GetPermissionResponse>;
   listPermissions: grpc.handleUnaryCall<aserto_directory_v2_directory_pb.ListPermissionsRequest, aserto_directory_v2_directory_pb.ListPermissionsResponse>;
   getObject: grpc.handleUnaryCall<aserto_directory_v2_directory_pb.GetObjectRequest, aserto_directory_v2_directory_pb.GetObjectResponse>;
+  getObjectMany: grpc.handleUnaryCall<aserto_directory_v2_directory_pb.GetObjectManyRequest, aserto_directory_v2_directory_pb.GetObjectManyResponse>;
   listObjects: grpc.handleUnaryCall<aserto_directory_v2_directory_pb.ListObjectsRequest, aserto_directory_v2_directory_pb.ListObjectsResponse>;
   getRelation: grpc.handleUnaryCall<aserto_directory_v2_directory_pb.GetRelationRequest, aserto_directory_v2_directory_pb.GetRelationResponse>;
   listRelations: grpc.handleUnaryCall<aserto_directory_v2_directory_pb.ListRelationsRequest, aserto_directory_v2_directory_pb.ListRelationsResponse>;
@@ -63,6 +65,9 @@ export class DirectoryClient extends grpc.Client {
   getObject(argument: aserto_directory_v2_directory_pb.GetObjectRequest, callback: grpc.requestCallback<aserto_directory_v2_directory_pb.GetObjectResponse>): grpc.ClientUnaryCall;
   getObject(argument: aserto_directory_v2_directory_pb.GetObjectRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<aserto_directory_v2_directory_pb.GetObjectResponse>): grpc.ClientUnaryCall;
   getObject(argument: aserto_directory_v2_directory_pb.GetObjectRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<aserto_directory_v2_directory_pb.GetObjectResponse>): grpc.ClientUnaryCall;
+  getObjectMany(argument: aserto_directory_v2_directory_pb.GetObjectManyRequest, callback: grpc.requestCallback<aserto_directory_v2_directory_pb.GetObjectManyResponse>): grpc.ClientUnaryCall;
+  getObjectMany(argument: aserto_directory_v2_directory_pb.GetObjectManyRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<aserto_directory_v2_directory_pb.GetObjectManyResponse>): grpc.ClientUnaryCall;
+  getObjectMany(argument: aserto_directory_v2_directory_pb.GetObjectManyRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<aserto_directory_v2_directory_pb.GetObjectManyResponse>): grpc.ClientUnaryCall;
   listObjects(argument: aserto_directory_v2_directory_pb.ListObjectsRequest, callback: grpc.requestCallback<aserto_directory_v2_directory_pb.ListObjectsResponse>): grpc.ClientUnaryCall;
   listObjects(argument: aserto_directory_v2_directory_pb.ListObjectsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<aserto_directory_v2_directory_pb.ListObjectsResponse>): grpc.ClientUnaryCall;
   listObjects(argument: aserto_directory_v2_directory_pb.ListObjectsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<aserto_directory_v2_directory_pb.ListObjectsResponse>): grpc.ClientUnaryCall;

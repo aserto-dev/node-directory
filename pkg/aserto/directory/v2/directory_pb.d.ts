@@ -286,6 +286,50 @@ export namespace GetObjectResponse {
   }
 }
 
+export class GetObjectManyRequest extends jspb.Message {
+  clearParamList(): void;
+  getParamList(): Array<aserto_directory_v2_object_pb.ObjectParam>;
+  setParamList(value: Array<aserto_directory_v2_object_pb.ObjectParam>): void;
+  addParam(value?: aserto_directory_v2_object_pb.ObjectParam, index?: number): aserto_directory_v2_object_pb.ObjectParam;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetObjectManyRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetObjectManyRequest): GetObjectManyRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetObjectManyRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetObjectManyRequest;
+  static deserializeBinaryFromReader(message: GetObjectManyRequest, reader: jspb.BinaryReader): GetObjectManyRequest;
+}
+
+export namespace GetObjectManyRequest {
+  export type AsObject = {
+    paramList: Array<aserto_directory_v2_object_pb.ObjectParam.AsObject>,
+  }
+}
+
+export class GetObjectManyResponse extends jspb.Message {
+  clearResultsList(): void;
+  getResultsList(): Array<aserto_directory_v2_object_pb.Object>;
+  setResultsList(value: Array<aserto_directory_v2_object_pb.Object>): void;
+  addResults(value?: aserto_directory_v2_object_pb.Object, index?: number): aserto_directory_v2_object_pb.Object;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetObjectManyResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetObjectManyResponse): GetObjectManyResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetObjectManyResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetObjectManyResponse;
+  static deserializeBinaryFromReader(message: GetObjectManyResponse, reader: jspb.BinaryReader): GetObjectManyResponse;
+}
+
+export namespace GetObjectManyResponse {
+  export type AsObject = {
+    resultsList: Array<aserto_directory_v2_object_pb.Object.AsObject>,
+  }
+}
+
 export class ListObjectsRequest extends jspb.Message {
   hasType(): boolean;
   clearType(): void;
