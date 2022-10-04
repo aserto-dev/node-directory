@@ -1,0 +1,26 @@
+name: Publish Package to npmjs
+on:
+  release:
+    types: [created]
+env:
+  VAULT_ADDR: https://vault.eng.aserto.com/
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read Configuration
+        uses: hashicorp/vault-action@v2.4.1
+        id: vault
+        with:
+          url: ${{ env.VAULT_ADDR }}
+          token: ${{ secrets.VAULT_TOKEN }}
+          secrets: |
+            kv/data/npmjs "NPM_TOKEN" | NPM_TOKEN;
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      - run: npm publish
