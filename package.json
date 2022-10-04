@@ -5,13 +5,6 @@
   "scripts": {
     "gen": "buf generate --include-imports buf.build/aserto-dev/directory"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/aserto-dev/node-directory"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "keywords": [],
   "author": "Aserto",
   "license": "MIT",

@@ -3,19 +3,10 @@ name: ci
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-    inputs:
-      proto_ref:
-      proto_sha:
   push:
     branches:
       - main
       - v*
-    # Publish `v1.2.3` tags as releases.
-    tags:
-      - v*
-  # Run tests for PRs
-  pull_request:
-
 env:
   VAULT_ADDR: https://vault.eng.aserto.com/
   GO_VERSION: "1.17"
