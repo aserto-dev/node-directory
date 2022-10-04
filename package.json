@@ -1,13 +1,13 @@
 {
   "name": "@aserto/node-directory",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Node gRPC bindings for the Aserto directory service",
   "scripts": {
     "gen": "buf generate --include-imports buf.build/aserto-dev/directory"
   },
   "keywords": [],
   "author": "Aserto",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
     "@grpc/grpc-js": "^1.6.11",
     "@types/google-protobuf": "^3.15.6",
