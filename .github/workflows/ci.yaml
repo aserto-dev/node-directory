@@ -46,6 +46,9 @@ jobs:
     - name: Clean generated code
       run: rm -rf pkg
 
+    - name: Set up Homebrew
+      uses: Homebrew/actions/setup-homebrew@master
+
     - name: Install Buf
       run: brew install bufbuild/buf/buf
 
