@@ -3,9 +3,7 @@
 'use strict';
 var grpc = require('@grpc/grpc-js');
 var aserto_directory_importer_v2_importer_pb = require('../../../../aserto/directory/importer/v2/importer_pb.js');
-var aserto_directory_v2_object_pb = require('../../../../aserto/directory/v2/object_pb.js');
-var aserto_directory_v2_permission_pb = require('../../../../aserto/directory/v2/permission_pb.js');
-var aserto_directory_v2_relation_pb = require('../../../../aserto/directory/v2/relation_pb.js');
+var aserto_directory_common_v2_common_pb = require('../../../../aserto/directory/common/v2/common_pb.js');
 
 function serialize_aserto_directory_importer_v2_ImportRequest(arg) {
   if (!(arg instanceof aserto_directory_importer_v2_importer_pb.ImportRequest)) {

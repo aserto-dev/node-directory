@@ -3,15 +3,13 @@
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
-import * as aserto_directory_v2_object_pb from "../../../../aserto/directory/v2/object_pb";
-import * as aserto_directory_v2_permission_pb from "../../../../aserto/directory/v2/permission_pb";
-import * as aserto_directory_v2_relation_pb from "../../../../aserto/directory/v2/relation_pb";
+import * as aserto_directory_common_v2_common_pb from "../../../../aserto/directory/common/v2/common_pb";
 
 export class SetObjectTypeRequest extends jspb.Message {
   hasObjectType(): boolean;
   clearObjectType(): void;
-  getObjectType(): aserto_directory_v2_object_pb.ObjectType | undefined;
-  setObjectType(value?: aserto_directory_v2_object_pb.ObjectType): void;
+  getObjectType(): aserto_directory_common_v2_common_pb.ObjectType | undefined;
+  setObjectType(value?: aserto_directory_common_v2_common_pb.ObjectType): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetObjectTypeRequest.AsObject;
@@ -25,15 +23,15 @@ export class SetObjectTypeRequest extends jspb.Message {
 
 export namespace SetObjectTypeRequest {
   export type AsObject = {
-    objectType?: aserto_directory_v2_object_pb.ObjectType.AsObject,
+    objectType?: aserto_directory_common_v2_common_pb.ObjectType.AsObject,
   }
 }
 
 export class SetObjectTypeResponse extends jspb.Message {
-  clearResultsList(): void;
-  getResultsList(): Array<aserto_directory_v2_object_pb.ObjectType>;
-  setResultsList(value: Array<aserto_directory_v2_object_pb.ObjectType>): void;
-  addResults(value?: aserto_directory_v2_object_pb.ObjectType, index?: number): aserto_directory_v2_object_pb.ObjectType;
+  hasResult(): boolean;
+  clearResult(): void;
+  getResult(): aserto_directory_common_v2_common_pb.ObjectType | undefined;
+  setResult(value?: aserto_directory_common_v2_common_pb.ObjectType): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetObjectTypeResponse.AsObject;
@@ -47,15 +45,15 @@ export class SetObjectTypeResponse extends jspb.Message {
 
 export namespace SetObjectTypeResponse {
   export type AsObject = {
-    resultsList: Array<aserto_directory_v2_object_pb.ObjectType.AsObject>,
+    result?: aserto_directory_common_v2_common_pb.ObjectType.AsObject,
   }
 }
 
 export class DeleteObjectTypeRequest extends jspb.Message {
   hasParam(): boolean;
   clearParam(): void;
-  getParam(): aserto_directory_v2_object_pb.ObjectTypeParam | undefined;
-  setParam(value?: aserto_directory_v2_object_pb.ObjectTypeParam): void;
+  getParam(): aserto_directory_common_v2_common_pb.ObjectTypeIdentifier | undefined;
+  setParam(value?: aserto_directory_common_v2_common_pb.ObjectTypeIdentifier): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteObjectTypeRequest.AsObject;
@@ -69,7 +67,7 @@ export class DeleteObjectTypeRequest extends jspb.Message {
 
 export namespace DeleteObjectTypeRequest {
   export type AsObject = {
-    param?: aserto_directory_v2_object_pb.ObjectTypeParam.AsObject,
+    param?: aserto_directory_common_v2_common_pb.ObjectTypeIdentifier.AsObject,
   }
 }
 
@@ -98,8 +96,8 @@ export namespace DeleteObjectTypeResponse {
 export class SetRelationTypeRequest extends jspb.Message {
   hasRelationType(): boolean;
   clearRelationType(): void;
-  getRelationType(): aserto_directory_v2_relation_pb.RelationType | undefined;
-  setRelationType(value?: aserto_directory_v2_relation_pb.RelationType): void;
+  getRelationType(): aserto_directory_common_v2_common_pb.RelationType | undefined;
+  setRelationType(value?: aserto_directory_common_v2_common_pb.RelationType): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetRelationTypeRequest.AsObject;
@@ -113,15 +111,15 @@ export class SetRelationTypeRequest extends jspb.Message {
 
 export namespace SetRelationTypeRequest {
   export type AsObject = {
-    relationType?: aserto_directory_v2_relation_pb.RelationType.AsObject,
+    relationType?: aserto_directory_common_v2_common_pb.RelationType.AsObject,
   }
 }
 
 export class SetRelationTypeResponse extends jspb.Message {
-  clearResultsList(): void;
-  getResultsList(): Array<aserto_directory_v2_relation_pb.RelationType>;
-  setResultsList(value: Array<aserto_directory_v2_relation_pb.RelationType>): void;
-  addResults(value?: aserto_directory_v2_relation_pb.RelationType, index?: number): aserto_directory_v2_relation_pb.RelationType;
+  hasResult(): boolean;
+  clearResult(): void;
+  getResult(): aserto_directory_common_v2_common_pb.RelationType | undefined;
+  setResult(value?: aserto_directory_common_v2_common_pb.RelationType): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetRelationTypeResponse.AsObject;
@@ -135,15 +133,15 @@ export class SetRelationTypeResponse extends jspb.Message {
 
 export namespace SetRelationTypeResponse {
   export type AsObject = {
-    resultsList: Array<aserto_directory_v2_relation_pb.RelationType.AsObject>,
+    result?: aserto_directory_common_v2_common_pb.RelationType.AsObject,
   }
 }
 
 export class DeleteRelationTypeRequest extends jspb.Message {
   hasParam(): boolean;
   clearParam(): void;
-  getParam(): aserto_directory_v2_relation_pb.RelationTypeParam | undefined;
-  setParam(value?: aserto_directory_v2_relation_pb.RelationTypeParam): void;
+  getParam(): aserto_directory_common_v2_common_pb.RelationTypeIdentifier | undefined;
+  setParam(value?: aserto_directory_common_v2_common_pb.RelationTypeIdentifier): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteRelationTypeRequest.AsObject;
@@ -157,7 +155,7 @@ export class DeleteRelationTypeRequest extends jspb.Message {
 
 export namespace DeleteRelationTypeRequest {
   export type AsObject = {
-    param?: aserto_directory_v2_relation_pb.RelationTypeParam.AsObject,
+    param?: aserto_directory_common_v2_common_pb.RelationTypeIdentifier.AsObject,
   }
 }
 
@@ -186,8 +184,8 @@ export namespace DeleteRelationTypeResponse {
 export class SetPermissionRequest extends jspb.Message {
   hasPermission(): boolean;
   clearPermission(): void;
-  getPermission(): aserto_directory_v2_permission_pb.Permission | undefined;
-  setPermission(value?: aserto_directory_v2_permission_pb.Permission): void;
+  getPermission(): aserto_directory_common_v2_common_pb.Permission | undefined;
+  setPermission(value?: aserto_directory_common_v2_common_pb.Permission): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetPermissionRequest.AsObject;
@@ -201,15 +199,15 @@ export class SetPermissionRequest extends jspb.Message {
 
 export namespace SetPermissionRequest {
   export type AsObject = {
-    permission?: aserto_directory_v2_permission_pb.Permission.AsObject,
+    permission?: aserto_directory_common_v2_common_pb.Permission.AsObject,
   }
 }
 
 export class SetPermissionResponse extends jspb.Message {
-  clearResultsList(): void;
-  getResultsList(): Array<aserto_directory_v2_permission_pb.Permission>;
-  setResultsList(value: Array<aserto_directory_v2_permission_pb.Permission>): void;
-  addResults(value?: aserto_directory_v2_permission_pb.Permission, index?: number): aserto_directory_v2_permission_pb.Permission;
+  hasResult(): boolean;
+  clearResult(): void;
+  getResult(): aserto_directory_common_v2_common_pb.Permission | undefined;
+  setResult(value?: aserto_directory_common_v2_common_pb.Permission): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetPermissionResponse.AsObject;
@@ -223,15 +221,15 @@ export class SetPermissionResponse extends jspb.Message {
 
 export namespace SetPermissionResponse {
   export type AsObject = {
-    resultsList: Array<aserto_directory_v2_permission_pb.Permission.AsObject>,
+    result?: aserto_directory_common_v2_common_pb.Permission.AsObject,
   }
 }
 
 export class DeletePermissionRequest extends jspb.Message {
   hasParam(): boolean;
   clearParam(): void;
-  getParam(): aserto_directory_v2_permission_pb.PermissionParam | undefined;
-  setParam(value?: aserto_directory_v2_permission_pb.PermissionParam): void;
+  getParam(): aserto_directory_common_v2_common_pb.PermissionIdentifier | undefined;
+  setParam(value?: aserto_directory_common_v2_common_pb.PermissionIdentifier): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeletePermissionRequest.AsObject;
@@ -245,7 +243,7 @@ export class DeletePermissionRequest extends jspb.Message {
 
 export namespace DeletePermissionRequest {
   export type AsObject = {
-    param?: aserto_directory_v2_permission_pb.PermissionParam.AsObject,
+    param?: aserto_directory_common_v2_common_pb.PermissionIdentifier.AsObject,
   }
 }
 
@@ -274,8 +272,8 @@ export namespace DeletePermissionResponse {
 export class SetObjectRequest extends jspb.Message {
   hasObject(): boolean;
   clearObject(): void;
-  getObject(): aserto_directory_v2_object_pb.Object | undefined;
-  setObject(value?: aserto_directory_v2_object_pb.Object): void;
+  getObject(): aserto_directory_common_v2_common_pb.Object | undefined;
+  setObject(value?: aserto_directory_common_v2_common_pb.Object): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetObjectRequest.AsObject;
@@ -289,15 +287,15 @@ export class SetObjectRequest extends jspb.Message {
 
 export namespace SetObjectRequest {
   export type AsObject = {
-    object?: aserto_directory_v2_object_pb.Object.AsObject,
+    object?: aserto_directory_common_v2_common_pb.Object.AsObject,
   }
 }
 
 export class SetObjectResponse extends jspb.Message {
-  clearResultsList(): void;
-  getResultsList(): Array<aserto_directory_v2_object_pb.Object>;
-  setResultsList(value: Array<aserto_directory_v2_object_pb.Object>): void;
-  addResults(value?: aserto_directory_v2_object_pb.Object, index?: number): aserto_directory_v2_object_pb.Object;
+  hasResult(): boolean;
+  clearResult(): void;
+  getResult(): aserto_directory_common_v2_common_pb.Object | undefined;
+  setResult(value?: aserto_directory_common_v2_common_pb.Object): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetObjectResponse.AsObject;
@@ -311,15 +309,15 @@ export class SetObjectResponse extends jspb.Message {
 
 export namespace SetObjectResponse {
   export type AsObject = {
-    resultsList: Array<aserto_directory_v2_object_pb.Object.AsObject>,
+    result?: aserto_directory_common_v2_common_pb.Object.AsObject,
   }
 }
 
 export class DeleteObjectRequest extends jspb.Message {
   hasParam(): boolean;
   clearParam(): void;
-  getParam(): aserto_directory_v2_object_pb.ObjectParam | undefined;
-  setParam(value?: aserto_directory_v2_object_pb.ObjectParam): void;
+  getParam(): aserto_directory_common_v2_common_pb.ObjectIdentifier | undefined;
+  setParam(value?: aserto_directory_common_v2_common_pb.ObjectIdentifier): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteObjectRequest.AsObject;
@@ -333,7 +331,7 @@ export class DeleteObjectRequest extends jspb.Message {
 
 export namespace DeleteObjectRequest {
   export type AsObject = {
-    param?: aserto_directory_v2_object_pb.ObjectParam.AsObject,
+    param?: aserto_directory_common_v2_common_pb.ObjectIdentifier.AsObject,
   }
 }
 
@@ -362,8 +360,8 @@ export namespace DeleteObjectResponse {
 export class SetRelationRequest extends jspb.Message {
   hasRelation(): boolean;
   clearRelation(): void;
-  getRelation(): aserto_directory_v2_relation_pb.Relation | undefined;
-  setRelation(value?: aserto_directory_v2_relation_pb.Relation): void;
+  getRelation(): aserto_directory_common_v2_common_pb.Relation | undefined;
+  setRelation(value?: aserto_directory_common_v2_common_pb.Relation): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetRelationRequest.AsObject;
@@ -377,15 +375,15 @@ export class SetRelationRequest extends jspb.Message {
 
 export namespace SetRelationRequest {
   export type AsObject = {
-    relation?: aserto_directory_v2_relation_pb.Relation.AsObject,
+    relation?: aserto_directory_common_v2_common_pb.Relation.AsObject,
   }
 }
 
 export class SetRelationResponse extends jspb.Message {
-  clearResultsList(): void;
-  getResultsList(): Array<aserto_directory_v2_relation_pb.Relation>;
-  setResultsList(value: Array<aserto_directory_v2_relation_pb.Relation>): void;
-  addResults(value?: aserto_directory_v2_relation_pb.Relation, index?: number): aserto_directory_v2_relation_pb.Relation;
+  hasResult(): boolean;
+  clearResult(): void;
+  getResult(): aserto_directory_common_v2_common_pb.Relation | undefined;
+  setResult(value?: aserto_directory_common_v2_common_pb.Relation): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetRelationResponse.AsObject;
@@ -399,15 +397,15 @@ export class SetRelationResponse extends jspb.Message {
 
 export namespace SetRelationResponse {
   export type AsObject = {
-    resultsList: Array<aserto_directory_v2_relation_pb.Relation.AsObject>,
+    result?: aserto_directory_common_v2_common_pb.Relation.AsObject,
   }
 }
 
 export class DeleteRelationRequest extends jspb.Message {
   hasParam(): boolean;
   clearParam(): void;
-  getParam(): aserto_directory_v2_relation_pb.RelationParam | undefined;
-  setParam(value?: aserto_directory_v2_relation_pb.RelationParam): void;
+  getParam(): aserto_directory_common_v2_common_pb.RelationIdentifier | undefined;
+  setParam(value?: aserto_directory_common_v2_common_pb.RelationIdentifier): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteRelationRequest.AsObject;
@@ -421,7 +419,7 @@ export class DeleteRelationRequest extends jspb.Message {
 
 export namespace DeleteRelationRequest {
   export type AsObject = {
-    param?: aserto_directory_v2_relation_pb.RelationParam.AsObject,
+    param?: aserto_directory_common_v2_common_pb.RelationIdentifier.AsObject,
   }
 }
 

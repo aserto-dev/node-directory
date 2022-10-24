@@ -2,19 +2,17 @@
 // file: aserto/directory/exporter/v2/exporter.proto
 
 import * as jspb from "google-protobuf";
+import * as aserto_directory_common_v2_common_pb from "../../../../aserto/directory/common/v2/common_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
-import * as aserto_directory_v2_object_pb from "../../../../aserto/directory/v2/object_pb";
-import * as aserto_directory_v2_permission_pb from "../../../../aserto/directory/v2/permission_pb";
-import * as aserto_directory_v2_relation_pb from "../../../../aserto/directory/v2/relation_pb";
 
 export class ExportRequest extends jspb.Message {
   getOptions(): number;
   setOptions(value: number): void;
 
-  hasStartAt(): boolean;
-  clearStartAt(): void;
-  getStartAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setStartAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasStartFrom(): boolean;
+  clearStartFrom(): void;
+  getStartFrom(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartFrom(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExportRequest.AsObject;
@@ -29,35 +27,35 @@ export class ExportRequest extends jspb.Message {
 export namespace ExportRequest {
   export type AsObject = {
     options: number,
-    startAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    startFrom?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
 export class ExportResponse extends jspb.Message {
   hasObject(): boolean;
   clearObject(): void;
-  getObject(): aserto_directory_v2_object_pb.Object | undefined;
-  setObject(value?: aserto_directory_v2_object_pb.Object): void;
+  getObject(): aserto_directory_common_v2_common_pb.Object | undefined;
+  setObject(value?: aserto_directory_common_v2_common_pb.Object): void;
 
   hasObjectType(): boolean;
   clearObjectType(): void;
-  getObjectType(): aserto_directory_v2_object_pb.ObjectType | undefined;
-  setObjectType(value?: aserto_directory_v2_object_pb.ObjectType): void;
+  getObjectType(): aserto_directory_common_v2_common_pb.ObjectType | undefined;
+  setObjectType(value?: aserto_directory_common_v2_common_pb.ObjectType): void;
 
   hasRelation(): boolean;
   clearRelation(): void;
-  getRelation(): aserto_directory_v2_relation_pb.Relation | undefined;
-  setRelation(value?: aserto_directory_v2_relation_pb.Relation): void;
+  getRelation(): aserto_directory_common_v2_common_pb.Relation | undefined;
+  setRelation(value?: aserto_directory_common_v2_common_pb.Relation): void;
 
   hasRelationType(): boolean;
   clearRelationType(): void;
-  getRelationType(): aserto_directory_v2_relation_pb.RelationType | undefined;
-  setRelationType(value?: aserto_directory_v2_relation_pb.RelationType): void;
+  getRelationType(): aserto_directory_common_v2_common_pb.RelationType | undefined;
+  setRelationType(value?: aserto_directory_common_v2_common_pb.RelationType): void;
 
   hasPermission(): boolean;
   clearPermission(): void;
-  getPermission(): aserto_directory_v2_permission_pb.Permission | undefined;
-  setPermission(value?: aserto_directory_v2_permission_pb.Permission): void;
+  getPermission(): aserto_directory_common_v2_common_pb.Permission | undefined;
+  setPermission(value?: aserto_directory_common_v2_common_pb.Permission): void;
 
   getMsgCase(): ExportResponse.MsgCase;
   serializeBinary(): Uint8Array;
@@ -72,11 +70,11 @@ export class ExportResponse extends jspb.Message {
 
 export namespace ExportResponse {
   export type AsObject = {
-    object?: aserto_directory_v2_object_pb.Object.AsObject,
-    objectType?: aserto_directory_v2_object_pb.ObjectType.AsObject,
-    relation?: aserto_directory_v2_relation_pb.Relation.AsObject,
-    relationType?: aserto_directory_v2_relation_pb.RelationType.AsObject,
-    permission?: aserto_directory_v2_permission_pb.Permission.AsObject,
+    object?: aserto_directory_common_v2_common_pb.Object.AsObject,
+    objectType?: aserto_directory_common_v2_common_pb.ObjectType.AsObject,
+    relation?: aserto_directory_common_v2_common_pb.Relation.AsObject,
+    relationType?: aserto_directory_common_v2_common_pb.RelationType.AsObject,
+    permission?: aserto_directory_common_v2_common_pb.Permission.AsObject,
   }
 
   export enum MsgCase {
@@ -97,8 +95,11 @@ export interface OptionMap {
   OPTION_METADATA: 7;
   OPTION_DATA_OBJECTS: 8;
   OPTION_DATA_RELATIONS: 16;
+  OPTION_DATA_RELATIONS_WITH_KEYS: 32;
   OPTION_DATA: 24;
+  OPTION_DATA_WITH_KEYS: 40;
   OPTION_ALL: 31;
+  OPTION_ALL_WITH_KEYS: 47;
 }
 
 export const Option: OptionMap;

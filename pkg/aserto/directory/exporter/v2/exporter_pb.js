@@ -15,14 +15,10 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
+var aserto_directory_common_v2_common_pb = require('../../../../aserto/directory/common/v2/common_pb.js');
+goog.object.extend(proto, aserto_directory_common_v2_common_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
-var aserto_directory_v2_object_pb = require('../../../../aserto/directory/v2/object_pb.js');
-goog.object.extend(proto, aserto_directory_v2_object_pb);
-var aserto_directory_v2_permission_pb = require('../../../../aserto/directory/v2/permission_pb.js');
-goog.object.extend(proto, aserto_directory_v2_permission_pb);
-var aserto_directory_v2_relation_pb = require('../../../../aserto/directory/v2/relation_pb.js');
-goog.object.extend(proto, aserto_directory_v2_relation_pb);
 goog.exportSymbol('proto.aserto.directory.exporter.v2.ExportRequest', null, global);
 goog.exportSymbol('proto.aserto.directory.exporter.v2.ExportResponse', null, global);
 goog.exportSymbol('proto.aserto.directory.exporter.v2.ExportResponse.MsgCase', null, global);
@@ -102,7 +98,7 @@ proto.aserto.directory.exporter.v2.ExportRequest.prototype.toObject = function(o
 proto.aserto.directory.exporter.v2.ExportRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     options: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    startAt: (f = msg.getStartAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    startFrom: (f = msg.getStartFrom()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -146,7 +142,7 @@ proto.aserto.directory.exporter.v2.ExportRequest.deserializeBinaryFromReader = f
     case 20:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setStartAt(value);
+      msg.setStartFrom(value);
       break;
     default:
       reader.skipField();
@@ -184,7 +180,7 @@ proto.aserto.directory.exporter.v2.ExportRequest.serializeBinaryToWriter = funct
       f
     );
   }
-  f = message.getStartAt();
+  f = message.getStartFrom();
   if (f != null) {
     writer.writeMessage(
       20,
@@ -214,10 +210,10 @@ proto.aserto.directory.exporter.v2.ExportRequest.prototype.setOptions = function
 
 
 /**
- * optional google.protobuf.Timestamp start_at = 20;
+ * optional google.protobuf.Timestamp start_from = 20;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.aserto.directory.exporter.v2.ExportRequest.prototype.getStartAt = function() {
+proto.aserto.directory.exporter.v2.ExportRequest.prototype.getStartFrom = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 20));
 };
@@ -227,7 +223,7 @@ proto.aserto.directory.exporter.v2.ExportRequest.prototype.getStartAt = function
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.aserto.directory.exporter.v2.ExportRequest} returns this
 */
-proto.aserto.directory.exporter.v2.ExportRequest.prototype.setStartAt = function(value) {
+proto.aserto.directory.exporter.v2.ExportRequest.prototype.setStartFrom = function(value) {
   return jspb.Message.setWrapperField(this, 20, value);
 };
 
@@ -236,8 +232,8 @@ proto.aserto.directory.exporter.v2.ExportRequest.prototype.setStartAt = function
  * Clears the message field making it undefined.
  * @return {!proto.aserto.directory.exporter.v2.ExportRequest} returns this
  */
-proto.aserto.directory.exporter.v2.ExportRequest.prototype.clearStartAt = function() {
-  return this.setStartAt(undefined);
+proto.aserto.directory.exporter.v2.ExportRequest.prototype.clearStartFrom = function() {
+  return this.setStartFrom(undefined);
 };
 
 
@@ -245,7 +241,7 @@ proto.aserto.directory.exporter.v2.ExportRequest.prototype.clearStartAt = functi
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.aserto.directory.exporter.v2.ExportRequest.prototype.hasStartAt = function() {
+proto.aserto.directory.exporter.v2.ExportRequest.prototype.hasStartFrom = function() {
   return jspb.Message.getField(this, 20) != null;
 };
 
@@ -311,11 +307,11 @@ proto.aserto.directory.exporter.v2.ExportResponse.prototype.toObject = function(
  */
 proto.aserto.directory.exporter.v2.ExportResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    object: (f = msg.getObject()) && aserto_directory_v2_object_pb.Object.toObject(includeInstance, f),
-    objectType: (f = msg.getObjectType()) && aserto_directory_v2_object_pb.ObjectType.toObject(includeInstance, f),
-    relation: (f = msg.getRelation()) && aserto_directory_v2_relation_pb.Relation.toObject(includeInstance, f),
-    relationType: (f = msg.getRelationType()) && aserto_directory_v2_relation_pb.RelationType.toObject(includeInstance, f),
-    permission: (f = msg.getPermission()) && aserto_directory_v2_permission_pb.Permission.toObject(includeInstance, f)
+    object: (f = msg.getObject()) && aserto_directory_common_v2_common_pb.Object.toObject(includeInstance, f),
+    objectType: (f = msg.getObjectType()) && aserto_directory_common_v2_common_pb.ObjectType.toObject(includeInstance, f),
+    relation: (f = msg.getRelation()) && aserto_directory_common_v2_common_pb.Relation.toObject(includeInstance, f),
+    relationType: (f = msg.getRelationType()) && aserto_directory_common_v2_common_pb.RelationType.toObject(includeInstance, f),
+    permission: (f = msg.getPermission()) && aserto_directory_common_v2_common_pb.Permission.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -353,28 +349,28 @@ proto.aserto.directory.exporter.v2.ExportResponse.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new aserto_directory_v2_object_pb.Object;
-      reader.readMessage(value,aserto_directory_v2_object_pb.Object.deserializeBinaryFromReader);
+      var value = new aserto_directory_common_v2_common_pb.Object;
+      reader.readMessage(value,aserto_directory_common_v2_common_pb.Object.deserializeBinaryFromReader);
       msg.setObject(value);
       break;
     case 3:
-      var value = new aserto_directory_v2_object_pb.ObjectType;
-      reader.readMessage(value,aserto_directory_v2_object_pb.ObjectType.deserializeBinaryFromReader);
+      var value = new aserto_directory_common_v2_common_pb.ObjectType;
+      reader.readMessage(value,aserto_directory_common_v2_common_pb.ObjectType.deserializeBinaryFromReader);
       msg.setObjectType(value);
       break;
     case 4:
-      var value = new aserto_directory_v2_relation_pb.Relation;
-      reader.readMessage(value,aserto_directory_v2_relation_pb.Relation.deserializeBinaryFromReader);
+      var value = new aserto_directory_common_v2_common_pb.Relation;
+      reader.readMessage(value,aserto_directory_common_v2_common_pb.Relation.deserializeBinaryFromReader);
       msg.setRelation(value);
       break;
     case 5:
-      var value = new aserto_directory_v2_relation_pb.RelationType;
-      reader.readMessage(value,aserto_directory_v2_relation_pb.RelationType.deserializeBinaryFromReader);
+      var value = new aserto_directory_common_v2_common_pb.RelationType;
+      reader.readMessage(value,aserto_directory_common_v2_common_pb.RelationType.deserializeBinaryFromReader);
       msg.setRelationType(value);
       break;
     case 6:
-      var value = new aserto_directory_v2_permission_pb.Permission;
-      reader.readMessage(value,aserto_directory_v2_permission_pb.Permission.deserializeBinaryFromReader);
+      var value = new aserto_directory_common_v2_common_pb.Permission;
+      reader.readMessage(value,aserto_directory_common_v2_common_pb.Permission.deserializeBinaryFromReader);
       msg.setPermission(value);
       break;
     default:
@@ -411,7 +407,7 @@ proto.aserto.directory.exporter.v2.ExportResponse.serializeBinaryToWriter = func
     writer.writeMessage(
       2,
       f,
-      aserto_directory_v2_object_pb.Object.serializeBinaryToWriter
+      aserto_directory_common_v2_common_pb.Object.serializeBinaryToWriter
     );
   }
   f = message.getObjectType();
@@ -419,7 +415,7 @@ proto.aserto.directory.exporter.v2.ExportResponse.serializeBinaryToWriter = func
     writer.writeMessage(
       3,
       f,
-      aserto_directory_v2_object_pb.ObjectType.serializeBinaryToWriter
+      aserto_directory_common_v2_common_pb.ObjectType.serializeBinaryToWriter
     );
   }
   f = message.getRelation();
@@ -427,7 +423,7 @@ proto.aserto.directory.exporter.v2.ExportResponse.serializeBinaryToWriter = func
     writer.writeMessage(
       4,
       f,
-      aserto_directory_v2_relation_pb.Relation.serializeBinaryToWriter
+      aserto_directory_common_v2_common_pb.Relation.serializeBinaryToWriter
     );
   }
   f = message.getRelationType();
@@ -435,7 +431,7 @@ proto.aserto.directory.exporter.v2.ExportResponse.serializeBinaryToWriter = func
     writer.writeMessage(
       5,
       f,
-      aserto_directory_v2_relation_pb.RelationType.serializeBinaryToWriter
+      aserto_directory_common_v2_common_pb.RelationType.serializeBinaryToWriter
     );
   }
   f = message.getPermission();
@@ -443,24 +439,24 @@ proto.aserto.directory.exporter.v2.ExportResponse.serializeBinaryToWriter = func
     writer.writeMessage(
       6,
       f,
-      aserto_directory_v2_permission_pb.Permission.serializeBinaryToWriter
+      aserto_directory_common_v2_common_pb.Permission.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional aserto.directory.v2.Object object = 2;
- * @return {?proto.aserto.directory.v2.Object}
+ * optional aserto.directory.common.v2.Object object = 2;
+ * @return {?proto.aserto.directory.common.v2.Object}
  */
 proto.aserto.directory.exporter.v2.ExportResponse.prototype.getObject = function() {
-  return /** @type{?proto.aserto.directory.v2.Object} */ (
-    jspb.Message.getWrapperField(this, aserto_directory_v2_object_pb.Object, 2));
+  return /** @type{?proto.aserto.directory.common.v2.Object} */ (
+    jspb.Message.getWrapperField(this, aserto_directory_common_v2_common_pb.Object, 2));
 };
 
 
 /**
- * @param {?proto.aserto.directory.v2.Object|undefined} value
+ * @param {?proto.aserto.directory.common.v2.Object|undefined} value
  * @return {!proto.aserto.directory.exporter.v2.ExportResponse} returns this
 */
 proto.aserto.directory.exporter.v2.ExportResponse.prototype.setObject = function(value) {
@@ -487,17 +483,17 @@ proto.aserto.directory.exporter.v2.ExportResponse.prototype.hasObject = function
 
 
 /**
- * optional aserto.directory.v2.ObjectType object_type = 3;
- * @return {?proto.aserto.directory.v2.ObjectType}
+ * optional aserto.directory.common.v2.ObjectType object_type = 3;
+ * @return {?proto.aserto.directory.common.v2.ObjectType}
  */
 proto.aserto.directory.exporter.v2.ExportResponse.prototype.getObjectType = function() {
-  return /** @type{?proto.aserto.directory.v2.ObjectType} */ (
-    jspb.Message.getWrapperField(this, aserto_directory_v2_object_pb.ObjectType, 3));
+  return /** @type{?proto.aserto.directory.common.v2.ObjectType} */ (
+    jspb.Message.getWrapperField(this, aserto_directory_common_v2_common_pb.ObjectType, 3));
 };
 
 
 /**
- * @param {?proto.aserto.directory.v2.ObjectType|undefined} value
+ * @param {?proto.aserto.directory.common.v2.ObjectType|undefined} value
  * @return {!proto.aserto.directory.exporter.v2.ExportResponse} returns this
 */
 proto.aserto.directory.exporter.v2.ExportResponse.prototype.setObjectType = function(value) {
@@ -524,17 +520,17 @@ proto.aserto.directory.exporter.v2.ExportResponse.prototype.hasObjectType = func
 
 
 /**
- * optional aserto.directory.v2.Relation relation = 4;
- * @return {?proto.aserto.directory.v2.Relation}
+ * optional aserto.directory.common.v2.Relation relation = 4;
+ * @return {?proto.aserto.directory.common.v2.Relation}
  */
 proto.aserto.directory.exporter.v2.ExportResponse.prototype.getRelation = function() {
-  return /** @type{?proto.aserto.directory.v2.Relation} */ (
-    jspb.Message.getWrapperField(this, aserto_directory_v2_relation_pb.Relation, 4));
+  return /** @type{?proto.aserto.directory.common.v2.Relation} */ (
+    jspb.Message.getWrapperField(this, aserto_directory_common_v2_common_pb.Relation, 4));
 };
 
 
 /**
- * @param {?proto.aserto.directory.v2.Relation|undefined} value
+ * @param {?proto.aserto.directory.common.v2.Relation|undefined} value
  * @return {!proto.aserto.directory.exporter.v2.ExportResponse} returns this
 */
 proto.aserto.directory.exporter.v2.ExportResponse.prototype.setRelation = function(value) {
@@ -561,17 +557,17 @@ proto.aserto.directory.exporter.v2.ExportResponse.prototype.hasRelation = functi
 
 
 /**
- * optional aserto.directory.v2.RelationType relation_type = 5;
- * @return {?proto.aserto.directory.v2.RelationType}
+ * optional aserto.directory.common.v2.RelationType relation_type = 5;
+ * @return {?proto.aserto.directory.common.v2.RelationType}
  */
 proto.aserto.directory.exporter.v2.ExportResponse.prototype.getRelationType = function() {
-  return /** @type{?proto.aserto.directory.v2.RelationType} */ (
-    jspb.Message.getWrapperField(this, aserto_directory_v2_relation_pb.RelationType, 5));
+  return /** @type{?proto.aserto.directory.common.v2.RelationType} */ (
+    jspb.Message.getWrapperField(this, aserto_directory_common_v2_common_pb.RelationType, 5));
 };
 
 
 /**
- * @param {?proto.aserto.directory.v2.RelationType|undefined} value
+ * @param {?proto.aserto.directory.common.v2.RelationType|undefined} value
  * @return {!proto.aserto.directory.exporter.v2.ExportResponse} returns this
 */
 proto.aserto.directory.exporter.v2.ExportResponse.prototype.setRelationType = function(value) {
@@ -598,17 +594,17 @@ proto.aserto.directory.exporter.v2.ExportResponse.prototype.hasRelationType = fu
 
 
 /**
- * optional aserto.directory.v2.Permission permission = 6;
- * @return {?proto.aserto.directory.v2.Permission}
+ * optional aserto.directory.common.v2.Permission permission = 6;
+ * @return {?proto.aserto.directory.common.v2.Permission}
  */
 proto.aserto.directory.exporter.v2.ExportResponse.prototype.getPermission = function() {
-  return /** @type{?proto.aserto.directory.v2.Permission} */ (
-    jspb.Message.getWrapperField(this, aserto_directory_v2_permission_pb.Permission, 6));
+  return /** @type{?proto.aserto.directory.common.v2.Permission} */ (
+    jspb.Message.getWrapperField(this, aserto_directory_common_v2_common_pb.Permission, 6));
 };
 
 
 /**
- * @param {?proto.aserto.directory.v2.Permission|undefined} value
+ * @param {?proto.aserto.directory.common.v2.Permission|undefined} value
  * @return {!proto.aserto.directory.exporter.v2.ExportResponse} returns this
 */
 proto.aserto.directory.exporter.v2.ExportResponse.prototype.setPermission = function(value) {
@@ -645,8 +641,11 @@ proto.aserto.directory.exporter.v2.Option = {
   OPTION_METADATA: 7,
   OPTION_DATA_OBJECTS: 8,
   OPTION_DATA_RELATIONS: 16,
+  OPTION_DATA_RELATIONS_WITH_KEYS: 32,
   OPTION_DATA: 24,
-  OPTION_ALL: 31
+  OPTION_DATA_WITH_KEYS: 40,
+  OPTION_ALL: 31,
+  OPTION_ALL_WITH_KEYS: 47
 };
 
 goog.object.extend(exports, proto.aserto.directory.exporter.v2);

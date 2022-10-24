@@ -2,9 +2,7 @@
 // file: aserto/directory/importer/v2/importer.proto
 
 import * as jspb from "google-protobuf";
-import * as aserto_directory_v2_object_pb from "../../../../aserto/directory/v2/object_pb";
-import * as aserto_directory_v2_permission_pb from "../../../../aserto/directory/v2/permission_pb";
-import * as aserto_directory_v2_relation_pb from "../../../../aserto/directory/v2/relation_pb";
+import * as aserto_directory_common_v2_common_pb from "../../../../aserto/directory/common/v2/common_pb";
 
 export class ImportRequest extends jspb.Message {
   getOpCode(): OpcodeMap[keyof OpcodeMap];
@@ -12,28 +10,28 @@ export class ImportRequest extends jspb.Message {
 
   hasObjectType(): boolean;
   clearObjectType(): void;
-  getObjectType(): aserto_directory_v2_object_pb.ObjectType | undefined;
-  setObjectType(value?: aserto_directory_v2_object_pb.ObjectType): void;
+  getObjectType(): aserto_directory_common_v2_common_pb.ObjectType | undefined;
+  setObjectType(value?: aserto_directory_common_v2_common_pb.ObjectType): void;
 
   hasPermission(): boolean;
   clearPermission(): void;
-  getPermission(): aserto_directory_v2_permission_pb.Permission | undefined;
-  setPermission(value?: aserto_directory_v2_permission_pb.Permission): void;
+  getPermission(): aserto_directory_common_v2_common_pb.Permission | undefined;
+  setPermission(value?: aserto_directory_common_v2_common_pb.Permission): void;
 
   hasRelationType(): boolean;
   clearRelationType(): void;
-  getRelationType(): aserto_directory_v2_relation_pb.RelationType | undefined;
-  setRelationType(value?: aserto_directory_v2_relation_pb.RelationType): void;
+  getRelationType(): aserto_directory_common_v2_common_pb.RelationType | undefined;
+  setRelationType(value?: aserto_directory_common_v2_common_pb.RelationType): void;
 
   hasObject(): boolean;
   clearObject(): void;
-  getObject(): aserto_directory_v2_object_pb.Object | undefined;
-  setObject(value?: aserto_directory_v2_object_pb.Object): void;
+  getObject(): aserto_directory_common_v2_common_pb.Object | undefined;
+  setObject(value?: aserto_directory_common_v2_common_pb.Object): void;
 
   hasRelation(): boolean;
   clearRelation(): void;
-  getRelation(): aserto_directory_v2_relation_pb.Relation | undefined;
-  setRelation(value?: aserto_directory_v2_relation_pb.Relation): void;
+  getRelation(): aserto_directory_common_v2_common_pb.Relation | undefined;
+  setRelation(value?: aserto_directory_common_v2_common_pb.Relation): void;
 
   getMsgCase(): ImportRequest.MsgCase;
   serializeBinary(): Uint8Array;
@@ -49,11 +47,11 @@ export class ImportRequest extends jspb.Message {
 export namespace ImportRequest {
   export type AsObject = {
     opCode: OpcodeMap[keyof OpcodeMap],
-    objectType?: aserto_directory_v2_object_pb.ObjectType.AsObject,
-    permission?: aserto_directory_v2_permission_pb.Permission.AsObject,
-    relationType?: aserto_directory_v2_relation_pb.RelationType.AsObject,
-    object?: aserto_directory_v2_object_pb.Object.AsObject,
-    relation?: aserto_directory_v2_relation_pb.Relation.AsObject,
+    objectType?: aserto_directory_common_v2_common_pb.ObjectType.AsObject,
+    permission?: aserto_directory_common_v2_common_pb.Permission.AsObject,
+    relationType?: aserto_directory_common_v2_common_pb.RelationType.AsObject,
+    object?: aserto_directory_common_v2_common_pb.Object.AsObject,
+    relation?: aserto_directory_common_v2_common_pb.Relation.AsObject,
   }
 
   export enum MsgCase {
