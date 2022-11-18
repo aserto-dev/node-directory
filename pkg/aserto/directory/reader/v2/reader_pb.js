@@ -3101,7 +3101,8 @@ proto.aserto.directory.reader.v2.GetRelationRequest.prototype.toObject = functio
  */
 proto.aserto.directory.reader.v2.GetRelationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    param: (f = msg.getParam()) && aserto_directory_common_v2_common_pb.RelationIdentifier.toObject(includeInstance, f)
+    param: (f = msg.getParam()) && aserto_directory_common_v2_common_pb.RelationIdentifier.toObject(includeInstance, f),
+    withObjects: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -3143,6 +3144,10 @@ proto.aserto.directory.reader.v2.GetRelationRequest.deserializeBinaryFromReader 
       reader.readMessage(value,aserto_directory_common_v2_common_pb.RelationIdentifier.deserializeBinaryFromReader);
       msg.setParam(value);
       break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithObjects(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3178,6 +3183,13 @@ proto.aserto.directory.reader.v2.GetRelationRequest.serializeBinaryToWriter = fu
       1,
       f,
       aserto_directory_common_v2_common_pb.RelationIdentifier.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeBool(
+      2,
+      f
     );
   }
 };
@@ -3217,6 +3229,42 @@ proto.aserto.directory.reader.v2.GetRelationRequest.prototype.clearParam = funct
  */
 proto.aserto.directory.reader.v2.GetRelationRequest.prototype.hasParam = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional bool with_objects = 2;
+ * @return {boolean}
+ */
+proto.aserto.directory.reader.v2.GetRelationRequest.prototype.getWithObjects = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.aserto.directory.reader.v2.GetRelationRequest} returns this
+ */
+proto.aserto.directory.reader.v2.GetRelationRequest.prototype.setWithObjects = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.aserto.directory.reader.v2.GetRelationRequest} returns this
+ */
+proto.aserto.directory.reader.v2.GetRelationRequest.prototype.clearWithObjects = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.aserto.directory.reader.v2.GetRelationRequest.prototype.hasWithObjects = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -3260,7 +3308,8 @@ proto.aserto.directory.reader.v2.GetRelationResponse.prototype.toObject = functi
 proto.aserto.directory.reader.v2.GetRelationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     resultsList: jspb.Message.toObjectList(msg.getResultsList(),
-    aserto_directory_common_v2_common_pb.Relation.toObject, includeInstance)
+    aserto_directory_common_v2_common_pb.Relation.toObject, includeInstance),
+    objectsMap: (f = msg.getObjectsMap()) ? f.toObject(includeInstance, proto.aserto.directory.common.v2.Object.toObject) : []
   };
 
   if (includeInstance) {
@@ -3302,6 +3351,12 @@ proto.aserto.directory.reader.v2.GetRelationResponse.deserializeBinaryFromReader
       reader.readMessage(value,aserto_directory_common_v2_common_pb.Relation.deserializeBinaryFromReader);
       msg.addResults(value);
       break;
+    case 2:
+      var value = msg.getObjectsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.aserto.directory.common.v2.Object.deserializeBinaryFromReader, "", new proto.aserto.directory.common.v2.Object());
+         });
+      break;
     default:
       reader.skipField();
       break;
@@ -3338,6 +3393,10 @@ proto.aserto.directory.reader.v2.GetRelationResponse.serializeBinaryToWriter = f
       f,
       aserto_directory_common_v2_common_pb.Relation.serializeBinaryToWriter
     );
+  }
+  f = message.getObjectsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.aserto.directory.common.v2.Object.serializeBinaryToWriter);
   }
 };
 
@@ -3378,6 +3437,28 @@ proto.aserto.directory.reader.v2.GetRelationResponse.prototype.addResults = func
 proto.aserto.directory.reader.v2.GetRelationResponse.prototype.clearResultsList = function() {
   return this.setResultsList([]);
 };
+
+
+/**
+ * map<string, aserto.directory.common.v2.Object> objects = 2;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!proto.aserto.directory.common.v2.Object>}
+ */
+proto.aserto.directory.reader.v2.GetRelationResponse.prototype.getObjectsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!proto.aserto.directory.common.v2.Object>} */ (
+      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
+      proto.aserto.directory.common.v2.Object));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.aserto.directory.reader.v2.GetRelationResponse} returns this
+ */
+proto.aserto.directory.reader.v2.GetRelationResponse.prototype.clearObjectsMap = function() {
+  this.getObjectsMap().clear();
+  return this;};
 
 
 

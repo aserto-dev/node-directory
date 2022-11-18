@@ -348,6 +348,11 @@ export class GetRelationRequest extends jspb.Message {
   getParam(): aserto_directory_common_v2_common_pb.RelationIdentifier | undefined;
   setParam(value?: aserto_directory_common_v2_common_pb.RelationIdentifier): void;
 
+  hasWithObjects(): boolean;
+  clearWithObjects(): void;
+  getWithObjects(): boolean;
+  setWithObjects(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetRelationRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetRelationRequest): GetRelationRequest.AsObject;
@@ -361,6 +366,7 @@ export class GetRelationRequest extends jspb.Message {
 export namespace GetRelationRequest {
   export type AsObject = {
     param?: aserto_directory_common_v2_common_pb.RelationIdentifier.AsObject,
+    withObjects: boolean,
   }
 }
 
@@ -370,6 +376,8 @@ export class GetRelationResponse extends jspb.Message {
   setResultsList(value: Array<aserto_directory_common_v2_common_pb.Relation>): void;
   addResults(value?: aserto_directory_common_v2_common_pb.Relation, index?: number): aserto_directory_common_v2_common_pb.Relation;
 
+  getObjectsMap(): jspb.Map<string, aserto_directory_common_v2_common_pb.Object>;
+  clearObjectsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetRelationResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetRelationResponse): GetRelationResponse.AsObject;
@@ -383,6 +391,7 @@ export class GetRelationResponse extends jspb.Message {
 export namespace GetRelationResponse {
   export type AsObject = {
     resultsList: Array<aserto_directory_common_v2_common_pb.Relation.AsObject>,
+    objectsMap: Array<[string, aserto_directory_common_v2_common_pb.Object.AsObject]>,
   }
 }
 
