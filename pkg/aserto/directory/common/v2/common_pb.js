@@ -338,7 +338,6 @@ proto.aserto.directory.common.v2.ObjectType.prototype.toObject = function(opt_in
  */
 proto.aserto.directory.common.v2.ObjectType.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     displayName: jspb.Message.getFieldWithDefault(msg, 3, ""),
     isSubject: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
@@ -385,10 +384,6 @@ proto.aserto.directory.common.v2.ObjectType.deserializeBinaryFromReader = functi
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setId(value);
-      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
@@ -462,13 +457,6 @@ proto.aserto.directory.common.v2.ObjectType.prototype.serializeBinary = function
  */
 proto.aserto.directory.common.v2.ObjectType.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0) {
-    writer.writeInt32(
-      1,
-      f
-    );
-  }
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
@@ -543,24 +531,6 @@ proto.aserto.directory.common.v2.ObjectType.serializeBinaryToWriter = function(m
       f
     );
   }
-};
-
-
-/**
- * optional int32 id = 1;
- * @return {number}
- */
-proto.aserto.directory.common.v2.ObjectType.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.aserto.directory.common.v2.ObjectType} returns this
- */
-proto.aserto.directory.common.v2.ObjectType.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -852,7 +822,6 @@ proto.aserto.directory.common.v2.Permission.prototype.toObject = function(opt_in
  */
 proto.aserto.directory.common.v2.Permission.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     displayName: jspb.Message.getFieldWithDefault(msg, 3, ""),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -895,10 +864,6 @@ proto.aserto.directory.common.v2.Permission.deserializeBinaryFromReader = functi
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
@@ -955,13 +920,6 @@ proto.aserto.directory.common.v2.Permission.prototype.serializeBinary = function
  */
 proto.aserto.directory.common.v2.Permission.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
@@ -1007,24 +965,6 @@ proto.aserto.directory.common.v2.Permission.serializeBinaryToWriter = function(m
       f
     );
   }
-};
-
-
-/**
- * optional string id = 1;
- * @return {string}
- */
-proto.aserto.directory.common.v2.Permission.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.common.v2.Permission} returns this
- */
-proto.aserto.directory.common.v2.Permission.prototype.setId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1232,7 +1172,6 @@ proto.aserto.directory.common.v2.RelationType.prototype.toObject = function(opt_
  */
 proto.aserto.directory.common.v2.RelationType.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     objectType: jspb.Message.getFieldWithDefault(msg, 3, ""),
     displayName: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -1280,10 +1219,6 @@ proto.aserto.directory.common.v2.RelationType.deserializeBinaryFromReader = func
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setId(value);
-      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
@@ -1360,13 +1295,6 @@ proto.aserto.directory.common.v2.RelationType.prototype.serializeBinary = functi
  */
 proto.aserto.directory.common.v2.RelationType.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0) {
-    writer.writeInt32(
-      1,
-      f
-    );
-  }
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
@@ -1447,24 +1375,6 @@ proto.aserto.directory.common.v2.RelationType.serializeBinaryToWriter = function
       f
     );
   }
-};
-
-
-/**
- * optional int32 id = 1;
- * @return {number}
- */
-proto.aserto.directory.common.v2.RelationType.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.aserto.directory.common.v2.RelationType} returns this
- */
-proto.aserto.directory.common.v2.RelationType.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -1793,7 +1703,6 @@ proto.aserto.directory.common.v2.Object.prototype.toObject = function(opt_includ
  */
 proto.aserto.directory.common.v2.Object.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     key: jspb.Message.getFieldWithDefault(msg, 2, ""),
     type: jspb.Message.getFieldWithDefault(msg, 3, ""),
     displayName: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -1838,10 +1747,6 @@ proto.aserto.directory.common.v2.Object.deserializeBinaryFromReader = function(m
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setKey(value);
@@ -1907,13 +1812,6 @@ proto.aserto.directory.common.v2.Object.prototype.serializeBinary = function() {
  */
 proto.aserto.directory.common.v2.Object.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getKey();
   if (f.length > 0) {
     writer.writeString(
@@ -1974,24 +1872,6 @@ proto.aserto.directory.common.v2.Object.serializeBinaryToWriter = function(messa
       f
     );
   }
-};
-
-
-/**
- * optional string id = 1;
- * @return {string}
- */
-proto.aserto.directory.common.v2.Object.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.common.v2.Object} returns this
- */
-proto.aserto.directory.common.v2.Object.prototype.setId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2670,11 +2550,9 @@ proto.aserto.directory.common.v2.ObjectDependency.prototype.toObject = function(
 proto.aserto.directory.common.v2.ObjectDependency.toObject = function(includeInstance, msg) {
   var f, obj = {
     objectType: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    objectId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     objectKey: jspb.Message.getFieldWithDefault(msg, 4, ""),
     relation: jspb.Message.getFieldWithDefault(msg, 5, ""),
     subjectType: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    subjectId: jspb.Message.getFieldWithDefault(msg, 9, ""),
     subjectKey: jspb.Message.getFieldWithDefault(msg, 10, ""),
     depth: jspb.Message.getFieldWithDefault(msg, 11, 0),
     isCycle: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
@@ -2719,10 +2597,6 @@ proto.aserto.directory.common.v2.ObjectDependency.deserializeBinaryFromReader = 
       var value = /** @type {string} */ (reader.readString());
       msg.setObjectType(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setObjectId(value);
-      break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setObjectKey(value);
@@ -2734,10 +2608,6 @@ proto.aserto.directory.common.v2.ObjectDependency.deserializeBinaryFromReader = 
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setSubjectType(value);
-      break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSubjectId(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
@@ -2791,13 +2661,6 @@ proto.aserto.directory.common.v2.ObjectDependency.serializeBinaryToWriter = func
       f
     );
   }
-  f = message.getObjectId();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = message.getObjectKey();
   if (f.length > 0) {
     writer.writeString(
@@ -2816,13 +2679,6 @@ proto.aserto.directory.common.v2.ObjectDependency.serializeBinaryToWriter = func
   if (f.length > 0) {
     writer.writeString(
       7,
-      f
-    );
-  }
-  f = message.getSubjectId();
-  if (f.length > 0) {
-    writer.writeString(
-      9,
       f
     );
   }
@@ -2872,24 +2728,6 @@ proto.aserto.directory.common.v2.ObjectDependency.prototype.getObjectType = func
  */
 proto.aserto.directory.common.v2.ObjectDependency.prototype.setObjectType = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string object_id = 3;
- * @return {string}
- */
-proto.aserto.directory.common.v2.ObjectDependency.prototype.getObjectId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.common.v2.ObjectDependency} returns this
- */
-proto.aserto.directory.common.v2.ObjectDependency.prototype.setObjectId = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -2944,24 +2782,6 @@ proto.aserto.directory.common.v2.ObjectDependency.prototype.getSubjectType = fun
  */
 proto.aserto.directory.common.v2.ObjectDependency.prototype.setSubjectType = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
-};
-
-
-/**
- * optional string subject_id = 9;
- * @return {string}
- */
-proto.aserto.directory.common.v2.ObjectDependency.prototype.getSubjectId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.common.v2.ObjectDependency} returns this
- */
-proto.aserto.directory.common.v2.ObjectDependency.prototype.setSubjectId = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
@@ -3088,7 +2908,6 @@ proto.aserto.directory.common.v2.ObjectTypeIdentifier.prototype.toObject = funct
  */
 proto.aserto.directory.common.v2.ObjectTypeIdentifier.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -3126,10 +2945,6 @@ proto.aserto.directory.common.v2.ObjectTypeIdentifier.deserializeBinaryFromReade
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setId(value);
-      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
@@ -3163,13 +2978,6 @@ proto.aserto.directory.common.v2.ObjectTypeIdentifier.prototype.serializeBinary 
  */
 proto.aserto.directory.common.v2.ObjectTypeIdentifier.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeInt32(
-      1,
-      f
-    );
-  }
   f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeString(
@@ -3177,42 +2985,6 @@ proto.aserto.directory.common.v2.ObjectTypeIdentifier.serializeBinaryToWriter = 
       f
     );
   }
-};
-
-
-/**
- * optional int32 id = 1;
- * @return {number}
- */
-proto.aserto.directory.common.v2.ObjectTypeIdentifier.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.aserto.directory.common.v2.ObjectTypeIdentifier} returns this
- */
-proto.aserto.directory.common.v2.ObjectTypeIdentifier.prototype.setId = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.aserto.directory.common.v2.ObjectTypeIdentifier} returns this
- */
-proto.aserto.directory.common.v2.ObjectTypeIdentifier.prototype.clearId = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.aserto.directory.common.v2.ObjectTypeIdentifier.prototype.hasId = function() {
-  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -3284,7 +3056,6 @@ proto.aserto.directory.common.v2.PermissionIdentifier.prototype.toObject = funct
  */
 proto.aserto.directory.common.v2.PermissionIdentifier.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -3322,10 +3093,6 @@ proto.aserto.directory.common.v2.PermissionIdentifier.deserializeBinaryFromReade
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
@@ -3359,13 +3126,6 @@ proto.aserto.directory.common.v2.PermissionIdentifier.prototype.serializeBinary 
  */
 proto.aserto.directory.common.v2.PermissionIdentifier.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeString(
@@ -3373,42 +3133,6 @@ proto.aserto.directory.common.v2.PermissionIdentifier.serializeBinaryToWriter = 
       f
     );
   }
-};
-
-
-/**
- * optional string id = 1;
- * @return {string}
- */
-proto.aserto.directory.common.v2.PermissionIdentifier.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.common.v2.PermissionIdentifier} returns this
- */
-proto.aserto.directory.common.v2.PermissionIdentifier.prototype.setId = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.aserto.directory.common.v2.PermissionIdentifier} returns this
- */
-proto.aserto.directory.common.v2.PermissionIdentifier.prototype.clearId = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.aserto.directory.common.v2.PermissionIdentifier.prototype.hasId = function() {
-  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -3480,7 +3204,6 @@ proto.aserto.directory.common.v2.RelationTypeIdentifier.prototype.toObject = fun
  */
 proto.aserto.directory.common.v2.RelationTypeIdentifier.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     objectType: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
@@ -3519,10 +3242,6 @@ proto.aserto.directory.common.v2.RelationTypeIdentifier.deserializeBinaryFromRea
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setId(value);
-      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
@@ -3560,13 +3279,6 @@ proto.aserto.directory.common.v2.RelationTypeIdentifier.prototype.serializeBinar
  */
 proto.aserto.directory.common.v2.RelationTypeIdentifier.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeInt32(
-      1,
-      f
-    );
-  }
   f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeString(
@@ -3581,42 +3293,6 @@ proto.aserto.directory.common.v2.RelationTypeIdentifier.serializeBinaryToWriter 
       f
     );
   }
-};
-
-
-/**
- * optional int32 id = 1;
- * @return {number}
- */
-proto.aserto.directory.common.v2.RelationTypeIdentifier.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.aserto.directory.common.v2.RelationTypeIdentifier} returns this
- */
-proto.aserto.directory.common.v2.RelationTypeIdentifier.prototype.setId = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.aserto.directory.common.v2.RelationTypeIdentifier} returns this
- */
-proto.aserto.directory.common.v2.RelationTypeIdentifier.prototype.clearId = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.aserto.directory.common.v2.RelationTypeIdentifier.prototype.hasId = function() {
-  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -3725,7 +3401,6 @@ proto.aserto.directory.common.v2.ObjectIdentifier.prototype.toObject = function(
 proto.aserto.directory.common.v2.ObjectIdentifier.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    id: jspb.Message.getFieldWithDefault(msg, 2, ""),
     key: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
@@ -3767,10 +3442,6 @@ proto.aserto.directory.common.v2.ObjectIdentifier.deserializeBinaryFromReader = 
       var value = /** @type {string} */ (reader.readString());
       msg.setType(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setKey(value);
@@ -3808,13 +3479,6 @@ proto.aserto.directory.common.v2.ObjectIdentifier.serializeBinaryToWriter = func
   if (f != null) {
     writer.writeString(
       1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
       f
     );
   }
@@ -3861,42 +3525,6 @@ proto.aserto.directory.common.v2.ObjectIdentifier.prototype.clearType = function
  */
 proto.aserto.directory.common.v2.ObjectIdentifier.prototype.hasType = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string id = 2;
- * @return {string}
- */
-proto.aserto.directory.common.v2.ObjectIdentifier.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.aserto.directory.common.v2.ObjectIdentifier} returns this
- */
-proto.aserto.directory.common.v2.ObjectIdentifier.prototype.setId = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.aserto.directory.common.v2.ObjectIdentifier} returns this
- */
-proto.aserto.directory.common.v2.ObjectIdentifier.prototype.clearId = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.aserto.directory.common.v2.ObjectIdentifier.prototype.hasId = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
