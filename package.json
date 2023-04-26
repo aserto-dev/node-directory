@@ -9,7 +9,7 @@
   "author": "Aserto",
   "license": "Apache-2.0",
   "dependencies": {
-    "@grpc/grpc-js": "^1.6.11",
+    "@grpc/grpc-js": "^1.8.12",
     "@types/google-protobuf": "^3.15.6",
     "google-protobuf": "^3.21.2",
     "grpc-tools": "^1.11.2"
