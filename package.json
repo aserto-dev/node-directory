@@ -15,9 +15,10 @@
     "grpc-tools": "^1.12.4"
   },
   "devDependencies": {
+    "@bufbuild/buf": "^1.15.0-1",
+    "@bufbuild/protobuf": "^1.2.0",
+    "@bufbuild/protoc-gen-es": "^1.2.0",
     "@types/node": "^18.7.13",
-    "ts-node": "^10.9.1",
-    "ts-protoc-gen": "^0.15.0",
     "typescript": "^4.8.2"
   }
 }
