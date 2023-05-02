@@ -1,5 +1,14 @@
 version: v1
 plugins:
    - plugin: es
-     opt: target=ts,target=js
+     opt: target=ts
+     out: src/gen
+   - plugin: es
+     opt: target=js
+     out: src/gen
+   - plugin: connect-es
+     opt: target=ts
+     out: src/gen
+   - plugin: connect-es
+     opt: target=js
      out: src/gen
