@@ -59,6 +59,13 @@ proto3.util.setEnumType(Flag, "aserto.directory.common.v2.Flag", [
  */
 export class ObjectType extends Message<ObjectType> {
   /**
+   * internal object type id
+   *
+   * @generated from field: int32 id = 1;
+   */
+  id = 0;
+
+  /**
    * object type name (unique, lc-string)
    *
    * @generated from field: string name = 2;
@@ -115,6 +122,13 @@ export class ObjectType extends Message<ObjectType> {
   updatedAt?: Timestamp;
 
   /**
+   * deleted timestamp (UTC)
+   *
+   * @generated from field: google.protobuf.Timestamp deleted_at = 22;
+   */
+  deletedAt?: Timestamp;
+
+  /**
    * object instance hash
    *
    * @generated from field: string hash = 23;
@@ -129,6 +143,7 @@ export class ObjectType extends Message<ObjectType> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "aserto.directory.common.v2.ObjectType";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "is_subject", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
@@ -137,6 +152,7 @@ export class ObjectType extends Message<ObjectType> {
     { no: 10, name: "schema", kind: "message", T: Struct },
     { no: 20, name: "created_at", kind: "message", T: Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: Timestamp },
+    { no: 22, name: "deleted_at", kind: "message", T: Timestamp },
     { no: 23, name: "hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
@@ -161,6 +177,13 @@ export class ObjectType extends Message<ObjectType> {
  * @generated from message aserto.directory.common.v2.Permission
  */
 export class Permission extends Message<Permission> {
+  /**
+   * internal permission id
+   *
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
   /**
    * permission name (unique, cs-string)
    *
@@ -190,6 +213,13 @@ export class Permission extends Message<Permission> {
   updatedAt?: Timestamp;
 
   /**
+   * deleted timestamp (UTC)
+   *
+   * @generated from field: google.protobuf.Timestamp deleted_at = 22;
+   */
+  deletedAt?: Timestamp;
+
+  /**
    * object instance hash
    *
    * @generated from field: string hash = 23;
@@ -204,10 +234,12 @@ export class Permission extends Message<Permission> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "aserto.directory.common.v2.Permission";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 20, name: "created_at", kind: "message", T: Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: Timestamp },
+    { no: 22, name: "deleted_at", kind: "message", T: Timestamp },
     { no: 23, name: "hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
@@ -232,6 +264,13 @@ export class Permission extends Message<Permission> {
  * @generated from message aserto.directory.common.v2.RelationType
  */
 export class RelationType extends Message<RelationType> {
+  /**
+   * relation type id selector
+   *
+   * @generated from field: int32 id = 1;
+   */
+  id = 0;
+
   /**
    * relation type name selector
    *
@@ -296,6 +335,13 @@ export class RelationType extends Message<RelationType> {
   updatedAt?: Timestamp;
 
   /**
+   * deleted timestamp (UTC)
+   *
+   * @generated from field: google.protobuf.Timestamp deleted_at = 22;
+   */
+  deletedAt?: Timestamp;
+
+  /**
    * object instance hash
    *
    * @generated from field: string hash = 23;
@@ -310,6 +356,7 @@ export class RelationType extends Message<RelationType> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "aserto.directory.common.v2.RelationType";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "object_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -319,6 +366,7 @@ export class RelationType extends Message<RelationType> {
     { no: 8, name: "permissions", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 20, name: "created_at", kind: "message", T: Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: Timestamp },
+    { no: 22, name: "deleted_at", kind: "message", T: Timestamp },
     { no: 23, name: "hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
@@ -343,6 +391,13 @@ export class RelationType extends Message<RelationType> {
  * @generated from message aserto.directory.common.v2.Object
  */
 export class Object$ extends Message<Object$> {
+  /**
+   * internal object id (uuid)
+   *
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
   /**
    * external object key (cs-string)
    *
@@ -386,6 +441,13 @@ export class Object$ extends Message<Object$> {
   updatedAt?: Timestamp;
 
   /**
+   * deleted timestamp (UTC)
+   *
+   * @generated from field: google.protobuf.Timestamp deleted_at = 22;
+   */
+  deletedAt?: Timestamp;
+
+  /**
    * object instance hash
    *
    * @generated from field: string hash = 23;
@@ -400,12 +462,14 @@ export class Object$ extends Message<Object$> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "aserto.directory.common.v2.Object";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "properties", kind: "message", T: Struct },
     { no: 20, name: "created_at", kind: "message", T: Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: Timestamp },
+    { no: 22, name: "deleted_at", kind: "message", T: Timestamp },
     { no: 23, name: "hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
@@ -438,7 +502,7 @@ export class Relation extends Message<Relation> {
   subject?: ObjectIdentifier;
 
   /**
-   * relation type name
+   * relation type ID
    *
    * @generated from field: string relation = 2;
    */
@@ -466,6 +530,13 @@ export class Relation extends Message<Relation> {
   updatedAt?: Timestamp;
 
   /**
+   * deleted timestamp (UTC)
+   *
+   * @generated from field: google.protobuf.Timestamp deleted_at = 22;
+   */
+  deletedAt?: Timestamp;
+
+  /**
    * object instance hash
    *
    * @generated from field: string hash = 23;
@@ -485,6 +556,7 @@ export class Relation extends Message<Relation> {
     { no: 3, name: "object", kind: "message", T: ObjectIdentifier },
     { no: 20, name: "created_at", kind: "message", T: Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: Timestamp },
+    { no: 22, name: "deleted_at", kind: "message", T: Timestamp },
     { no: 23, name: "hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
@@ -517,6 +589,13 @@ export class ObjectDependency extends Message<ObjectDependency> {
   objectType = "";
 
   /**
+   * object id (uuid) of source object
+   *
+   * @generated from field: string object_id = 3;
+   */
+  objectId = "";
+
+  /**
    * object search key of source object
    *
    * @generated from field: string object_key = 4;
@@ -536,6 +615,13 @@ export class ObjectDependency extends Message<ObjectDependency> {
    * @generated from field: string subject_type = 7;
    */
   subjectType = "";
+
+  /**
+   * object id (uuid) of target object
+   *
+   * @generated from field: string subject_id = 9;
+   */
+  subjectId = "";
 
   /**
    * object search key of target object
@@ -574,9 +660,11 @@ export class ObjectDependency extends Message<ObjectDependency> {
   static readonly typeName = "aserto.directory.common.v2.ObjectDependency";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "object_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "object_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "object_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "subject_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "subject_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "subject_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 11, name: "depth", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 12, name: "is_cycle", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
@@ -607,6 +695,13 @@ export class ObjectDependency extends Message<ObjectDependency> {
  */
 export class ObjectTypeIdentifier extends Message<ObjectTypeIdentifier> {
   /**
+   * internal object type id
+   *
+   * @generated from field: optional int32 id = 1;
+   */
+  id?: number;
+
+  /**
    * object type name (unique, lc-string)
    *
    * @generated from field: optional string name = 2;
@@ -621,6 +716,7 @@ export class ObjectTypeIdentifier extends Message<ObjectTypeIdentifier> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "aserto.directory.common.v2.ObjectTypeIdentifier";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
@@ -648,6 +744,13 @@ export class ObjectTypeIdentifier extends Message<ObjectTypeIdentifier> {
  */
 export class PermissionIdentifier extends Message<PermissionIdentifier> {
   /**
+   * internal permission id
+   *
+   * @generated from field: optional string id = 1;
+   */
+  id?: string;
+
+  /**
    * permission name (unique, cs-string)
    *
    * @generated from field: optional string name = 2;
@@ -662,6 +765,7 @@ export class PermissionIdentifier extends Message<PermissionIdentifier> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "aserto.directory.common.v2.PermissionIdentifier";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
@@ -689,6 +793,13 @@ export class PermissionIdentifier extends Message<PermissionIdentifier> {
  */
 export class RelationTypeIdentifier extends Message<RelationTypeIdentifier> {
   /**
+   * relation type id selector
+   *
+   * @generated from field: optional int32 id = 1;
+   */
+  id?: number;
+
+  /**
    * relation type name selector
    *
    * @generated from field: optional string name = 2;
@@ -710,6 +821,7 @@ export class RelationTypeIdentifier extends Message<RelationTypeIdentifier> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "aserto.directory.common.v2.RelationTypeIdentifier";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 3, name: "object_type", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
@@ -745,6 +857,13 @@ export class ObjectIdentifier extends Message<ObjectIdentifier> {
   type?: string;
 
   /**
+   * internal object id (uuid)
+   *
+   * @generated from field: optional string id = 2;
+   */
+  id?: string;
+
+  /**
    * external object key (cs-string)
    *
    * @generated from field: optional string key = 3;
@@ -760,6 +879,7 @@ export class ObjectIdentifier extends Message<ObjectIdentifier> {
   static readonly typeName = "aserto.directory.common.v2.ObjectIdentifier";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 3, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
