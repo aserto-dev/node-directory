@@ -6,9 +6,6 @@ import * as google_protobuf_struct_pb from "google-protobuf/google/protobuf/stru
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class ObjectType extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
-
   getName(): string;
   setName(value: string): void;
 
@@ -39,11 +36,6 @@ export class ObjectType extends jspb.Message {
   getUpdatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  hasDeletedAt(): boolean;
-  clearDeletedAt(): void;
-  getDeletedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDeletedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
   getHash(): string;
   setHash(value: string): void;
 
@@ -59,7 +51,6 @@ export class ObjectType extends jspb.Message {
 
 export namespace ObjectType {
   export type AsObject = {
-    id: number,
     name: string,
     displayName: string,
     isSubject: boolean,
@@ -68,15 +59,11 @@ export namespace ObjectType {
     schema?: google_protobuf_struct_pb.Struct.AsObject,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    deletedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     hash: string,
   }
 }
 
 export class Permission extends jspb.Message {
-  getId(): string;
-  setId(value: string): void;
-
   getName(): string;
   setName(value: string): void;
 
@@ -93,11 +80,6 @@ export class Permission extends jspb.Message {
   getUpdatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  hasDeletedAt(): boolean;
-  clearDeletedAt(): void;
-  getDeletedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDeletedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
   getHash(): string;
   setHash(value: string): void;
 
@@ -113,20 +95,15 @@ export class Permission extends jspb.Message {
 
 export namespace Permission {
   export type AsObject = {
-    id: string,
     name: string,
     displayName: string,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    deletedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     hash: string,
   }
 }
 
 export class RelationType extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
-
   getName(): string;
   setName(value: string): void;
 
@@ -162,11 +139,6 @@ export class RelationType extends jspb.Message {
   getUpdatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  hasDeletedAt(): boolean;
-  clearDeletedAt(): void;
-  getDeletedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDeletedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
   getHash(): string;
   setHash(value: string): void;
 
@@ -182,7 +154,6 @@ export class RelationType extends jspb.Message {
 
 export namespace RelationType {
   export type AsObject = {
-    id: number,
     name: string,
     objectType: string,
     displayName: string,
@@ -192,15 +163,11 @@ export namespace RelationType {
     permissionsList: Array<string>,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    deletedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     hash: string,
   }
 }
 
 export class Object extends jspb.Message {
-  getId(): string;
-  setId(value: string): void;
-
   getKey(): string;
   setKey(value: string): void;
 
@@ -225,11 +192,6 @@ export class Object extends jspb.Message {
   getUpdatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  hasDeletedAt(): boolean;
-  clearDeletedAt(): void;
-  getDeletedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDeletedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
   getHash(): string;
   setHash(value: string): void;
 
@@ -245,14 +207,12 @@ export class Object extends jspb.Message {
 
 export namespace Object {
   export type AsObject = {
-    id: string,
     key: string,
     type: string,
     displayName: string,
     properties?: google_protobuf_struct_pb.Struct.AsObject,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    deletedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     hash: string,
   }
 }
@@ -281,11 +241,6 @@ export class Relation extends jspb.Message {
   getUpdatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdatedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  hasDeletedAt(): boolean;
-  clearDeletedAt(): void;
-  getDeletedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDeletedAt(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
   getHash(): string;
   setHash(value: string): void;
 
@@ -306,7 +261,6 @@ export namespace Relation {
     object?: ObjectIdentifier.AsObject,
     createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    deletedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     hash: string,
   }
 }
@@ -314,9 +268,6 @@ export namespace Relation {
 export class ObjectDependency extends jspb.Message {
   getObjectType(): string;
   setObjectType(value: string): void;
-
-  getObjectId(): string;
-  setObjectId(value: string): void;
 
   getObjectKey(): string;
   setObjectKey(value: string): void;
@@ -326,9 +277,6 @@ export class ObjectDependency extends jspb.Message {
 
   getSubjectType(): string;
   setSubjectType(value: string): void;
-
-  getSubjectId(): string;
-  setSubjectId(value: string): void;
 
   getSubjectKey(): string;
   setSubjectKey(value: string): void;
@@ -357,11 +305,9 @@ export class ObjectDependency extends jspb.Message {
 export namespace ObjectDependency {
   export type AsObject = {
     objectType: string,
-    objectId: string,
     objectKey: string,
     relation: string,
     subjectType: string,
-    subjectId: string,
     subjectKey: string,
     depth: number,
     isCycle: boolean,
@@ -370,11 +316,6 @@ export namespace ObjectDependency {
 }
 
 export class ObjectTypeIdentifier extends jspb.Message {
-  hasId(): boolean;
-  clearId(): void;
-  getId(): number;
-  setId(value: number): void;
-
   hasName(): boolean;
   clearName(): void;
   getName(): string;
@@ -392,17 +333,11 @@ export class ObjectTypeIdentifier extends jspb.Message {
 
 export namespace ObjectTypeIdentifier {
   export type AsObject = {
-    id: number,
     name: string,
   }
 }
 
 export class PermissionIdentifier extends jspb.Message {
-  hasId(): boolean;
-  clearId(): void;
-  getId(): string;
-  setId(value: string): void;
-
   hasName(): boolean;
   clearName(): void;
   getName(): string;
@@ -420,17 +355,11 @@ export class PermissionIdentifier extends jspb.Message {
 
 export namespace PermissionIdentifier {
   export type AsObject = {
-    id: string,
     name: string,
   }
 }
 
 export class RelationTypeIdentifier extends jspb.Message {
-  hasId(): boolean;
-  clearId(): void;
-  getId(): number;
-  setId(value: number): void;
-
   hasName(): boolean;
   clearName(): void;
   getName(): string;
@@ -453,7 +382,6 @@ export class RelationTypeIdentifier extends jspb.Message {
 
 export namespace RelationTypeIdentifier {
   export type AsObject = {
-    id: number,
     name: string,
     objectType: string,
   }
@@ -464,11 +392,6 @@ export class ObjectIdentifier extends jspb.Message {
   clearType(): void;
   getType(): string;
   setType(value: string): void;
-
-  hasId(): boolean;
-  clearId(): void;
-  getId(): string;
-  setId(value: string): void;
 
   hasKey(): boolean;
   clearKey(): void;
@@ -488,7 +411,6 @@ export class ObjectIdentifier extends jspb.Message {
 export namespace ObjectIdentifier {
   export type AsObject = {
     type: string,
-    id: string,
     key: string,
   }
 }
