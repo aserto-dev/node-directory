@@ -2,11 +2,8 @@
   "name": "@aserto/node-directory",
   "version": "0.20.6",
   "description": "Node gRPC bindings for the Aserto directory service",
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "gen": "buf generate --include-imports buf.build/aserto-dev/directory && rm -fr dist/* && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && rm -rf src"
+    "gen": "rm -rf src && buf generate --include-imports buf.build/aserto-dev/directory && rm -rf src/gen/cjs && tsc -p tsconfig-cjs.json"
   },
   "keywords": [],
   "author": "Aserto",
