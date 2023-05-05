@@ -40,12 +40,6 @@ export declare enum Flag {
  */
 export declare class ObjectType extends Message<ObjectType> {
     /**
-     * internal object type id
-     *
-     * @generated from field: int32 id = 1;
-     */
-    id: number;
-    /**
      * object type name (unique, lc-string)
      *
      * @generated from field: string name = 2;
@@ -94,12 +88,6 @@ export declare class ObjectType extends Message<ObjectType> {
      */
     updatedAt?: Timestamp;
     /**
-     * deleted timestamp (UTC)
-     *
-     * @generated from field: google.protobuf.Timestamp deleted_at = 22;
-     */
-    deletedAt?: Timestamp;
-    /**
      * object instance hash
      *
      * @generated from field: string hash = 23;
@@ -118,12 +106,6 @@ export declare class ObjectType extends Message<ObjectType> {
  * @generated from message aserto.directory.common.v2.Permission
  */
 export declare class Permission extends Message<Permission> {
-    /**
-     * internal permission id
-     *
-     * @generated from field: string id = 1;
-     */
-    id: string;
     /**
      * permission name (unique, cs-string)
      *
@@ -149,12 +131,6 @@ export declare class Permission extends Message<Permission> {
      */
     updatedAt?: Timestamp;
     /**
-     * deleted timestamp (UTC)
-     *
-     * @generated from field: google.protobuf.Timestamp deleted_at = 22;
-     */
-    deletedAt?: Timestamp;
-    /**
      * object instance hash
      *
      * @generated from field: string hash = 23;
@@ -173,12 +149,6 @@ export declare class Permission extends Message<Permission> {
  * @generated from message aserto.directory.common.v2.RelationType
  */
 export declare class RelationType extends Message<RelationType> {
-    /**
-     * relation type id selector
-     *
-     * @generated from field: int32 id = 1;
-     */
-    id: number;
     /**
      * relation type name selector
      *
@@ -234,12 +204,6 @@ export declare class RelationType extends Message<RelationType> {
      */
     updatedAt?: Timestamp;
     /**
-     * deleted timestamp (UTC)
-     *
-     * @generated from field: google.protobuf.Timestamp deleted_at = 22;
-     */
-    deletedAt?: Timestamp;
-    /**
      * object instance hash
      *
      * @generated from field: string hash = 23;
@@ -258,12 +222,6 @@ export declare class RelationType extends Message<RelationType> {
  * @generated from message aserto.directory.common.v2.Object
  */
 export declare class Object$ extends Message<Object$> {
-    /**
-     * internal object id (uuid)
-     *
-     * @generated from field: string id = 1;
-     */
-    id: string;
     /**
      * external object key (cs-string)
      *
@@ -301,12 +259,6 @@ export declare class Object$ extends Message<Object$> {
      */
     updatedAt?: Timestamp;
     /**
-     * deleted timestamp (UTC)
-     *
-     * @generated from field: google.protobuf.Timestamp deleted_at = 22;
-     */
-    deletedAt?: Timestamp;
-    /**
      * object instance hash
      *
      * @generated from field: string hash = 23;
@@ -332,7 +284,7 @@ export declare class Relation extends Message<Relation> {
      */
     subject?: ObjectIdentifier;
     /**
-     * relation type ID
+     * relation type name
      *
      * @generated from field: string relation = 2;
      */
@@ -355,12 +307,6 @@ export declare class Relation extends Message<Relation> {
      * @generated from field: google.protobuf.Timestamp updated_at = 21;
      */
     updatedAt?: Timestamp;
-    /**
-     * deleted timestamp (UTC)
-     *
-     * @generated from field: google.protobuf.Timestamp deleted_at = 22;
-     */
-    deletedAt?: Timestamp;
     /**
      * object instance hash
      *
@@ -387,12 +333,6 @@ export declare class ObjectDependency extends Message<ObjectDependency> {
      */
     objectType: string;
     /**
-     * object id (uuid) of source object
-     *
-     * @generated from field: string object_id = 3;
-     */
-    objectId: string;
-    /**
      * object search key of source object
      *
      * @generated from field: string object_key = 4;
@@ -410,12 +350,6 @@ export declare class ObjectDependency extends Message<ObjectDependency> {
      * @generated from field: string subject_type = 7;
      */
     subjectType: string;
-    /**
-     * object id (uuid) of target object
-     *
-     * @generated from field: string subject_id = 9;
-     */
-    subjectId: string;
     /**
      * object search key of target object
      *
@@ -456,12 +390,6 @@ export declare class ObjectDependency extends Message<ObjectDependency> {
  */
 export declare class ObjectTypeIdentifier extends Message<ObjectTypeIdentifier> {
     /**
-     * internal object type id
-     *
-     * @generated from field: optional int32 id = 1;
-     */
-    id?: number;
-    /**
      * object type name (unique, lc-string)
      *
      * @generated from field: optional string name = 2;
@@ -483,12 +411,6 @@ export declare class ObjectTypeIdentifier extends Message<ObjectTypeIdentifier> 
  */
 export declare class PermissionIdentifier extends Message<PermissionIdentifier> {
     /**
-     * internal permission id
-     *
-     * @generated from field: optional string id = 1;
-     */
-    id?: string;
-    /**
      * permission name (unique, cs-string)
      *
      * @generated from field: optional string name = 2;
@@ -509,12 +431,6 @@ export declare class PermissionIdentifier extends Message<PermissionIdentifier> 
  * @generated from message aserto.directory.common.v2.RelationTypeIdentifier
  */
 export declare class RelationTypeIdentifier extends Message<RelationTypeIdentifier> {
-    /**
-     * relation type id selector
-     *
-     * @generated from field: optional int32 id = 1;
-     */
-    id?: number;
     /**
      * relation type name selector
      *
@@ -548,12 +464,6 @@ export declare class ObjectIdentifier extends Message<ObjectIdentifier> {
      * @generated from field: optional string type = 1;
      */
     type?: string;
-    /**
-     * internal object id (uuid)
-     *
-     * @generated from field: optional string id = 2;
-     */
-    id?: string;
     /**
      * external object key (cs-string)
      *

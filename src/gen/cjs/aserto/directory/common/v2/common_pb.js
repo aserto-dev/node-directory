@@ -57,12 +57,6 @@ class ObjectType extends protobuf_1.Message {
     constructor(data) {
         super();
         /**
-         * internal object type id
-         *
-         * @generated from field: int32 id = 1;
-         */
-        this.id = 0;
-        /**
          * object type name (unique, lc-string)
          *
          * @generated from field: string name = 2;
@@ -117,7 +111,6 @@ exports.ObjectType = ObjectType;
 ObjectType.runtime = protobuf_1.proto3;
 ObjectType.typeName = "aserto.directory.common.v2.ObjectType";
 ObjectType.fields = protobuf_1.proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "is_subject", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
@@ -126,7 +119,6 @@ ObjectType.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 10, name: "schema", kind: "message", T: protobuf_1.Struct },
     { no: 20, name: "created_at", kind: "message", T: protobuf_1.Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: protobuf_1.Timestamp },
-    { no: 22, name: "deleted_at", kind: "message", T: protobuf_1.Timestamp },
     { no: 23, name: "hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
 ]);
 /**
@@ -135,12 +127,6 @@ ObjectType.fields = protobuf_1.proto3.util.newFieldList(() => [
 class Permission extends protobuf_1.Message {
     constructor(data) {
         super();
-        /**
-         * internal permission id
-         *
-         * @generated from field: string id = 1;
-         */
-        this.id = "";
         /**
          * permission name (unique, cs-string)
          *
@@ -178,12 +164,10 @@ exports.Permission = Permission;
 Permission.runtime = protobuf_1.proto3;
 Permission.typeName = "aserto.directory.common.v2.Permission";
 Permission.fields = protobuf_1.proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 20, name: "created_at", kind: "message", T: protobuf_1.Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: protobuf_1.Timestamp },
-    { no: 22, name: "deleted_at", kind: "message", T: protobuf_1.Timestamp },
     { no: 23, name: "hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
 ]);
 /**
@@ -192,12 +176,6 @@ Permission.fields = protobuf_1.proto3.util.newFieldList(() => [
 class RelationType extends protobuf_1.Message {
     constructor(data) {
         super();
-        /**
-         * relation type id selector
-         *
-         * @generated from field: int32 id = 1;
-         */
-        this.id = 0;
         /**
          * relation type name selector
          *
@@ -265,7 +243,6 @@ exports.RelationType = RelationType;
 RelationType.runtime = protobuf_1.proto3;
 RelationType.typeName = "aserto.directory.common.v2.RelationType";
 RelationType.fields = protobuf_1.proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "object_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -275,7 +252,6 @@ RelationType.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 8, name: "permissions", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 20, name: "created_at", kind: "message", T: protobuf_1.Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: protobuf_1.Timestamp },
-    { no: 22, name: "deleted_at", kind: "message", T: protobuf_1.Timestamp },
     { no: 23, name: "hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
 ]);
 /**
@@ -284,12 +260,6 @@ RelationType.fields = protobuf_1.proto3.util.newFieldList(() => [
 class Object$ extends protobuf_1.Message {
     constructor(data) {
         super();
-        /**
-         * internal object id (uuid)
-         *
-         * @generated from field: string id = 1;
-         */
-        this.id = "";
         /**
          * external object key (cs-string)
          *
@@ -333,14 +303,12 @@ exports.Object$ = Object$;
 Object$.runtime = protobuf_1.proto3;
 Object$.typeName = "aserto.directory.common.v2.Object";
 Object$.fields = protobuf_1.proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "properties", kind: "message", T: protobuf_1.Struct },
     { no: 20, name: "created_at", kind: "message", T: protobuf_1.Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: protobuf_1.Timestamp },
-    { no: 22, name: "deleted_at", kind: "message", T: protobuf_1.Timestamp },
     { no: 23, name: "hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
 ]);
 /**
@@ -350,7 +318,7 @@ class Relation extends protobuf_1.Message {
     constructor(data) {
         super();
         /**
-         * relation type ID
+         * relation type name
          *
          * @generated from field: string relation = 2;
          */
@@ -385,7 +353,6 @@ Relation.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 3, name: "object", kind: "message", T: ObjectIdentifier },
     { no: 20, name: "created_at", kind: "message", T: protobuf_1.Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: protobuf_1.Timestamp },
-    { no: 22, name: "deleted_at", kind: "message", T: protobuf_1.Timestamp },
     { no: 23, name: "hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
 ]);
 /**
@@ -400,12 +367,6 @@ class ObjectDependency extends protobuf_1.Message {
          * @generated from field: string object_type = 1;
          */
         this.objectType = "";
-        /**
-         * object id (uuid) of source object
-         *
-         * @generated from field: string object_id = 3;
-         */
-        this.objectId = "";
         /**
          * object search key of source object
          *
@@ -424,12 +385,6 @@ class ObjectDependency extends protobuf_1.Message {
          * @generated from field: string subject_type = 7;
          */
         this.subjectType = "";
-        /**
-         * object id (uuid) of target object
-         *
-         * @generated from field: string subject_id = 9;
-         */
-        this.subjectId = "";
         /**
          * object search key of target object
          *
@@ -474,11 +429,9 @@ ObjectDependency.runtime = protobuf_1.proto3;
 ObjectDependency.typeName = "aserto.directory.common.v2.ObjectDependency";
 ObjectDependency.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 1, name: "object_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "object_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "object_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "subject_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 9, name: "subject_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "subject_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 11, name: "depth", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 12, name: "is_cycle", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
@@ -511,7 +464,6 @@ exports.ObjectTypeIdentifier = ObjectTypeIdentifier;
 ObjectTypeIdentifier.runtime = protobuf_1.proto3;
 ObjectTypeIdentifier.typeName = "aserto.directory.common.v2.ObjectTypeIdentifier";
 ObjectTypeIdentifier.fields = protobuf_1.proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
 ]);
 /**
@@ -541,7 +493,6 @@ exports.PermissionIdentifier = PermissionIdentifier;
 PermissionIdentifier.runtime = protobuf_1.proto3;
 PermissionIdentifier.typeName = "aserto.directory.common.v2.PermissionIdentifier";
 PermissionIdentifier.fields = protobuf_1.proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
 ]);
 /**
@@ -571,7 +522,6 @@ exports.RelationTypeIdentifier = RelationTypeIdentifier;
 RelationTypeIdentifier.runtime = protobuf_1.proto3;
 RelationTypeIdentifier.typeName = "aserto.directory.common.v2.RelationTypeIdentifier";
 RelationTypeIdentifier.fields = protobuf_1.proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 3, name: "object_type", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
 ]);
@@ -603,7 +553,6 @@ ObjectIdentifier.runtime = protobuf_1.proto3;
 ObjectIdentifier.typeName = "aserto.directory.common.v2.ObjectIdentifier";
 ObjectIdentifier.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 1, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 2, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 3, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
 ]);
 /**

@@ -25,7 +25,6 @@ export const Flag = proto3.makeEnum(
 export const ObjectType = proto3.makeMessageType(
   "aserto.directory.common.v2.ObjectType",
   () => [
-    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "is_subject", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
@@ -34,7 +33,6 @@ export const ObjectType = proto3.makeMessageType(
     { no: 10, name: "schema", kind: "message", T: Struct },
     { no: 20, name: "created_at", kind: "message", T: Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: Timestamp },
-    { no: 22, name: "deleted_at", kind: "message", T: Timestamp },
     { no: 23, name: "hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -45,12 +43,10 @@ export const ObjectType = proto3.makeMessageType(
 export const Permission = proto3.makeMessageType(
   "aserto.directory.common.v2.Permission",
   () => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 20, name: "created_at", kind: "message", T: Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: Timestamp },
-    { no: 22, name: "deleted_at", kind: "message", T: Timestamp },
     { no: 23, name: "hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -61,7 +57,6 @@ export const Permission = proto3.makeMessageType(
 export const RelationType = proto3.makeMessageType(
   "aserto.directory.common.v2.RelationType",
   () => [
-    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "object_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -71,7 +66,6 @@ export const RelationType = proto3.makeMessageType(
     { no: 8, name: "permissions", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 20, name: "created_at", kind: "message", T: Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: Timestamp },
-    { no: 22, name: "deleted_at", kind: "message", T: Timestamp },
     { no: 23, name: "hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -82,14 +76,12 @@ export const RelationType = proto3.makeMessageType(
 export const Object$ = proto3.makeMessageType(
   "aserto.directory.common.v2.Object",
   () => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "properties", kind: "message", T: Struct },
     { no: 20, name: "created_at", kind: "message", T: Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: Timestamp },
-    { no: 22, name: "deleted_at", kind: "message", T: Timestamp },
     { no: 23, name: "hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
   {localName: "Object$"},
@@ -106,7 +98,6 @@ export const Relation = proto3.makeMessageType(
     { no: 3, name: "object", kind: "message", T: ObjectIdentifier },
     { no: 20, name: "created_at", kind: "message", T: Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: Timestamp },
-    { no: 22, name: "deleted_at", kind: "message", T: Timestamp },
     { no: 23, name: "hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -118,11 +109,9 @@ export const ObjectDependency = proto3.makeMessageType(
   "aserto.directory.common.v2.ObjectDependency",
   () => [
     { no: 1, name: "object_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "object_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "object_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "subject_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 9, name: "subject_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "subject_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 11, name: "depth", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 12, name: "is_cycle", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
@@ -138,7 +127,6 @@ export const ObjectDependency = proto3.makeMessageType(
 export const ObjectTypeIdentifier = proto3.makeMessageType(
   "aserto.directory.common.v2.ObjectTypeIdentifier",
   () => [
-    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ],
 );
@@ -151,7 +139,6 @@ export const ObjectTypeIdentifier = proto3.makeMessageType(
 export const PermissionIdentifier = proto3.makeMessageType(
   "aserto.directory.common.v2.PermissionIdentifier",
   () => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ],
 );
@@ -164,7 +151,6 @@ export const PermissionIdentifier = proto3.makeMessageType(
 export const RelationTypeIdentifier = proto3.makeMessageType(
   "aserto.directory.common.v2.RelationTypeIdentifier",
   () => [
-    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 3, name: "object_type", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ],
@@ -179,7 +165,6 @@ export const ObjectIdentifier = proto3.makeMessageType(
   "aserto.directory.common.v2.ObjectIdentifier",
   () => [
     { no: 1, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 2, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 3, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ],
 );
