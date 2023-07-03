@@ -122,7 +122,7 @@ export const Reader = {
       kind: MethodKind.Unary,
     },
     /**
-     * check methods
+     * check permission method
      *
      * @generated from rpc aserto.directory.reader.v2.Reader.CheckPermission
      */
@@ -133,6 +133,8 @@ export const Reader = {
       kind: MethodKind.Unary,
     },
     /**
+     * check relation method
+     *
      * @generated from rpc aserto.directory.reader.v2.Reader.CheckRelation
      */
     checkRelation: {

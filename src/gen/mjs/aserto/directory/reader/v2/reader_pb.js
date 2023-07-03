@@ -96,6 +96,7 @@ export const GetObjectRequest = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetObjectRequest",
   () => [
     { no: 1, name: "param", kind: "message", T: ObjectIdentifier },
+    { no: 2, name: "with_relations", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
   ],
 );
 
@@ -106,6 +107,8 @@ export const GetObjectResponse = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetObjectResponse",
   () => [
     { no: 1, name: "result", kind: "message", T: Object$ },
+    { no: 2, name: "incoming", kind: "message", T: Relation, repeated: true },
+    { no: 3, name: "outgoing", kind: "message", T: Relation, repeated: true },
   ],
 );
 

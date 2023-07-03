@@ -116,7 +116,7 @@ export declare const Reader: {
             readonly kind: MethodKind.Unary;
         };
         /**
-         * check methods
+         * check permission method
          *
          * @generated from rpc aserto.directory.reader.v2.Reader.CheckPermission
          */
@@ -127,6 +127,8 @@ export declare const Reader: {
             readonly kind: MethodKind.Unary;
         };
         /**
+         * check relation method
+         *
          * @generated from rpc aserto.directory.reader.v2.Reader.CheckRelation
          */
         readonly checkRelation: {

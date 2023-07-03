@@ -354,6 +354,13 @@ export class GetObjectRequest extends Message<GetObjectRequest> {
    */
   param?: ObjectIdentifier;
 
+  /**
+   * materialize the object relations objects
+   *
+   * @generated from field: optional bool with_relations = 2;
+   */
+  withRelations?: boolean;
+
   constructor(data?: PartialMessage<GetObjectRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -363,6 +370,7 @@ export class GetObjectRequest extends Message<GetObjectRequest> {
   static readonly typeName = "aserto.directory.reader.v2.GetObjectRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "param", kind: "message", T: ObjectIdentifier },
+    { no: 2, name: "with_relations", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetObjectRequest {
@@ -393,6 +401,20 @@ export class GetObjectResponse extends Message<GetObjectResponse> {
    */
   result?: Object$;
 
+  /**
+   * incoming object relations
+   *
+   * @generated from field: repeated aserto.directory.common.v2.Relation incoming = 2;
+   */
+  incoming: Relation[] = [];
+
+  /**
+   * outgoing object relations
+   *
+   * @generated from field: repeated aserto.directory.common.v2.Relation outgoing = 3;
+   */
+  outgoing: Relation[] = [];
+
   constructor(data?: PartialMessage<GetObjectResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -402,6 +424,8 @@ export class GetObjectResponse extends Message<GetObjectResponse> {
   static readonly typeName = "aserto.directory.reader.v2.GetObjectResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "result", kind: "message", T: Object$ },
+    { no: 2, name: "incoming", kind: "message", T: Relation, repeated: true },
+    { no: 3, name: "outgoing", kind: "message", T: Relation, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetObjectResponse {

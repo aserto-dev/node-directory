@@ -181,6 +181,12 @@ export declare class GetObjectRequest extends Message<GetObjectRequest> {
      * @generated from field: aserto.directory.common.v2.ObjectIdentifier param = 1;
      */
     param?: ObjectIdentifier;
+    /**
+     * materialize the object relations objects
+     *
+     * @generated from field: optional bool with_relations = 2;
+     */
+    withRelations?: boolean;
     constructor(data?: PartialMessage<GetObjectRequest>);
     static readonly runtime: typeof proto3;
     static readonly typeName = "aserto.directory.reader.v2.GetObjectRequest";
@@ -200,6 +206,18 @@ export declare class GetObjectResponse extends Message<GetObjectResponse> {
      * @generated from field: aserto.directory.common.v2.Object result = 1;
      */
     result?: Object$;
+    /**
+     * incoming object relations
+     *
+     * @generated from field: repeated aserto.directory.common.v2.Relation incoming = 2;
+     */
+    incoming: Relation[];
+    /**
+     * outgoing object relations
+     *
+     * @generated from field: repeated aserto.directory.common.v2.Relation outgoing = 3;
+     */
+    outgoing: Relation[];
     constructor(data?: PartialMessage<GetObjectResponse>);
     static readonly runtime: typeof proto3;
     static readonly typeName = "aserto.directory.reader.v2.GetObjectResponse";
