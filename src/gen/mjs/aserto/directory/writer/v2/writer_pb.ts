@@ -564,6 +564,13 @@ export class DeleteObjectRequest extends Message<DeleteObjectRequest> {
    */
   param?: ObjectIdentifier;
 
+  /**
+   * delete object relations, both object and subject relations.
+   *
+   * @generated from field: optional bool with_relations = 2;
+   */
+  withRelations?: boolean;
+
   constructor(data?: PartialMessage<DeleteObjectRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -573,6 +580,7 @@ export class DeleteObjectRequest extends Message<DeleteObjectRequest> {
   static readonly typeName = "aserto.directory.writer.v2.DeleteObjectRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "param", kind: "message", T: ObjectIdentifier },
+    { no: 2, name: "with_relations", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteObjectRequest {

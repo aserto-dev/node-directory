@@ -411,6 +411,7 @@ DeleteObjectRequest.runtime = protobuf_1.proto3;
 DeleteObjectRequest.typeName = "aserto.directory.writer.v2.DeleteObjectRequest";
 DeleteObjectRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 1, name: "param", kind: "message", T: common_pb_js_1.ObjectIdentifier },
+    { no: 2, name: "with_relations", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.DeleteObjectResponse

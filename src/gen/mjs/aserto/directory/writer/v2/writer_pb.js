@@ -153,6 +153,7 @@ export const DeleteObjectRequest = proto3.makeMessageType(
   "aserto.directory.writer.v2.DeleteObjectRequest",
   () => [
     { no: 1, name: "param", kind: "message", T: ObjectIdentifier },
+    { no: 2, name: "with_relations", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
   ],
 );
 

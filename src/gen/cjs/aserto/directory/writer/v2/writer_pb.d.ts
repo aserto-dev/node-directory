@@ -277,6 +277,12 @@ export declare class DeleteObjectRequest extends Message<DeleteObjectRequest> {
      * @generated from field: aserto.directory.common.v2.ObjectIdentifier param = 1;
      */
     param?: ObjectIdentifier;
+    /**
+     * delete object relations, both object and subject relations.
+     *
+     * @generated from field: optional bool with_relations = 2;
+     */
+    withRelations?: boolean;
     constructor(data?: PartialMessage<DeleteObjectRequest>);
     static readonly runtime: typeof proto3;
     static readonly typeName = "aserto.directory.writer.v2.DeleteObjectRequest";
