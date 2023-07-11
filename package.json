@@ -9,14 +9,14 @@
   "author": "Aserto",
   "license": "Apache-2.0",
   "dependencies": {
-    "@grpc/grpc-js": "^1.8.12",
-    "@types/google-protobuf": "^3.15.6",
+    "@grpc/grpc-js": "^1.8.17",
     "google-protobuf": "^3.21.2",
     "grpc-tools": "^1.12.4"
   },
   "devDependencies": {
-    "@bufbuild/buf": "^1.15.0-1",
-    "@bufbuild/protobuf": "^1.2.0",
+    "@types/google-protobuf": "^3.15.6",
+    "@bufbuild/buf": "^1.23.1",
+    "@bufbuild/protobuf": "^1.2.1",
     "@bufbuild/protoc-gen-connect-es": "^0.8.6",
     "@bufbuild/protoc-gen-es": "^1.2.0",
     "@types/node": "^18.7.13",
