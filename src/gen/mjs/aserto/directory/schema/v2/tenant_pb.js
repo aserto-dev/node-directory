@@ -40,6 +40,7 @@ export const AccountProperties = proto3.makeMessageType(
   () => [
     { no: 1, name: "max_orgs", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "getting_started", kind: "message", T: GuideState, opt: true },
+    { no: 4, name: "default_tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

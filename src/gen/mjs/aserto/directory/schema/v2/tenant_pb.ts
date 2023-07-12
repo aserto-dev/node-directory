@@ -118,6 +118,13 @@ export class AccountProperties extends Message<AccountProperties> {
    */
   gettingStarted?: GuideState;
 
+  /**
+   * The default organization for the account
+   *
+   * @generated from field: string default_tenant_id = 4;
+   */
+  defaultTenantId = "";
+
   constructor(data?: PartialMessage<AccountProperties>) {
     super();
     proto3.util.initPartial(data, this);
@@ -128,6 +135,7 @@ export class AccountProperties extends Message<AccountProperties> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "max_orgs", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "getting_started", kind: "message", T: GuideState, opt: true },
+    { no: 4, name: "default_tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AccountProperties {

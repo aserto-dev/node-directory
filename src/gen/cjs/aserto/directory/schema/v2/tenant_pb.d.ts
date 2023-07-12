@@ -75,6 +75,12 @@ export declare class AccountProperties extends Message<AccountProperties> {
      * @generated from field: optional aserto.directory.schema.v2.GuideState getting_started = 3;
      */
     gettingStarted?: GuideState;
+    /**
+     * The default organization for the account
+     *
+     * @generated from field: string default_tenant_id = 4;
+     */
+    defaultTenantId: string;
     constructor(data?: PartialMessage<AccountProperties>);
     static readonly runtime: typeof proto3;
     static readonly typeName = "aserto.directory.schema.v2.AccountProperties";

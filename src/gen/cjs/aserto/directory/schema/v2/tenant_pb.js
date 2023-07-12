@@ -95,6 +95,12 @@ class AccountProperties extends protobuf_1.Message {
          * @generated from field: int32 max_orgs = 1;
          */
         this.maxOrgs = 0;
+        /**
+         * The default organization for the account
+         *
+         * @generated from field: string default_tenant_id = 4;
+         */
+        this.defaultTenantId = "";
         protobuf_1.proto3.util.initPartial(data, this);
     }
     static fromBinary(bytes, options) {
@@ -116,6 +122,7 @@ AccountProperties.typeName = "aserto.directory.schema.v2.AccountProperties";
 AccountProperties.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 1, name: "max_orgs", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "getting_started", kind: "message", T: GuideState, opt: true },
+    { no: 4, name: "default_tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
 ]);
 /**
  * The state of a user's progress through the console's getting started guide.
