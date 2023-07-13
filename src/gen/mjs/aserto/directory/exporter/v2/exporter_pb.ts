@@ -54,7 +54,7 @@ export enum Option {
   DATA_OBJECTS = 8,
 
   /**
-   * relation instances with id values
+   * relation instances
    *
    * @generated from enum value: OPTION_DATA_RELATIONS = 16;
    */

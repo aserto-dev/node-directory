@@ -6,7 +6,7 @@ import { Object$, ObjectIdentifier, ObjectType, ObjectTypeIdentifier, Permission
  */
 export declare class SetObjectTypeRequest extends Message<SetObjectTypeRequest> {
     /**
-     *
+     * object type instance
      *
      * @generated from field: aserto.directory.common.v2.ObjectType object_type = 1;
      */
@@ -44,7 +44,7 @@ export declare class SetObjectTypeResponse extends Message<SetObjectTypeResponse
  */
 export declare class DeleteObjectTypeRequest extends Message<DeleteObjectTypeRequest> {
     /**
-     *
+     * object type identifier
      *
      * @generated from field: aserto.directory.common.v2.ObjectTypeIdentifier param = 1;
      */
@@ -82,7 +82,7 @@ export declare class DeleteObjectTypeResponse extends Message<DeleteObjectTypeRe
  */
 export declare class SetRelationTypeRequest extends Message<SetRelationTypeRequest> {
     /**
-     *
+     * relation type instance
      *
      * @generated from field: aserto.directory.common.v2.RelationType relation_type = 1;
      */
@@ -120,7 +120,7 @@ export declare class SetRelationTypeResponse extends Message<SetRelationTypeResp
  */
 export declare class DeleteRelationTypeRequest extends Message<DeleteRelationTypeRequest> {
     /**
-     *
+     * relation type identifier
      *
      * @generated from field: aserto.directory.common.v2.RelationTypeIdentifier param = 1;
      */
@@ -158,7 +158,7 @@ export declare class DeleteRelationTypeResponse extends Message<DeleteRelationTy
  */
 export declare class SetPermissionRequest extends Message<SetPermissionRequest> {
     /**
-     *
+     * permission instance
      *
      * @generated from field: aserto.directory.common.v2.Permission permission = 1;
      */
@@ -196,7 +196,7 @@ export declare class SetPermissionResponse extends Message<SetPermissionResponse
  */
 export declare class DeletePermissionRequest extends Message<DeletePermissionRequest> {
     /**
-     *
+     * permission identifier
      *
      * @generated from field: aserto.directory.common.v2.PermissionIdentifier param = 1;
      */
@@ -234,7 +234,7 @@ export declare class DeletePermissionResponse extends Message<DeletePermissionRe
  */
 export declare class SetObjectRequest extends Message<SetObjectRequest> {
     /**
-     *
+     * object instance
      *
      * @generated from field: aserto.directory.common.v2.Object object = 1;
      */
@@ -272,7 +272,7 @@ export declare class SetObjectResponse extends Message<SetObjectResponse> {
  */
 export declare class DeleteObjectRequest extends Message<DeleteObjectRequest> {
     /**
-     *
+     * object identifier
      *
      * @generated from field: aserto.directory.common.v2.ObjectIdentifier param = 1;
      */
@@ -316,7 +316,7 @@ export declare class DeleteObjectResponse extends Message<DeleteObjectResponse> 
  */
 export declare class SetRelationRequest extends Message<SetRelationRequest> {
     /**
-     *
+     * relation instance
      *
      * @generated from field: aserto.directory.common.v2.Relation relation = 1;
      */
@@ -354,7 +354,7 @@ export declare class SetRelationResponse extends Message<SetRelationResponse> {
  */
 export declare class DeleteRelationRequest extends Message<DeleteRelationRequest> {
     /**
-     *
+     * relation identifier
      *
      * @generated from field: aserto.directory.common.v2.RelationIdentifier param = 1;
      */

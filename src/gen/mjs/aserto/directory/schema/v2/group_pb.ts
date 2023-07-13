@@ -13,7 +13,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
  */
 export class GroupProperties extends Message<GroupProperties> {
   /**
-   * ID of the IDP connection the group is associated with.
+   * ID of the IDP connection the group instance is associated with.
    *
    * @generated from field: string connection_id = 1;
    */

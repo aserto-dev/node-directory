@@ -33,17 +33,16 @@ export enum UserStatus {
 
   /**
    * Active status, is when:
+   *  * An admin adds a user and sets the user password without requiring email verification.
+   *  * An admin adds a user, sets the user password, and requires the user to set their password when they first sign-in.
+   *  * A user self-registers into a custom app or IDP and email verification is not required.
+   *  * An admin explicitly activates the user.
    *
    * @generated from enum value: USER_STATUS_ACTIVE = 3;
    */
   ACTIVE = 3,
 
   /**
-   *  * An admin adds a user and sets the user password without requiring email verification.
-   *  * An admin adds a user, sets the user password, and requires the user to set their password when they first sign-in.
-   *  * A user self-registers into a custom app or IDP and email verification is not required.
-   *  * An admin explicitly activates the user.
-   *
    * Recovery status, when the user requests a password reset or an admin initiates one on their behalf.
    *
    * @generated from enum value: USER_STATUS_RECOVERY = 4;
@@ -126,7 +125,7 @@ export class UserProperties extends Message<UserProperties> {
   enabled = false;
 
   /**
-   * ID of the IDP connection the user is associated with.
+   * ID of the IDP connection the user instance is associated with.
    *
    * @generated from field: string connection_id = 5;
    */

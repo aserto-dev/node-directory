@@ -254,7 +254,7 @@ export class GetRelationTypeResponse extends Message<GetRelationTypeResponse> {
  */
 export class GetRelationTypesRequest extends Message<GetRelationTypesRequest> {
   /**
-   * object type selector    
+   * object type selector
    *
    * @generated from field: aserto.directory.common.v2.ObjectTypeIdentifier param = 1;
    */
@@ -402,14 +402,14 @@ export class GetObjectResponse extends Message<GetObjectResponse> {
   result?: Object$;
 
   /**
-   * incoming object relations
+   * incoming object relations of object instance (result.type == incoming.subject.type && result.key == incoming.subject.key)
    *
    * @generated from field: repeated aserto.directory.common.v2.Relation incoming = 2;
    */
   incoming: Relation[] = [];
 
   /**
-   * outgoing object relations
+   * outgoing object relations of object instance (result.type == outgoing.object.type && result.key == outgoing.object.key)
    *
    * @generated from field: repeated aserto.directory.common.v2.Relation outgoing = 3;
    */
@@ -1037,7 +1037,7 @@ export class CheckPermissionRequest extends Message<CheckPermissionRequest> {
  */
 export class CheckPermissionResponse extends Message<CheckPermissionResponse> {
   /**
-   * check result (BOOL)
+   * check result
    *
    * @generated from field: bool check = 1;
    */
@@ -1147,7 +1147,7 @@ export class CheckRelationRequest extends Message<CheckRelationRequest> {
  */
 export class CheckRelationResponse extends Message<CheckRelationResponse> {
   /**
-   * check result (BOOL)
+   * check result
    *
    * @generated from field: bool check = 1;
    */
@@ -1194,7 +1194,7 @@ export class CheckRelationResponse extends Message<CheckRelationResponse> {
  */
 export class CheckResponse extends Message<CheckResponse> {
   /**
-   * check result (BOOL)
+   * check result
    *
    * @generated from field: bool check = 1;
    */

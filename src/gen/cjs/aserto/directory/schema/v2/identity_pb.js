@@ -42,7 +42,7 @@ var IdentityKind;
      */
     IdentityKind[IdentityKind["DN"] = 4] = "DN";
     /**
-     * phonenumber using the format described in RFC3966, +1-201-555-0111 (without the tel: prefix)
+     * phone number using the format described in RFC3966, using the E.164 recommendation
      *
      * @generated from enum value: IDENTITY_KIND_PHONE = 5;
      */

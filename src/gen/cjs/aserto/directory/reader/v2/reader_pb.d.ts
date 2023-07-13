@@ -207,13 +207,13 @@ export declare class GetObjectResponse extends Message<GetObjectResponse> {
      */
     result?: Object$;
     /**
-     * incoming object relations
+     * incoming object relations of object instance (result.type == incoming.subject.type && result.key == incoming.subject.key)
      *
      * @generated from field: repeated aserto.directory.common.v2.Relation incoming = 2;
      */
     incoming: Relation[];
     /**
-     * outgoing object relations
+     * outgoing object relations of object instance (result.type == outgoing.object.type && result.key == outgoing.object.key)
      *
      * @generated from field: repeated aserto.directory.common.v2.Relation outgoing = 3;
      */
@@ -541,7 +541,7 @@ export declare class CheckPermissionRequest extends Message<CheckPermissionReque
  */
 export declare class CheckPermissionResponse extends Message<CheckPermissionResponse> {
     /**
-     * check result (BOOL)
+     * check result
      *
      * @generated from field: bool check = 1;
      */
@@ -603,7 +603,7 @@ export declare class CheckRelationRequest extends Message<CheckRelationRequest> 
  */
 export declare class CheckRelationResponse extends Message<CheckRelationResponse> {
     /**
-     * check result (BOOL)
+     * check result
      *
      * @generated from field: bool check = 1;
      */
@@ -628,7 +628,7 @@ export declare class CheckRelationResponse extends Message<CheckRelationResponse
  */
 export declare class CheckResponse extends Message<CheckResponse> {
     /**
-     * check result (BOOL)
+     * check result
      *
      * @generated from field: bool check = 1;
      */

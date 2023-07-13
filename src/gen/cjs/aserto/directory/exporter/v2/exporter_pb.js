@@ -49,7 +49,7 @@ var Option;
      */
     Option[Option["DATA_OBJECTS"] = 8] = "DATA_OBJECTS";
     /**
-     * relation instances with id values
+     * relation instances
      *
      * @generated from enum value: OPTION_DATA_RELATIONS = 16;
      */

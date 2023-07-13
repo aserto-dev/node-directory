@@ -273,13 +273,13 @@ class GetObjectResponse extends protobuf_1.Message {
     constructor(data) {
         super();
         /**
-         * incoming object relations
+         * incoming object relations of object instance (result.type == incoming.subject.type && result.key == incoming.subject.key)
          *
          * @generated from field: repeated aserto.directory.common.v2.Relation incoming = 2;
          */
         this.incoming = [];
         /**
-         * outgoing object relations
+         * outgoing object relations of object instance (result.type == outgoing.object.type && result.key == outgoing.object.key)
          *
          * @generated from field: repeated aserto.directory.common.v2.Relation outgoing = 3;
          */
@@ -723,7 +723,7 @@ class CheckPermissionResponse extends protobuf_1.Message {
     constructor(data) {
         super();
         /**
-         * check result (BOOL)
+         * check result
          *
          * @generated from field: bool check = 1;
          */
@@ -799,7 +799,7 @@ class CheckRelationResponse extends protobuf_1.Message {
     constructor(data) {
         super();
         /**
-         * check result (BOOL)
+         * check result
          *
          * @generated from field: bool check = 1;
          */
@@ -839,7 +839,7 @@ class CheckResponse extends protobuf_1.Message {
     constructor(data) {
         super();
         /**
-         * check result (BOOL)
+         * check result
          *
          * @generated from field: bool check = 1;
          */

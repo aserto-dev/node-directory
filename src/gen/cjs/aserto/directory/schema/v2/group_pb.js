@@ -15,7 +15,7 @@ class GroupProperties extends protobuf_1.Message {
     constructor(data) {
         super();
         /**
-         * ID of the IDP connection the group is associated with.
+         * ID of the IDP connection the group instance is associated with.
          *
          * @generated from field: string connection_id = 1;
          */
