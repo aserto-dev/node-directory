@@ -402,18 +402,11 @@ export class GetObjectResponse extends Message<GetObjectResponse> {
   result?: Object$;
 
   /**
-   * incoming object relations of object instance (result.type == incoming.subject.type && result.key == incoming.subject.key)
+   * object relations
    *
-   * @generated from field: repeated aserto.directory.common.v2.Relation incoming = 2;
+   * @generated from field: repeated aserto.directory.common.v2.Relation relations = 4;
    */
-  incoming: Relation[] = [];
-
-  /**
-   * outgoing object relations of object instance (result.type == outgoing.object.type && result.key == outgoing.object.key)
-   *
-   * @generated from field: repeated aserto.directory.common.v2.Relation outgoing = 3;
-   */
-  outgoing: Relation[] = [];
+  relations: Relation[] = [];
 
   constructor(data?: PartialMessage<GetObjectResponse>) {
     super();
@@ -424,8 +417,7 @@ export class GetObjectResponse extends Message<GetObjectResponse> {
   static readonly typeName = "aserto.directory.reader.v2.GetObjectResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "result", kind: "message", T: Object$ },
-    { no: 2, name: "incoming", kind: "message", T: Relation, repeated: true },
-    { no: 3, name: "outgoing", kind: "message", T: Relation, repeated: true },
+    { no: 4, name: "relations", kind: "message", T: Relation, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetObjectResponse {

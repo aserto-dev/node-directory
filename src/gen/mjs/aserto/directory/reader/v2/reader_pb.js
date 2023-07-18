@@ -107,8 +107,7 @@ export const GetObjectResponse = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetObjectResponse",
   () => [
     { no: 1, name: "result", kind: "message", T: Object$ },
-    { no: 2, name: "incoming", kind: "message", T: Relation, repeated: true },
-    { no: 3, name: "outgoing", kind: "message", T: Relation, repeated: true },
+    { no: 4, name: "relations", kind: "message", T: Relation, repeated: true },
   ],
 );
 

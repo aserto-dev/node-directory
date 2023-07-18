@@ -207,17 +207,11 @@ export declare class GetObjectResponse extends Message<GetObjectResponse> {
      */
     result?: Object$;
     /**
-     * incoming object relations of object instance (result.type == incoming.subject.type && result.key == incoming.subject.key)
+     * object relations
      *
-     * @generated from field: repeated aserto.directory.common.v2.Relation incoming = 2;
+     * @generated from field: repeated aserto.directory.common.v2.Relation relations = 4;
      */
-    incoming: Relation[];
-    /**
-     * outgoing object relations of object instance (result.type == outgoing.object.type && result.key == outgoing.object.key)
-     *
-     * @generated from field: repeated aserto.directory.common.v2.Relation outgoing = 3;
-     */
-    outgoing: Relation[];
+    relations: Relation[];
     constructor(data?: PartialMessage<GetObjectResponse>);
     static readonly runtime: typeof proto3;
     static readonly typeName = "aserto.directory.reader.v2.GetObjectResponse";

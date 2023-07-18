@@ -273,17 +273,11 @@ class GetObjectResponse extends protobuf_1.Message {
     constructor(data) {
         super();
         /**
-         * incoming object relations of object instance (result.type == incoming.subject.type && result.key == incoming.subject.key)
+         * object relations
          *
-         * @generated from field: repeated aserto.directory.common.v2.Relation incoming = 2;
+         * @generated from field: repeated aserto.directory.common.v2.Relation relations = 4;
          */
-        this.incoming = [];
-        /**
-         * outgoing object relations of object instance (result.type == outgoing.object.type && result.key == outgoing.object.key)
-         *
-         * @generated from field: repeated aserto.directory.common.v2.Relation outgoing = 3;
-         */
-        this.outgoing = [];
+        this.relations = [];
         protobuf_1.proto3.util.initPartial(data, this);
     }
     static fromBinary(bytes, options) {
@@ -304,8 +298,7 @@ GetObjectResponse.runtime = protobuf_1.proto3;
 GetObjectResponse.typeName = "aserto.directory.reader.v2.GetObjectResponse";
 GetObjectResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 1, name: "result", kind: "message", T: common_pb_js_1.Object$ },
-    { no: 2, name: "incoming", kind: "message", T: common_pb_js_1.Relation, repeated: true },
-    { no: 3, name: "outgoing", kind: "message", T: common_pb_js_1.Relation, repeated: true },
+    { no: 4, name: "relations", kind: "message", T: common_pb_js_1.Relation, repeated: true },
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectManyRequest
