@@ -97,6 +97,7 @@ export const GetObjectRequest = proto3.makeMessageType(
   () => [
     { no: 1, name: "param", kind: "message", T: ObjectIdentifier },
     { no: 2, name: "with_relations", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 9, name: "page", kind: "message", T: PaginationRequest },
   ],
 );
 
@@ -108,6 +109,7 @@ export const GetObjectResponse = proto3.makeMessageType(
   () => [
     { no: 1, name: "result", kind: "message", T: Object$ },
     { no: 4, name: "relations", kind: "message", T: Relation, repeated: true },
+    { no: 9, name: "page", kind: "message", T: PaginationResponse },
   ],
 );
 

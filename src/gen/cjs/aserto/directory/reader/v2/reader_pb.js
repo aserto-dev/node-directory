@@ -265,6 +265,7 @@ GetObjectRequest.typeName = "aserto.directory.reader.v2.GetObjectRequest";
 GetObjectRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 1, name: "param", kind: "message", T: common_pb_js_1.ObjectIdentifier },
     { no: 2, name: "with_relations", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 9, name: "page", kind: "message", T: common_pb_js_1.PaginationRequest },
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectResponse
@@ -299,6 +300,7 @@ GetObjectResponse.typeName = "aserto.directory.reader.v2.GetObjectResponse";
 GetObjectResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 1, name: "result", kind: "message", T: common_pb_js_1.Object$ },
     { no: 4, name: "relations", kind: "message", T: common_pb_js_1.Relation, repeated: true },
+    { no: 9, name: "page", kind: "message", T: common_pb_js_1.PaginationResponse },
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectManyRequest

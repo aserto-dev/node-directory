@@ -187,6 +187,12 @@ export declare class GetObjectRequest extends Message<GetObjectRequest> {
      * @generated from field: optional bool with_relations = 2;
      */
     withRelations?: boolean;
+    /**
+     * pagination request
+     *
+     * @generated from field: aserto.directory.common.v2.PaginationRequest page = 9;
+     */
+    page?: PaginationRequest;
     constructor(data?: PartialMessage<GetObjectRequest>);
     static readonly runtime: typeof proto3;
     static readonly typeName = "aserto.directory.reader.v2.GetObjectRequest";
@@ -212,6 +218,12 @@ export declare class GetObjectResponse extends Message<GetObjectResponse> {
      * @generated from field: repeated aserto.directory.common.v2.Relation relations = 4;
      */
     relations: Relation[];
+    /**
+     * pagination response
+     *
+     * @generated from field: aserto.directory.common.v2.PaginationResponse page = 9;
+     */
+    page?: PaginationResponse;
     constructor(data?: PartialMessage<GetObjectResponse>);
     static readonly runtime: typeof proto3;
     static readonly typeName = "aserto.directory.reader.v2.GetObjectResponse";

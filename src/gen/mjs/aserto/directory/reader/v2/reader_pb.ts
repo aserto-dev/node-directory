@@ -361,6 +361,13 @@ export class GetObjectRequest extends Message<GetObjectRequest> {
    */
   withRelations?: boolean;
 
+  /**
+   * pagination request
+   *
+   * @generated from field: aserto.directory.common.v2.PaginationRequest page = 9;
+   */
+  page?: PaginationRequest;
+
   constructor(data?: PartialMessage<GetObjectRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -371,6 +378,7 @@ export class GetObjectRequest extends Message<GetObjectRequest> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "param", kind: "message", T: ObjectIdentifier },
     { no: 2, name: "with_relations", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 9, name: "page", kind: "message", T: PaginationRequest },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetObjectRequest {
@@ -408,6 +416,13 @@ export class GetObjectResponse extends Message<GetObjectResponse> {
    */
   relations: Relation[] = [];
 
+  /**
+   * pagination response
+   *
+   * @generated from field: aserto.directory.common.v2.PaginationResponse page = 9;
+   */
+  page?: PaginationResponse;
+
   constructor(data?: PartialMessage<GetObjectResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -418,6 +433,7 @@ export class GetObjectResponse extends Message<GetObjectResponse> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "result", kind: "message", T: Object$ },
     { no: 4, name: "relations", kind: "message", T: Relation, repeated: true },
+    { no: 9, name: "page", kind: "message", T: PaginationResponse },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetObjectResponse {
