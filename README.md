@@ -8,6 +8,10 @@
 yarn install
 yarn gen
 ```
+### Build with a local build of directory
+```
+BUF_PATH=/path/to/directory.bin yarn gen
+```
 
 **On M1 Mac**: Run `arch -x86_64 zsh` first and the continue normally.
 
