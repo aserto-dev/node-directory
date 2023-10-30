@@ -1,7 +1,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, Struct } from "@bufbuild/protobuf";
 /**
- * @generated from enum aserto.directory.schema.v2.TenantKind
+ * @generated from enum aserto.directory.schema.v3.TenantKind
  */
 export declare enum TenantKind {
     /**
@@ -22,13 +22,13 @@ export declare enum TenantKind {
 /**
  * Properties of a tenant object
  *
- * @generated from message aserto.directory.schema.v2.TenantProperties
+ * @generated from message aserto.directory.schema.v3.TenantProperties
  */
 export declare class TenantProperties extends Message<TenantProperties> {
     /**
      * The kind of tenant.
      *
-     * @generated from field: aserto.directory.schema.v2.TenantKind kind = 1;
+     * @generated from field: aserto.directory.schema.v3.TenantKind kind = 1;
      */
     kind: TenantKind;
     /**
@@ -46,12 +46,12 @@ export declare class TenantProperties extends Message<TenantProperties> {
     /**
      * Additional properties that are only set accounts (personal tenant).
      *
-     * @generated from field: optional aserto.directory.schema.v2.AccountProperties account = 4;
+     * @generated from field: optional aserto.directory.schema.v3.AccountProperties account = 4;
      */
     account?: AccountProperties;
     constructor(data?: PartialMessage<TenantProperties>);
     static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.schema.v2.TenantProperties";
+    static readonly typeName = "aserto.directory.schema.v3.TenantProperties";
     static readonly fields: FieldList;
     static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TenantProperties;
     static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TenantProperties;
@@ -59,7 +59,7 @@ export declare class TenantProperties extends Message<TenantProperties> {
     static equals(a: TenantProperties | PlainMessage<TenantProperties> | undefined, b: TenantProperties | PlainMessage<TenantProperties> | undefined): boolean;
 }
 /**
- * @generated from message aserto.directory.schema.v2.AccountProperties
+ * @generated from message aserto.directory.schema.v3.AccountProperties
  */
 export declare class AccountProperties extends Message<AccountProperties> {
     /**
@@ -72,7 +72,7 @@ export declare class AccountProperties extends Message<AccountProperties> {
     /**
      * Tracks the account owner's progress through the getting-started guide.
      *
-     * @generated from field: optional aserto.directory.schema.v2.GuideState getting_started = 3;
+     * @generated from field: optional aserto.directory.schema.v3.GuideState getting_started = 3;
      */
     gettingStarted?: GuideState;
     /**
@@ -83,7 +83,7 @@ export declare class AccountProperties extends Message<AccountProperties> {
     defaultTenantId: string;
     constructor(data?: PartialMessage<AccountProperties>);
     static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.schema.v2.AccountProperties";
+    static readonly typeName = "aserto.directory.schema.v3.AccountProperties";
     static readonly fields: FieldList;
     static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AccountProperties;
     static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AccountProperties;
@@ -93,7 +93,7 @@ export declare class AccountProperties extends Message<AccountProperties> {
 /**
  * The state of a user's progress through the console's getting started guide.
  *
- * @generated from message aserto.directory.schema.v2.GuideState
+ * @generated from message aserto.directory.schema.v3.GuideState
  */
 export declare class GuideState extends Message<GuideState> {
     /**
@@ -110,7 +110,7 @@ export declare class GuideState extends Message<GuideState> {
     steps?: Struct;
     constructor(data?: PartialMessage<GuideState>);
     static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.schema.v2.GuideState";
+    static readonly typeName = "aserto.directory.schema.v3.GuideState";
     static readonly fields: FieldList;
     static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GuideState;
     static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GuideState;
