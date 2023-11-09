@@ -77,25 +77,26 @@ export declare class MessageConstraints extends Message<MessageConstraints> {
 }
 /**
  * The `OneofConstraints` message type enables you to manage constraints for
- * oneof fields in your protobuf messages. Use the `required` constraint to ensure
- * that exactly one of the fields within a oneof is set; validation will fail
- * if none of the fields in the oneof are set:
+ * oneof fields in your protobuf messages.
  *
  * @generated from message buf.validate.OneofConstraints
  */
 export declare class OneofConstraints extends Message<OneofConstraints> {
     /**
-     * `required` is an optional boolean attribute that ensures that
-     * exactly one of the field options in a oneof is set; validation fails if
-     * no fields in the oneof are set.
+     * If `required` is true, exactly one field of the oneof must be present. A
+     * validation error is returned if no fields in the oneof are present. The
+     * field itself may still be a default value; further constraints
+     * should be placed on the fields themselves to ensure they are valid values,
+     * such as `min_len` or `gt`.
      *
      * ```proto
      * message MyMessage {
      *   oneof value {
-     *     // The field `a` or `b` must be set.
+     *     // Either `a` or `b` must be set. If `a` is set, it must also be
+     *     // non-empty; whereas if `b` is set, it can still be an empty string.
      *     option (buf.validate.oneof).required = true;
-     *     optional string a = 1;
-     *     optional string b = 2;
+     *     string a = 1 [(buf.validate.field).string.min_len = 1];
+     *     string b = 2;
      *   }
      * }
      * ```
@@ -154,16 +155,20 @@ export declare class FieldConstraints extends Message<FieldConstraints> {
      */
     skipped: boolean;
     /**
-     * `required` is an optional boolean attribute that specifies that
-     * this field must be set. If required is set to true, the field value must
-     * not be empty; otherwise, an error message will be generated.
+     * If `required` is true, the field must be populated. Field presence can be
+     * described as "serialized in the wire format," which follows the following rules:
      *
-     * Note that `required` validates that `repeated` fields are non-empty, that is
-     * setting a `repeated` field as `required` is equivalent to `repeated.min_items = 1`.
+     * - the following "nullable" fields must be explicitly set to be considered present:
+     *   - singular message fields (may be their empty value)
+     *   - member fields of a oneof (may be their default value)
+     *   - proto3 optional fields (may be their default value)
+     *   - proto2 scalar fields
+     * - proto3 scalar fields must be non-zero to be considered present
+     * - repeated and map fields must be non-empty to be considered present
      *
      * ```proto
      * message MyMessage {
-     *   // The field `value` must be set.
+     *   // The field `value` must be set to a non-null value.
      *   optional MyOtherMessage value = 1 [(buf.validate.field).required = true];
      * }
      * ```
@@ -172,14 +177,19 @@ export declare class FieldConstraints extends Message<FieldConstraints> {
      */
     required: boolean;
     /**
-     * `ignore_empty` specifies that the validation rules of this field should be
-     * evaluated only if the field isn't empty. If the field is empty, no validation
-     * rules are applied.
+     * If `ignore_empty` is true and applied to a non-nullable field (see
+     * `required` for more details), validation is skipped on the field if it is
+     * the default or empty value. Adding `ignore_empty` to a "nullable" field is
+     * a noop as these unset fields already skip validation (with the exception
+     * of `required`).
      *
      * ```proto
      * message MyRepeated {
-     *   // The field `value` validation rules should be evaluated only if the field isn't empty.
-     *   repeated string value = 1 [(buf.validate.field).ignore_empty = true];
+     *   // The field `value` min_len rule is only applied if the field isn't empty.
+     *   repeated string value = 1 [
+     *     (buf.validate.field).ignore_empty = true,
+     *     (buf.validate.field).min_len = 5
+     *   ];
      * }
      * ```
      *
@@ -2652,6 +2662,114 @@ export declare class StringRules extends Message<StringRules> {
          */
         value: boolean;
         case: "uuid";
+    } | {
+        /**
+         * `ip_with_prefixlen` specifies that the field value must be a valid IP (v4 or v6)
+         * address with prefix length. If the field value isn't a valid IP with prefix
+         * length, an error message will be generated.
+         *
+         *
+         * ```proto
+         * message MyString {
+         *   // value must be a valid IP with prefix length
+         *    string value = 1 [(buf.validate.field).string.ip_with_prefixlen = true];
+         * }
+         * ```
+         *
+         * @generated from field: bool ip_with_prefixlen = 26;
+         */
+        value: boolean;
+        case: "ipWithPrefixlen";
+    } | {
+        /**
+         * `ipv4_with_prefixlen` specifies that the field value must be a valid
+         * IPv4 address with prefix.
+         * If the field value isn't a valid IPv4 address with prefix length,
+         * an error message will be generated.
+         *
+         * ```proto
+         * message MyString {
+         *   // value must be a valid IPv4 address with prefix lentgh
+         *    string value = 1 [(buf.validate.field).string.ipv4_with_prefixlen = true];
+         * }
+         * ```
+         *
+         * @generated from field: bool ipv4_with_prefixlen = 27;
+         */
+        value: boolean;
+        case: "ipv4WithPrefixlen";
+    } | {
+        /**
+         * `ipv6_with_prefixlen` specifies that the field value must be a valid
+         * IPv6 address with prefix length.
+         * If the field value is not a valid IPv6 address with prefix length,
+         * an error message will be generated.
+         *
+         * ```proto
+         * message MyString {
+         *   // value must be a valid IPv6 address prefix length
+         *    string value = 1 [(buf.validate.field).string.ipv6_with_prefixlen = true];
+         * }
+         * ```
+         *
+         * @generated from field: bool ipv6_with_prefixlen = 28;
+         */
+        value: boolean;
+        case: "ipv6WithPrefixlen";
+    } | {
+        /**
+         * `ip_prefix` specifies that the field value must be a valid IP (v4 or v6) prefix.
+         * If the field value isn't a valid IP prefix, an error message will be
+         * generated. The prefix must have all zeros for the masked bits of the prefix (e.g.,
+         * `127.0.0.0/16`, not `127.0.0.1/16`).
+         *
+         * ```proto
+         * message MyString {
+         *   // value must be a valid IP prefix
+         *    string value = 1 [(buf.validate.field).string.ip_prefix = true];
+         * }
+         * ```
+         *
+         * @generated from field: bool ip_prefix = 29;
+         */
+        value: boolean;
+        case: "ipPrefix";
+    } | {
+        /**
+         * `ipv4_prefix` specifies that the field value must be a valid IPv4
+         * prefix. If the field value isn't a valid IPv4 prefix, an error message
+         * will be generated. The prefix must have all zeros for the masked bits of
+         * the prefix (e.g., `127.0.0.0/16`, not `127.0.0.1/16`).
+         *
+         * ```proto
+         * message MyString {
+         *   // value must be a valid IPv4 prefix
+         *    string value = 1 [(buf.validate.field).string.ipv4_prefix = true];
+         * }
+         * ```
+         *
+         * @generated from field: bool ipv4_prefix = 30;
+         */
+        value: boolean;
+        case: "ipv4Prefix";
+    } | {
+        /**
+         * `ipv6_prefix` specifies that the field value must be a valid IPv6 prefix.
+         * If the field value is not a valid IPv6 prefix, an error message will be
+         * generated. The prefix must have all zeros for the masked bits of the prefix
+         * (e.g., `2001:db8::/48`, not `2001:db8::1/48`).
+         *
+         * ```proto
+         * message MyString {
+         *   // value must be a valid IPv6 prefix
+         *    string value = 1 [(buf.validate.field).string.ipv6_prefix = true];
+         * }
+         * ```
+         *
+         * @generated from field: bool ipv6_prefix = 31;
+         */
+        value: boolean;
+        case: "ipv6Prefix";
     } | {
         /**
          * `well_known_regex` specifies a common well-known pattern

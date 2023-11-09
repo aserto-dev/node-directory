@@ -50,9 +50,7 @@ export const MessageConstraints = proto3.makeMessageType(
 
 /**
  * The `OneofConstraints` message type enables you to manage constraints for
- * oneof fields in your protobuf messages. Use the `required` constraint to ensure
- * that exactly one of the fields within a oneof is set; validation will fail
- * if none of the fields in the oneof are set:
+ * oneof fields in your protobuf messages.
  *
  * @generated from message buf.validate.OneofConstraints
  */
@@ -369,6 +367,12 @@ export const StringRules = proto3.makeMessageType(
     { no: 18, name: "uri_ref", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 21, name: "address", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 22, name: "uuid", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
+    { no: 26, name: "ip_with_prefixlen", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
+    { no: 27, name: "ipv4_with_prefixlen", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
+    { no: 28, name: "ipv6_with_prefixlen", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
+    { no: 29, name: "ip_prefix", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
+    { no: 30, name: "ipv4_prefix", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
+    { no: 31, name: "ipv6_prefix", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 24, name: "well_known_regex", kind: "enum", T: proto3.getEnumType(KnownRegex), oneof: "well_known" },
     { no: 25, name: "strict", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
   ],
