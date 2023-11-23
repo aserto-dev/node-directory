@@ -19,8 +19,7 @@ BUF_PATH=/path/to/directory.bin yarn gen
 ## Examples
 
 ```typescript
-import { Reader as ReaderClient } from "@aserto/node-directory/src/gen/cjs/aserto/directory/reader/v2/reader_connect";
-import { GetObjectRequest } from "@aserto/node-directory/src/gen/cjs/aserto/directory/reader/v2/reader_pb";
+import { Reader } from "@aserto/node-directory/src/gen/cjs/aserto/directory/reader/v3/reader_connect";
 import { createPromiseClient } from "@bufbuild/connect";
 import { createGrpcTransport } from "@bufbuild/connect-node";
 
@@ -30,15 +29,12 @@ const grpcTansport = createGrpcTransport({
   nodeOptions: { rejectUnauthorized: false },
 });
 
-const client = createPromiseClient(ReaderClient, grpcTansport);
-const objectResponse = client.getObject(
-  new GetObjectRequest({
-    param: {
-      type: "user",
-      key: "CiRmZDA2MTRkMy1jMzlhLTQ3ODEtYjdiZC04Yjk2ZjVhNTEwMGQSBWxvY2Fs"
-    }
+const client = createPromiseClient(Reader, grpcTansport);
+const objectResponse = client.getObject({
+    objectType: "user",
+    objectId: "rick@the-citadel.com",
   })
-)
+
 
 objectResponse.then((result) => {
   console.log(result.result?.toJson())
