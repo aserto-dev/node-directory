@@ -1,5 +1,5 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
+import { Message, proto3, Struct, Timestamp } from "@bufbuild/protobuf";
 import { Object$, Relation } from "../../common/v3/common_pb.js";
 /**
  * @generated from enum aserto.directory.exporter.v3.Option
@@ -28,7 +28,13 @@ export declare enum Option {
      *
      * @generated from enum value: OPTION_DATA = 24;
      */
-    DATA = 24
+    DATA = 24,
+    /**
+     * stats
+     *
+     * @generated from enum value: OPTION_STATS = 64;
+     */
+    STATS = 64
 }
 /**
  * @generated from message aserto.directory.exporter.v3.ExportRequest
@@ -78,6 +84,14 @@ export declare class ExportResponse extends Message<ExportResponse> {
          */
         value: Relation;
         case: "relation";
+    } | {
+        /**
+         * object and/or relation stats (no data)
+         *
+         * @generated from field: google.protobuf.Struct stats = 8;
+         */
+        value: Struct;
+        case: "stats";
     } | {
         case: undefined;
         value?: undefined;

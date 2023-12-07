@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
+import { Message, proto3, Struct, Timestamp } from "@bufbuild/protobuf";
 import { Object$, Relation } from "../../common/v3/common_pb.js";
 
 /**
@@ -38,6 +38,13 @@ export enum Option {
    * @generated from enum value: OPTION_DATA = 24;
    */
   DATA = 24,
+
+  /**
+   * stats
+   *
+   * @generated from enum value: OPTION_STATS = 64;
+   */
+  STATS = 64,
 }
 // Retrieve enum metadata with: proto3.getEnumType(Option)
 proto3.util.setEnumType(Option, "aserto.directory.exporter.v3.Option", [
@@ -45,6 +52,7 @@ proto3.util.setEnumType(Option, "aserto.directory.exporter.v3.Option", [
   { no: 8, name: "OPTION_DATA_OBJECTS" },
   { no: 16, name: "OPTION_DATA_RELATIONS" },
   { no: 24, name: "OPTION_DATA" },
+  { no: 64, name: "OPTION_STATS" },
 ]);
 
 /**
@@ -117,6 +125,14 @@ export class ExportResponse extends Message<ExportResponse> {
      */
     value: Relation;
     case: "relation";
+  } | {
+    /**
+     * object and/or relation stats (no data)
+     *
+     * @generated from field: google.protobuf.Struct stats = 8;
+     */
+    value: Struct;
+    case: "stats";
   } | { case: undefined; value?: undefined } = { case: undefined };
 
   constructor(data?: PartialMessage<ExportResponse>) {
@@ -129,6 +145,7 @@ export class ExportResponse extends Message<ExportResponse> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 2, name: "object", kind: "message", T: Object$, oneof: "msg" },
     { no: 4, name: "relation", kind: "message", T: Relation, oneof: "msg" },
+    { no: 8, name: "stats", kind: "message", T: Struct, oneof: "msg" },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportResponse {

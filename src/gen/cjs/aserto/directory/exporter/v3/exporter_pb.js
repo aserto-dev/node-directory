@@ -36,6 +36,12 @@ var Option;
      * @generated from enum value: OPTION_DATA = 24;
      */
     Option[Option["DATA"] = 24] = "DATA";
+    /**
+     * stats
+     *
+     * @generated from enum value: OPTION_STATS = 64;
+     */
+    Option[Option["STATS"] = 64] = "STATS";
 })(Option = exports.Option || (exports.Option = {}));
 // Retrieve enum metadata with: proto3.getEnumType(Option)
 protobuf_1.proto3.util.setEnumType(Option, "aserto.directory.exporter.v3.Option", [
@@ -43,6 +49,7 @@ protobuf_1.proto3.util.setEnumType(Option, "aserto.directory.exporter.v3.Option"
     { no: 8, name: "OPTION_DATA_OBJECTS" },
     { no: 16, name: "OPTION_DATA_RELATIONS" },
     { no: 24, name: "OPTION_DATA" },
+    { no: 64, name: "OPTION_STATS" },
 ]);
 /**
  * @generated from message aserto.directory.exporter.v3.ExportRequest
@@ -109,4 +116,5 @@ ExportResponse.typeName = "aserto.directory.exporter.v3.ExportResponse";
 ExportResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 2, name: "object", kind: "message", T: common_pb_js_1.Object$, oneof: "msg" },
     { no: 4, name: "relation", kind: "message", T: common_pb_js_1.Relation, oneof: "msg" },
+    { no: 8, name: "stats", kind: "message", T: protobuf_1.Struct, oneof: "msg" },
 ]);

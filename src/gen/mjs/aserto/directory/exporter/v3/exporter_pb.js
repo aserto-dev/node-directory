@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { proto3, Timestamp } from "@bufbuild/protobuf";
+import { proto3, Struct, Timestamp } from "@bufbuild/protobuf";
 import { Object$, Relation } from "../../common/v3/common_pb.js";
 
 /**
@@ -16,6 +16,7 @@ export const Option = proto3.makeEnum(
     {no: 8, name: "OPTION_DATA_OBJECTS", localName: "DATA_OBJECTS"},
     {no: 16, name: "OPTION_DATA_RELATIONS", localName: "DATA_RELATIONS"},
     {no: 24, name: "OPTION_DATA", localName: "DATA"},
+    {no: 64, name: "OPTION_STATS", localName: "STATS"},
   ],
 );
 
@@ -38,6 +39,7 @@ export const ExportResponse = proto3.makeMessageType(
   () => [
     { no: 2, name: "object", kind: "message", T: Object$, oneof: "msg" },
     { no: 4, name: "relation", kind: "message", T: Relation, oneof: "msg" },
+    { no: 8, name: "stats", kind: "message", T: Struct, oneof: "msg" },
   ],
 );
 
