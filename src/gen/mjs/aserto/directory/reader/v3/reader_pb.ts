@@ -485,6 +485,13 @@ export class GetRelationsRequest extends Message<GetRelationsRequest> {
   withObjects = false;
 
   /**
+   * only return relations that do not have a subject relation.
+   *
+   * @generated from field: bool with_empty_subject_relation = 8;
+   */
+  withEmptySubjectRelation = false;
+
+  /**
    * pagination request
    *
    * @generated from field: aserto.directory.common.v3.PaginationRequest page = 9;
@@ -506,6 +513,7 @@ export class GetRelationsRequest extends Message<GetRelationsRequest> {
     { no: 5, name: "subject_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "subject_relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "with_objects", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "with_empty_subject_relation", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 9, name: "page", kind: "message", T: PaginationRequest },
   ]);
 

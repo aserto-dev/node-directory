@@ -381,6 +381,12 @@ class GetRelationsRequest extends protobuf_1.Message {
          * @generated from field: bool with_objects = 7;
          */
         this.withObjects = false;
+        /**
+         * only return relations that do not have a subject relation.
+         *
+         * @generated from field: bool with_empty_subject_relation = 8;
+         */
+        this.withEmptySubjectRelation = false;
         protobuf_1.proto3.util.initPartial(data, this);
     }
     static fromBinary(bytes, options) {
@@ -407,6 +413,7 @@ GetRelationsRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 5, name: "subject_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "subject_relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "with_objects", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "with_empty_subject_relation", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 9, name: "page", kind: "message", T: common_pb_js_1.PaginationRequest },
 ]);
 /**

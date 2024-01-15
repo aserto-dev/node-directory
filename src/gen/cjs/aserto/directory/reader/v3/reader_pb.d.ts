@@ -286,6 +286,12 @@ export declare class GetRelationsRequest extends Message<GetRelationsRequest> {
      */
     withObjects: boolean;
     /**
+     * only return relations that do not have a subject relation.
+     *
+     * @generated from field: bool with_empty_subject_relation = 8;
+     */
+    withEmptySubjectRelation: boolean;
+    /**
      * pagination request
      *
      * @generated from field: aserto.directory.common.v3.PaginationRequest page = 9;

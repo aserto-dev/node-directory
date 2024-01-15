@@ -113,6 +113,7 @@ export const GetRelationsRequest = proto3.makeMessageType(
     { no: 5, name: "subject_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "subject_relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "with_objects", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "with_empty_subject_relation", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 9, name: "page", kind: "message", T: PaginationRequest },
   ],
 );
