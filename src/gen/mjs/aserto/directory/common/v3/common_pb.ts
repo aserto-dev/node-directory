@@ -349,6 +349,87 @@ export class ObjectIdentifier extends Message<ObjectIdentifier> {
 }
 
 /**
+ * Relation identifier
+ *
+ * @generated from message aserto.directory.common.v3.RelationIdentifier
+ */
+export class RelationIdentifier extends Message<RelationIdentifier> {
+  /**
+   * object type
+   *
+   * @generated from field: string object_type = 1;
+   */
+  objectType = "";
+
+  /**
+   * object identifier
+   *
+   * @generated from field: string object_id = 2;
+   */
+  objectId = "";
+
+  /**
+   * object relation name
+   *
+   * @generated from field: string relation = 3;
+   */
+  relation = "";
+
+  /**
+   * subject type
+   *
+   * @generated from field: string subject_type = 4;
+   */
+  subjectType = "";
+
+  /**
+   * subject identifier
+   *
+   * @generated from field: string subject_id = 5;
+   */
+  subjectId = "";
+
+  /**
+   * optional subject relation name
+   *
+   * @generated from field: string subject_relation = 6;
+   */
+  subjectRelation = "";
+
+  constructor(data?: PartialMessage<RelationIdentifier>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.common.v3.RelationIdentifier";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "object_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "object_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "subject_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "subject_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "subject_relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RelationIdentifier {
+    return new RelationIdentifier().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RelationIdentifier {
+    return new RelationIdentifier().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RelationIdentifier {
+    return new RelationIdentifier().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RelationIdentifier | PlainMessage<RelationIdentifier> | undefined, b: RelationIdentifier | PlainMessage<RelationIdentifier> | undefined): boolean {
+    return proto3.util.equals(RelationIdentifier, a, b);
+  }
+}
+
+/**
  * Pagination request
  *
  * @generated from message aserto.directory.common.v3.PaginationRequest
@@ -435,63 +516,6 @@ export class PaginationResponse extends Message<PaginationResponse> {
 
   static equals(a: PaginationResponse | PlainMessage<PaginationResponse> | undefined, b: PaginationResponse | PlainMessage<PaginationResponse> | undefined): boolean {
     return proto3.util.equals(PaginationResponse, a, b);
-  }
-}
-
-/**
- * Object type
- *
- * @generated from message aserto.directory.common.v3.ObjectType
- */
-export class ObjectType extends Message<ObjectType> {
-  /**
-   * object type name (lc-string)
-   *
-   * @generated from field: string name = 1;
-   */
-  name = "";
-
-  /**
-   * relations associated to object type
-   *
-   * @generated from field: repeated string relations = 2;
-   */
-  relations: string[] = [];
-
-  /**
-   * permissions associated to object type
-   *
-   * @generated from field: repeated string permissions = 3;
-   */
-  permissions: string[] = [];
-
-  constructor(data?: PartialMessage<ObjectType>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "aserto.directory.common.v3.ObjectType";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "relations", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 3, name: "permissions", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ObjectType {
-    return new ObjectType().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ObjectType {
-    return new ObjectType().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ObjectType {
-    return new ObjectType().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: ObjectType | PlainMessage<ObjectType> | undefined, b: ObjectType | PlainMessage<ObjectType> | undefined): boolean {
-    return proto3.util.equals(ObjectType, a, b);
   }
 }
 

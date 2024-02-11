@@ -72,6 +72,23 @@ export const ObjectIdentifier = proto3.makeMessageType(
 );
 
 /**
+ * Relation identifier
+ *
+ * @generated from message aserto.directory.common.v3.RelationIdentifier
+ */
+export const RelationIdentifier = proto3.makeMessageType(
+  "aserto.directory.common.v3.RelationIdentifier",
+  () => [
+    { no: 1, name: "object_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "object_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "subject_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "subject_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "subject_relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
  * Pagination request
  *
  * @generated from message aserto.directory.common.v3.PaginationRequest
@@ -93,20 +110,6 @@ export const PaginationResponse = proto3.makeMessageType(
   "aserto.directory.common.v3.PaginationResponse",
   () => [
     { no: 1, name: "next_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * Object type
- *
- * @generated from message aserto.directory.common.v3.ObjectType
- */
-export const ObjectType = proto3.makeMessageType(
-  "aserto.directory.common.v3.ObjectType",
-  () => [
-    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "relations", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 3, name: "permissions", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 

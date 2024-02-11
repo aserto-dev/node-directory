@@ -217,6 +217,57 @@ export declare class ObjectIdentifier extends Message<ObjectIdentifier> {
     static equals(a: ObjectIdentifier | PlainMessage<ObjectIdentifier> | undefined, b: ObjectIdentifier | PlainMessage<ObjectIdentifier> | undefined): boolean;
 }
 /**
+ * Relation identifier
+ *
+ * @generated from message aserto.directory.common.v3.RelationIdentifier
+ */
+export declare class RelationIdentifier extends Message<RelationIdentifier> {
+    /**
+     * object type
+     *
+     * @generated from field: string object_type = 1;
+     */
+    objectType: string;
+    /**
+     * object identifier
+     *
+     * @generated from field: string object_id = 2;
+     */
+    objectId: string;
+    /**
+     * object relation name
+     *
+     * @generated from field: string relation = 3;
+     */
+    relation: string;
+    /**
+     * subject type
+     *
+     * @generated from field: string subject_type = 4;
+     */
+    subjectType: string;
+    /**
+     * subject identifier
+     *
+     * @generated from field: string subject_id = 5;
+     */
+    subjectId: string;
+    /**
+     * optional subject relation name
+     *
+     * @generated from field: string subject_relation = 6;
+     */
+    subjectRelation: string;
+    constructor(data?: PartialMessage<RelationIdentifier>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.common.v3.RelationIdentifier";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RelationIdentifier;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RelationIdentifier;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RelationIdentifier;
+    static equals(a: RelationIdentifier | PlainMessage<RelationIdentifier> | undefined, b: RelationIdentifier | PlainMessage<RelationIdentifier> | undefined): boolean;
+}
+/**
  * Pagination request
  *
  * @generated from message aserto.directory.common.v3.PaginationRequest
@@ -263,37 +314,4 @@ export declare class PaginationResponse extends Message<PaginationResponse> {
     static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaginationResponse;
     static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaginationResponse;
     static equals(a: PaginationResponse | PlainMessage<PaginationResponse> | undefined, b: PaginationResponse | PlainMessage<PaginationResponse> | undefined): boolean;
-}
-/**
- * Object type
- *
- * @generated from message aserto.directory.common.v3.ObjectType
- */
-export declare class ObjectType extends Message<ObjectType> {
-    /**
-     * object type name (lc-string)
-     *
-     * @generated from field: string name = 1;
-     */
-    name: string;
-    /**
-     * relations associated to object type
-     *
-     * @generated from field: repeated string relations = 2;
-     */
-    relations: string[];
-    /**
-     * permissions associated to object type
-     *
-     * @generated from field: repeated string permissions = 3;
-     */
-    permissions: string[];
-    constructor(data?: PartialMessage<ObjectType>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v3.ObjectType";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ObjectType;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ObjectType;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ObjectType;
-    static equals(a: ObjectType | PlainMessage<ObjectType> | undefined, b: ObjectType | PlainMessage<ObjectType> | undefined): boolean;
 }
