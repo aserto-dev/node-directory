@@ -41,24 +41,6 @@ export const Relation = proto3.makeMessageType(
 );
 
 /**
- * @generated from message aserto.directory.common.v3.ObjectDependency
- */
-export const ObjectDependency = proto3.makeMessageType(
-  "aserto.directory.common.v3.ObjectDependency",
-  () => [
-    { no: 1, name: "object_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "object_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "subject_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "subject_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "subject_relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: "depth", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 8, name: "is_cycle", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 9, name: "path", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-  ],
-);
-
-/**
  * Object identifier
  *
  * @generated from message aserto.directory.common.v3.ObjectIdentifier

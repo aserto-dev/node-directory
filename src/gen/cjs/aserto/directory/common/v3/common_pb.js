@@ -4,7 +4,7 @@
 /* eslint-disable */
 // @ts-nocheck
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PaginationResponse = exports.PaginationRequest = exports.RelationIdentifier = exports.ObjectIdentifier = exports.ObjectDependency = exports.Relation = exports.Object$ = void 0;
+exports.PaginationResponse = exports.PaginationRequest = exports.RelationIdentifier = exports.ObjectIdentifier = exports.Relation = exports.Object$ = void 0;
 const protobuf_1 = require("@bufbuild/protobuf");
 /**
  * @generated from message aserto.directory.common.v3.Object
@@ -139,95 +139,6 @@ Relation.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 20, name: "created_at", kind: "message", T: protobuf_1.Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: protobuf_1.Timestamp },
     { no: 23, name: "etag", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-]);
-/**
- * @generated from message aserto.directory.common.v3.ObjectDependency
- */
-class ObjectDependency extends protobuf_1.Message {
-    constructor(data) {
-        super();
-        /**
-         * object type
-         *
-         * @generated from field: string object_type = 1;
-         */
-        this.objectType = "";
-        /**
-         * object identifier
-         *
-         * @generated from field: string object_id = 2;
-         */
-        this.objectId = "";
-        /**
-         * object relation name
-         *
-         * @generated from field: string relation = 3;
-         */
-        this.relation = "";
-        /**
-         * subject type
-         *
-         * @generated from field: string subject_type = 4;
-         */
-        this.subjectType = "";
-        /**
-         * subject identifier
-         *
-         * @generated from field: string subject_id = 5;
-         */
-        this.subjectId = "";
-        /**
-         * optional subject relation name
-         *
-         * @generated from field: string subject_relation = 6;
-         */
-        this.subjectRelation = "";
-        /**
-         * dependency depth
-         *
-         * @generated from field: int32 depth = 7;
-         */
-        this.depth = 0;
-        /**
-         * dependency cycle
-         *
-         * @generated from field: bool is_cycle = 8;
-         */
-        this.isCycle = false;
-        /**
-         * dependency path
-         *
-         * @generated from field: repeated string path = 9;
-         */
-        this.path = [];
-        protobuf_1.proto3.util.initPartial(data, this);
-    }
-    static fromBinary(bytes, options) {
-        return new ObjectDependency().fromBinary(bytes, options);
-    }
-    static fromJson(jsonValue, options) {
-        return new ObjectDependency().fromJson(jsonValue, options);
-    }
-    static fromJsonString(jsonString, options) {
-        return new ObjectDependency().fromJsonString(jsonString, options);
-    }
-    static equals(a, b) {
-        return protobuf_1.proto3.util.equals(ObjectDependency, a, b);
-    }
-}
-exports.ObjectDependency = ObjectDependency;
-ObjectDependency.runtime = protobuf_1.proto3;
-ObjectDependency.typeName = "aserto.directory.common.v3.ObjectDependency";
-ObjectDependency.fields = protobuf_1.proto3.util.newFieldList(() => [
-    { no: 1, name: "object_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "object_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "subject_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "subject_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "subject_relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: "depth", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 8, name: "is_cycle", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 9, name: "path", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
 ]);
 /**
  * Object identifier

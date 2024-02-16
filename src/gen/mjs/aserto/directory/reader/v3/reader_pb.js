@@ -3,8 +3,8 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { proto3 } from "@bufbuild/protobuf";
-import { Object$, ObjectDependency, ObjectIdentifier, PaginationRequest, PaginationResponse, Relation } from "../../common/v3/common_pb.js";
+import { proto3, Struct } from "@bufbuild/protobuf";
+import { Object$, ObjectIdentifier, PaginationRequest, PaginationResponse, Relation } from "../../common/v3/common_pb.js";
 
 /**
  * @generated from message aserto.directory.reader.v3.GetObjectRequest
@@ -214,14 +214,14 @@ export const CheckRelationResponse = proto3.makeMessageType(
 export const GetGraphRequest = proto3.makeMessageType(
   "aserto.directory.reader.v3.GetGraphRequest",
   () => [
-    { no: 1, name: "anchor_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "anchor_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "object_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "object_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "subject_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "subject_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "subject_relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "explain", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "trace", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -231,7 +231,9 @@ export const GetGraphRequest = proto3.makeMessageType(
 export const GetGraphResponse = proto3.makeMessageType(
   "aserto.directory.reader.v3.GetGraphResponse",
   () => [
-    { no: 1, name: "results", kind: "message", T: ObjectDependency, repeated: true },
+    { no: 2, name: "results", kind: "message", T: ObjectIdentifier, repeated: true },
+    { no: 3, name: "explanation", kind: "message", T: Struct },
+    { no: 4, name: "trace", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 

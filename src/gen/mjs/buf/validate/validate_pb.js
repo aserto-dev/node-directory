@@ -21,6 +21,21 @@ import { Duration, proto3, Timestamp } from "@bufbuild/protobuf";
 import { Constraint } from "./expression_pb.js";
 
 /**
+ * Specifies how FieldConstraints.ignore behaves. See the documentation for
+ * FieldConstraints.required for definitions of "populated" and "nullable".
+ *
+ * @generated from enum buf.validate.Ignore
+ */
+export const Ignore = proto3.makeEnum(
+  "buf.validate.Ignore",
+  [
+    {no: 0, name: "IGNORE_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "IGNORE_EMPTY", localName: "EMPTY"},
+    {no: 2, name: "IGNORE_DEFAULT", localName: "DEFAULT"},
+  ],
+);
+
+/**
  * WellKnownRegex contain some well-known patterns.
  *
  * @generated from enum buf.validate.KnownRegex
@@ -74,6 +89,7 @@ export const FieldConstraints = proto3.makeMessageType(
     { no: 24, name: "skipped", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 25, name: "required", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 26, name: "ignore_empty", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 27, name: "ignore", kind: "enum", T: proto3.getEnumType(Ignore) },
     { no: 1, name: "float", kind: "message", T: FloatRules, oneof: "type" },
     { no: 2, name: "double", kind: "message", T: DoubleRules, oneof: "type" },
     { no: 3, name: "int32", kind: "message", T: Int32Rules, oneof: "type" },
@@ -373,6 +389,7 @@ export const StringRules = proto3.makeMessageType(
     { no: 29, name: "ip_prefix", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 30, name: "ipv4_prefix", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 31, name: "ipv6_prefix", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
+    { no: 32, name: "host_and_port", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 24, name: "well_known_regex", kind: "enum", T: proto3.getEnumType(KnownRegex), oneof: "well_known" },
     { no: 25, name: "strict", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
   ],

@@ -13,9 +13,43 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TimestampRules = exports.DurationRules = exports.AnyRules = exports.MapRules = exports.RepeatedRules = exports.EnumRules = exports.BytesRules = exports.StringRules = exports.BoolRules = exports.SFixed64Rules = exports.SFixed32Rules = exports.Fixed64Rules = exports.Fixed32Rules = exports.SInt64Rules = exports.SInt32Rules = exports.UInt64Rules = exports.UInt32Rules = exports.Int64Rules = exports.Int32Rules = exports.DoubleRules = exports.FloatRules = exports.FieldConstraints = exports.OneofConstraints = exports.MessageConstraints = exports.KnownRegex = void 0;
+exports.TimestampRules = exports.DurationRules = exports.AnyRules = exports.MapRules = exports.RepeatedRules = exports.EnumRules = exports.BytesRules = exports.StringRules = exports.BoolRules = exports.SFixed64Rules = exports.SFixed32Rules = exports.Fixed64Rules = exports.Fixed32Rules = exports.SInt64Rules = exports.SInt32Rules = exports.UInt64Rules = exports.UInt32Rules = exports.Int64Rules = exports.Int32Rules = exports.DoubleRules = exports.FloatRules = exports.FieldConstraints = exports.OneofConstraints = exports.MessageConstraints = exports.KnownRegex = exports.Ignore = void 0;
 const protobuf_1 = require("@bufbuild/protobuf");
 const expression_pb_js_1 = require("./expression_pb.js");
+/**
+ * Specifies how FieldConstraints.ignore behaves. See the documentation for
+ * FieldConstraints.required for definitions of "populated" and "nullable".
+ *
+ * @generated from enum buf.validate.Ignore
+ */
+var Ignore;
+(function (Ignore) {
+    /**
+     * Validation is only skipped if it's an unpopulated nullable fields.
+     *
+     * @generated from enum value: IGNORE_UNSPECIFIED = 0;
+     */
+    Ignore[Ignore["UNSPECIFIED"] = 0] = "UNSPECIFIED";
+    /**
+     * Validation is skipped if the field is unpopulated.
+     *
+     * @generated from enum value: IGNORE_EMPTY = 1;
+     */
+    Ignore[Ignore["EMPTY"] = 1] = "EMPTY";
+    /**
+     * Validation is skipped if the field is unpopulated or if it is a nullable
+     * field populated with its default value.
+     *
+     * @generated from enum value: IGNORE_DEFAULT = 2;
+     */
+    Ignore[Ignore["DEFAULT"] = 2] = "DEFAULT";
+})(Ignore = exports.Ignore || (exports.Ignore = {}));
+// Retrieve enum metadata with: proto3.getEnumType(Ignore)
+protobuf_1.proto3.util.setEnumType(Ignore, "buf.validate.Ignore", [
+    { no: 0, name: "IGNORE_UNSPECIFIED" },
+    { no: 1, name: "IGNORE_EMPTY" },
+    { no: 2, name: "IGNORE_DEFAULT" },
+]);
 /**
  * WellKnownRegex contain some well-known patterns.
  *
@@ -176,7 +210,7 @@ class FieldConstraints extends protobuf_1.Message {
          * described as "serialized in the wire format," which follows the following rules:
          *
          * - the following "nullable" fields must be explicitly set to be considered present:
-         *   - singular message fields (may be their empty value)
+         *   - singular message fields (whose fields may be unpopulated/default values)
          *   - member fields of a oneof (may be their default value)
          *   - proto3 optional fields (may be their default value)
          *   - proto2 scalar fields
@@ -194,25 +228,29 @@ class FieldConstraints extends protobuf_1.Message {
          */
         this.required = false;
         /**
-         * If `ignore_empty` is true and applied to a non-nullable field (see
-         * `required` for more details), validation is skipped on the field if it is
-         * the default or empty value. Adding `ignore_empty` to a "nullable" field is
-         * a noop as these unset fields already skip validation (with the exception
-         * of `required`).
+         * DEPRECATED: use ignore=IGNORE_EMPTY instead.
+         *
+         * @generated from field: bool ignore_empty = 26 [deprecated = true];
+         * @deprecated
+         */
+        this.ignoreEmpty = false;
+        /**
+         * Skip validation on the field if its value matches the specified rule.
          *
          * ```proto
-         * message MyRepeated {
-         *   // The field `value` min_len rule is only applied if the field isn't empty.
-         *   repeated string value = 1 [
-         *     (buf.validate.field).ignore_empty = true,
-         *     (buf.validate.field).min_len = 5
+         * message UpdateRequest {
+         *   // The uri rule only applies if the field is populated and not an empty
+         *   // string.
+         *   optional string url = 1 [
+         *     (buf.validate.field).ignore = IGNORE_DEFAULT,
+         *     (buf.validate.field).string.uri = true,
          *   ];
          * }
          * ```
          *
-         * @generated from field: bool ignore_empty = 26;
+         * @generated from field: buf.validate.Ignore ignore = 27;
          */
-        this.ignoreEmpty = false;
+        this.ignore = Ignore.UNSPECIFIED;
         /**
          * @generated from oneof buf.validate.FieldConstraints.type
          */
@@ -240,6 +278,7 @@ FieldConstraints.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 24, name: "skipped", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 25, name: "required", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 26, name: "ignore_empty", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 27, name: "ignore", kind: "enum", T: protobuf_1.proto3.getEnumType(Ignore) },
     { no: 1, name: "float", kind: "message", T: FloatRules, oneof: "type" },
     { no: 2, name: "double", kind: "message", T: DoubleRules, oneof: "type" },
     { no: 3, name: "int32", kind: "message", T: Int32Rules, oneof: "type" },
@@ -1283,6 +1322,7 @@ StringRules.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 29, name: "ip_prefix", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 30, name: "ipv4_prefix", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 31, name: "ipv6_prefix", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
+    { no: 32, name: "host_and_port", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 24, name: "well_known_regex", kind: "enum", T: protobuf_1.proto3.getEnumType(KnownRegex), oneof: "well_known" },
     { no: 25, name: "strict", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
 ]);

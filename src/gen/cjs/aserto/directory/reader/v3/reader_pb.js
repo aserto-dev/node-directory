@@ -788,18 +788,6 @@ class GetGraphRequest extends protobuf_1.Message {
     constructor(data) {
         super();
         /**
-         * anchor type
-         *
-         * @generated from field: string anchor_type = 1;
-         */
-        this.anchorType = "";
-        /**
-         * anchor identifier
-         *
-         * @generated from field: string anchor_id = 2;
-         */
-        this.anchorId = "";
-        /**
          * object type
          *
          * @generated from field: string object_type = 3;
@@ -835,6 +823,18 @@ class GetGraphRequest extends protobuf_1.Message {
          * @generated from field: string subject_relation = 8;
          */
         this.subjectRelation = "";
+        /**
+         * return graph paths for each result
+         *
+         * @generated from field: bool explain = 9;
+         */
+        this.explain = false;
+        /**
+         * collect trace information
+         *
+         * @generated from field: bool trace = 10;
+         */
+        this.trace = false;
         protobuf_1.proto3.util.initPartial(data, this);
     }
     static fromBinary(bytes, options) {
@@ -854,14 +854,14 @@ exports.GetGraphRequest = GetGraphRequest;
 GetGraphRequest.runtime = protobuf_1.proto3;
 GetGraphRequest.typeName = "aserto.directory.reader.v3.GetGraphRequest";
 GetGraphRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
-    { no: 1, name: "anchor_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "anchor_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "object_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "object_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "subject_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "subject_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "subject_relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "explain", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "trace", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
 ]);
 /**
  * @generated from message aserto.directory.reader.v3.GetGraphResponse
@@ -870,11 +870,17 @@ class GetGraphResponse extends protobuf_1.Message {
     constructor(data) {
         super();
         /**
-         * dependency graph
+         * matching object identifiers
          *
-         * @generated from field: repeated aserto.directory.common.v3.ObjectDependency results = 1;
+         * @generated from field: repeated aserto.directory.common.v3.ObjectIdentifier results = 2;
          */
         this.results = [];
+        /**
+         * trace information
+         *
+         * @generated from field: repeated string trace = 4;
+         */
+        this.trace = [];
         protobuf_1.proto3.util.initPartial(data, this);
     }
     static fromBinary(bytes, options) {
@@ -894,5 +900,7 @@ exports.GetGraphResponse = GetGraphResponse;
 GetGraphResponse.runtime = protobuf_1.proto3;
 GetGraphResponse.typeName = "aserto.directory.reader.v3.GetGraphResponse";
 GetGraphResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
-    { no: 1, name: "results", kind: "message", T: common_pb_js_1.ObjectDependency, repeated: true },
+    { no: 2, name: "results", kind: "message", T: common_pb_js_1.ObjectIdentifier, repeated: true },
+    { no: 3, name: "explanation", kind: "message", T: protobuf_1.Struct },
+    { no: 4, name: "trace", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
 ]);

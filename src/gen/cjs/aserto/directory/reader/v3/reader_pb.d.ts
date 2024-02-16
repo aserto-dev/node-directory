@@ -1,6 +1,6 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
-import { Object$, ObjectDependency, ObjectIdentifier, PaginationRequest, PaginationResponse, Relation } from "../../common/v3/common_pb.js";
+import { Message, proto3, Struct } from "@bufbuild/protobuf";
+import { Object$, ObjectIdentifier, PaginationRequest, PaginationResponse, Relation } from "../../common/v3/common_pb.js";
 /**
  * @generated from message aserto.directory.reader.v3.GetObjectRequest
  */
@@ -566,18 +566,6 @@ export declare class CheckRelationResponse extends Message<CheckRelationResponse
  */
 export declare class GetGraphRequest extends Message<GetGraphRequest> {
     /**
-     * anchor type
-     *
-     * @generated from field: string anchor_type = 1;
-     */
-    anchorType: string;
-    /**
-     * anchor identifier
-     *
-     * @generated from field: string anchor_id = 2;
-     */
-    anchorId: string;
-    /**
      * object type
      *
      * @generated from field: string object_type = 3;
@@ -613,6 +601,18 @@ export declare class GetGraphRequest extends Message<GetGraphRequest> {
      * @generated from field: string subject_relation = 8;
      */
     subjectRelation: string;
+    /**
+     * return graph paths for each result
+     *
+     * @generated from field: bool explain = 9;
+     */
+    explain: boolean;
+    /**
+     * collect trace information
+     *
+     * @generated from field: bool trace = 10;
+     */
+    trace: boolean;
     constructor(data?: PartialMessage<GetGraphRequest>);
     static readonly runtime: typeof proto3;
     static readonly typeName = "aserto.directory.reader.v3.GetGraphRequest";
@@ -627,11 +627,23 @@ export declare class GetGraphRequest extends Message<GetGraphRequest> {
  */
 export declare class GetGraphResponse extends Message<GetGraphResponse> {
     /**
-     * dependency graph
+     * matching object identifiers
      *
-     * @generated from field: repeated aserto.directory.common.v3.ObjectDependency results = 1;
+     * @generated from field: repeated aserto.directory.common.v3.ObjectIdentifier results = 2;
      */
-    results: ObjectDependency[];
+    results: ObjectIdentifier[];
+    /**
+     * explanation of results
+     *
+     * @generated from field: google.protobuf.Struct explanation = 3;
+     */
+    explanation?: Struct;
+    /**
+     * trace information
+     *
+     * @generated from field: repeated string trace = 4;
+     */
+    trace: string[];
     constructor(data?: PartialMessage<GetGraphResponse>);
     static readonly runtime: typeof proto3;
     static readonly typeName = "aserto.directory.reader.v3.GetGraphResponse";

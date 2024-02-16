@@ -4,8 +4,8 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
-import { Object$, ObjectDependency, ObjectIdentifier, PaginationRequest, PaginationResponse, Relation } from "../../common/v3/common_pb.js";
+import { Message, proto3, Struct } from "@bufbuild/protobuf";
+import { Object$, ObjectIdentifier, PaginationRequest, PaginationResponse, Relation } from "../../common/v3/common_pb.js";
 
 /**
  * @generated from message aserto.directory.reader.v3.GetObjectRequest
@@ -972,20 +972,6 @@ export class CheckRelationResponse extends Message<CheckRelationResponse> {
  */
 export class GetGraphRequest extends Message<GetGraphRequest> {
   /**
-   * anchor type
-   *
-   * @generated from field: string anchor_type = 1;
-   */
-  anchorType = "";
-
-  /**
-   * anchor identifier
-   *
-   * @generated from field: string anchor_id = 2;
-   */
-  anchorId = "";
-
-  /**
    * object type
    *
    * @generated from field: string object_type = 3;
@@ -1027,6 +1013,20 @@ export class GetGraphRequest extends Message<GetGraphRequest> {
    */
   subjectRelation = "";
 
+  /**
+   * return graph paths for each result
+   *
+   * @generated from field: bool explain = 9;
+   */
+  explain = false;
+
+  /**
+   * collect trace information
+   *
+   * @generated from field: bool trace = 10;
+   */
+  trace = false;
+
   constructor(data?: PartialMessage<GetGraphRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1035,14 +1035,14 @@ export class GetGraphRequest extends Message<GetGraphRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "aserto.directory.reader.v3.GetGraphRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "anchor_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "anchor_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "object_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "object_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "subject_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "subject_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "subject_relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "explain", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "trace", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetGraphRequest {
@@ -1067,11 +1067,25 @@ export class GetGraphRequest extends Message<GetGraphRequest> {
  */
 export class GetGraphResponse extends Message<GetGraphResponse> {
   /**
-   * dependency graph
+   * matching object identifiers
    *
-   * @generated from field: repeated aserto.directory.common.v3.ObjectDependency results = 1;
+   * @generated from field: repeated aserto.directory.common.v3.ObjectIdentifier results = 2;
    */
-  results: ObjectDependency[] = [];
+  results: ObjectIdentifier[] = [];
+
+  /**
+   * explanation of results
+   *
+   * @generated from field: google.protobuf.Struct explanation = 3;
+   */
+  explanation?: Struct;
+
+  /**
+   * trace information
+   *
+   * @generated from field: repeated string trace = 4;
+   */
+  trace: string[] = [];
 
   constructor(data?: PartialMessage<GetGraphResponse>) {
     super();
@@ -1081,7 +1095,9 @@ export class GetGraphResponse extends Message<GetGraphResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "aserto.directory.reader.v3.GetGraphResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "results", kind: "message", T: ObjectDependency, repeated: true },
+    { no: 2, name: "results", kind: "message", T: ObjectIdentifier, repeated: true },
+    { no: 3, name: "explanation", kind: "message", T: Struct },
+    { no: 4, name: "trace", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetGraphResponse {
