@@ -31,28 +31,184 @@ export enum Ignore {
   /**
    * Validation is only skipped if it's an unpopulated nullable fields.
    *
+   * ```proto
+   * syntax="proto3";
+   *
+   * message Request {
+   *   // The uri rule applies to any value, including the empty string.
+   *   string foo = 1 [
+   *     (buf.validate.field).string.uri = true
+   *   ];
+   *
+   *   // The uri rule only applies if the field is set, including if it's
+   *   // set to the empty string.
+   *   optional string bar = 2 [
+   *     (buf.validate.field).string.uri = true
+   *   ];
+   *
+   *   // The min_items rule always applies, even if the list is empty.
+   *   repeated string baz = 3 [
+   *     (buf.validate.field).repeated.min_items = 3
+   *   ];
+   *
+   *   // The custom CEL rule applies only if the field is set, including if
+   *   // it's the "zero" value of that message.
+   *   SomeMessage quux = 4 [
+   *     (buf.validate.field).cel = {/* ... *\/}
+   *   ];
+   * }
+   * ```
+   *
    * @generated from enum value: IGNORE_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
-   * Validation is skipped if the field is unpopulated.
+   * Validation is skipped if the field is unpopulated. This rule is redundant
+   * if the field is already nullable. This value is equivalent behavior to the
+   * deprecated ignore_empty rule.
    *
-   * @generated from enum value: IGNORE_EMPTY = 1;
+   * ```proto
+   * syntax="proto3
+   *
+   * message Request {
+   *   // The uri rule applies only if the value is not the empty string.
+   *   string foo = 1 [
+   *     (buf.validate.field).string.uri = true,
+   *     (buf.validate.field).ignore = IGNORE_IF_UNPOPULATED
+   *   ];
+   *
+   *   // IGNORE_IF_UNPOPULATED is equivalent to IGNORE_UNSPECIFIED in this
+   *   // case: the uri rule only applies if the field is set, including if
+   *   // it's set to the empty string.
+   *   optional string bar = 2 [
+   *     (buf.validate.field).string.uri = true,
+   *     (buf.validate.field).ignore = IGNORE_IF_UNPOPULATED
+   *   ];
+   *
+   *   // The min_items rule only applies if the list has at least one item.
+   *   repeated string baz = 3 [
+   *     (buf.validate.field).repeated.min_items = 3,
+   *     (buf.validate.field).ignore = IGNORE_IF_UNPOPULATED
+   *   ];
+   *
+   *   // IGNORE_IF_UNPOPULATED is equivalent to IGNORE_UNSPECIFIED in this
+   *   // case: the custom CEL rule applies only if the field is set, including
+   *   // if it's the "zero" value of that message.
+   *   SomeMessage quux = 4 [
+   *     (buf.validate.field).cel = {/* ... *\/},
+   *     (buf.validate.field).ignore = IGNORE_IF_UNPOPULATED
+   *   ];
+   * }
+   * ```
+   *
+   * @generated from enum value: IGNORE_IF_UNPOPULATED = 1;
+   */
+  IF_UNPOPULATED = 1,
+
+  /**
+   * Validation is skipped if the field is unpopulated or if it is a nullable
+   * field populated with its default value. This is typically the zero or
+   * empty value, but proto2 scalars support custom defaults. For messages, the
+   * default is a non-null message with all its fields unpopulated.
+   *
+   * ```proto
+   * syntax="proto3
+   *
+   * message Request {
+   *   // IGNORE_IF_DEFAULT_VALUE is equivalent to IGNORE_IF_UNPOPULATED in
+   *   // this case; the uri rule applies only if the value is not the empty
+   *   // string.
+   *   string foo = 1 [
+   *     (buf.validate.field).string.uri = true,
+   *     (buf.validate.field).ignore = IGNORE_IF_DEFAULT_VALUE
+   *   ];
+   *
+   *   // The uri rule only applies if the field is set to a value other than
+   *   // the empty string.
+   *   optional string bar = 2 [
+   *     (buf.validate.field).string.uri = true,
+   *     (buf.validate.field).ignore = IGNORE_IF_DEFAULT_VALUE
+   *   ];
+   *
+   *   // IGNORE_IF_DEFAULT_VALUE is equivalent to IGNORE_IF_UNPOPULATED in
+   *   // this case; the min_items rule only applies if the list has at least
+   *   // one item.
+   *   repeated string baz = 3 [
+   *     (buf.validate.field).repeated.min_items = 3,
+   *     (buf.validate.field).ignore = IGNORE_IF_DEFAULT_VALUE
+   *   ];
+   *
+   *   // The custom CEL rule only applies if the field is set to a value other
+   *   // than an empty message (i.e., fields are unpopulated).
+   *   SomeMessage quux = 4 [
+   *     (buf.validate.field).cel = {/* ... *\/},
+   *     (buf.validate.field).ignore = IGNORE_IF_DEFAULT_VALUE
+   *   ];
+   * }
+   * ```
+   *
+   * This rule is affected by proto2 custom default values:
+   *
+   * ```proto
+   * syntax="proto2";
+   *
+   * message Request {
+   *   // The gt rule only applies if the field is set and it's value is not
+   *   the default (i.e., not -42). The rule even applies if the field is set
+   *   to zero since the default value differs.
+   *   optional int32 value = 1 [
+   *     default = -42,
+   *     (buf.validate.field).int32.gt = 0,
+   *     (buf.validate.field).ignore = IGNORE_IF_DEFAULT_VALUE
+   *   ];
+   * }
+   *
+   * @generated from enum value: IGNORE_IF_DEFAULT_VALUE = 2;
+   */
+  IF_DEFAULT_VALUE = 2,
+
+  /**
+   * The validation rules of this field will be skipped and not evaluated. This
+   * is useful for situations that necessitate turning off the rules of a field
+   * containing a message that may not make sense in the current context, or to
+   * temporarily disable constraints during development.
+   *
+   * ```proto
+   * message MyMessage {
+   *   // The field's rules will always be ignored, including any validation's
+   *   // on value's fields.
+   *   MyOtherMessage value = 1 [
+   *     (buf.validate.field).ignore = IGNORE_ALWAYS];
+   * }
+   * ```
+   *
+   * @generated from enum value: IGNORE_ALWAYS = 3;
+   */
+  ALWAYS = 3,
+
+  /**
+   * Deprecated: Use IGNORE_IF_UNPOPULATED instead. TODO: Remove this value pre-v1.
+   *
+   * @generated from enum value: IGNORE_EMPTY = 1 [deprecated = true];
+   * @deprecated
    */
   EMPTY = 1,
 
   /**
-   * Validation is skipped if the field is unpopulated or if it is a nullable
-   * field populated with its default value.
+   * Deprecated: Use IGNORE_IF_DEFAULT_VALUE. TODO: Remove this value pre-v1.
    *
-   * @generated from enum value: IGNORE_DEFAULT = 2;
+   * @generated from enum value: IGNORE_DEFAULT = 2 [deprecated = true];
+   * @deprecated
    */
   DEFAULT = 2,
 }
 // Retrieve enum metadata with: proto3.getEnumType(Ignore)
 proto3.util.setEnumType(Ignore, "buf.validate.Ignore", [
   { no: 0, name: "IGNORE_UNSPECIFIED" },
+  { no: 1, name: "IGNORE_IF_UNPOPULATED" },
+  { no: 2, name: "IGNORE_IF_DEFAULT_VALUE" },
+  { no: 3, name: "IGNORE_ALWAYS" },
   { no: 1, name: "IGNORE_EMPTY" },
   { no: 2, name: "IGNORE_DEFAULT" },
 ]);
@@ -248,32 +404,16 @@ export class FieldConstraints extends Message<FieldConstraints> {
   cel: Constraint[] = [];
 
   /**
-   * `skipped` is an optional boolean attribute that specifies that the
-   * validation rules of this field should not be evaluated. If skipped is set to
-   * true, any validation rules set for the field will be ignored.
+   * If `required` is true, the field must be populated. A populated field can be
+   * described as "serialized in the wire format," which includes:
    *
-   * ```proto
-   * message MyMessage {
-   *   // The field `value` must not be set.
-   *   optional MyOtherMessage value = 1 [(buf.validate.field).skipped = true];
-   * }
-   * ```
-   *
-   * @generated from field: bool skipped = 24;
-   */
-  skipped = false;
-
-  /**
-   * If `required` is true, the field must be populated. Field presence can be
-   * described as "serialized in the wire format," which follows the following rules:
-   *
-   * - the following "nullable" fields must be explicitly set to be considered present:
+   * - the following "nullable" fields must be explicitly set to be considered populated:
    *   - singular message fields (whose fields may be unpopulated/default values)
    *   - member fields of a oneof (may be their default value)
    *   - proto3 optional fields (may be their default value)
-   *   - proto2 scalar fields
-   * - proto3 scalar fields must be non-zero to be considered present
-   * - repeated and map fields must be non-empty to be considered present
+   *   - proto2 scalar fields (both optional and required)
+   * - proto3 scalar fields must be non-zero to be considered populated
+   * - repeated and map fields must be non-empty to be considered populated
    *
    * ```proto
    * message MyMessage {
@@ -287,22 +427,15 @@ export class FieldConstraints extends Message<FieldConstraints> {
   required = false;
 
   /**
-   * DEPRECATED: use ignore=IGNORE_EMPTY instead.
-   *
-   * @generated from field: bool ignore_empty = 26 [deprecated = true];
-   * @deprecated
-   */
-  ignoreEmpty = false;
-
-  /**
-   * Skip validation on the field if its value matches the specified rule.
+   * Skip validation on the field if its value matches the specified criteria.
+   * See Ignore enum for details.
    *
    * ```proto
    * message UpdateRequest {
    *   // The uri rule only applies if the field is populated and not an empty
    *   // string.
    *   optional string url = 1 [
-   *     (buf.validate.field).ignore = IGNORE_DEFAULT,
+   *     (buf.validate.field).ignore = IGNORE_IF_DEFAULT_VALUE,
    *     (buf.validate.field).string.uri = true,
    *   ];
    * }
@@ -449,6 +582,22 @@ export class FieldConstraints extends Message<FieldConstraints> {
     case: "timestamp";
   } | { case: undefined; value?: undefined } = { case: undefined };
 
+  /**
+   * DEPRECATED: use ignore=IGNORE_ALWAYS instead. TODO: remove this field pre-v1.
+   *
+   * @generated from field: bool skipped = 24 [deprecated = true];
+   * @deprecated
+   */
+  skipped = false;
+
+  /**
+   * DEPRECATED: use ignore=IGNORE_IF_UNPOPULATED instead. TODO: remove this field pre-v1.
+   *
+   * @generated from field: bool ignore_empty = 26 [deprecated = true];
+   * @deprecated
+   */
+  ignoreEmpty = false;
+
   constructor(data?: PartialMessage<FieldConstraints>) {
     super();
     proto3.util.initPartial(data, this);
@@ -458,9 +607,7 @@ export class FieldConstraints extends Message<FieldConstraints> {
   static readonly typeName = "buf.validate.FieldConstraints";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 23, name: "cel", kind: "message", T: Constraint, repeated: true },
-    { no: 24, name: "skipped", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 25, name: "required", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 26, name: "ignore_empty", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 27, name: "ignore", kind: "enum", T: proto3.getEnumType(Ignore) },
     { no: 1, name: "float", kind: "message", T: FloatRules, oneof: "type" },
     { no: 2, name: "double", kind: "message", T: DoubleRules, oneof: "type" },
@@ -483,6 +630,8 @@ export class FieldConstraints extends Message<FieldConstraints> {
     { no: 20, name: "any", kind: "message", T: AnyRules, oneof: "type" },
     { no: 21, name: "duration", kind: "message", T: DurationRules, oneof: "type" },
     { no: 22, name: "timestamp", kind: "message", T: TimestampRules, oneof: "type" },
+    { no: 24, name: "skipped", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 26, name: "ignore_empty", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FieldConstraints {

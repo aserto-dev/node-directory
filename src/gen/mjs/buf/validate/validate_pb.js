@@ -30,6 +30,9 @@ export const Ignore = proto3.makeEnum(
   "buf.validate.Ignore",
   [
     {no: 0, name: "IGNORE_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "IGNORE_IF_UNPOPULATED", localName: "IF_UNPOPULATED"},
+    {no: 2, name: "IGNORE_IF_DEFAULT_VALUE", localName: "IF_DEFAULT_VALUE"},
+    {no: 3, name: "IGNORE_ALWAYS", localName: "ALWAYS"},
     {no: 1, name: "IGNORE_EMPTY", localName: "EMPTY"},
     {no: 2, name: "IGNORE_DEFAULT", localName: "DEFAULT"},
   ],
@@ -86,9 +89,7 @@ export const FieldConstraints = proto3.makeMessageType(
   "buf.validate.FieldConstraints",
   () => [
     { no: 23, name: "cel", kind: "message", T: Constraint, repeated: true },
-    { no: 24, name: "skipped", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 25, name: "required", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 26, name: "ignore_empty", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 27, name: "ignore", kind: "enum", T: proto3.getEnumType(Ignore) },
     { no: 1, name: "float", kind: "message", T: FloatRules, oneof: "type" },
     { no: 2, name: "double", kind: "message", T: DoubleRules, oneof: "type" },
@@ -111,6 +112,8 @@ export const FieldConstraints = proto3.makeMessageType(
     { no: 20, name: "any", kind: "message", T: AnyRules, oneof: "type" },
     { no: 21, name: "duration", kind: "message", T: DurationRules, oneof: "type" },
     { no: 22, name: "timestamp", kind: "message", T: TimestampRules, oneof: "type" },
+    { no: 24, name: "skipped", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 26, name: "ignore_empty", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
