@@ -6,6 +6,9 @@
     "gen": "rm -rf src && buf generate --include-imports ${BUF_PATH:-buf.build/aserto-dev/directory} && rm -rf src/gen/cjs && tsc",
     "release": "scripts/release.sh"
   },
+  "files": [
+    "src/"
+  ],
   "keywords": [],
   "author": "Aserto",
   "license": "Apache-2.0",
