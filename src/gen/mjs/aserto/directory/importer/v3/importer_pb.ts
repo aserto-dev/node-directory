@@ -25,12 +25,18 @@ export enum Opcode {
    * @generated from enum value: OPCODE_DELETE = 2;
    */
   DELETE = 2,
+
+  /**
+   * @generated from enum value: OPCODE_DELETE_WITH_RELATIONS = 3;
+   */
+  DELETE_WITH_RELATIONS = 3,
 }
 // Retrieve enum metadata with: proto3.getEnumType(Opcode)
 proto3.util.setEnumType(Opcode, "aserto.directory.importer.v3.Opcode", [
   { no: 0, name: "OPCODE_UNKNOWN" },
   { no: 1, name: "OPCODE_SET" },
   { no: 2, name: "OPCODE_DELETE" },
+  { no: 3, name: "OPCODE_DELETE_WITH_RELATIONS" },
 ]);
 
 /**

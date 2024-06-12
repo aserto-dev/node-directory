@@ -80,8 +80,8 @@ export const OneofConstraints = proto3.makeMessageType(
 );
 
 /**
- * FieldRules encapsulates the rules for each type of field. Depending on the
- * field, the correct set should be used to ensure proper validations.
+ * FieldConstraints encapsulates the rules for each type of field. Depending on
+ * the field, the correct set should be used to ensure proper validations.
  *
  * @generated from message buf.validate.FieldConstraints
  */
@@ -386,6 +386,7 @@ export const StringRules = proto3.makeMessageType(
     { no: 18, name: "uri_ref", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 21, name: "address", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 22, name: "uuid", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
+    { no: 33, name: "tuuid", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 26, name: "ip_with_prefixlen", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 27, name: "ipv4_with_prefixlen", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 28, name: "ipv6_with_prefixlen", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },

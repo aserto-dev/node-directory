@@ -16,7 +16,11 @@ export declare enum Opcode {
     /**
      * @generated from enum value: OPCODE_DELETE = 2;
      */
-    DELETE = 2
+    DELETE = 2,
+    /**
+     * @generated from enum value: OPCODE_DELETE_WITH_RELATIONS = 3;
+     */
+    DELETE_WITH_RELATIONS = 3
 }
 /**
  * @generated from message aserto.directory.importer.v3.ImportRequest

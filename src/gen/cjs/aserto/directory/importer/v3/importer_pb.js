@@ -24,12 +24,17 @@ var Opcode;
      * @generated from enum value: OPCODE_DELETE = 2;
      */
     Opcode[Opcode["DELETE"] = 2] = "DELETE";
+    /**
+     * @generated from enum value: OPCODE_DELETE_WITH_RELATIONS = 3;
+     */
+    Opcode[Opcode["DELETE_WITH_RELATIONS"] = 3] = "DELETE_WITH_RELATIONS";
 })(Opcode = exports.Opcode || (exports.Opcode = {}));
 // Retrieve enum metadata with: proto3.getEnumType(Opcode)
 protobuf_1.proto3.util.setEnumType(Opcode, "aserto.directory.importer.v3.Opcode", [
     { no: 0, name: "OPCODE_UNKNOWN" },
     { no: 1, name: "OPCODE_SET" },
     { no: 2, name: "OPCODE_DELETE" },
+    { no: 3, name: "OPCODE_DELETE_WITH_RELATIONS" },
 ]);
 /**
  * @generated from message aserto.directory.importer.v3.ImportRequest

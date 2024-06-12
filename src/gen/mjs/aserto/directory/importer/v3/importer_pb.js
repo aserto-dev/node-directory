@@ -15,6 +15,7 @@ export const Opcode = proto3.makeEnum(
     {no: 0, name: "OPCODE_UNKNOWN", localName: "UNKNOWN"},
     {no: 1, name: "OPCODE_SET", localName: "SET"},
     {no: 2, name: "OPCODE_DELETE", localName: "DELETE"},
+    {no: 3, name: "OPCODE_DELETE_WITH_RELATIONS", localName: "DELETE_WITH_RELATIONS"},
   ],
 );
 

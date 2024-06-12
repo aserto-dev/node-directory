@@ -377,8 +377,8 @@ export class OneofConstraints extends Message<OneofConstraints> {
 }
 
 /**
- * FieldRules encapsulates the rules for each type of field. Depending on the
- * field, the correct set should be used to ensure proper validations.
+ * FieldConstraints encapsulates the rules for each type of field. Depending on
+ * the field, the correct set should be used to ensure proper validations.
  *
  * @generated from message buf.validate.FieldConstraints
  */
@@ -3297,6 +3297,24 @@ export class StringRules extends Message<StringRules> {
     case: "uuid";
   } | {
     /**
+     * `tuuid` (trimmed UUID) specifies that the field value must be a valid UUID as
+     * defined by [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2) with all dashes
+     * omitted. If the field value isn't a valid UUID without dashes, an error message
+     * will be generated.
+     *
+     * ```proto
+     * message MyString {
+     *   // value must be a valid trimmed UUID
+     *   string value = 1 [(buf.validate.field).string.tuuid = true];
+     * }
+     * ```
+     *
+     * @generated from field: bool tuuid = 33;
+     */
+    value: boolean;
+    case: "tuuid";
+  } | {
+    /**
      * `ip_with_prefixlen` specifies that the field value must be a valid IP (v4 or v6)
      * address with prefix length. If the field value isn't a valid IP with prefix
      * length, an error message will be generated.
@@ -3492,6 +3510,7 @@ export class StringRules extends Message<StringRules> {
     { no: 18, name: "uri_ref", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 21, name: "address", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 22, name: "uuid", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
+    { no: 33, name: "tuuid", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 26, name: "ip_with_prefixlen", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 27, name: "ipv4_with_prefixlen", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },
     { no: 28, name: "ipv6_with_prefixlen", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "well_known" },

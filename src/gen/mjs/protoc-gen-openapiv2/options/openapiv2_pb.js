@@ -153,7 +153,7 @@ export const HeaderParameter = proto3.makeMessageType(
 );
 
 /**
- * `Type` is a a supported HTTP header type.
+ * `Type` is a supported HTTP header type.
  * See https://swagger.io/specification/v2/#parameterType.
  *
  * @generated from enum grpc.gateway.protoc_gen_openapiv2.options.HeaderParameter.Type

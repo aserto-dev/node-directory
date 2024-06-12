@@ -291,8 +291,8 @@ export declare class OneofConstraints extends Message<OneofConstraints> {
     static equals(a: OneofConstraints | PlainMessage<OneofConstraints> | undefined, b: OneofConstraints | PlainMessage<OneofConstraints> | undefined): boolean;
 }
 /**
- * FieldRules encapsulates the rules for each type of field. Depending on the
- * field, the correct set should be used to ensure proper validations.
+ * FieldConstraints encapsulates the rules for each type of field. Depending on
+ * the field, the correct set should be used to ensure proper validations.
  *
  * @generated from message buf.validate.FieldConstraints
  */
@@ -2836,6 +2836,24 @@ export declare class StringRules extends Message<StringRules> {
          */
         value: boolean;
         case: "uuid";
+    } | {
+        /**
+         * `tuuid` (trimmed UUID) specifies that the field value must be a valid UUID as
+         * defined by [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2) with all dashes
+         * omitted. If the field value isn't a valid UUID without dashes, an error message
+         * will be generated.
+         *
+         * ```proto
+         * message MyString {
+         *   // value must be a valid trimmed UUID
+         *   string value = 1 [(buf.validate.field).string.tuuid = true];
+         * }
+         * ```
+         *
+         * @generated from field: bool tuuid = 33;
+         */
+        value: boolean;
+        case: "tuuid";
     } | {
         /**
          * `ip_with_prefixlen` specifies that the field value must be a valid IP (v4 or v6)
