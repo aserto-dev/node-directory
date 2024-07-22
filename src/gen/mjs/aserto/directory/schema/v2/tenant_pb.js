@@ -7,6 +7,7 @@ import { proto3, Struct } from "@bufbuild/protobuf";
 
 /**
  * @generated from enum aserto.directory.schema.v2.TenantKind
+ * @deprecated
  */
 export const TenantKind = proto3.makeEnum(
   "aserto.directory.schema.v2.TenantKind",
@@ -21,6 +22,7 @@ export const TenantKind = proto3.makeEnum(
  * Properties of a tenant object
  *
  * @generated from message aserto.directory.schema.v2.TenantProperties
+ * @deprecated
  */
 export const TenantProperties = proto3.makeMessageType(
   "aserto.directory.schema.v2.TenantProperties",
@@ -34,6 +36,7 @@ export const TenantProperties = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.schema.v2.AccountProperties
+ * @deprecated
  */
 export const AccountProperties = proto3.makeMessageType(
   "aserto.directory.schema.v2.AccountProperties",
@@ -48,6 +51,7 @@ export const AccountProperties = proto3.makeMessageType(
  * The state of a user's progress through the console's getting started guide.
  *
  * @generated from message aserto.directory.schema.v2.GuideState
+ * @deprecated
  */
 export const GuideState = proto3.makeMessageType(
   "aserto.directory.schema.v2.GuideState",

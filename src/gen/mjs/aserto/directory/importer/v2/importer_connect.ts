@@ -13,7 +13,10 @@ export const Importer = {
   typeName: "aserto.directory.importer.v2.Importer",
   methods: {
     /**
+     * import stream of objects and relations
+     *
      * @generated from rpc aserto.directory.importer.v2.Importer.Import
+     * @deprecated
      */
     import: {
       name: "Import",

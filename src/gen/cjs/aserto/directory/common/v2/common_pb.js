@@ -8,6 +8,7 @@ exports.PaginationResponse = exports.PaginationRequest = exports.RelationIdentif
 const protobuf_1 = require("@bufbuild/protobuf");
 /**
  * @generated from enum aserto.directory.common.v2.Flag
+ * @deprecated
  */
 var Flag;
 (function (Flag) {
@@ -52,6 +53,7 @@ protobuf_1.proto3.util.setEnumType(Flag, "aserto.directory.common.v2.Flag", [
 ]);
 /**
  * @generated from message aserto.directory.common.v2.ObjectType
+ * @deprecated
  */
 class ObjectType extends protobuf_1.Message {
     constructor(data) {
@@ -123,6 +125,7 @@ ObjectType.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.common.v2.Permission
+ * @deprecated
  */
 class Permission extends protobuf_1.Message {
     constructor(data) {
@@ -172,6 +175,7 @@ Permission.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.common.v2.RelationType
+ * @deprecated
  */
 class RelationType extends protobuf_1.Message {
     constructor(data) {
@@ -256,6 +260,7 @@ RelationType.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.common.v2.Object
+ * @deprecated
  */
 class Object$ extends protobuf_1.Message {
     constructor(data) {
@@ -313,6 +318,7 @@ Object$.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.common.v2.Relation
+ * @deprecated
  */
 class Relation extends protobuf_1.Message {
     constructor(data) {
@@ -357,6 +363,7 @@ Relation.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.common.v2.ObjectDependency
+ * @deprecated
  */
 class ObjectDependency extends protobuf_1.Message {
     constructor(data) {
@@ -441,6 +448,7 @@ ObjectDependency.fields = protobuf_1.proto3.util.newFieldList(() => [
  * ObjectType identifier
  *
  * @generated from message aserto.directory.common.v2.ObjectTypeIdentifier
+ * @deprecated
  */
 class ObjectTypeIdentifier extends protobuf_1.Message {
     constructor(data) {
@@ -470,6 +478,7 @@ ObjectTypeIdentifier.fields = protobuf_1.proto3.util.newFieldList(() => [
  * Permission identifier
  *
  * @generated from message aserto.directory.common.v2.PermissionIdentifier
+ * @deprecated
  */
 class PermissionIdentifier extends protobuf_1.Message {
     constructor(data) {
@@ -499,6 +508,7 @@ PermissionIdentifier.fields = protobuf_1.proto3.util.newFieldList(() => [
  * RelationType identifier
  *
  * @generated from message aserto.directory.common.v2.RelationTypeIdentifier
+ * @deprecated
  */
 class RelationTypeIdentifier extends protobuf_1.Message {
     constructor(data) {
@@ -529,6 +539,7 @@ RelationTypeIdentifier.fields = protobuf_1.proto3.util.newFieldList(() => [
  * Object identifier
  *
  * @generated from message aserto.directory.common.v2.ObjectIdentifier
+ * @deprecated
  */
 class ObjectIdentifier extends protobuf_1.Message {
     constructor(data) {
@@ -559,6 +570,7 @@ ObjectIdentifier.fields = protobuf_1.proto3.util.newFieldList(() => [
  * Relation identifier
  *
  * @generated from message aserto.directory.common.v2.RelationIdentifier
+ * @deprecated
  */
 class RelationIdentifier extends protobuf_1.Message {
     constructor(data) {
@@ -590,6 +602,7 @@ RelationIdentifier.fields = protobuf_1.proto3.util.newFieldList(() => [
  * Pagination request
  *
  * @generated from message aserto.directory.common.v2.PaginationRequest
+ * @deprecated
  */
 class PaginationRequest extends protobuf_1.Message {
     constructor(data) {
@@ -632,6 +645,7 @@ PaginationRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
  * Pagination response
  *
  * @generated from message aserto.directory.common.v2.PaginationResponse
+ * @deprecated
  */
 class PaginationResponse extends protobuf_1.Message {
     constructor(data) {

@@ -8,6 +8,7 @@ import { Message, proto3, Struct } from "@bufbuild/protobuf";
 
 /**
  * @generated from enum aserto.directory.schema.v2.TenantKind
+ * @deprecated
  */
 export enum TenantKind {
   /**
@@ -38,6 +39,7 @@ proto3.util.setEnumType(TenantKind, "aserto.directory.schema.v2.TenantKind", [
  * Properties of a tenant object
  *
  * @generated from message aserto.directory.schema.v2.TenantProperties
+ * @deprecated
  */
 export class TenantProperties extends Message<TenantProperties> {
   /**
@@ -101,6 +103,7 @@ export class TenantProperties extends Message<TenantProperties> {
 
 /**
  * @generated from message aserto.directory.schema.v2.AccountProperties
+ * @deprecated
  */
 export class AccountProperties extends Message<AccountProperties> {
   /**
@@ -159,6 +162,7 @@ export class AccountProperties extends Message<AccountProperties> {
  * The state of a user's progress through the console's getting started guide.
  *
  * @generated from message aserto.directory.schema.v2.GuideState
+ * @deprecated
  */
 export class GuideState extends Message<GuideState> {
   /**

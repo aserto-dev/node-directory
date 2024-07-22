@@ -10,6 +10,7 @@ const protobuf_1 = require("@bufbuild/protobuf");
  * Properties of "group" objects.
  *
  * @generated from message aserto.directory.schema.v2.GroupProperties
+ * @deprecated
  */
 class GroupProperties extends protobuf_1.Message {
     constructor(data) {

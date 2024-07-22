@@ -3,6 +3,7 @@ import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
 import { Object$, ObjectType, Permission, Relation, RelationType } from "../../common/v2/common_pb.js";
 /**
  * @generated from enum aserto.directory.exporter.v2.Option
+ * @deprecated
  */
 export declare enum Option {
     /**
@@ -80,6 +81,7 @@ export declare enum Option {
 }
 /**
  * @generated from message aserto.directory.exporter.v2.ExportRequest
+ * @deprecated
  */
 export declare class ExportRequest extends Message<ExportRequest> {
     /**
@@ -105,6 +107,7 @@ export declare class ExportRequest extends Message<ExportRequest> {
 }
 /**
  * @generated from message aserto.directory.exporter.v2.ExportResponse
+ * @deprecated
  */
 export declare class ExportResponse extends Message<ExportResponse> {
     /**

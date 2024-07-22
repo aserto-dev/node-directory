@@ -8,6 +8,7 @@ import { Object$, ObjectType, Permission, Relation, RelationType } from "../../c
 
 /**
  * @generated from enum aserto.directory.importer.v2.Opcode
+ * @deprecated
  */
 export const Opcode = proto3.makeEnum(
   "aserto.directory.importer.v2.Opcode",
@@ -20,6 +21,7 @@ export const Opcode = proto3.makeEnum(
 
 /**
  * @generated from message aserto.directory.importer.v2.ImportRequest
+ * @deprecated
  */
 export const ImportRequest = proto3.makeMessageType(
   "aserto.directory.importer.v2.ImportRequest",
@@ -35,6 +37,7 @@ export const ImportRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.importer.v2.ImportResponse
+ * @deprecated
  */
 export const ImportResponse = proto3.makeMessageType(
   "aserto.directory.importer.v2.ImportResponse",
@@ -49,6 +52,7 @@ export const ImportResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.importer.v2.ImportCounter
+ * @deprecated
  */
 export const ImportCounter = proto3.makeMessageType(
   "aserto.directory.importer.v2.ImportCounter",

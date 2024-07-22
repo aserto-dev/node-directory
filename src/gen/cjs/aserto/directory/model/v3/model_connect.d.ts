@@ -7,6 +7,8 @@ export declare const Model: {
     readonly typeName: "aserto.directory.model.v3.Model";
     readonly methods: {
         /**
+         * get manifest instance
+         *
          * @generated from rpc aserto.directory.model.v3.Model.GetManifest
          */
         readonly getManifest: {
@@ -16,6 +18,8 @@ export declare const Model: {
             readonly kind: MethodKind.ServerStreaming;
         };
         /**
+         * set manifest instance
+         *
          * @generated from rpc aserto.directory.model.v3.Model.SetManifest
          */
         readonly setManifest: {
@@ -25,6 +29,8 @@ export declare const Model: {
             readonly kind: MethodKind.ClientStreaming;
         };
         /**
+         * delete manifest instance
+         *
          * @generated from rpc aserto.directory.model.v3.Model.DeleteManifest
          */
         readonly deleteManifest: {

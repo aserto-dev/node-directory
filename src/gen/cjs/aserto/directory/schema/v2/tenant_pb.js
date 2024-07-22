@@ -8,6 +8,7 @@ exports.GuideState = exports.AccountProperties = exports.TenantProperties = expo
 const protobuf_1 = require("@bufbuild/protobuf");
 /**
  * @generated from enum aserto.directory.schema.v2.TenantKind
+ * @deprecated
  */
 var TenantKind;
 (function (TenantKind) {
@@ -36,6 +37,7 @@ protobuf_1.proto3.util.setEnumType(TenantKind, "aserto.directory.schema.v2.Tenan
  * Properties of a tenant object
  *
  * @generated from message aserto.directory.schema.v2.TenantProperties
+ * @deprecated
  */
 class TenantProperties extends protobuf_1.Message {
     constructor(data) {
@@ -84,6 +86,7 @@ TenantProperties.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.schema.v2.AccountProperties
+ * @deprecated
  */
 class AccountProperties extends protobuf_1.Message {
     constructor(data) {
@@ -128,6 +131,7 @@ AccountProperties.fields = protobuf_1.proto3.util.newFieldList(() => [
  * The state of a user's progress through the console's getting started guide.
  *
  * @generated from message aserto.directory.schema.v2.GuideState
+ * @deprecated
  */
 class GuideState extends protobuf_1.Message {
     constructor(data) {

@@ -8,6 +8,7 @@ import { Object$, ObjectIdentifier, ObjectType, ObjectTypeIdentifier, Permission
 
 /**
  * @generated from message aserto.directory.writer.v2.SetObjectTypeRequest
+ * @deprecated
  */
 export const SetObjectTypeRequest = proto3.makeMessageType(
   "aserto.directory.writer.v2.SetObjectTypeRequest",
@@ -18,6 +19,7 @@ export const SetObjectTypeRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.SetObjectTypeResponse
+ * @deprecated
  */
 export const SetObjectTypeResponse = proto3.makeMessageType(
   "aserto.directory.writer.v2.SetObjectTypeResponse",
@@ -28,6 +30,7 @@ export const SetObjectTypeResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.DeleteObjectTypeRequest
+ * @deprecated
  */
 export const DeleteObjectTypeRequest = proto3.makeMessageType(
   "aserto.directory.writer.v2.DeleteObjectTypeRequest",
@@ -38,6 +41,7 @@ export const DeleteObjectTypeRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.DeleteObjectTypeResponse
+ * @deprecated
  */
 export const DeleteObjectTypeResponse = proto3.makeMessageType(
   "aserto.directory.writer.v2.DeleteObjectTypeResponse",
@@ -48,6 +52,7 @@ export const DeleteObjectTypeResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.SetRelationTypeRequest
+ * @deprecated
  */
 export const SetRelationTypeRequest = proto3.makeMessageType(
   "aserto.directory.writer.v2.SetRelationTypeRequest",
@@ -58,6 +63,7 @@ export const SetRelationTypeRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.SetRelationTypeResponse
+ * @deprecated
  */
 export const SetRelationTypeResponse = proto3.makeMessageType(
   "aserto.directory.writer.v2.SetRelationTypeResponse",
@@ -68,6 +74,7 @@ export const SetRelationTypeResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.DeleteRelationTypeRequest
+ * @deprecated
  */
 export const DeleteRelationTypeRequest = proto3.makeMessageType(
   "aserto.directory.writer.v2.DeleteRelationTypeRequest",
@@ -78,6 +85,7 @@ export const DeleteRelationTypeRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.DeleteRelationTypeResponse
+ * @deprecated
  */
 export const DeleteRelationTypeResponse = proto3.makeMessageType(
   "aserto.directory.writer.v2.DeleteRelationTypeResponse",
@@ -88,6 +96,7 @@ export const DeleteRelationTypeResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.SetPermissionRequest
+ * @deprecated
  */
 export const SetPermissionRequest = proto3.makeMessageType(
   "aserto.directory.writer.v2.SetPermissionRequest",
@@ -98,6 +107,7 @@ export const SetPermissionRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.SetPermissionResponse
+ * @deprecated
  */
 export const SetPermissionResponse = proto3.makeMessageType(
   "aserto.directory.writer.v2.SetPermissionResponse",
@@ -108,6 +118,7 @@ export const SetPermissionResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.DeletePermissionRequest
+ * @deprecated
  */
 export const DeletePermissionRequest = proto3.makeMessageType(
   "aserto.directory.writer.v2.DeletePermissionRequest",
@@ -118,6 +129,7 @@ export const DeletePermissionRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.DeletePermissionResponse
+ * @deprecated
  */
 export const DeletePermissionResponse = proto3.makeMessageType(
   "aserto.directory.writer.v2.DeletePermissionResponse",
@@ -128,6 +140,7 @@ export const DeletePermissionResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.SetObjectRequest
+ * @deprecated
  */
 export const SetObjectRequest = proto3.makeMessageType(
   "aserto.directory.writer.v2.SetObjectRequest",
@@ -138,6 +151,7 @@ export const SetObjectRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.SetObjectResponse
+ * @deprecated
  */
 export const SetObjectResponse = proto3.makeMessageType(
   "aserto.directory.writer.v2.SetObjectResponse",
@@ -148,6 +162,7 @@ export const SetObjectResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.DeleteObjectRequest
+ * @deprecated
  */
 export const DeleteObjectRequest = proto3.makeMessageType(
   "aserto.directory.writer.v2.DeleteObjectRequest",
@@ -159,6 +174,7 @@ export const DeleteObjectRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.DeleteObjectResponse
+ * @deprecated
  */
 export const DeleteObjectResponse = proto3.makeMessageType(
   "aserto.directory.writer.v2.DeleteObjectResponse",
@@ -169,6 +185,7 @@ export const DeleteObjectResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.SetRelationRequest
+ * @deprecated
  */
 export const SetRelationRequest = proto3.makeMessageType(
   "aserto.directory.writer.v2.SetRelationRequest",
@@ -179,6 +196,7 @@ export const SetRelationRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.SetRelationResponse
+ * @deprecated
  */
 export const SetRelationResponse = proto3.makeMessageType(
   "aserto.directory.writer.v2.SetRelationResponse",
@@ -189,6 +207,7 @@ export const SetRelationResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.DeleteRelationRequest
+ * @deprecated
  */
 export const DeleteRelationRequest = proto3.makeMessageType(
   "aserto.directory.writer.v2.DeleteRelationRequest",
@@ -199,6 +218,7 @@ export const DeleteRelationRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.writer.v2.DeleteRelationResponse
+ * @deprecated
  */
 export const DeleteRelationResponse = proto3.makeMessageType(
   "aserto.directory.writer.v2.DeleteRelationResponse",

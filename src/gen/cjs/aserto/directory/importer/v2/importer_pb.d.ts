@@ -3,6 +3,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 import { Object$, ObjectType, Permission, Relation, RelationType } from "../../common/v2/common_pb.js";
 /**
  * @generated from enum aserto.directory.importer.v2.Opcode
+ * @deprecated
  */
 export declare enum Opcode {
     /**
@@ -20,6 +21,7 @@ export declare enum Opcode {
 }
 /**
  * @generated from message aserto.directory.importer.v2.ImportRequest
+ * @deprecated
  */
 export declare class ImportRequest extends Message<ImportRequest> {
     /**
@@ -86,6 +88,7 @@ export declare class ImportRequest extends Message<ImportRequest> {
 }
 /**
  * @generated from message aserto.directory.importer.v2.ImportResponse
+ * @deprecated
  */
 export declare class ImportResponse extends Message<ImportResponse> {
     /**
@@ -129,6 +132,7 @@ export declare class ImportResponse extends Message<ImportResponse> {
 }
 /**
  * @generated from message aserto.directory.importer.v2.ImportCounter
+ * @deprecated
  */
 export declare class ImportCounter extends Message<ImportCounter> {
     /**

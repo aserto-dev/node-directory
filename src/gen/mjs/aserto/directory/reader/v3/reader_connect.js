@@ -13,7 +13,7 @@ export const Reader = {
   typeName: "aserto.directory.reader.v3.Reader",
   methods: {
     /**
-     * object methods
+     * get object
      *
      * @generated from rpc aserto.directory.reader.v3.Reader.GetObject
      */
@@ -24,6 +24,8 @@ export const Reader = {
       kind: MethodKind.Unary,
     },
     /**
+     * get multiple objects
+     *
      * @generated from rpc aserto.directory.reader.v3.Reader.GetObjectMany
      */
     getObjectMany: {
@@ -33,6 +35,8 @@ export const Reader = {
       kind: MethodKind.Unary,
     },
     /**
+     * list objects
+     *
      * @generated from rpc aserto.directory.reader.v3.Reader.GetObjects
      */
     getObjects: {
@@ -42,7 +46,7 @@ export const Reader = {
       kind: MethodKind.Unary,
     },
     /**
-     * relation methods
+     * get relation
      *
      * @generated from rpc aserto.directory.reader.v3.Reader.GetRelation
      */
@@ -53,6 +57,8 @@ export const Reader = {
       kind: MethodKind.Unary,
     },
     /**
+     * list relations
+     *
      * @generated from rpc aserto.directory.reader.v3.Reader.GetRelations
      */
     getRelations: {
@@ -62,7 +68,7 @@ export const Reader = {
       kind: MethodKind.Unary,
     },
     /**
-     * check method
+     * check if subject has relation or permission with object
      *
      * @generated from rpc aserto.directory.reader.v3.Reader.Check
      */
@@ -73,9 +79,11 @@ export const Reader = {
       kind: MethodKind.Unary,
     },
     /**
-     * check permission method
+     * check permission (deprecated, use the check method)
+     * Deprecated: use directory.v3.Check()
      *
      * @generated from rpc aserto.directory.reader.v3.Reader.CheckPermission
+     * @deprecated
      */
     checkPermission: {
       name: "CheckPermission",
@@ -84,9 +92,11 @@ export const Reader = {
       kind: MethodKind.Unary,
     },
     /**
-     * check relation method
+     * check relation (deprecated, use the check method)
+     * Deprecated: use directory.v3.Check()
      *
      * @generated from rpc aserto.directory.reader.v3.Reader.CheckRelation
+     * @deprecated
      */
     checkRelation: {
       name: "CheckRelation",
@@ -95,7 +105,7 @@ export const Reader = {
       kind: MethodKind.Unary,
     },
     /**
-     * graph methods
+     * get object relationship graph
      *
      * @generated from rpc aserto.directory.reader.v3.Reader.GetGraph
      */

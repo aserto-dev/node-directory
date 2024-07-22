@@ -9,6 +9,7 @@ const protobuf_1 = require("@bufbuild/protobuf");
 const common_pb_js_1 = require("../../common/v2/common_pb.js");
 /**
  * @generated from message aserto.directory.writer.v2.SetObjectTypeRequest
+ * @deprecated
  */
 class SetObjectTypeRequest extends protobuf_1.Message {
     constructor(data) {
@@ -36,6 +37,7 @@ SetObjectTypeRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.SetObjectTypeResponse
+ * @deprecated
  */
 class SetObjectTypeResponse extends protobuf_1.Message {
     constructor(data) {
@@ -63,6 +65,7 @@ SetObjectTypeResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.DeleteObjectTypeRequest
+ * @deprecated
  */
 class DeleteObjectTypeRequest extends protobuf_1.Message {
     constructor(data) {
@@ -90,6 +93,7 @@ DeleteObjectTypeRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.DeleteObjectTypeResponse
+ * @deprecated
  */
 class DeleteObjectTypeResponse extends protobuf_1.Message {
     constructor(data) {
@@ -117,6 +121,7 @@ DeleteObjectTypeResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.SetRelationTypeRequest
+ * @deprecated
  */
 class SetRelationTypeRequest extends protobuf_1.Message {
     constructor(data) {
@@ -144,6 +149,7 @@ SetRelationTypeRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.SetRelationTypeResponse
+ * @deprecated
  */
 class SetRelationTypeResponse extends protobuf_1.Message {
     constructor(data) {
@@ -171,6 +177,7 @@ SetRelationTypeResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.DeleteRelationTypeRequest
+ * @deprecated
  */
 class DeleteRelationTypeRequest extends protobuf_1.Message {
     constructor(data) {
@@ -198,6 +205,7 @@ DeleteRelationTypeRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.DeleteRelationTypeResponse
+ * @deprecated
  */
 class DeleteRelationTypeResponse extends protobuf_1.Message {
     constructor(data) {
@@ -225,6 +233,7 @@ DeleteRelationTypeResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.SetPermissionRequest
+ * @deprecated
  */
 class SetPermissionRequest extends protobuf_1.Message {
     constructor(data) {
@@ -252,6 +261,7 @@ SetPermissionRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.SetPermissionResponse
+ * @deprecated
  */
 class SetPermissionResponse extends protobuf_1.Message {
     constructor(data) {
@@ -279,6 +289,7 @@ SetPermissionResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.DeletePermissionRequest
+ * @deprecated
  */
 class DeletePermissionRequest extends protobuf_1.Message {
     constructor(data) {
@@ -306,6 +317,7 @@ DeletePermissionRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.DeletePermissionResponse
+ * @deprecated
  */
 class DeletePermissionResponse extends protobuf_1.Message {
     constructor(data) {
@@ -333,6 +345,7 @@ DeletePermissionResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.SetObjectRequest
+ * @deprecated
  */
 class SetObjectRequest extends protobuf_1.Message {
     constructor(data) {
@@ -360,6 +373,7 @@ SetObjectRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.SetObjectResponse
+ * @deprecated
  */
 class SetObjectResponse extends protobuf_1.Message {
     constructor(data) {
@@ -387,6 +401,7 @@ SetObjectResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.DeleteObjectRequest
+ * @deprecated
  */
 class DeleteObjectRequest extends protobuf_1.Message {
     constructor(data) {
@@ -415,6 +430,7 @@ DeleteObjectRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.DeleteObjectResponse
+ * @deprecated
  */
 class DeleteObjectResponse extends protobuf_1.Message {
     constructor(data) {
@@ -442,6 +458,7 @@ DeleteObjectResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.SetRelationRequest
+ * @deprecated
  */
 class SetRelationRequest extends protobuf_1.Message {
     constructor(data) {
@@ -469,6 +486,7 @@ SetRelationRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.SetRelationResponse
+ * @deprecated
  */
 class SetRelationResponse extends protobuf_1.Message {
     constructor(data) {
@@ -496,6 +514,7 @@ SetRelationResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.DeleteRelationRequest
+ * @deprecated
  */
 class DeleteRelationRequest extends protobuf_1.Message {
     constructor(data) {
@@ -523,6 +542,7 @@ DeleteRelationRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.writer.v2.DeleteRelationResponse
+ * @deprecated
  */
 class DeleteRelationResponse extends protobuf_1.Message {
     constructor(data) {

@@ -14,6 +14,8 @@ exports.Model = {
     typeName: "aserto.directory.model.v3.Model",
     methods: {
         /**
+         * get manifest instance
+         *
          * @generated from rpc aserto.directory.model.v3.Model.GetManifest
          */
         getManifest: {
@@ -23,6 +25,8 @@ exports.Model = {
             kind: protobuf_1.MethodKind.ServerStreaming,
         },
         /**
+         * set manifest instance
+         *
          * @generated from rpc aserto.directory.model.v3.Model.SetManifest
          */
         setManifest: {
@@ -32,6 +36,8 @@ exports.Model = {
             kind: protobuf_1.MethodKind.ClientStreaming,
         },
         /**
+         * delete manifest instance
+         *
          * @generated from rpc aserto.directory.model.v3.Model.DeleteManifest
          */
         deleteManifest: {

@@ -7,6 +7,7 @@ import { proto3 } from "@bufbuild/protobuf";
 
 /**
  * @generated from enum aserto.directory.schema.v2.IdentityKind
+ * @deprecated
  */
 export const IdentityKind = proto3.makeEnum(
   "aserto.directory.schema.v2.IdentityKind",
@@ -25,6 +26,7 @@ export const IdentityKind = proto3.makeEnum(
  * Properties of "identity" objects.
  *
  * @generated from message aserto.directory.schema.v2.IdentityProperties
+ * @deprecated
  */
 export const IdentityProperties = proto3.makeMessageType(
   "aserto.directory.schema.v2.IdentityProperties",

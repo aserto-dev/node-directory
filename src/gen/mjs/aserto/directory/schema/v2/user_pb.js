@@ -7,6 +7,7 @@ import { proto3 } from "@bufbuild/protobuf";
 
 /**
  * @generated from enum aserto.directory.schema.v2.UserStatus
+ * @deprecated
  */
 export const UserStatus = proto3.makeEnum(
   "aserto.directory.schema.v2.UserStatus",
@@ -27,6 +28,7 @@ export const UserStatus = proto3.makeEnum(
  * Properties of "user" objects.
  *
  * @generated from message aserto.directory.schema.v2.UserProperties
+ * @deprecated
  */
 export const UserProperties = proto3.makeMessageType(
   "aserto.directory.schema.v2.UserProperties",

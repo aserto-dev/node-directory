@@ -9,6 +9,7 @@ import { Object$, ObjectType, Permission, Relation, RelationType } from "../../c
 
 /**
  * @generated from enum aserto.directory.importer.v2.Opcode
+ * @deprecated
  */
 export enum Opcode {
   /**
@@ -35,6 +36,7 @@ proto3.util.setEnumType(Opcode, "aserto.directory.importer.v2.Opcode", [
 
 /**
  * @generated from message aserto.directory.importer.v2.ImportRequest
+ * @deprecated
  */
 export class ImportRequest extends Message<ImportRequest> {
   /**
@@ -124,6 +126,7 @@ export class ImportRequest extends Message<ImportRequest> {
 
 /**
  * @generated from message aserto.directory.importer.v2.ImportResponse
+ * @deprecated
  */
 export class ImportResponse extends Message<ImportResponse> {
   /**
@@ -195,6 +198,7 @@ export class ImportResponse extends Message<ImportResponse> {
 
 /**
  * @generated from message aserto.directory.importer.v2.ImportCounter
+ * @deprecated
  */
 export class ImportCounter extends Message<ImportCounter> {
   /**

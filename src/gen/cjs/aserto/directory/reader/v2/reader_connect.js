@@ -14,9 +14,10 @@ exports.Reader = {
     typeName: "aserto.directory.reader.v2.Reader",
     methods: {
         /**
-         * object type metadata methods
+         * get object type metadata
          *
          * @generated from rpc aserto.directory.reader.v2.Reader.GetObjectType
+         * @deprecated
          */
         getObjectType: {
             name: "GetObjectType",
@@ -25,7 +26,10 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
+         * list object type metadata
+         *
          * @generated from rpc aserto.directory.reader.v2.Reader.GetObjectTypes
+         * @deprecated
          */
         getObjectTypes: {
             name: "GetObjectTypes",
@@ -34,9 +38,10 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
-         * relation type metadata methods
+         * get relation type metadata
          *
          * @generated from rpc aserto.directory.reader.v2.Reader.GetRelationType
+         * @deprecated
          */
         getRelationType: {
             name: "GetRelationType",
@@ -45,7 +50,10 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
+         * list relation type metadata
+         *
          * @generated from rpc aserto.directory.reader.v2.Reader.GetRelationTypes
+         * @deprecated
          */
         getRelationTypes: {
             name: "GetRelationTypes",
@@ -54,9 +62,10 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
-         * permission metadata methods
+         * get permission metadata
          *
          * @generated from rpc aserto.directory.reader.v2.Reader.GetPermission
+         * @deprecated
          */
         getPermission: {
             name: "GetPermission",
@@ -65,7 +74,10 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
+         * list permission metadata
+         *
          * @generated from rpc aserto.directory.reader.v2.Reader.GetPermissions
+         * @deprecated
          */
         getPermissions: {
             name: "GetPermissions",
@@ -74,9 +86,11 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
-         * object methods
+         * get object
+         * Deprecated: directory.v2.GetObject is deprecated, use directory.v3.GetObject.
          *
          * @generated from rpc aserto.directory.reader.v2.Reader.GetObject
+         * @deprecated
          */
         getObject: {
             name: "GetObject",
@@ -85,7 +99,11 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
+         * get multiple objects
+         * Deprecated: directory.v2.GetObjectMany is deprecated, update to use directory.v3.GetObjectMany.
+         *
          * @generated from rpc aserto.directory.reader.v2.Reader.GetObjectMany
+         * @deprecated
          */
         getObjectMany: {
             name: "GetObjectMany",
@@ -94,7 +112,11 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
+         * list objects
+         * Deprecated: directory.v2.GetObjects is deprecated, update to use directory.v3.GetObjects.
+         *
          * @generated from rpc aserto.directory.reader.v2.Reader.GetObjects
+         * @deprecated
          */
         getObjects: {
             name: "GetObjects",
@@ -103,9 +125,11 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
-         * relation methods
+         * get relation
+         * Deprecated: directory.v2.GetRelation is deprecated, update to use directory.v3.GetRelation.
          *
          * @generated from rpc aserto.directory.reader.v2.Reader.GetRelation
+         * @deprecated
          */
         getRelation: {
             name: "GetRelation",
@@ -114,7 +138,11 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
+         * list relations
+         * Deprecated: directory.v2.GetRelations is deprecated, update to use directory.v3.GetRelations.
+         *
          * @generated from rpc aserto.directory.reader.v2.Reader.GetRelations
+         * @deprecated
          */
         getRelations: {
             name: "GetRelations",
@@ -123,9 +151,11 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
-         * check permission method
+         * check permission
+         * Deprecated: directory.v2.CheckPermission is deprecated, update to use directory.v3.Check.
          *
          * @generated from rpc aserto.directory.reader.v2.Reader.CheckPermission
+         * @deprecated
          */
         checkPermission: {
             name: "CheckPermission",
@@ -134,9 +164,11 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
-         * check relation method
+         * check relation
+         * Deprecated: directory.v2.CheckRelation is deprecated, update to use directory.v3.Check.
          *
          * @generated from rpc aserto.directory.reader.v2.Reader.CheckRelation
+         * @deprecated
          */
         checkRelation: {
             name: "CheckRelation",
@@ -145,9 +177,11 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
-         * graph methods
+         * get object relationship graph
+         * Deprecated: directory.v2.GetGraph is deprecated, update to use directory.v3.GetGraph.
          *
          * @generated from rpc aserto.directory.reader.v2.Reader.GetGraph
+         * @deprecated
          */
         getGraph: {
             name: "GetGraph",

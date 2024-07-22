@@ -7,7 +7,10 @@ export declare const Importer: {
     readonly typeName: "aserto.directory.importer.v2.Importer";
     readonly methods: {
         /**
+         * import stream of objects and relations
+         *
          * @generated from rpc aserto.directory.importer.v2.Importer.Import
+         * @deprecated
          */
         readonly import: {
             readonly name: "Import";

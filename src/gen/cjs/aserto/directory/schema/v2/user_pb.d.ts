@@ -2,6 +2,7 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 /**
  * @generated from enum aserto.directory.schema.v2.UserStatus
+ * @deprecated
  */
 export declare enum UserStatus {
     /**
@@ -67,6 +68,7 @@ export declare enum UserStatus {
  * Properties of "user" objects.
  *
  * @generated from message aserto.directory.schema.v2.UserProperties
+ * @deprecated
  */
 export declare class UserProperties extends Message<UserProperties> {
     /**

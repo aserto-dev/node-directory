@@ -8,6 +8,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
  * @generated from enum aserto.directory.schema.v2.UserStatus
+ * @deprecated
  */
 export enum UserStatus {
   /**
@@ -94,6 +95,7 @@ proto3.util.setEnumType(UserStatus, "aserto.directory.schema.v2.UserStatus", [
  * Properties of "user" objects.
  *
  * @generated from message aserto.directory.schema.v2.UserProperties
+ * @deprecated
  */
 export class UserProperties extends Message<UserProperties> {
   /**

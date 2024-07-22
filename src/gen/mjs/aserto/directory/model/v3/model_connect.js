@@ -13,6 +13,8 @@ export const Model = {
   typeName: "aserto.directory.model.v3.Model",
   methods: {
     /**
+     * get manifest instance
+     *
      * @generated from rpc aserto.directory.model.v3.Model.GetManifest
      */
     getManifest: {
@@ -22,6 +24,8 @@ export const Model = {
       kind: MethodKind.ServerStreaming,
     },
     /**
+     * set manifest instance
+     *
      * @generated from rpc aserto.directory.model.v3.Model.SetManifest
      */
     setManifest: {
@@ -31,6 +35,8 @@ export const Model = {
       kind: MethodKind.ClientStreaming,
     },
     /**
+     * delete manifest instance
+     *
      * @generated from rpc aserto.directory.model.v3.Model.DeleteManifest
      */
     deleteManifest: {

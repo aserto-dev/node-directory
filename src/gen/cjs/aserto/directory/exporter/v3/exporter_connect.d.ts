@@ -7,6 +7,8 @@ export declare const Exporter: {
     readonly typeName: "aserto.directory.exporter.v3.Exporter";
     readonly methods: {
         /**
+         * export objects and relations as a stream
+         *
          * @generated from rpc aserto.directory.exporter.v3.Exporter.Export
          */
         readonly export: {

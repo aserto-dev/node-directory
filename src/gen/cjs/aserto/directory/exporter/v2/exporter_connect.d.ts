@@ -8,6 +8,7 @@ export declare const Exporter: {
     readonly methods: {
         /**
          * @generated from rpc aserto.directory.exporter.v2.Exporter.Export
+         * @deprecated
          */
         readonly export: {
             readonly name: "Export";

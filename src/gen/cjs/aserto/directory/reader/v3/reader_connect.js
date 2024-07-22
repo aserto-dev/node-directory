@@ -14,7 +14,7 @@ exports.Reader = {
     typeName: "aserto.directory.reader.v3.Reader",
     methods: {
         /**
-         * object methods
+         * get object
          *
          * @generated from rpc aserto.directory.reader.v3.Reader.GetObject
          */
@@ -25,6 +25,8 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
+         * get multiple objects
+         *
          * @generated from rpc aserto.directory.reader.v3.Reader.GetObjectMany
          */
         getObjectMany: {
@@ -34,6 +36,8 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
+         * list objects
+         *
          * @generated from rpc aserto.directory.reader.v3.Reader.GetObjects
          */
         getObjects: {
@@ -43,7 +47,7 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
-         * relation methods
+         * get relation
          *
          * @generated from rpc aserto.directory.reader.v3.Reader.GetRelation
          */
@@ -54,6 +58,8 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
+         * list relations
+         *
          * @generated from rpc aserto.directory.reader.v3.Reader.GetRelations
          */
         getRelations: {
@@ -63,7 +69,7 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
-         * check method
+         * check if subject has relation or permission with object
          *
          * @generated from rpc aserto.directory.reader.v3.Reader.Check
          */
@@ -74,9 +80,11 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
-         * check permission method
+         * check permission (deprecated, use the check method)
+         * Deprecated: use directory.v3.Check()
          *
          * @generated from rpc aserto.directory.reader.v3.Reader.CheckPermission
+         * @deprecated
          */
         checkPermission: {
             name: "CheckPermission",
@@ -85,9 +93,11 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
-         * check relation method
+         * check relation (deprecated, use the check method)
+         * Deprecated: use directory.v3.Check()
          *
          * @generated from rpc aserto.directory.reader.v3.Reader.CheckRelation
+         * @deprecated
          */
         checkRelation: {
             name: "CheckRelation",
@@ -96,7 +106,7 @@ exports.Reader = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
-         * graph methods
+         * get object relationship graph
          *
          * @generated from rpc aserto.directory.reader.v3.Reader.GetGraph
          */

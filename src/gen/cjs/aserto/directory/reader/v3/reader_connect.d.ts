@@ -7,7 +7,7 @@ export declare const Reader: {
     readonly typeName: "aserto.directory.reader.v3.Reader";
     readonly methods: {
         /**
-         * object methods
+         * get object
          *
          * @generated from rpc aserto.directory.reader.v3.Reader.GetObject
          */
@@ -18,6 +18,8 @@ export declare const Reader: {
             readonly kind: MethodKind.Unary;
         };
         /**
+         * get multiple objects
+         *
          * @generated from rpc aserto.directory.reader.v3.Reader.GetObjectMany
          */
         readonly getObjectMany: {
@@ -27,6 +29,8 @@ export declare const Reader: {
             readonly kind: MethodKind.Unary;
         };
         /**
+         * list objects
+         *
          * @generated from rpc aserto.directory.reader.v3.Reader.GetObjects
          */
         readonly getObjects: {
@@ -36,7 +40,7 @@ export declare const Reader: {
             readonly kind: MethodKind.Unary;
         };
         /**
-         * relation methods
+         * get relation
          *
          * @generated from rpc aserto.directory.reader.v3.Reader.GetRelation
          */
@@ -47,6 +51,8 @@ export declare const Reader: {
             readonly kind: MethodKind.Unary;
         };
         /**
+         * list relations
+         *
          * @generated from rpc aserto.directory.reader.v3.Reader.GetRelations
          */
         readonly getRelations: {
@@ -56,7 +62,7 @@ export declare const Reader: {
             readonly kind: MethodKind.Unary;
         };
         /**
-         * check method
+         * check if subject has relation or permission with object
          *
          * @generated from rpc aserto.directory.reader.v3.Reader.Check
          */
@@ -67,9 +73,11 @@ export declare const Reader: {
             readonly kind: MethodKind.Unary;
         };
         /**
-         * check permission method
+         * check permission (deprecated, use the check method)
+         * Deprecated: use directory.v3.Check()
          *
          * @generated from rpc aserto.directory.reader.v3.Reader.CheckPermission
+         * @deprecated
          */
         readonly checkPermission: {
             readonly name: "CheckPermission";
@@ -78,9 +86,11 @@ export declare const Reader: {
             readonly kind: MethodKind.Unary;
         };
         /**
-         * check relation method
+         * check relation (deprecated, use the check method)
+         * Deprecated: use directory.v3.Check()
          *
          * @generated from rpc aserto.directory.reader.v3.Reader.CheckRelation
+         * @deprecated
          */
         readonly checkRelation: {
             readonly name: "CheckRelation";
@@ -89,7 +99,7 @@ export declare const Reader: {
             readonly kind: MethodKind.Unary;
         };
         /**
-         * graph methods
+         * get object relationship graph
          *
          * @generated from rpc aserto.directory.reader.v3.Reader.GetGraph
          */

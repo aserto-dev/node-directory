@@ -2,6 +2,7 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3, Struct } from "@bufbuild/protobuf";
 /**
  * @generated from enum aserto.directory.schema.v2.TenantKind
+ * @deprecated
  */
 export declare enum TenantKind {
     /**
@@ -23,6 +24,7 @@ export declare enum TenantKind {
  * Properties of a tenant object
  *
  * @generated from message aserto.directory.schema.v2.TenantProperties
+ * @deprecated
  */
 export declare class TenantProperties extends Message<TenantProperties> {
     /**
@@ -60,6 +62,7 @@ export declare class TenantProperties extends Message<TenantProperties> {
 }
 /**
  * @generated from message aserto.directory.schema.v2.AccountProperties
+ * @deprecated
  */
 export declare class AccountProperties extends Message<AccountProperties> {
     /**
@@ -94,6 +97,7 @@ export declare class AccountProperties extends Message<AccountProperties> {
  * The state of a user's progress through the console's getting started guide.
  *
  * @generated from message aserto.directory.schema.v2.GuideState
+ * @deprecated
  */
 export declare class GuideState extends Message<GuideState> {
     /**

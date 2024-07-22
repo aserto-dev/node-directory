@@ -9,6 +9,7 @@ import { Object$, ObjectDependency, ObjectIdentifier, ObjectType, ObjectTypeIden
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectTypeRequest
+ * @deprecated
  */
 export class GetObjectTypeRequest extends Message<GetObjectTypeRequest> {
   /**
@@ -48,6 +49,7 @@ export class GetObjectTypeRequest extends Message<GetObjectTypeRequest> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectTypeResponse
+ * @deprecated
  */
 export class GetObjectTypeResponse extends Message<GetObjectTypeResponse> {
   /**
@@ -87,6 +89,7 @@ export class GetObjectTypeResponse extends Message<GetObjectTypeResponse> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectTypesRequest
+ * @deprecated
  */
 export class GetObjectTypesRequest extends Message<GetObjectTypesRequest> {
   /**
@@ -126,6 +129,7 @@ export class GetObjectTypesRequest extends Message<GetObjectTypesRequest> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectTypesResponse
+ * @deprecated
  */
 export class GetObjectTypesResponse extends Message<GetObjectTypesResponse> {
   /**
@@ -173,6 +177,7 @@ export class GetObjectTypesResponse extends Message<GetObjectTypesResponse> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationTypeRequest
+ * @deprecated
  */
 export class GetRelationTypeRequest extends Message<GetRelationTypeRequest> {
   /**
@@ -212,6 +217,7 @@ export class GetRelationTypeRequest extends Message<GetRelationTypeRequest> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationTypeResponse
+ * @deprecated
  */
 export class GetRelationTypeResponse extends Message<GetRelationTypeResponse> {
   /**
@@ -251,6 +257,7 @@ export class GetRelationTypeResponse extends Message<GetRelationTypeResponse> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationTypesRequest
+ * @deprecated
  */
 export class GetRelationTypesRequest extends Message<GetRelationTypesRequest> {
   /**
@@ -298,6 +305,7 @@ export class GetRelationTypesRequest extends Message<GetRelationTypesRequest> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationTypesResponse
+ * @deprecated
  */
 export class GetRelationTypesResponse extends Message<GetRelationTypesResponse> {
   /**
@@ -345,6 +353,7 @@ export class GetRelationTypesResponse extends Message<GetRelationTypesResponse> 
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectRequest
+ * @deprecated
  */
 export class GetObjectRequest extends Message<GetObjectRequest> {
   /**
@@ -400,6 +409,7 @@ export class GetObjectRequest extends Message<GetObjectRequest> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectResponse
+ * @deprecated
  */
 export class GetObjectResponse extends Message<GetObjectResponse> {
   /**
@@ -455,6 +465,7 @@ export class GetObjectResponse extends Message<GetObjectResponse> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectManyRequest
+ * @deprecated
  */
 export class GetObjectManyRequest extends Message<GetObjectManyRequest> {
   /**
@@ -494,6 +505,7 @@ export class GetObjectManyRequest extends Message<GetObjectManyRequest> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectManyResponse
+ * @deprecated
  */
 export class GetObjectManyResponse extends Message<GetObjectManyResponse> {
   /**
@@ -533,6 +545,7 @@ export class GetObjectManyResponse extends Message<GetObjectManyResponse> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectsRequest
+ * @deprecated
  */
 export class GetObjectsRequest extends Message<GetObjectsRequest> {
   /**
@@ -580,6 +593,7 @@ export class GetObjectsRequest extends Message<GetObjectsRequest> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectsResponse
+ * @deprecated
  */
 export class GetObjectsResponse extends Message<GetObjectsResponse> {
   /**
@@ -627,6 +641,7 @@ export class GetObjectsResponse extends Message<GetObjectsResponse> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationRequest
+ * @deprecated
  */
 export class GetRelationRequest extends Message<GetRelationRequest> {
   /**
@@ -674,6 +689,7 @@ export class GetRelationRequest extends Message<GetRelationRequest> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationResponse
+ * @deprecated
  */
 export class GetRelationResponse extends Message<GetRelationResponse> {
   /**
@@ -721,6 +737,7 @@ export class GetRelationResponse extends Message<GetRelationResponse> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationsRequest
+ * @deprecated
  */
 export class GetRelationsRequest extends Message<GetRelationsRequest> {
   /**
@@ -768,6 +785,7 @@ export class GetRelationsRequest extends Message<GetRelationsRequest> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationsResponse
+ * @deprecated
  */
 export class GetRelationsResponse extends Message<GetRelationsResponse> {
   /**
@@ -815,6 +833,7 @@ export class GetRelationsResponse extends Message<GetRelationsResponse> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetPermissionRequest
+ * @deprecated
  */
 export class GetPermissionRequest extends Message<GetPermissionRequest> {
   /**
@@ -854,6 +873,7 @@ export class GetPermissionRequest extends Message<GetPermissionRequest> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetPermissionResponse
+ * @deprecated
  */
 export class GetPermissionResponse extends Message<GetPermissionResponse> {
   /**
@@ -893,6 +913,7 @@ export class GetPermissionResponse extends Message<GetPermissionResponse> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetPermissionsRequest
+ * @deprecated
  */
 export class GetPermissionsRequest extends Message<GetPermissionsRequest> {
   /**
@@ -932,6 +953,7 @@ export class GetPermissionsRequest extends Message<GetPermissionsRequest> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetPermissionsResponse
+ * @deprecated
  */
 export class GetPermissionsResponse extends Message<GetPermissionsResponse> {
   /**
@@ -979,6 +1001,7 @@ export class GetPermissionsResponse extends Message<GetPermissionsResponse> {
 
 /**
  * @generated from message aserto.directory.reader.v2.CheckPermissionRequest
+ * @deprecated
  */
 export class CheckPermissionRequest extends Message<CheckPermissionRequest> {
   /**
@@ -1042,6 +1065,7 @@ export class CheckPermissionRequest extends Message<CheckPermissionRequest> {
 
 /**
  * @generated from message aserto.directory.reader.v2.CheckPermissionResponse
+ * @deprecated
  */
 export class CheckPermissionResponse extends Message<CheckPermissionResponse> {
   /**
@@ -1089,6 +1113,7 @@ export class CheckPermissionResponse extends Message<CheckPermissionResponse> {
 
 /**
  * @generated from message aserto.directory.reader.v2.CheckRelationRequest
+ * @deprecated
  */
 export class CheckRelationRequest extends Message<CheckRelationRequest> {
   /**
@@ -1152,6 +1177,7 @@ export class CheckRelationRequest extends Message<CheckRelationRequest> {
 
 /**
  * @generated from message aserto.directory.reader.v2.CheckRelationResponse
+ * @deprecated
  */
 export class CheckRelationResponse extends Message<CheckRelationResponse> {
   /**
@@ -1199,6 +1225,7 @@ export class CheckRelationResponse extends Message<CheckRelationResponse> {
 
 /**
  * @generated from message aserto.directory.reader.v2.CheckResponse
+ * @deprecated
  */
 export class CheckResponse extends Message<CheckResponse> {
   /**
@@ -1246,6 +1273,7 @@ export class CheckResponse extends Message<CheckResponse> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetGraphRequest
+ * @deprecated
  */
 export class GetGraphRequest extends Message<GetGraphRequest> {
   /**
@@ -1309,6 +1337,7 @@ export class GetGraphRequest extends Message<GetGraphRequest> {
 
 /**
  * @generated from message aserto.directory.reader.v2.GetGraphResponse
+ * @deprecated
  */
 export class GetGraphResponse extends Message<GetGraphResponse> {
   /**

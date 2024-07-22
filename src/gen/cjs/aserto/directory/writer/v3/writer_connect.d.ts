@@ -7,7 +7,7 @@ export declare const Writer: {
     readonly typeName: "aserto.directory.writer.v3.Writer";
     readonly methods: {
         /**
-         * object methods
+         * set object instance
          *
          * @generated from rpc aserto.directory.writer.v3.Writer.SetObject
          */
@@ -18,6 +18,8 @@ export declare const Writer: {
             readonly kind: MethodKind.Unary;
         };
         /**
+         * delete object instance
+         *
          * @generated from rpc aserto.directory.writer.v3.Writer.DeleteObject
          */
         readonly deleteObject: {
@@ -27,7 +29,7 @@ export declare const Writer: {
             readonly kind: MethodKind.Unary;
         };
         /**
-         * relation methods
+         * set relation instance
          *
          * @generated from rpc aserto.directory.writer.v3.Writer.SetRelation
          */
@@ -38,6 +40,8 @@ export declare const Writer: {
             readonly kind: MethodKind.Unary;
         };
         /**
+         * delete relation instance
+         *
          * @generated from rpc aserto.directory.writer.v3.Writer.DeleteRelation
          */
         readonly deleteRelation: {

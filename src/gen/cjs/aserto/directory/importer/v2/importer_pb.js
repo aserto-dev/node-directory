@@ -9,6 +9,7 @@ const protobuf_1 = require("@bufbuild/protobuf");
 const common_pb_js_1 = require("../../common/v2/common_pb.js");
 /**
  * @generated from enum aserto.directory.importer.v2.Opcode
+ * @deprecated
  */
 var Opcode;
 (function (Opcode) {
@@ -33,6 +34,7 @@ protobuf_1.proto3.util.setEnumType(Opcode, "aserto.directory.importer.v2.Opcode"
 ]);
 /**
  * @generated from message aserto.directory.importer.v2.ImportRequest
+ * @deprecated
  */
 class ImportRequest extends protobuf_1.Message {
     constructor(data) {
@@ -75,6 +77,7 @@ ImportRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.importer.v2.ImportResponse
+ * @deprecated
  */
 class ImportResponse extends protobuf_1.Message {
     constructor(data) {
@@ -106,6 +109,7 @@ ImportResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.importer.v2.ImportCounter
+ * @deprecated
  */
 class ImportCounter extends protobuf_1.Message {
     constructor(data) {

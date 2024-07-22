@@ -8,6 +8,7 @@ import { Message, proto3, Struct, Timestamp } from "@bufbuild/protobuf";
 
 /**
  * @generated from enum aserto.directory.common.v2.Flag
+ * @deprecated
  */
 export enum Flag {
   /**
@@ -56,6 +57,7 @@ proto3.util.setEnumType(Flag, "aserto.directory.common.v2.Flag", [
 
 /**
  * @generated from message aserto.directory.common.v2.ObjectType
+ * @deprecated
  */
 export class ObjectType extends Message<ObjectType> {
   /**
@@ -159,6 +161,7 @@ export class ObjectType extends Message<ObjectType> {
 
 /**
  * @generated from message aserto.directory.common.v2.Permission
+ * @deprecated
  */
 export class Permission extends Message<Permission> {
   /**
@@ -230,6 +233,7 @@ export class Permission extends Message<Permission> {
 
 /**
  * @generated from message aserto.directory.common.v2.RelationType
+ * @deprecated
  */
 export class RelationType extends Message<RelationType> {
   /**
@@ -341,6 +345,7 @@ export class RelationType extends Message<RelationType> {
 
 /**
  * @generated from message aserto.directory.common.v2.Object
+ * @deprecated
  */
 export class Object$ extends Message<Object$> {
   /**
@@ -428,6 +433,7 @@ export class Object$ extends Message<Object$> {
 
 /**
  * @generated from message aserto.directory.common.v2.Relation
+ * @deprecated
  */
 export class Relation extends Message<Relation> {
   /**
@@ -507,6 +513,7 @@ export class Relation extends Message<Relation> {
 
 /**
  * @generated from message aserto.directory.common.v2.ObjectDependency
+ * @deprecated
  */
 export class ObjectDependency extends Message<ObjectDependency> {
   /**
@@ -604,6 +611,7 @@ export class ObjectDependency extends Message<ObjectDependency> {
  * ObjectType identifier
  *
  * @generated from message aserto.directory.common.v2.ObjectTypeIdentifier
+ * @deprecated
  */
 export class ObjectTypeIdentifier extends Message<ObjectTypeIdentifier> {
   /**
@@ -645,6 +653,7 @@ export class ObjectTypeIdentifier extends Message<ObjectTypeIdentifier> {
  * Permission identifier
  *
  * @generated from message aserto.directory.common.v2.PermissionIdentifier
+ * @deprecated
  */
 export class PermissionIdentifier extends Message<PermissionIdentifier> {
   /**
@@ -686,6 +695,7 @@ export class PermissionIdentifier extends Message<PermissionIdentifier> {
  * RelationType identifier
  *
  * @generated from message aserto.directory.common.v2.RelationTypeIdentifier
+ * @deprecated
  */
 export class RelationTypeIdentifier extends Message<RelationTypeIdentifier> {
   /**
@@ -735,6 +745,7 @@ export class RelationTypeIdentifier extends Message<RelationTypeIdentifier> {
  * Object identifier
  *
  * @generated from message aserto.directory.common.v2.ObjectIdentifier
+ * @deprecated
  */
 export class ObjectIdentifier extends Message<ObjectIdentifier> {
   /**
@@ -784,6 +795,7 @@ export class ObjectIdentifier extends Message<ObjectIdentifier> {
  * Relation identifier
  *
  * @generated from message aserto.directory.common.v2.RelationIdentifier
+ * @deprecated
  */
 export class RelationIdentifier extends Message<RelationIdentifier> {
   /**
@@ -841,6 +853,7 @@ export class RelationIdentifier extends Message<RelationIdentifier> {
  * Pagination request
  *
  * @generated from message aserto.directory.common.v2.PaginationRequest
+ * @deprecated
  */
 export class PaginationRequest extends Message<PaginationRequest> {
   /**
@@ -890,6 +903,7 @@ export class PaginationRequest extends Message<PaginationRequest> {
  * Pagination response
  *
  * @generated from message aserto.directory.common.v2.PaginationResponse
+ * @deprecated
  */
 export class PaginationResponse extends Message<PaginationResponse> {
   /**

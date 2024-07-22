@@ -8,6 +8,7 @@ exports.IdentityProperties = exports.IdentityKind = void 0;
 const protobuf_1 = require("@bufbuild/protobuf");
 /**
  * @generated from enum aserto.directory.schema.v2.IdentityKind
+ * @deprecated
  */
 var IdentityKind;
 (function (IdentityKind) {
@@ -68,6 +69,7 @@ protobuf_1.proto3.util.setEnumType(IdentityKind, "aserto.directory.schema.v2.Ide
  * Properties of "identity" objects.
  *
  * @generated from message aserto.directory.schema.v2.IdentityProperties
+ * @deprecated
  */
 class IdentityProperties extends protobuf_1.Message {
     constructor(data) {

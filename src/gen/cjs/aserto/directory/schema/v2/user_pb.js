@@ -8,6 +8,7 @@ exports.UserProperties = exports.UserStatus = void 0;
 const protobuf_1 = require("@bufbuild/protobuf");
 /**
  * @generated from enum aserto.directory.schema.v2.UserStatus
+ * @deprecated
  */
 var UserStatus;
 (function (UserStatus) {
@@ -86,6 +87,7 @@ protobuf_1.proto3.util.setEnumType(UserStatus, "aserto.directory.schema.v2.UserS
  * Properties of "user" objects.
  *
  * @generated from message aserto.directory.schema.v2.UserProperties
+ * @deprecated
  */
 class UserProperties extends protobuf_1.Message {
     constructor(data) {

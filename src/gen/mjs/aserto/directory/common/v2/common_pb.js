@@ -7,6 +7,7 @@ import { proto3, Struct, Timestamp } from "@bufbuild/protobuf";
 
 /**
  * @generated from enum aserto.directory.common.v2.Flag
+ * @deprecated
  */
 export const Flag = proto3.makeEnum(
   "aserto.directory.common.v2.Flag",
@@ -21,6 +22,7 @@ export const Flag = proto3.makeEnum(
 
 /**
  * @generated from message aserto.directory.common.v2.ObjectType
+ * @deprecated
  */
 export const ObjectType = proto3.makeMessageType(
   "aserto.directory.common.v2.ObjectType",
@@ -39,6 +41,7 @@ export const ObjectType = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.common.v2.Permission
+ * @deprecated
  */
 export const Permission = proto3.makeMessageType(
   "aserto.directory.common.v2.Permission",
@@ -53,6 +56,7 @@ export const Permission = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.common.v2.RelationType
+ * @deprecated
  */
 export const RelationType = proto3.makeMessageType(
   "aserto.directory.common.v2.RelationType",
@@ -72,6 +76,7 @@ export const RelationType = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.common.v2.Object
+ * @deprecated
  */
 export const Object$ = proto3.makeMessageType(
   "aserto.directory.common.v2.Object",
@@ -89,6 +94,7 @@ export const Object$ = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.common.v2.Relation
+ * @deprecated
  */
 export const Relation = proto3.makeMessageType(
   "aserto.directory.common.v2.Relation",
@@ -104,6 +110,7 @@ export const Relation = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.common.v2.ObjectDependency
+ * @deprecated
  */
 export const ObjectDependency = proto3.makeMessageType(
   "aserto.directory.common.v2.ObjectDependency",
@@ -123,6 +130,7 @@ export const ObjectDependency = proto3.makeMessageType(
  * ObjectType identifier
  *
  * @generated from message aserto.directory.common.v2.ObjectTypeIdentifier
+ * @deprecated
  */
 export const ObjectTypeIdentifier = proto3.makeMessageType(
   "aserto.directory.common.v2.ObjectTypeIdentifier",
@@ -135,6 +143,7 @@ export const ObjectTypeIdentifier = proto3.makeMessageType(
  * Permission identifier
  *
  * @generated from message aserto.directory.common.v2.PermissionIdentifier
+ * @deprecated
  */
 export const PermissionIdentifier = proto3.makeMessageType(
   "aserto.directory.common.v2.PermissionIdentifier",
@@ -147,6 +156,7 @@ export const PermissionIdentifier = proto3.makeMessageType(
  * RelationType identifier
  *
  * @generated from message aserto.directory.common.v2.RelationTypeIdentifier
+ * @deprecated
  */
 export const RelationTypeIdentifier = proto3.makeMessageType(
   "aserto.directory.common.v2.RelationTypeIdentifier",
@@ -160,6 +170,7 @@ export const RelationTypeIdentifier = proto3.makeMessageType(
  * Object identifier
  *
  * @generated from message aserto.directory.common.v2.ObjectIdentifier
+ * @deprecated
  */
 export const ObjectIdentifier = proto3.makeMessageType(
   "aserto.directory.common.v2.ObjectIdentifier",
@@ -173,6 +184,7 @@ export const ObjectIdentifier = proto3.makeMessageType(
  * Relation identifier
  *
  * @generated from message aserto.directory.common.v2.RelationIdentifier
+ * @deprecated
  */
 export const RelationIdentifier = proto3.makeMessageType(
   "aserto.directory.common.v2.RelationIdentifier",
@@ -187,6 +199,7 @@ export const RelationIdentifier = proto3.makeMessageType(
  * Pagination request
  *
  * @generated from message aserto.directory.common.v2.PaginationRequest
+ * @deprecated
  */
 export const PaginationRequest = proto3.makeMessageType(
   "aserto.directory.common.v2.PaginationRequest",
@@ -200,6 +213,7 @@ export const PaginationRequest = proto3.makeMessageType(
  * Pagination response
  *
  * @generated from message aserto.directory.common.v2.PaginationResponse
+ * @deprecated
  */
 export const PaginationResponse = proto3.makeMessageType(
   "aserto.directory.common.v2.PaginationResponse",

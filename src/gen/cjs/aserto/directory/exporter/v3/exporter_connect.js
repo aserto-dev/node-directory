@@ -14,6 +14,8 @@ exports.Exporter = {
     typeName: "aserto.directory.exporter.v3.Exporter",
     methods: {
         /**
+         * export objects and relations as a stream
+         *
          * @generated from rpc aserto.directory.exporter.v3.Exporter.Export
          */
         export: {

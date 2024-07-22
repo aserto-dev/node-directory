@@ -14,7 +14,7 @@ exports.Writer = {
     typeName: "aserto.directory.writer.v3.Writer",
     methods: {
         /**
-         * object methods
+         * set object instance
          *
          * @generated from rpc aserto.directory.writer.v3.Writer.SetObject
          */
@@ -25,6 +25,8 @@ exports.Writer = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
+         * delete object instance
+         *
          * @generated from rpc aserto.directory.writer.v3.Writer.DeleteObject
          */
         deleteObject: {
@@ -34,7 +36,7 @@ exports.Writer = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
-         * relation methods
+         * set relation instance
          *
          * @generated from rpc aserto.directory.writer.v3.Writer.SetRelation
          */
@@ -45,6 +47,8 @@ exports.Writer = {
             kind: protobuf_1.MethodKind.Unary,
         },
         /**
+         * delete relation instance
+         *
          * @generated from rpc aserto.directory.writer.v3.Writer.DeleteRelation
          */
         deleteRelation: {

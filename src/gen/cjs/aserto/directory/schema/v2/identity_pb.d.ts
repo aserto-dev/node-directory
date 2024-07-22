@@ -2,6 +2,7 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 /**
  * @generated from enum aserto.directory.schema.v2.IdentityKind
+ * @deprecated
  */
 export declare enum IdentityKind {
     /**
@@ -51,6 +52,7 @@ export declare enum IdentityKind {
  * Properties of "identity" objects.
  *
  * @generated from message aserto.directory.schema.v2.IdentityProperties
+ * @deprecated
  */
 export declare class IdentityProperties extends Message<IdentityProperties> {
     /**

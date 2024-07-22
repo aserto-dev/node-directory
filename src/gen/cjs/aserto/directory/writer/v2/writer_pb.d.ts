@@ -3,6 +3,7 @@ import { Empty, Message, proto3 } from "@bufbuild/protobuf";
 import { Object$, ObjectIdentifier, ObjectType, ObjectTypeIdentifier, Permission, PermissionIdentifier, Relation, RelationIdentifier, RelationType, RelationTypeIdentifier } from "../../common/v2/common_pb.js";
 /**
  * @generated from message aserto.directory.writer.v2.SetObjectTypeRequest
+ * @deprecated
  */
 export declare class SetObjectTypeRequest extends Message<SetObjectTypeRequest> {
     /**
@@ -22,6 +23,7 @@ export declare class SetObjectTypeRequest extends Message<SetObjectTypeRequest> 
 }
 /**
  * @generated from message aserto.directory.writer.v2.SetObjectTypeResponse
+ * @deprecated
  */
 export declare class SetObjectTypeResponse extends Message<SetObjectTypeResponse> {
     /**
@@ -41,6 +43,7 @@ export declare class SetObjectTypeResponse extends Message<SetObjectTypeResponse
 }
 /**
  * @generated from message aserto.directory.writer.v2.DeleteObjectTypeRequest
+ * @deprecated
  */
 export declare class DeleteObjectTypeRequest extends Message<DeleteObjectTypeRequest> {
     /**
@@ -60,6 +63,7 @@ export declare class DeleteObjectTypeRequest extends Message<DeleteObjectTypeReq
 }
 /**
  * @generated from message aserto.directory.writer.v2.DeleteObjectTypeResponse
+ * @deprecated
  */
 export declare class DeleteObjectTypeResponse extends Message<DeleteObjectTypeResponse> {
     /**
@@ -79,6 +83,7 @@ export declare class DeleteObjectTypeResponse extends Message<DeleteObjectTypeRe
 }
 /**
  * @generated from message aserto.directory.writer.v2.SetRelationTypeRequest
+ * @deprecated
  */
 export declare class SetRelationTypeRequest extends Message<SetRelationTypeRequest> {
     /**
@@ -98,6 +103,7 @@ export declare class SetRelationTypeRequest extends Message<SetRelationTypeReque
 }
 /**
  * @generated from message aserto.directory.writer.v2.SetRelationTypeResponse
+ * @deprecated
  */
 export declare class SetRelationTypeResponse extends Message<SetRelationTypeResponse> {
     /**
@@ -117,6 +123,7 @@ export declare class SetRelationTypeResponse extends Message<SetRelationTypeResp
 }
 /**
  * @generated from message aserto.directory.writer.v2.DeleteRelationTypeRequest
+ * @deprecated
  */
 export declare class DeleteRelationTypeRequest extends Message<DeleteRelationTypeRequest> {
     /**
@@ -136,6 +143,7 @@ export declare class DeleteRelationTypeRequest extends Message<DeleteRelationTyp
 }
 /**
  * @generated from message aserto.directory.writer.v2.DeleteRelationTypeResponse
+ * @deprecated
  */
 export declare class DeleteRelationTypeResponse extends Message<DeleteRelationTypeResponse> {
     /**
@@ -155,6 +163,7 @@ export declare class DeleteRelationTypeResponse extends Message<DeleteRelationTy
 }
 /**
  * @generated from message aserto.directory.writer.v2.SetPermissionRequest
+ * @deprecated
  */
 export declare class SetPermissionRequest extends Message<SetPermissionRequest> {
     /**
@@ -174,6 +183,7 @@ export declare class SetPermissionRequest extends Message<SetPermissionRequest> 
 }
 /**
  * @generated from message aserto.directory.writer.v2.SetPermissionResponse
+ * @deprecated
  */
 export declare class SetPermissionResponse extends Message<SetPermissionResponse> {
     /**
@@ -193,6 +203,7 @@ export declare class SetPermissionResponse extends Message<SetPermissionResponse
 }
 /**
  * @generated from message aserto.directory.writer.v2.DeletePermissionRequest
+ * @deprecated
  */
 export declare class DeletePermissionRequest extends Message<DeletePermissionRequest> {
     /**
@@ -212,6 +223,7 @@ export declare class DeletePermissionRequest extends Message<DeletePermissionReq
 }
 /**
  * @generated from message aserto.directory.writer.v2.DeletePermissionResponse
+ * @deprecated
  */
 export declare class DeletePermissionResponse extends Message<DeletePermissionResponse> {
     /**
@@ -231,6 +243,7 @@ export declare class DeletePermissionResponse extends Message<DeletePermissionRe
 }
 /**
  * @generated from message aserto.directory.writer.v2.SetObjectRequest
+ * @deprecated
  */
 export declare class SetObjectRequest extends Message<SetObjectRequest> {
     /**
@@ -250,6 +263,7 @@ export declare class SetObjectRequest extends Message<SetObjectRequest> {
 }
 /**
  * @generated from message aserto.directory.writer.v2.SetObjectResponse
+ * @deprecated
  */
 export declare class SetObjectResponse extends Message<SetObjectResponse> {
     /**
@@ -269,6 +283,7 @@ export declare class SetObjectResponse extends Message<SetObjectResponse> {
 }
 /**
  * @generated from message aserto.directory.writer.v2.DeleteObjectRequest
+ * @deprecated
  */
 export declare class DeleteObjectRequest extends Message<DeleteObjectRequest> {
     /**
@@ -294,6 +309,7 @@ export declare class DeleteObjectRequest extends Message<DeleteObjectRequest> {
 }
 /**
  * @generated from message aserto.directory.writer.v2.DeleteObjectResponse
+ * @deprecated
  */
 export declare class DeleteObjectResponse extends Message<DeleteObjectResponse> {
     /**
@@ -313,6 +329,7 @@ export declare class DeleteObjectResponse extends Message<DeleteObjectResponse> 
 }
 /**
  * @generated from message aserto.directory.writer.v2.SetRelationRequest
+ * @deprecated
  */
 export declare class SetRelationRequest extends Message<SetRelationRequest> {
     /**
@@ -332,6 +349,7 @@ export declare class SetRelationRequest extends Message<SetRelationRequest> {
 }
 /**
  * @generated from message aserto.directory.writer.v2.SetRelationResponse
+ * @deprecated
  */
 export declare class SetRelationResponse extends Message<SetRelationResponse> {
     /**
@@ -351,6 +369,7 @@ export declare class SetRelationResponse extends Message<SetRelationResponse> {
 }
 /**
  * @generated from message aserto.directory.writer.v2.DeleteRelationRequest
+ * @deprecated
  */
 export declare class DeleteRelationRequest extends Message<DeleteRelationRequest> {
     /**
@@ -370,6 +389,7 @@ export declare class DeleteRelationRequest extends Message<DeleteRelationRequest
 }
 /**
  * @generated from message aserto.directory.writer.v2.DeleteRelationResponse
+ * @deprecated
  */
 export declare class DeleteRelationResponse extends Message<DeleteRelationResponse> {
     /**

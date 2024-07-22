@@ -8,6 +8,7 @@ import { Object$, ObjectDependency, ObjectIdentifier, ObjectType, ObjectTypeIden
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectTypeRequest
+ * @deprecated
  */
 export const GetObjectTypeRequest = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetObjectTypeRequest",
@@ -18,6 +19,7 @@ export const GetObjectTypeRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectTypeResponse
+ * @deprecated
  */
 export const GetObjectTypeResponse = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetObjectTypeResponse",
@@ -28,6 +30,7 @@ export const GetObjectTypeResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectTypesRequest
+ * @deprecated
  */
 export const GetObjectTypesRequest = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetObjectTypesRequest",
@@ -38,6 +41,7 @@ export const GetObjectTypesRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectTypesResponse
+ * @deprecated
  */
 export const GetObjectTypesResponse = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetObjectTypesResponse",
@@ -49,6 +53,7 @@ export const GetObjectTypesResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationTypeRequest
+ * @deprecated
  */
 export const GetRelationTypeRequest = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetRelationTypeRequest",
@@ -59,6 +64,7 @@ export const GetRelationTypeRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationTypeResponse
+ * @deprecated
  */
 export const GetRelationTypeResponse = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetRelationTypeResponse",
@@ -69,6 +75,7 @@ export const GetRelationTypeResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationTypesRequest
+ * @deprecated
  */
 export const GetRelationTypesRequest = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetRelationTypesRequest",
@@ -80,6 +87,7 @@ export const GetRelationTypesRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationTypesResponse
+ * @deprecated
  */
 export const GetRelationTypesResponse = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetRelationTypesResponse",
@@ -91,6 +99,7 @@ export const GetRelationTypesResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectRequest
+ * @deprecated
  */
 export const GetObjectRequest = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetObjectRequest",
@@ -103,6 +112,7 @@ export const GetObjectRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectResponse
+ * @deprecated
  */
 export const GetObjectResponse = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetObjectResponse",
@@ -115,6 +125,7 @@ export const GetObjectResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectManyRequest
+ * @deprecated
  */
 export const GetObjectManyRequest = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetObjectManyRequest",
@@ -125,6 +136,7 @@ export const GetObjectManyRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectManyResponse
+ * @deprecated
  */
 export const GetObjectManyResponse = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetObjectManyResponse",
@@ -135,6 +147,7 @@ export const GetObjectManyResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectsRequest
+ * @deprecated
  */
 export const GetObjectsRequest = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetObjectsRequest",
@@ -146,6 +159,7 @@ export const GetObjectsRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectsResponse
+ * @deprecated
  */
 export const GetObjectsResponse = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetObjectsResponse",
@@ -157,6 +171,7 @@ export const GetObjectsResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationRequest
+ * @deprecated
  */
 export const GetRelationRequest = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetRelationRequest",
@@ -168,6 +183,7 @@ export const GetRelationRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationResponse
+ * @deprecated
  */
 export const GetRelationResponse = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetRelationResponse",
@@ -179,6 +195,7 @@ export const GetRelationResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationsRequest
+ * @deprecated
  */
 export const GetRelationsRequest = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetRelationsRequest",
@@ -190,6 +207,7 @@ export const GetRelationsRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationsResponse
+ * @deprecated
  */
 export const GetRelationsResponse = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetRelationsResponse",
@@ -201,6 +219,7 @@ export const GetRelationsResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetPermissionRequest
+ * @deprecated
  */
 export const GetPermissionRequest = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetPermissionRequest",
@@ -211,6 +230,7 @@ export const GetPermissionRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetPermissionResponse
+ * @deprecated
  */
 export const GetPermissionResponse = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetPermissionResponse",
@@ -221,6 +241,7 @@ export const GetPermissionResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetPermissionsRequest
+ * @deprecated
  */
 export const GetPermissionsRequest = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetPermissionsRequest",
@@ -231,6 +252,7 @@ export const GetPermissionsRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetPermissionsResponse
+ * @deprecated
  */
 export const GetPermissionsResponse = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetPermissionsResponse",
@@ -242,6 +264,7 @@ export const GetPermissionsResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.CheckPermissionRequest
+ * @deprecated
  */
 export const CheckPermissionRequest = proto3.makeMessageType(
   "aserto.directory.reader.v2.CheckPermissionRequest",
@@ -255,6 +278,7 @@ export const CheckPermissionRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.CheckPermissionResponse
+ * @deprecated
  */
 export const CheckPermissionResponse = proto3.makeMessageType(
   "aserto.directory.reader.v2.CheckPermissionResponse",
@@ -266,6 +290,7 @@ export const CheckPermissionResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.CheckRelationRequest
+ * @deprecated
  */
 export const CheckRelationRequest = proto3.makeMessageType(
   "aserto.directory.reader.v2.CheckRelationRequest",
@@ -279,6 +304,7 @@ export const CheckRelationRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.CheckRelationResponse
+ * @deprecated
  */
 export const CheckRelationResponse = proto3.makeMessageType(
   "aserto.directory.reader.v2.CheckRelationResponse",
@@ -290,6 +316,7 @@ export const CheckRelationResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.CheckResponse
+ * @deprecated
  */
 export const CheckResponse = proto3.makeMessageType(
   "aserto.directory.reader.v2.CheckResponse",
@@ -301,6 +328,7 @@ export const CheckResponse = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetGraphRequest
+ * @deprecated
  */
 export const GetGraphRequest = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetGraphRequest",
@@ -314,6 +342,7 @@ export const GetGraphRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.reader.v2.GetGraphResponse
+ * @deprecated
  */
 export const GetGraphResponse = proto3.makeMessageType(
   "aserto.directory.reader.v2.GetGraphResponse",

@@ -13,7 +13,7 @@ export const Writer = {
   typeName: "aserto.directory.writer.v3.Writer",
   methods: {
     /**
-     * object methods
+     * set object instance
      *
      * @generated from rpc aserto.directory.writer.v3.Writer.SetObject
      */
@@ -24,6 +24,8 @@ export const Writer = {
       kind: MethodKind.Unary,
     },
     /**
+     * delete object instance
+     *
      * @generated from rpc aserto.directory.writer.v3.Writer.DeleteObject
      */
     deleteObject: {
@@ -33,7 +35,7 @@ export const Writer = {
       kind: MethodKind.Unary,
     },
     /**
-     * relation methods
+     * set relation instance
      *
      * @generated from rpc aserto.directory.writer.v3.Writer.SetRelation
      */
@@ -44,6 +46,8 @@ export const Writer = {
       kind: MethodKind.Unary,
     },
     /**
+     * delete relation instance
+     *
      * @generated from rpc aserto.directory.writer.v3.Writer.DeleteRelation
      */
     deleteRelation: {

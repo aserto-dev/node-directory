@@ -9,6 +9,7 @@ const protobuf_1 = require("@bufbuild/protobuf");
 const common_pb_js_1 = require("../../common/v2/common_pb.js");
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectTypeRequest
+ * @deprecated
  */
 class GetObjectTypeRequest extends protobuf_1.Message {
     constructor(data) {
@@ -36,6 +37,7 @@ GetObjectTypeRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectTypeResponse
+ * @deprecated
  */
 class GetObjectTypeResponse extends protobuf_1.Message {
     constructor(data) {
@@ -63,6 +65,7 @@ GetObjectTypeResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectTypesRequest
+ * @deprecated
  */
 class GetObjectTypesRequest extends protobuf_1.Message {
     constructor(data) {
@@ -90,6 +93,7 @@ GetObjectTypesRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectTypesResponse
+ * @deprecated
  */
 class GetObjectTypesResponse extends protobuf_1.Message {
     constructor(data) {
@@ -124,6 +128,7 @@ GetObjectTypesResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationTypeRequest
+ * @deprecated
  */
 class GetRelationTypeRequest extends protobuf_1.Message {
     constructor(data) {
@@ -151,6 +156,7 @@ GetRelationTypeRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationTypeResponse
+ * @deprecated
  */
 class GetRelationTypeResponse extends protobuf_1.Message {
     constructor(data) {
@@ -178,6 +184,7 @@ GetRelationTypeResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationTypesRequest
+ * @deprecated
  */
 class GetRelationTypesRequest extends protobuf_1.Message {
     constructor(data) {
@@ -206,6 +213,7 @@ GetRelationTypesRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationTypesResponse
+ * @deprecated
  */
 class GetRelationTypesResponse extends protobuf_1.Message {
     constructor(data) {
@@ -240,6 +248,7 @@ GetRelationTypesResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectRequest
+ * @deprecated
  */
 class GetObjectRequest extends protobuf_1.Message {
     constructor(data) {
@@ -269,6 +278,7 @@ GetObjectRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectResponse
+ * @deprecated
  */
 class GetObjectResponse extends protobuf_1.Message {
     constructor(data) {
@@ -304,6 +314,7 @@ GetObjectResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectManyRequest
+ * @deprecated
  */
 class GetObjectManyRequest extends protobuf_1.Message {
     constructor(data) {
@@ -337,6 +348,7 @@ GetObjectManyRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectManyResponse
+ * @deprecated
  */
 class GetObjectManyResponse extends protobuf_1.Message {
     constructor(data) {
@@ -370,6 +382,7 @@ GetObjectManyResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectsRequest
+ * @deprecated
  */
 class GetObjectsRequest extends protobuf_1.Message {
     constructor(data) {
@@ -398,6 +411,7 @@ GetObjectsRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectsResponse
+ * @deprecated
  */
 class GetObjectsResponse extends protobuf_1.Message {
     constructor(data) {
@@ -432,6 +446,7 @@ GetObjectsResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationRequest
+ * @deprecated
  */
 class GetRelationRequest extends protobuf_1.Message {
     constructor(data) {
@@ -460,6 +475,7 @@ GetRelationRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationResponse
+ * @deprecated
  */
 class GetRelationResponse extends protobuf_1.Message {
     constructor(data) {
@@ -500,6 +516,7 @@ GetRelationResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationsRequest
+ * @deprecated
  */
 class GetRelationsRequest extends protobuf_1.Message {
     constructor(data) {
@@ -528,6 +545,7 @@ GetRelationsRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationsResponse
+ * @deprecated
  */
 class GetRelationsResponse extends protobuf_1.Message {
     constructor(data) {
@@ -562,6 +580,7 @@ GetRelationsResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetPermissionRequest
+ * @deprecated
  */
 class GetPermissionRequest extends protobuf_1.Message {
     constructor(data) {
@@ -589,6 +608,7 @@ GetPermissionRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetPermissionResponse
+ * @deprecated
  */
 class GetPermissionResponse extends protobuf_1.Message {
     constructor(data) {
@@ -616,6 +636,7 @@ GetPermissionResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetPermissionsRequest
+ * @deprecated
  */
 class GetPermissionsRequest extends protobuf_1.Message {
     constructor(data) {
@@ -643,6 +664,7 @@ GetPermissionsRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetPermissionsResponse
+ * @deprecated
  */
 class GetPermissionsResponse extends protobuf_1.Message {
     constructor(data) {
@@ -677,6 +699,7 @@ GetPermissionsResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.CheckPermissionRequest
+ * @deprecated
  */
 class CheckPermissionRequest extends protobuf_1.Message {
     constructor(data) {
@@ -713,6 +736,7 @@ CheckPermissionRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.CheckPermissionResponse
+ * @deprecated
  */
 class CheckPermissionResponse extends protobuf_1.Message {
     constructor(data) {
@@ -753,6 +777,7 @@ CheckPermissionResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.CheckRelationRequest
+ * @deprecated
  */
 class CheckRelationRequest extends protobuf_1.Message {
     constructor(data) {
@@ -789,6 +814,7 @@ CheckRelationRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.CheckRelationResponse
+ * @deprecated
  */
 class CheckRelationResponse extends protobuf_1.Message {
     constructor(data) {
@@ -829,6 +855,7 @@ CheckRelationResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.CheckResponse
+ * @deprecated
  */
 class CheckResponse extends protobuf_1.Message {
     constructor(data) {
@@ -869,6 +896,7 @@ CheckResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetGraphRequest
+ * @deprecated
  */
 class GetGraphRequest extends protobuf_1.Message {
     constructor(data) {
@@ -899,6 +927,7 @@ GetGraphRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
 ]);
 /**
  * @generated from message aserto.directory.reader.v2.GetGraphResponse
+ * @deprecated
  */
 class GetGraphResponse extends protobuf_1.Message {
     constructor(data) {

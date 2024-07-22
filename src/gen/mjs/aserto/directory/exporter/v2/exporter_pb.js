@@ -8,6 +8,7 @@ import { Object$, ObjectType, Permission, Relation, RelationType } from "../../c
 
 /**
  * @generated from enum aserto.directory.exporter.v2.Option
+ * @deprecated
  */
 export const Option = proto3.makeEnum(
   "aserto.directory.exporter.v2.Option",
@@ -29,6 +30,7 @@ export const Option = proto3.makeEnum(
 
 /**
  * @generated from message aserto.directory.exporter.v2.ExportRequest
+ * @deprecated
  */
 export const ExportRequest = proto3.makeMessageType(
   "aserto.directory.exporter.v2.ExportRequest",
@@ -40,6 +42,7 @@ export const ExportRequest = proto3.makeMessageType(
 
 /**
  * @generated from message aserto.directory.exporter.v2.ExportResponse
+ * @deprecated
  */
 export const ExportResponse = proto3.makeMessageType(
   "aserto.directory.exporter.v2.ExportResponse",

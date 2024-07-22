@@ -9,6 +9,7 @@ import { proto3 } from "@bufbuild/protobuf";
  * Properties of "group" objects.
  *
  * @generated from message aserto.directory.schema.v2.GroupProperties
+ * @deprecated
  */
 export const GroupProperties = proto3.makeMessageType(
   "aserto.directory.schema.v2.GroupProperties",

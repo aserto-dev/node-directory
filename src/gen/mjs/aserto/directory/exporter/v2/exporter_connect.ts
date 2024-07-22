@@ -14,6 +14,7 @@ export const Exporter = {
   methods: {
     /**
      * @generated from rpc aserto.directory.exporter.v2.Exporter.Export
+     * @deprecated
      */
     export: {
       name: "Export",

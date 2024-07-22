@@ -7,9 +7,8 @@ export declare const Writer: {
     readonly typeName: "aserto.directory.writer.v2.Writer";
     readonly methods: {
         /**
-         * object type metadata methods
-         *
          * @generated from rpc aserto.directory.writer.v2.Writer.SetObjectType
+         * @deprecated
          */
         readonly setObjectType: {
             readonly name: "SetObjectType";
@@ -19,6 +18,7 @@ export declare const Writer: {
         };
         /**
          * @generated from rpc aserto.directory.writer.v2.Writer.DeleteObjectType
+         * @deprecated
          */
         readonly deleteObjectType: {
             readonly name: "DeleteObjectType";
@@ -27,9 +27,8 @@ export declare const Writer: {
             readonly kind: MethodKind.Unary;
         };
         /**
-         * relation type metadata methods
-         *
          * @generated from rpc aserto.directory.writer.v2.Writer.SetRelationType
+         * @deprecated
          */
         readonly setRelationType: {
             readonly name: "SetRelationType";
@@ -39,6 +38,7 @@ export declare const Writer: {
         };
         /**
          * @generated from rpc aserto.directory.writer.v2.Writer.DeleteRelationType
+         * @deprecated
          */
         readonly deleteRelationType: {
             readonly name: "DeleteRelationType";
@@ -47,9 +47,8 @@ export declare const Writer: {
             readonly kind: MethodKind.Unary;
         };
         /**
-         * permission metadata methods
-         *
          * @generated from rpc aserto.directory.writer.v2.Writer.SetPermission
+         * @deprecated
          */
         readonly setPermission: {
             readonly name: "SetPermission";
@@ -59,6 +58,7 @@ export declare const Writer: {
         };
         /**
          * @generated from rpc aserto.directory.writer.v2.Writer.DeletePermission
+         * @deprecated
          */
         readonly deletePermission: {
             readonly name: "DeletePermission";
@@ -67,9 +67,11 @@ export declare const Writer: {
             readonly kind: MethodKind.Unary;
         };
         /**
-         * object methods
+         * set object instance
+         * Deprecated: directory.v2.SetObject is deprecated, use directory.v3.SetObject.
          *
          * @generated from rpc aserto.directory.writer.v2.Writer.SetObject
+         * @deprecated
          */
         readonly setObject: {
             readonly name: "SetObject";
@@ -78,7 +80,11 @@ export declare const Writer: {
             readonly kind: MethodKind.Unary;
         };
         /**
+         * delete object instance
+         * Deprecated: directory.v2.DeleteObject is deprecated, use directory.v3.DeleteObject.
+         *
          * @generated from rpc aserto.directory.writer.v2.Writer.DeleteObject
+         * @deprecated
          */
         readonly deleteObject: {
             readonly name: "DeleteObject";
@@ -87,9 +93,11 @@ export declare const Writer: {
             readonly kind: MethodKind.Unary;
         };
         /**
-         * relation methods
+         * set relation instance
+         * Deprecated: directory.v2.SetRelation is deprecated, use directory.v3.SetRelation.
          *
          * @generated from rpc aserto.directory.writer.v2.Writer.SetRelation
+         * @deprecated
          */
         readonly setRelation: {
             readonly name: "SetRelation";
@@ -98,7 +106,11 @@ export declare const Writer: {
             readonly kind: MethodKind.Unary;
         };
         /**
+         * delete relation instance
+         * Deprecated: directory.v2.DeleteRelation is deprecated, use directory.v3.DeleteRelation.
+         *
          * @generated from rpc aserto.directory.writer.v2.Writer.DeleteRelation
+         * @deprecated
          */
         readonly deleteRelation: {
             readonly name: "DeleteRelation";
