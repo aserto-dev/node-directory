@@ -13,7 +13,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TimestampRules = exports.DurationRules = exports.AnyRules = exports.MapRules = exports.RepeatedRules = exports.EnumRules = exports.BytesRules = exports.StringRules = exports.BoolRules = exports.SFixed64Rules = exports.SFixed32Rules = exports.Fixed64Rules = exports.Fixed32Rules = exports.SInt64Rules = exports.SInt32Rules = exports.UInt64Rules = exports.UInt32Rules = exports.Int64Rules = exports.Int32Rules = exports.DoubleRules = exports.FloatRules = exports.FieldConstraints = exports.OneofConstraints = exports.MessageConstraints = exports.KnownRegex = exports.Ignore = void 0;
+exports.field = exports.oneof = exports.message = exports.TimestampRules = exports.DurationRules = exports.AnyRules = exports.MapRules = exports.RepeatedRules = exports.EnumRules = exports.BytesRules = exports.StringRules = exports.BoolRules = exports.SFixed64Rules = exports.SFixed32Rules = exports.Fixed64Rules = exports.Fixed32Rules = exports.SInt64Rules = exports.SInt32Rules = exports.UInt64Rules = exports.UInt32Rules = exports.Int64Rules = exports.Int32Rules = exports.DoubleRules = exports.FloatRules = exports.FieldConstraints = exports.OneofConstraints = exports.MessageConstraints = exports.KnownRegex = exports.Ignore = void 0;
 const protobuf_1 = require("@bufbuild/protobuf");
 const expression_pb_js_1 = require("./expression_pb.js");
 /**
@@ -1867,3 +1867,24 @@ TimestampRules.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 8, name: "gt_now", kind: "scalar", T: 8 /* ScalarType.BOOL */, oneof: "greater_than" },
     { no: 9, name: "within", kind: "message", T: protobuf_1.Duration, opt: true },
 ]);
+/**
+ * Rules specify the validations to be performed on this message. By default,
+ * no validation is performed against a message.
+ *
+ * @generated from extension: optional buf.validate.MessageConstraints message = 1159;
+ */
+exports.message = protobuf_1.proto3.makeExtension("buf.validate.message", protobuf_1.MessageOptions, () => ({ no: 1159, kind: "message", T: MessageConstraints, opt: true }));
+/**
+ * Rules specify the validations to be performed on this oneof. By default,
+ * no validation is performed against a oneof.
+ *
+ * @generated from extension: optional buf.validate.OneofConstraints oneof = 1159;
+ */
+exports.oneof = protobuf_1.proto3.makeExtension("buf.validate.oneof", protobuf_1.OneofOptions, () => ({ no: 1159, kind: "message", T: OneofConstraints, opt: true }));
+/**
+ * Rules specify the validations to be performed on this field. By default,
+ * no validation is performed against a field.
+ *
+ * @generated from extension: optional buf.validate.FieldConstraints field = 1159;
+ */
+exports.field = protobuf_1.proto3.makeExtension("buf.validate.field", protobuf_1.FieldOptions, () => ({ no: 1159, kind: "message", T: FieldConstraints, opt: true }));

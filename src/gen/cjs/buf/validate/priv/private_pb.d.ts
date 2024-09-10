@@ -1,5 +1,5 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
+import { FieldOptions, Message, proto3 } from "@bufbuild/protobuf";
 /**
  * Do not use. Internal to protovalidate library
  *
@@ -46,3 +46,9 @@ export declare class Constraint extends Message<Constraint> {
     static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Constraint;
     static equals(a: Constraint | PlainMessage<Constraint> | undefined, b: Constraint | PlainMessage<Constraint> | undefined): boolean;
 }
+/**
+ * Do not use. Internal to protovalidate library
+ *
+ * @generated from extension: optional buf.validate.priv.FieldConstraints field = 1160;
+ */
+export declare const field: import("@bufbuild/protobuf").Extension<FieldOptions, FieldConstraints>;

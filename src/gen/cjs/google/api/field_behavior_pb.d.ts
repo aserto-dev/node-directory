@@ -1,3 +1,4 @@
+import { FieldOptions } from "@bufbuild/protobuf";
 /**
  * An indicator of the behavior of a given field (for example, that a field
  * is required in requests, or given as output but ignored as input).
@@ -92,3 +93,20 @@ export declare enum FieldBehavior {
      */
     IDENTIFIER = 8
 }
+/**
+ * A designation of a specific field behavior (required, output only, etc.)
+ * in protobuf messages.
+ *
+ * Examples:
+ *
+ *   string name = 1 [(google.api.field_behavior) = REQUIRED];
+ *   State state = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+ *   google.protobuf.Duration ttl = 1
+ *     [(google.api.field_behavior) = INPUT_ONLY];
+ *   google.protobuf.Timestamp expire_time = 1
+ *     [(google.api.field_behavior) = OUTPUT_ONLY,
+ *      (google.api.field_behavior) = IMMUTABLE];
+ *
+ * @generated from extension: repeated google.api.FieldBehavior field_behavior = 1052 [packed = false];
+ */
+export declare const field_behavior: import("@bufbuild/protobuf").Extension<FieldOptions, FieldBehavior[]>;

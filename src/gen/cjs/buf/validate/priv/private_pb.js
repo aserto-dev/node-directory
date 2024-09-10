@@ -13,7 +13,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Constraint = exports.FieldConstraints = void 0;
+exports.field = exports.Constraint = exports.FieldConstraints = void 0;
 const protobuf_1 = require("@bufbuild/protobuf");
 /**
  * Do not use. Internal to protovalidate library
@@ -91,3 +91,9 @@ Constraint.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 2, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "expression", kind: "scalar", T: 9 /* ScalarType.STRING */ },
 ]);
+/**
+ * Do not use. Internal to protovalidate library
+ *
+ * @generated from extension: optional buf.validate.priv.FieldConstraints field = 1160;
+ */
+exports.field = protobuf_1.proto3.makeExtension("buf.validate.priv.field", protobuf_1.FieldOptions, () => ({ no: 1160, kind: "message", T: FieldConstraints, opt: true }));

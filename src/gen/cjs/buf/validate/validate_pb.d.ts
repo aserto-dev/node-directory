@@ -1,5 +1,5 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Duration, Message, proto3, Timestamp } from "@bufbuild/protobuf";
+import { Duration, FieldOptions, Message, MessageOptions, OneofOptions, proto3, Timestamp } from "@bufbuild/protobuf";
 import { Constraint } from "./expression_pb.js";
 /**
  * Specifies how FieldConstraints.ignore behaves. See the documentation for
@@ -3881,3 +3881,24 @@ export declare class TimestampRules extends Message<TimestampRules> {
     static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TimestampRules;
     static equals(a: TimestampRules | PlainMessage<TimestampRules> | undefined, b: TimestampRules | PlainMessage<TimestampRules> | undefined): boolean;
 }
+/**
+ * Rules specify the validations to be performed on this message. By default,
+ * no validation is performed against a message.
+ *
+ * @generated from extension: optional buf.validate.MessageConstraints message = 1159;
+ */
+export declare const message: import("@bufbuild/protobuf").Extension<MessageOptions, MessageConstraints>;
+/**
+ * Rules specify the validations to be performed on this oneof. By default,
+ * no validation is performed against a oneof.
+ *
+ * @generated from extension: optional buf.validate.OneofConstraints oneof = 1159;
+ */
+export declare const oneof: import("@bufbuild/protobuf").Extension<OneofOptions, OneofConstraints>;
+/**
+ * Rules specify the validations to be performed on this field. By default,
+ * no validation is performed against a field.
+ *
+ * @generated from extension: optional buf.validate.FieldConstraints field = 1159;
+ */
+export declare const field: import("@bufbuild/protobuf").Extension<FieldOptions, FieldConstraints>;
