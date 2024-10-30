@@ -1,3 +1,4 @@
+---
 name: ci
 
 on:
@@ -22,36 +23,34 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Read Configuration
-      uses: hashicorp/vault-action@v3
-      id: vault
-      with:
-        url: ${{ env.VAULT_ADDR }}
-        token: ${{ secrets.VAULT_TOKEN }}
-        secrets: |
-          kv/data/github  "SSH_PRIVATE_KEY"     | SSH_PRIVATE_KEY;
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ vars.CODEGEN_APP_ID }}
+          private-key: ${{ secrets.CODEGEN_APP_KEY }}
 
-    - name: Use Node.js 20.x
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20.x'
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
 
-    - name: Yarn Install
-      run: yarn install
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
 
-    - name: Generate
-      run: yarn gen
+      - name: Yarn Install
+        run: yarn install
 
-    - name: Commit changes
-      if: github.event_name == 'workflow_dispatch'
-      uses: EndBug/add-and-commit@v9
-      with:
-        default_author: github_actions
-        message: 'Commit from GitHub Actions (ci)'
-        add: 'src'
-        push: origin HEAD:main
+      - name: Generate
+        run: yarn gen
 
+      - name: Commit changes
+        if: github.event_name == 'workflow_dispatch'
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          message: 'Commit from GitHub Actions (ci)'
+          add: 'src'
+          push: origin HEAD:main
