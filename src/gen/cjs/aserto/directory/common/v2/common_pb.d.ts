@@ -1,46 +1,15 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, Struct, Timestamp } from "@bufbuild/protobuf";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1";
+import type { Timestamp } from "@bufbuild/protobuf/wkt";
+import type { JsonObject, Message } from "@bufbuild/protobuf";
 /**
- * @generated from enum aserto.directory.common.v2.Flag
- * @deprecated
+ * Describes the file aserto/directory/common/v2/common.proto.
  */
-export declare enum Flag {
-    /**
-     * default, no special object behavior
-     *
-     * @generated from enum value: FLAG_UNKNOWN = 0;
-     */
-    UNKNOWN = 0,
-    /**
-     * hidden object
-     *
-     * @generated from enum value: FLAG_HIDDEN = 1;
-     */
-    HIDDEN = 1,
-    /**
-     * read-only object
-     *
-     * @generated from enum value: FLAG_READONLY = 2;
-     */
-    READONLY = 2,
-    /**
-     * system object
-     *
-     * @generated from enum value: FLAG_SYSTEM = 4;
-     */
-    SYSTEM = 4,
-    /**
-     * shadow object by type+key associated to parent object
-     *
-     * @generated from enum value: FLAG_SHADOW = 8;
-     */
-    SHADOW = 8
-}
+export declare const file_aserto_directory_common_v2_common: GenFile;
 /**
  * @generated from message aserto.directory.common.v2.ObjectType
  * @deprecated
  */
-export declare class ObjectType extends Message<ObjectType> {
+export type ObjectType = Message<"aserto.directory.common.v2.ObjectType"> & {
     /**
      * object type name (unique, lc-string)
      *
@@ -76,7 +45,7 @@ export declare class ObjectType extends Message<ObjectType> {
      *
      * @generated from field: google.protobuf.Struct schema = 10;
      */
-    schema?: Struct;
+    schema?: JsonObject;
     /**
      * created at timestamp (UTC)
      *
@@ -95,20 +64,18 @@ export declare class ObjectType extends Message<ObjectType> {
      * @generated from field: string hash = 23;
      */
     hash: string;
-    constructor(data?: PartialMessage<ObjectType>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v2.ObjectType";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ObjectType;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ObjectType;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ObjectType;
-    static equals(a: ObjectType | PlainMessage<ObjectType> | undefined, b: ObjectType | PlainMessage<ObjectType> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v2.ObjectType.
+ * Use `create(ObjectTypeSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const ObjectTypeSchema: GenMessage<ObjectType>;
 /**
  * @generated from message aserto.directory.common.v2.Permission
  * @deprecated
  */
-export declare class Permission extends Message<Permission> {
+export type Permission = Message<"aserto.directory.common.v2.Permission"> & {
     /**
      * permission name (unique, cs-string)
      *
@@ -139,20 +106,18 @@ export declare class Permission extends Message<Permission> {
      * @generated from field: string hash = 23;
      */
     hash: string;
-    constructor(data?: PartialMessage<Permission>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v2.Permission";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Permission;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Permission;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Permission;
-    static equals(a: Permission | PlainMessage<Permission> | undefined, b: Permission | PlainMessage<Permission> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v2.Permission.
+ * Use `create(PermissionSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const PermissionSchema: GenMessage<Permission>;
 /**
  * @generated from message aserto.directory.common.v2.RelationType
  * @deprecated
  */
-export declare class RelationType extends Message<RelationType> {
+export type RelationType = Message<"aserto.directory.common.v2.RelationType"> & {
     /**
      * relation type name selector
      *
@@ -213,20 +178,18 @@ export declare class RelationType extends Message<RelationType> {
      * @generated from field: string hash = 23;
      */
     hash: string;
-    constructor(data?: PartialMessage<RelationType>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v2.RelationType";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RelationType;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RelationType;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RelationType;
-    static equals(a: RelationType | PlainMessage<RelationType> | undefined, b: RelationType | PlainMessage<RelationType> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v2.RelationType.
+ * Use `create(RelationTypeSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const RelationTypeSchema: GenMessage<RelationType>;
 /**
  * @generated from message aserto.directory.common.v2.Object
  * @deprecated
  */
-export declare class Object$ extends Message<Object$> {
+export type Object$ = Message<"aserto.directory.common.v2.Object"> & {
     /**
      * external object key (cs-string)
      *
@@ -250,7 +213,7 @@ export declare class Object$ extends Message<Object$> {
      *
      * @generated from field: google.protobuf.Struct properties = 5;
      */
-    properties?: Struct;
+    properties?: JsonObject;
     /**
      * created at timestamp (UTC)
      *
@@ -269,20 +232,18 @@ export declare class Object$ extends Message<Object$> {
      * @generated from field: string hash = 23;
      */
     hash: string;
-    constructor(data?: PartialMessage<Object$>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v2.Object";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Object$;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Object$;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Object$;
-    static equals(a: Object$ | PlainMessage<Object$> | undefined, b: Object$ | PlainMessage<Object$> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v2.Object.
+ * Use `create(ObjectSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const ObjectSchema: GenMessage<Object$>;
 /**
  * @generated from message aserto.directory.common.v2.Relation
  * @deprecated
  */
-export declare class Relation extends Message<Relation> {
+export type Relation = Message<"aserto.directory.common.v2.Relation"> & {
     /**
      * subject identifier
      *
@@ -319,20 +280,18 @@ export declare class Relation extends Message<Relation> {
      * @generated from field: string hash = 23;
      */
     hash: string;
-    constructor(data?: PartialMessage<Relation>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v2.Relation";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Relation;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Relation;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Relation;
-    static equals(a: Relation | PlainMessage<Relation> | undefined, b: Relation | PlainMessage<Relation> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v2.Relation.
+ * Use `create(RelationSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const RelationSchema: GenMessage<Relation>;
 /**
  * @generated from message aserto.directory.common.v2.ObjectDependency
  * @deprecated
  */
-export declare class ObjectDependency extends Message<ObjectDependency> {
+export type ObjectDependency = Message<"aserto.directory.common.v2.ObjectDependency"> & {
     /**
      * object type name of source object
      *
@@ -381,66 +340,60 @@ export declare class ObjectDependency extends Message<ObjectDependency> {
      * @generated from field: repeated string path = 13;
      */
     path: string[];
-    constructor(data?: PartialMessage<ObjectDependency>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v2.ObjectDependency";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ObjectDependency;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ObjectDependency;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ObjectDependency;
-    static equals(a: ObjectDependency | PlainMessage<ObjectDependency> | undefined, b: ObjectDependency | PlainMessage<ObjectDependency> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v2.ObjectDependency.
+ * Use `create(ObjectDependencySchema)` to create a new message.
+ * @deprecated
+ */
+export declare const ObjectDependencySchema: GenMessage<ObjectDependency>;
 /**
  * ObjectType identifier
  *
  * @generated from message aserto.directory.common.v2.ObjectTypeIdentifier
  * @deprecated
  */
-export declare class ObjectTypeIdentifier extends Message<ObjectTypeIdentifier> {
+export type ObjectTypeIdentifier = Message<"aserto.directory.common.v2.ObjectTypeIdentifier"> & {
     /**
      * object type name (unique, lc-string)
      *
      * @generated from field: optional string name = 2;
      */
     name?: string;
-    constructor(data?: PartialMessage<ObjectTypeIdentifier>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v2.ObjectTypeIdentifier";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ObjectTypeIdentifier;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ObjectTypeIdentifier;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ObjectTypeIdentifier;
-    static equals(a: ObjectTypeIdentifier | PlainMessage<ObjectTypeIdentifier> | undefined, b: ObjectTypeIdentifier | PlainMessage<ObjectTypeIdentifier> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v2.ObjectTypeIdentifier.
+ * Use `create(ObjectTypeIdentifierSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const ObjectTypeIdentifierSchema: GenMessage<ObjectTypeIdentifier>;
 /**
  * Permission identifier
  *
  * @generated from message aserto.directory.common.v2.PermissionIdentifier
  * @deprecated
  */
-export declare class PermissionIdentifier extends Message<PermissionIdentifier> {
+export type PermissionIdentifier = Message<"aserto.directory.common.v2.PermissionIdentifier"> & {
     /**
      * permission name (unique, cs-string)
      *
      * @generated from field: optional string name = 2;
      */
     name?: string;
-    constructor(data?: PartialMessage<PermissionIdentifier>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v2.PermissionIdentifier";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PermissionIdentifier;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PermissionIdentifier;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PermissionIdentifier;
-    static equals(a: PermissionIdentifier | PlainMessage<PermissionIdentifier> | undefined, b: PermissionIdentifier | PlainMessage<PermissionIdentifier> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v2.PermissionIdentifier.
+ * Use `create(PermissionIdentifierSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const PermissionIdentifierSchema: GenMessage<PermissionIdentifier>;
 /**
  * RelationType identifier
  *
  * @generated from message aserto.directory.common.v2.RelationTypeIdentifier
  * @deprecated
  */
-export declare class RelationTypeIdentifier extends Message<RelationTypeIdentifier> {
+export type RelationTypeIdentifier = Message<"aserto.directory.common.v2.RelationTypeIdentifier"> & {
     /**
      * relation type name selector
      *
@@ -453,22 +406,20 @@ export declare class RelationTypeIdentifier extends Message<RelationTypeIdentifi
      * @generated from field: optional string object_type = 3;
      */
     objectType?: string;
-    constructor(data?: PartialMessage<RelationTypeIdentifier>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v2.RelationTypeIdentifier";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RelationTypeIdentifier;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RelationTypeIdentifier;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RelationTypeIdentifier;
-    static equals(a: RelationTypeIdentifier | PlainMessage<RelationTypeIdentifier> | undefined, b: RelationTypeIdentifier | PlainMessage<RelationTypeIdentifier> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v2.RelationTypeIdentifier.
+ * Use `create(RelationTypeIdentifierSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const RelationTypeIdentifierSchema: GenMessage<RelationTypeIdentifier>;
 /**
  * Object identifier
  *
  * @generated from message aserto.directory.common.v2.ObjectIdentifier
  * @deprecated
  */
-export declare class ObjectIdentifier extends Message<ObjectIdentifier> {
+export type ObjectIdentifier = Message<"aserto.directory.common.v2.ObjectIdentifier"> & {
     /**
      * object type
      *
@@ -481,22 +432,20 @@ export declare class ObjectIdentifier extends Message<ObjectIdentifier> {
      * @generated from field: optional string key = 3;
      */
     key?: string;
-    constructor(data?: PartialMessage<ObjectIdentifier>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v2.ObjectIdentifier";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ObjectIdentifier;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ObjectIdentifier;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ObjectIdentifier;
-    static equals(a: ObjectIdentifier | PlainMessage<ObjectIdentifier> | undefined, b: ObjectIdentifier | PlainMessage<ObjectIdentifier> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v2.ObjectIdentifier.
+ * Use `create(ObjectIdentifierSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const ObjectIdentifierSchema: GenMessage<ObjectIdentifier>;
 /**
  * Relation identifier
  *
  * @generated from message aserto.directory.common.v2.RelationIdentifier
  * @deprecated
  */
-export declare class RelationIdentifier extends Message<RelationIdentifier> {
+export type RelationIdentifier = Message<"aserto.directory.common.v2.RelationIdentifier"> & {
     /**
      * subject identifier
      *
@@ -515,22 +464,20 @@ export declare class RelationIdentifier extends Message<RelationIdentifier> {
      * @generated from field: aserto.directory.common.v2.ObjectIdentifier object = 3;
      */
     object?: ObjectIdentifier;
-    constructor(data?: PartialMessage<RelationIdentifier>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v2.RelationIdentifier";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RelationIdentifier;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RelationIdentifier;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RelationIdentifier;
-    static equals(a: RelationIdentifier | PlainMessage<RelationIdentifier> | undefined, b: RelationIdentifier | PlainMessage<RelationIdentifier> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v2.RelationIdentifier.
+ * Use `create(RelationIdentifierSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const RelationIdentifierSchema: GenMessage<RelationIdentifier>;
 /**
  * Pagination request
  *
  * @generated from message aserto.directory.common.v2.PaginationRequest
  * @deprecated
  */
-export declare class PaginationRequest extends Message<PaginationRequest> {
+export type PaginationRequest = Message<"aserto.directory.common.v2.PaginationRequest"> & {
     /**
      * requested page size, valid value between 1-100 rows (default 100)
      *
@@ -543,22 +490,20 @@ export declare class PaginationRequest extends Message<PaginationRequest> {
      * @generated from field: string token = 2;
      */
     token: string;
-    constructor(data?: PartialMessage<PaginationRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v2.PaginationRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaginationRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaginationRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaginationRequest;
-    static equals(a: PaginationRequest | PlainMessage<PaginationRequest> | undefined, b: PaginationRequest | PlainMessage<PaginationRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v2.PaginationRequest.
+ * Use `create(PaginationRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const PaginationRequestSchema: GenMessage<PaginationRequest>;
 /**
  * Pagination response
  *
  * @generated from message aserto.directory.common.v2.PaginationResponse
  * @deprecated
  */
-export declare class PaginationResponse extends Message<PaginationResponse> {
+export type PaginationResponse = Message<"aserto.directory.common.v2.PaginationResponse"> & {
     /**
      * next page token, when empty there are no more pages to fetch
      *
@@ -571,12 +516,51 @@ export declare class PaginationResponse extends Message<PaginationResponse> {
      * @generated from field: int32 result_size = 2;
      */
     resultSize: number;
-    constructor(data?: PartialMessage<PaginationResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v2.PaginationResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaginationResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaginationResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaginationResponse;
-    static equals(a: PaginationResponse | PlainMessage<PaginationResponse> | undefined, b: PaginationResponse | PlainMessage<PaginationResponse> | undefined): boolean;
+};
+/**
+ * Describes the message aserto.directory.common.v2.PaginationResponse.
+ * Use `create(PaginationResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const PaginationResponseSchema: GenMessage<PaginationResponse>;
+/**
+ * @generated from enum aserto.directory.common.v2.Flag
+ * @deprecated
+ */
+export declare enum Flag {
+    /**
+     * default, no special object behavior
+     *
+     * @generated from enum value: FLAG_UNKNOWN = 0;
+     */
+    UNKNOWN = 0,
+    /**
+     * hidden object
+     *
+     * @generated from enum value: FLAG_HIDDEN = 1;
+     */
+    HIDDEN = 1,
+    /**
+     * read-only object
+     *
+     * @generated from enum value: FLAG_READONLY = 2;
+     */
+    READONLY = 2,
+    /**
+     * system object
+     *
+     * @generated from enum value: FLAG_SYSTEM = 4;
+     */
+    SYSTEM = 4,
+    /**
+     * shadow object by type+key associated to parent object
+     *
+     * @generated from enum value: FLAG_SHADOW = 8;
+     */
+    SHADOW = 8
 }
+/**
+ * Describes the enum aserto.directory.common.v2.Flag.
+ * @deprecated
+ */
+export declare const FlagSchema: GenEnum<Flag>;

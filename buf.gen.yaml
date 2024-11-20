@@ -1,14 +1,6 @@
-version: v1
+version: v2
+clean: true
 plugins:
-   - plugin: es
-     opt: target=ts
-     out: src/gen/mjs
-   - plugin: es
-     opt: target=js
-     out:  src/gen/mjs
-   - plugin: connect-es
-     opt: target=ts
-     out:  src/gen/mjs
-   - plugin: connect-es
-     opt: target=js
-     out:  src/gen/mjs
+  - local: protoc-gen-es
+    opt: target=ts+js
+    out: src/gen/mjs

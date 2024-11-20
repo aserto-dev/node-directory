@@ -1,5 +1,10 @@
-import { FieldOptions, FileOptions, MessageOptions, MethodOptions, ServiceOptions } from "@bufbuild/protobuf";
-import { JSONSchema, Operation, Schema, Swagger, Tag } from "./openapiv2_pb.js";
+import type { GenExtension, GenFile } from "@bufbuild/protobuf/codegenv1";
+import type { FieldOptions, FileOptions, MessageOptions, MethodOptions, ServiceOptions } from "@bufbuild/protobuf/wkt";
+import type { JSONSchema, Operation, Schema, Swagger, Tag } from "./openapiv2_pb";
+/**
+ * Describes the file protoc-gen-openapiv2/options/annotations.proto.
+ */
+export declare const file_protoc_gen_openapiv2_options_annotations: GenFile;
 /**
  * ID assigned by protobuf-global-extension-registry@google.com for gRPC-Gateway project.
  *
@@ -8,7 +13,7 @@ import { JSONSchema, Operation, Schema, Swagger, Tag } from "./openapiv2_pb.js";
  *
  * @generated from extension: grpc.gateway.protoc_gen_openapiv2.options.Swagger openapiv2_swagger = 1042;
  */
-export declare const openapiv2_swagger: import("@bufbuild/protobuf").Extension<FileOptions, Swagger>;
+export declare const openapiv2_swagger: GenExtension<FileOptions, Swagger>;
 /**
  * ID assigned by protobuf-global-extension-registry@google.com for gRPC-Gateway project.
  *
@@ -17,7 +22,7 @@ export declare const openapiv2_swagger: import("@bufbuild/protobuf").Extension<F
  *
  * @generated from extension: grpc.gateway.protoc_gen_openapiv2.options.Operation openapiv2_operation = 1042;
  */
-export declare const openapiv2_operation: import("@bufbuild/protobuf").Extension<MethodOptions, Operation>;
+export declare const openapiv2_operation: GenExtension<MethodOptions, Operation>;
 /**
  * ID assigned by protobuf-global-extension-registry@google.com for gRPC-Gateway project.
  *
@@ -26,7 +31,7 @@ export declare const openapiv2_operation: import("@bufbuild/protobuf").Extension
  *
  * @generated from extension: grpc.gateway.protoc_gen_openapiv2.options.Schema openapiv2_schema = 1042;
  */
-export declare const openapiv2_schema: import("@bufbuild/protobuf").Extension<MessageOptions, Schema>;
+export declare const openapiv2_schema: GenExtension<MessageOptions, Schema>;
 /**
  * ID assigned by protobuf-global-extension-registry@google.com for gRPC-Gateway project.
  *
@@ -35,7 +40,7 @@ export declare const openapiv2_schema: import("@bufbuild/protobuf").Extension<Me
  *
  * @generated from extension: grpc.gateway.protoc_gen_openapiv2.options.Tag openapiv2_tag = 1042;
  */
-export declare const openapiv2_tag: import("@bufbuild/protobuf").Extension<ServiceOptions, Tag>;
+export declare const openapiv2_tag: GenExtension<ServiceOptions, Tag>;
 /**
  * ID assigned by protobuf-global-extension-registry@google.com for gRPC-Gateway project.
  *
@@ -44,4 +49,4 @@ export declare const openapiv2_tag: import("@bufbuild/protobuf").Extension<Servi
  *
  * @generated from extension: grpc.gateway.protoc_gen_openapiv2.options.JSONSchema openapiv2_field = 1042;
  */
-export declare const openapiv2_field: import("@bufbuild/protobuf").Extension<FieldOptions, JSONSchema>;
+export declare const openapiv2_field: GenExtension<FieldOptions, JSONSchema>;

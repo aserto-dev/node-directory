@@ -1,291 +1,268 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Empty, Message, proto3 } from "@bufbuild/protobuf";
-import { Object$, ObjectIdentifier, ObjectType, ObjectTypeIdentifier, Permission, PermissionIdentifier, Relation, RelationIdentifier, RelationType, RelationTypeIdentifier } from "../../common/v2/common_pb.js";
+import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv1";
+import type { Empty } from "@bufbuild/protobuf/wkt";
+import type { Object$, ObjectIdentifier, ObjectType, ObjectTypeIdentifier, Permission, PermissionIdentifier, Relation, RelationIdentifier, RelationType, RelationTypeIdentifier } from "../../common/v2/common_pb";
+import type { Message } from "@bufbuild/protobuf";
+/**
+ * Describes the file aserto/directory/writer/v2/writer.proto.
+ */
+export declare const file_aserto_directory_writer_v2_writer: GenFile;
 /**
  * @generated from message aserto.directory.writer.v2.SetObjectTypeRequest
  * @deprecated
  */
-export declare class SetObjectTypeRequest extends Message<SetObjectTypeRequest> {
+export type SetObjectTypeRequest = Message<"aserto.directory.writer.v2.SetObjectTypeRequest"> & {
     /**
      * object type instance
      *
      * @generated from field: aserto.directory.common.v2.ObjectType object_type = 1;
      */
     objectType?: ObjectType;
-    constructor(data?: PartialMessage<SetObjectTypeRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.SetObjectTypeRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetObjectTypeRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetObjectTypeRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetObjectTypeRequest;
-    static equals(a: SetObjectTypeRequest | PlainMessage<SetObjectTypeRequest> | undefined, b: SetObjectTypeRequest | PlainMessage<SetObjectTypeRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.SetObjectTypeRequest.
+ * Use `create(SetObjectTypeRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const SetObjectTypeRequestSchema: GenMessage<SetObjectTypeRequest>;
 /**
  * @generated from message aserto.directory.writer.v2.SetObjectTypeResponse
  * @deprecated
  */
-export declare class SetObjectTypeResponse extends Message<SetObjectTypeResponse> {
+export type SetObjectTypeResponse = Message<"aserto.directory.writer.v2.SetObjectTypeResponse"> & {
     /**
      * object type instance
      *
      * @generated from field: aserto.directory.common.v2.ObjectType result = 1;
      */
     result?: ObjectType;
-    constructor(data?: PartialMessage<SetObjectTypeResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.SetObjectTypeResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetObjectTypeResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetObjectTypeResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetObjectTypeResponse;
-    static equals(a: SetObjectTypeResponse | PlainMessage<SetObjectTypeResponse> | undefined, b: SetObjectTypeResponse | PlainMessage<SetObjectTypeResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.SetObjectTypeResponse.
+ * Use `create(SetObjectTypeResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const SetObjectTypeResponseSchema: GenMessage<SetObjectTypeResponse>;
 /**
  * @generated from message aserto.directory.writer.v2.DeleteObjectTypeRequest
  * @deprecated
  */
-export declare class DeleteObjectTypeRequest extends Message<DeleteObjectTypeRequest> {
+export type DeleteObjectTypeRequest = Message<"aserto.directory.writer.v2.DeleteObjectTypeRequest"> & {
     /**
      * object type identifier
      *
      * @generated from field: aserto.directory.common.v2.ObjectTypeIdentifier param = 1;
      */
     param?: ObjectTypeIdentifier;
-    constructor(data?: PartialMessage<DeleteObjectTypeRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.DeleteObjectTypeRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteObjectTypeRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteObjectTypeRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteObjectTypeRequest;
-    static equals(a: DeleteObjectTypeRequest | PlainMessage<DeleteObjectTypeRequest> | undefined, b: DeleteObjectTypeRequest | PlainMessage<DeleteObjectTypeRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.DeleteObjectTypeRequest.
+ * Use `create(DeleteObjectTypeRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const DeleteObjectTypeRequestSchema: GenMessage<DeleteObjectTypeRequest>;
 /**
  * @generated from message aserto.directory.writer.v2.DeleteObjectTypeResponse
  * @deprecated
  */
-export declare class DeleteObjectTypeResponse extends Message<DeleteObjectTypeResponse> {
+export type DeleteObjectTypeResponse = Message<"aserto.directory.writer.v2.DeleteObjectTypeResponse"> & {
     /**
      * empty result
      *
      * @generated from field: google.protobuf.Empty result = 1;
      */
     result?: Empty;
-    constructor(data?: PartialMessage<DeleteObjectTypeResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.DeleteObjectTypeResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteObjectTypeResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteObjectTypeResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteObjectTypeResponse;
-    static equals(a: DeleteObjectTypeResponse | PlainMessage<DeleteObjectTypeResponse> | undefined, b: DeleteObjectTypeResponse | PlainMessage<DeleteObjectTypeResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.DeleteObjectTypeResponse.
+ * Use `create(DeleteObjectTypeResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const DeleteObjectTypeResponseSchema: GenMessage<DeleteObjectTypeResponse>;
 /**
  * @generated from message aserto.directory.writer.v2.SetRelationTypeRequest
  * @deprecated
  */
-export declare class SetRelationTypeRequest extends Message<SetRelationTypeRequest> {
+export type SetRelationTypeRequest = Message<"aserto.directory.writer.v2.SetRelationTypeRequest"> & {
     /**
      * relation type instance
      *
      * @generated from field: aserto.directory.common.v2.RelationType relation_type = 1;
      */
     relationType?: RelationType;
-    constructor(data?: PartialMessage<SetRelationTypeRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.SetRelationTypeRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetRelationTypeRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetRelationTypeRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetRelationTypeRequest;
-    static equals(a: SetRelationTypeRequest | PlainMessage<SetRelationTypeRequest> | undefined, b: SetRelationTypeRequest | PlainMessage<SetRelationTypeRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.SetRelationTypeRequest.
+ * Use `create(SetRelationTypeRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const SetRelationTypeRequestSchema: GenMessage<SetRelationTypeRequest>;
 /**
  * @generated from message aserto.directory.writer.v2.SetRelationTypeResponse
  * @deprecated
  */
-export declare class SetRelationTypeResponse extends Message<SetRelationTypeResponse> {
+export type SetRelationTypeResponse = Message<"aserto.directory.writer.v2.SetRelationTypeResponse"> & {
     /**
      * relation types instance
      *
      * @generated from field: aserto.directory.common.v2.RelationType result = 1;
      */
     result?: RelationType;
-    constructor(data?: PartialMessage<SetRelationTypeResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.SetRelationTypeResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetRelationTypeResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetRelationTypeResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetRelationTypeResponse;
-    static equals(a: SetRelationTypeResponse | PlainMessage<SetRelationTypeResponse> | undefined, b: SetRelationTypeResponse | PlainMessage<SetRelationTypeResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.SetRelationTypeResponse.
+ * Use `create(SetRelationTypeResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const SetRelationTypeResponseSchema: GenMessage<SetRelationTypeResponse>;
 /**
  * @generated from message aserto.directory.writer.v2.DeleteRelationTypeRequest
  * @deprecated
  */
-export declare class DeleteRelationTypeRequest extends Message<DeleteRelationTypeRequest> {
+export type DeleteRelationTypeRequest = Message<"aserto.directory.writer.v2.DeleteRelationTypeRequest"> & {
     /**
      * relation type identifier
      *
      * @generated from field: aserto.directory.common.v2.RelationTypeIdentifier param = 1;
      */
     param?: RelationTypeIdentifier;
-    constructor(data?: PartialMessage<DeleteRelationTypeRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.DeleteRelationTypeRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteRelationTypeRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteRelationTypeRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteRelationTypeRequest;
-    static equals(a: DeleteRelationTypeRequest | PlainMessage<DeleteRelationTypeRequest> | undefined, b: DeleteRelationTypeRequest | PlainMessage<DeleteRelationTypeRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.DeleteRelationTypeRequest.
+ * Use `create(DeleteRelationTypeRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const DeleteRelationTypeRequestSchema: GenMessage<DeleteRelationTypeRequest>;
 /**
  * @generated from message aserto.directory.writer.v2.DeleteRelationTypeResponse
  * @deprecated
  */
-export declare class DeleteRelationTypeResponse extends Message<DeleteRelationTypeResponse> {
+export type DeleteRelationTypeResponse = Message<"aserto.directory.writer.v2.DeleteRelationTypeResponse"> & {
     /**
      * empty result
      *
      * @generated from field: google.protobuf.Empty result = 1;
      */
     result?: Empty;
-    constructor(data?: PartialMessage<DeleteRelationTypeResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.DeleteRelationTypeResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteRelationTypeResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteRelationTypeResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteRelationTypeResponse;
-    static equals(a: DeleteRelationTypeResponse | PlainMessage<DeleteRelationTypeResponse> | undefined, b: DeleteRelationTypeResponse | PlainMessage<DeleteRelationTypeResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.DeleteRelationTypeResponse.
+ * Use `create(DeleteRelationTypeResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const DeleteRelationTypeResponseSchema: GenMessage<DeleteRelationTypeResponse>;
 /**
  * @generated from message aserto.directory.writer.v2.SetPermissionRequest
  * @deprecated
  */
-export declare class SetPermissionRequest extends Message<SetPermissionRequest> {
+export type SetPermissionRequest = Message<"aserto.directory.writer.v2.SetPermissionRequest"> & {
     /**
      * permission instance
      *
      * @generated from field: aserto.directory.common.v2.Permission permission = 1;
      */
     permission?: Permission;
-    constructor(data?: PartialMessage<SetPermissionRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.SetPermissionRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetPermissionRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetPermissionRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetPermissionRequest;
-    static equals(a: SetPermissionRequest | PlainMessage<SetPermissionRequest> | undefined, b: SetPermissionRequest | PlainMessage<SetPermissionRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.SetPermissionRequest.
+ * Use `create(SetPermissionRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const SetPermissionRequestSchema: GenMessage<SetPermissionRequest>;
 /**
  * @generated from message aserto.directory.writer.v2.SetPermissionResponse
  * @deprecated
  */
-export declare class SetPermissionResponse extends Message<SetPermissionResponse> {
+export type SetPermissionResponse = Message<"aserto.directory.writer.v2.SetPermissionResponse"> & {
     /**
      * permission instance
      *
      * @generated from field: aserto.directory.common.v2.Permission result = 1;
      */
     result?: Permission;
-    constructor(data?: PartialMessage<SetPermissionResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.SetPermissionResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetPermissionResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetPermissionResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetPermissionResponse;
-    static equals(a: SetPermissionResponse | PlainMessage<SetPermissionResponse> | undefined, b: SetPermissionResponse | PlainMessage<SetPermissionResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.SetPermissionResponse.
+ * Use `create(SetPermissionResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const SetPermissionResponseSchema: GenMessage<SetPermissionResponse>;
 /**
  * @generated from message aserto.directory.writer.v2.DeletePermissionRequest
  * @deprecated
  */
-export declare class DeletePermissionRequest extends Message<DeletePermissionRequest> {
+export type DeletePermissionRequest = Message<"aserto.directory.writer.v2.DeletePermissionRequest"> & {
     /**
      * permission identifier
      *
      * @generated from field: aserto.directory.common.v2.PermissionIdentifier param = 1;
      */
     param?: PermissionIdentifier;
-    constructor(data?: PartialMessage<DeletePermissionRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.DeletePermissionRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeletePermissionRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeletePermissionRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeletePermissionRequest;
-    static equals(a: DeletePermissionRequest | PlainMessage<DeletePermissionRequest> | undefined, b: DeletePermissionRequest | PlainMessage<DeletePermissionRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.DeletePermissionRequest.
+ * Use `create(DeletePermissionRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const DeletePermissionRequestSchema: GenMessage<DeletePermissionRequest>;
 /**
  * @generated from message aserto.directory.writer.v2.DeletePermissionResponse
  * @deprecated
  */
-export declare class DeletePermissionResponse extends Message<DeletePermissionResponse> {
+export type DeletePermissionResponse = Message<"aserto.directory.writer.v2.DeletePermissionResponse"> & {
     /**
      * empty result
      *
      * @generated from field: google.protobuf.Empty result = 1;
      */
     result?: Empty;
-    constructor(data?: PartialMessage<DeletePermissionResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.DeletePermissionResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeletePermissionResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeletePermissionResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeletePermissionResponse;
-    static equals(a: DeletePermissionResponse | PlainMessage<DeletePermissionResponse> | undefined, b: DeletePermissionResponse | PlainMessage<DeletePermissionResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.DeletePermissionResponse.
+ * Use `create(DeletePermissionResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const DeletePermissionResponseSchema: GenMessage<DeletePermissionResponse>;
 /**
  * @generated from message aserto.directory.writer.v2.SetObjectRequest
  * @deprecated
  */
-export declare class SetObjectRequest extends Message<SetObjectRequest> {
+export type SetObjectRequest = Message<"aserto.directory.writer.v2.SetObjectRequest"> & {
     /**
      * object instance
      *
      * @generated from field: aserto.directory.common.v2.Object object = 1;
      */
     object?: Object$;
-    constructor(data?: PartialMessage<SetObjectRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.SetObjectRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetObjectRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetObjectRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetObjectRequest;
-    static equals(a: SetObjectRequest | PlainMessage<SetObjectRequest> | undefined, b: SetObjectRequest | PlainMessage<SetObjectRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.SetObjectRequest.
+ * Use `create(SetObjectRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const SetObjectRequestSchema: GenMessage<SetObjectRequest>;
 /**
  * @generated from message aserto.directory.writer.v2.SetObjectResponse
  * @deprecated
  */
-export declare class SetObjectResponse extends Message<SetObjectResponse> {
+export type SetObjectResponse = Message<"aserto.directory.writer.v2.SetObjectResponse"> & {
     /**
      * object instance
      *
      * @generated from field: aserto.directory.common.v2.Object result = 1;
      */
     result?: Object$;
-    constructor(data?: PartialMessage<SetObjectResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.SetObjectResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetObjectResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetObjectResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetObjectResponse;
-    static equals(a: SetObjectResponse | PlainMessage<SetObjectResponse> | undefined, b: SetObjectResponse | PlainMessage<SetObjectResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.SetObjectResponse.
+ * Use `create(SetObjectResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const SetObjectResponseSchema: GenMessage<SetObjectResponse>;
 /**
  * @generated from message aserto.directory.writer.v2.DeleteObjectRequest
  * @deprecated
  */
-export declare class DeleteObjectRequest extends Message<DeleteObjectRequest> {
+export type DeleteObjectRequest = Message<"aserto.directory.writer.v2.DeleteObjectRequest"> & {
     /**
      * object identifier
      *
@@ -298,112 +275,207 @@ export declare class DeleteObjectRequest extends Message<DeleteObjectRequest> {
      * @generated from field: optional bool with_relations = 2;
      */
     withRelations?: boolean;
-    constructor(data?: PartialMessage<DeleteObjectRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.DeleteObjectRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteObjectRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteObjectRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteObjectRequest;
-    static equals(a: DeleteObjectRequest | PlainMessage<DeleteObjectRequest> | undefined, b: DeleteObjectRequest | PlainMessage<DeleteObjectRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.DeleteObjectRequest.
+ * Use `create(DeleteObjectRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const DeleteObjectRequestSchema: GenMessage<DeleteObjectRequest>;
 /**
  * @generated from message aserto.directory.writer.v2.DeleteObjectResponse
  * @deprecated
  */
-export declare class DeleteObjectResponse extends Message<DeleteObjectResponse> {
+export type DeleteObjectResponse = Message<"aserto.directory.writer.v2.DeleteObjectResponse"> & {
     /**
      * empty result
      *
      * @generated from field: google.protobuf.Empty result = 1;
      */
     result?: Empty;
-    constructor(data?: PartialMessage<DeleteObjectResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.DeleteObjectResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteObjectResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteObjectResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteObjectResponse;
-    static equals(a: DeleteObjectResponse | PlainMessage<DeleteObjectResponse> | undefined, b: DeleteObjectResponse | PlainMessage<DeleteObjectResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.DeleteObjectResponse.
+ * Use `create(DeleteObjectResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const DeleteObjectResponseSchema: GenMessage<DeleteObjectResponse>;
 /**
  * @generated from message aserto.directory.writer.v2.SetRelationRequest
  * @deprecated
  */
-export declare class SetRelationRequest extends Message<SetRelationRequest> {
+export type SetRelationRequest = Message<"aserto.directory.writer.v2.SetRelationRequest"> & {
     /**
      * relation instance
      *
      * @generated from field: aserto.directory.common.v2.Relation relation = 1;
      */
     relation?: Relation;
-    constructor(data?: PartialMessage<SetRelationRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.SetRelationRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetRelationRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetRelationRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetRelationRequest;
-    static equals(a: SetRelationRequest | PlainMessage<SetRelationRequest> | undefined, b: SetRelationRequest | PlainMessage<SetRelationRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.SetRelationRequest.
+ * Use `create(SetRelationRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const SetRelationRequestSchema: GenMessage<SetRelationRequest>;
 /**
  * @generated from message aserto.directory.writer.v2.SetRelationResponse
  * @deprecated
  */
-export declare class SetRelationResponse extends Message<SetRelationResponse> {
+export type SetRelationResponse = Message<"aserto.directory.writer.v2.SetRelationResponse"> & {
     /**
      * relation instance
      *
      * @generated from field: aserto.directory.common.v2.Relation result = 1;
      */
     result?: Relation;
-    constructor(data?: PartialMessage<SetRelationResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.SetRelationResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetRelationResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetRelationResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetRelationResponse;
-    static equals(a: SetRelationResponse | PlainMessage<SetRelationResponse> | undefined, b: SetRelationResponse | PlainMessage<SetRelationResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.SetRelationResponse.
+ * Use `create(SetRelationResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const SetRelationResponseSchema: GenMessage<SetRelationResponse>;
 /**
  * @generated from message aserto.directory.writer.v2.DeleteRelationRequest
  * @deprecated
  */
-export declare class DeleteRelationRequest extends Message<DeleteRelationRequest> {
+export type DeleteRelationRequest = Message<"aserto.directory.writer.v2.DeleteRelationRequest"> & {
     /**
      * relation identifier
      *
      * @generated from field: aserto.directory.common.v2.RelationIdentifier param = 1;
      */
     param?: RelationIdentifier;
-    constructor(data?: PartialMessage<DeleteRelationRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.DeleteRelationRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteRelationRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteRelationRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteRelationRequest;
-    static equals(a: DeleteRelationRequest | PlainMessage<DeleteRelationRequest> | undefined, b: DeleteRelationRequest | PlainMessage<DeleteRelationRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.DeleteRelationRequest.
+ * Use `create(DeleteRelationRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const DeleteRelationRequestSchema: GenMessage<DeleteRelationRequest>;
 /**
  * @generated from message aserto.directory.writer.v2.DeleteRelationResponse
  * @deprecated
  */
-export declare class DeleteRelationResponse extends Message<DeleteRelationResponse> {
+export type DeleteRelationResponse = Message<"aserto.directory.writer.v2.DeleteRelationResponse"> & {
     /**
      * empty result
      *
      * @generated from field: google.protobuf.Empty result = 1;
      */
     result?: Empty;
-    constructor(data?: PartialMessage<DeleteRelationResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.writer.v2.DeleteRelationResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteRelationResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteRelationResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteRelationResponse;
-    static equals(a: DeleteRelationResponse | PlainMessage<DeleteRelationResponse> | undefined, b: DeleteRelationResponse | PlainMessage<DeleteRelationResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.writer.v2.DeleteRelationResponse.
+ * Use `create(DeleteRelationResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const DeleteRelationResponseSchema: GenMessage<DeleteRelationResponse>;
+/**
+ * @generated from service aserto.directory.writer.v2.Writer
+ */
+export declare const Writer: GenService<{
+    /**
+     * @generated from rpc aserto.directory.writer.v2.Writer.SetObjectType
+     * @deprecated
+     */
+    setObjectType: {
+        methodKind: "unary";
+        input: typeof SetObjectTypeRequestSchema;
+        output: typeof SetObjectTypeResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.writer.v2.Writer.DeleteObjectType
+     * @deprecated
+     */
+    deleteObjectType: {
+        methodKind: "unary";
+        input: typeof DeleteObjectTypeRequestSchema;
+        output: typeof DeleteObjectTypeResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.writer.v2.Writer.SetRelationType
+     * @deprecated
+     */
+    setRelationType: {
+        methodKind: "unary";
+        input: typeof SetRelationTypeRequestSchema;
+        output: typeof SetRelationTypeResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.writer.v2.Writer.DeleteRelationType
+     * @deprecated
+     */
+    deleteRelationType: {
+        methodKind: "unary";
+        input: typeof DeleteRelationTypeRequestSchema;
+        output: typeof DeleteRelationTypeResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.writer.v2.Writer.SetPermission
+     * @deprecated
+     */
+    setPermission: {
+        methodKind: "unary";
+        input: typeof SetPermissionRequestSchema;
+        output: typeof SetPermissionResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.writer.v2.Writer.DeletePermission
+     * @deprecated
+     */
+    deletePermission: {
+        methodKind: "unary";
+        input: typeof DeletePermissionRequestSchema;
+        output: typeof DeletePermissionResponseSchema;
+    };
+    /**
+     * set object instance
+     * Deprecated: directory.v2.SetObject is deprecated, use directory.v3.SetObject.
+     *
+     * @generated from rpc aserto.directory.writer.v2.Writer.SetObject
+     * @deprecated
+     */
+    setObject: {
+        methodKind: "unary";
+        input: typeof SetObjectRequestSchema;
+        output: typeof SetObjectResponseSchema;
+    };
+    /**
+     * delete object instance
+     * Deprecated: directory.v2.DeleteObject is deprecated, use directory.v3.DeleteObject.
+     *
+     * @generated from rpc aserto.directory.writer.v2.Writer.DeleteObject
+     * @deprecated
+     */
+    deleteObject: {
+        methodKind: "unary";
+        input: typeof DeleteObjectRequestSchema;
+        output: typeof DeleteObjectResponseSchema;
+    };
+    /**
+     * set relation instance
+     * Deprecated: directory.v2.SetRelation is deprecated, use directory.v3.SetRelation.
+     *
+     * @generated from rpc aserto.directory.writer.v2.Writer.SetRelation
+     * @deprecated
+     */
+    setRelation: {
+        methodKind: "unary";
+        input: typeof SetRelationRequestSchema;
+        output: typeof SetRelationResponseSchema;
+    };
+    /**
+     * delete relation instance
+     * Deprecated: directory.v2.DeleteRelation is deprecated, use directory.v3.DeleteRelation.
+     *
+     * @generated from rpc aserto.directory.writer.v2.Writer.DeleteRelation
+     * @deprecated
+     */
+    deleteRelation: {
+        methodKind: "unary";
+        input: typeof DeleteRelationRequestSchema;
+        output: typeof DeleteRelationResponseSchema;
+    };
+}>;

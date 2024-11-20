@@ -1,23 +1,24 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
+import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1";
+import type { Message } from "@bufbuild/protobuf";
+/**
+ * Describes the file aserto/directory/schema/v3/group.proto.
+ */
+export declare const file_aserto_directory_schema_v3_group: GenFile;
 /**
  * Properties of "group" objects.
  *
  * @generated from message aserto.directory.schema.v3.GroupProperties
  */
-export declare class GroupProperties extends Message<GroupProperties> {
+export type GroupProperties = Message<"aserto.directory.schema.v3.GroupProperties"> & {
     /**
      * ID of the IDP connection the group instance is associated with.
      *
      * @generated from field: string connection_id = 1;
      */
     connectionId: string;
-    constructor(data?: PartialMessage<GroupProperties>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.schema.v3.GroupProperties";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GroupProperties;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GroupProperties;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GroupProperties;
-    static equals(a: GroupProperties | PlainMessage<GroupProperties> | undefined, b: GroupProperties | PlainMessage<GroupProperties> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.schema.v3.GroupProperties.
+ * Use `create(GroupPropertiesSchema)` to create a new message.
+ */
+export declare const GroupPropertiesSchema: GenMessage<GroupProperties>;

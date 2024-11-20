@@ -1,213 +1,18 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Duration, FieldOptions, Message, MessageOptions, OneofOptions, proto3, Timestamp } from "@bufbuild/protobuf";
-import { Constraint } from "./expression_pb.js";
+import type { GenEnum, GenExtension, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1";
+import type { Constraint } from "./expression_pb";
+import type { Duration, FieldOptions, MessageOptions, OneofOptions, Timestamp } from "@bufbuild/protobuf/wkt";
+import type { Message } from "@bufbuild/protobuf";
 /**
- * Specifies how FieldConstraints.ignore behaves. See the documentation for
- * FieldConstraints.required for definitions of "populated" and "nullable".
- *
- * @generated from enum buf.validate.Ignore
+ * Describes the file buf/validate/validate.proto.
  */
-export declare enum Ignore {
-    /**
-     * Validation is only skipped if it's an unpopulated nullable fields.
-     *
-     * ```proto
-     * syntax="proto3";
-     *
-     * message Request {
-     *   // The uri rule applies to any value, including the empty string.
-     *   string foo = 1 [
-     *     (buf.validate.field).string.uri = true
-     *   ];
-     *
-     *   // The uri rule only applies if the field is set, including if it's
-     *   // set to the empty string.
-     *   optional string bar = 2 [
-     *     (buf.validate.field).string.uri = true
-     *   ];
-     *
-     *   // The min_items rule always applies, even if the list is empty.
-     *   repeated string baz = 3 [
-     *     (buf.validate.field).repeated.min_items = 3
-     *   ];
-     *
-     *   // The custom CEL rule applies only if the field is set, including if
-     *   // it's the "zero" value of that message.
-     *   SomeMessage quux = 4 [
-     *     (buf.validate.field).cel = {/* ... *\/}
-     *   ];
-     * }
-     * ```
-     *
-     * @generated from enum value: IGNORE_UNSPECIFIED = 0;
-     */
-    UNSPECIFIED = 0,
-    /**
-     * Validation is skipped if the field is unpopulated. This rule is redundant
-     * if the field is already nullable. This value is equivalent behavior to the
-     * deprecated ignore_empty rule.
-     *
-     * ```proto
-     * syntax="proto3
-     *
-     * message Request {
-     *   // The uri rule applies only if the value is not the empty string.
-     *   string foo = 1 [
-     *     (buf.validate.field).string.uri = true,
-     *     (buf.validate.field).ignore = IGNORE_IF_UNPOPULATED
-     *   ];
-     *
-     *   // IGNORE_IF_UNPOPULATED is equivalent to IGNORE_UNSPECIFIED in this
-     *   // case: the uri rule only applies if the field is set, including if
-     *   // it's set to the empty string.
-     *   optional string bar = 2 [
-     *     (buf.validate.field).string.uri = true,
-     *     (buf.validate.field).ignore = IGNORE_IF_UNPOPULATED
-     *   ];
-     *
-     *   // The min_items rule only applies if the list has at least one item.
-     *   repeated string baz = 3 [
-     *     (buf.validate.field).repeated.min_items = 3,
-     *     (buf.validate.field).ignore = IGNORE_IF_UNPOPULATED
-     *   ];
-     *
-     *   // IGNORE_IF_UNPOPULATED is equivalent to IGNORE_UNSPECIFIED in this
-     *   // case: the custom CEL rule applies only if the field is set, including
-     *   // if it's the "zero" value of that message.
-     *   SomeMessage quux = 4 [
-     *     (buf.validate.field).cel = {/* ... *\/},
-     *     (buf.validate.field).ignore = IGNORE_IF_UNPOPULATED
-     *   ];
-     * }
-     * ```
-     *
-     * @generated from enum value: IGNORE_IF_UNPOPULATED = 1;
-     */
-    IF_UNPOPULATED = 1,
-    /**
-     * Validation is skipped if the field is unpopulated or if it is a nullable
-     * field populated with its default value. This is typically the zero or
-     * empty value, but proto2 scalars support custom defaults. For messages, the
-     * default is a non-null message with all its fields unpopulated.
-     *
-     * ```proto
-     * syntax="proto3
-     *
-     * message Request {
-     *   // IGNORE_IF_DEFAULT_VALUE is equivalent to IGNORE_IF_UNPOPULATED in
-     *   // this case; the uri rule applies only if the value is not the empty
-     *   // string.
-     *   string foo = 1 [
-     *     (buf.validate.field).string.uri = true,
-     *     (buf.validate.field).ignore = IGNORE_IF_DEFAULT_VALUE
-     *   ];
-     *
-     *   // The uri rule only applies if the field is set to a value other than
-     *   // the empty string.
-     *   optional string bar = 2 [
-     *     (buf.validate.field).string.uri = true,
-     *     (buf.validate.field).ignore = IGNORE_IF_DEFAULT_VALUE
-     *   ];
-     *
-     *   // IGNORE_IF_DEFAULT_VALUE is equivalent to IGNORE_IF_UNPOPULATED in
-     *   // this case; the min_items rule only applies if the list has at least
-     *   // one item.
-     *   repeated string baz = 3 [
-     *     (buf.validate.field).repeated.min_items = 3,
-     *     (buf.validate.field).ignore = IGNORE_IF_DEFAULT_VALUE
-     *   ];
-     *
-     *   // The custom CEL rule only applies if the field is set to a value other
-     *   // than an empty message (i.e., fields are unpopulated).
-     *   SomeMessage quux = 4 [
-     *     (buf.validate.field).cel = {/* ... *\/},
-     *     (buf.validate.field).ignore = IGNORE_IF_DEFAULT_VALUE
-     *   ];
-     * }
-     * ```
-     *
-     * This rule is affected by proto2 custom default values:
-     *
-     * ```proto
-     * syntax="proto2";
-     *
-     * message Request {
-     *   // The gt rule only applies if the field is set and it's value is not
-     *   the default (i.e., not -42). The rule even applies if the field is set
-     *   to zero since the default value differs.
-     *   optional int32 value = 1 [
-     *     default = -42,
-     *     (buf.validate.field).int32.gt = 0,
-     *     (buf.validate.field).ignore = IGNORE_IF_DEFAULT_VALUE
-     *   ];
-     * }
-     *
-     * @generated from enum value: IGNORE_IF_DEFAULT_VALUE = 2;
-     */
-    IF_DEFAULT_VALUE = 2,
-    /**
-     * The validation rules of this field will be skipped and not evaluated. This
-     * is useful for situations that necessitate turning off the rules of a field
-     * containing a message that may not make sense in the current context, or to
-     * temporarily disable constraints during development.
-     *
-     * ```proto
-     * message MyMessage {
-     *   // The field's rules will always be ignored, including any validation's
-     *   // on value's fields.
-     *   MyOtherMessage value = 1 [
-     *     (buf.validate.field).ignore = IGNORE_ALWAYS];
-     * }
-     * ```
-     *
-     * @generated from enum value: IGNORE_ALWAYS = 3;
-     */
-    ALWAYS = 3,
-    /**
-     * Deprecated: Use IGNORE_IF_UNPOPULATED instead. TODO: Remove this value pre-v1.
-     *
-     * @generated from enum value: IGNORE_EMPTY = 1 [deprecated = true];
-     * @deprecated
-     */
-    EMPTY = 1,
-    /**
-     * Deprecated: Use IGNORE_IF_DEFAULT_VALUE. TODO: Remove this value pre-v1.
-     *
-     * @generated from enum value: IGNORE_DEFAULT = 2 [deprecated = true];
-     * @deprecated
-     */
-    DEFAULT = 2
-}
-/**
- * WellKnownRegex contain some well-known patterns.
- *
- * @generated from enum buf.validate.KnownRegex
- */
-export declare enum KnownRegex {
-    /**
-     * @generated from enum value: KNOWN_REGEX_UNSPECIFIED = 0;
-     */
-    UNSPECIFIED = 0,
-    /**
-     * HTTP header name as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2).
-     *
-     * @generated from enum value: KNOWN_REGEX_HTTP_HEADER_NAME = 1;
-     */
-    HTTP_HEADER_NAME = 1,
-    /**
-     * HTTP header value as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2.4).
-     *
-     * @generated from enum value: KNOWN_REGEX_HTTP_HEADER_VALUE = 2;
-     */
-    HTTP_HEADER_VALUE = 2
-}
+export declare const file_buf_validate_validate: GenFile;
 /**
  * MessageConstraints represents validation rules that are applied to the entire message.
  * It includes disabling options and a list of Constraint messages representing Common Expression Language (CEL) validation rules.
  *
  * @generated from message buf.validate.MessageConstraints
  */
-export declare class MessageConstraints extends Message<MessageConstraints> {
+export type MessageConstraints = Message<"buf.validate.MessageConstraints"> & {
     /**
      * `disabled` is a boolean flag that, when set to true, nullifies any validation rules for this message.
      * This includes any fields within the message that would otherwise support validation.
@@ -243,22 +48,19 @@ export declare class MessageConstraints extends Message<MessageConstraints> {
      * @generated from field: repeated buf.validate.Constraint cel = 3;
      */
     cel: Constraint[];
-    constructor(data?: PartialMessage<MessageConstraints>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.MessageConstraints";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MessageConstraints;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MessageConstraints;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MessageConstraints;
-    static equals(a: MessageConstraints | PlainMessage<MessageConstraints> | undefined, b: MessageConstraints | PlainMessage<MessageConstraints> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.MessageConstraints.
+ * Use `create(MessageConstraintsSchema)` to create a new message.
+ */
+export declare const MessageConstraintsSchema: GenMessage<MessageConstraints>;
 /**
  * The `OneofConstraints` message type enables you to manage constraints for
  * oneof fields in your protobuf messages.
  *
  * @generated from message buf.validate.OneofConstraints
  */
-export declare class OneofConstraints extends Message<OneofConstraints> {
+export type OneofConstraints = Message<"buf.validate.OneofConstraints"> & {
     /**
      * If `required` is true, exactly one field of the oneof must be present. A
      * validation error is returned if no fields in the oneof are present. The
@@ -281,22 +83,19 @@ export declare class OneofConstraints extends Message<OneofConstraints> {
      * @generated from field: optional bool required = 1;
      */
     required?: boolean;
-    constructor(data?: PartialMessage<OneofConstraints>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.OneofConstraints";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OneofConstraints;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OneofConstraints;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OneofConstraints;
-    static equals(a: OneofConstraints | PlainMessage<OneofConstraints> | undefined, b: OneofConstraints | PlainMessage<OneofConstraints> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.OneofConstraints.
+ * Use `create(OneofConstraintsSchema)` to create a new message.
+ */
+export declare const OneofConstraintsSchema: GenMessage<OneofConstraints>;
 /**
  * FieldConstraints encapsulates the rules for each type of field. Depending on
  * the field, the correct set should be used to ensure proper validations.
  *
  * @generated from message buf.validate.FieldConstraints
  */
-export declare class FieldConstraints extends Message<FieldConstraints> {
+export type FieldConstraints = Message<"buf.validate.FieldConstraints"> & {
     /**
      * `cel` is a repeated field used to represent a textual expression
      * in the Common Expression Language (CEL) syntax. For more information on
@@ -509,22 +308,19 @@ export declare class FieldConstraints extends Message<FieldConstraints> {
      * @deprecated
      */
     ignoreEmpty: boolean;
-    constructor(data?: PartialMessage<FieldConstraints>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.FieldConstraints";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FieldConstraints;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FieldConstraints;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FieldConstraints;
-    static equals(a: FieldConstraints | PlainMessage<FieldConstraints> | undefined, b: FieldConstraints | PlainMessage<FieldConstraints> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.FieldConstraints.
+ * Use `create(FieldConstraintsSchema)` to create a new message.
+ */
+export declare const FieldConstraintsSchema: GenMessage<FieldConstraints>;
 /**
  * FloatRules describes the constraints applied to `float` values. These
  * rules may also be applied to the `google.protobuf.FloatValue` Well-Known-Type.
  *
  * @generated from message buf.validate.FloatRules
  */
-export declare class FloatRules extends Message<FloatRules> {
+export type FloatRules = Message<"buf.validate.FloatRules"> & {
     /**
      * `const` requires the field value to exactly match the specified value. If
      * the field value doesn't match, an error message is generated.
@@ -674,22 +470,19 @@ export declare class FloatRules extends Message<FloatRules> {
      * @generated from field: bool finite = 8;
      */
     finite: boolean;
-    constructor(data?: PartialMessage<FloatRules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.FloatRules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FloatRules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FloatRules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FloatRules;
-    static equals(a: FloatRules | PlainMessage<FloatRules> | undefined, b: FloatRules | PlainMessage<FloatRules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.FloatRules.
+ * Use `create(FloatRulesSchema)` to create a new message.
+ */
+export declare const FloatRulesSchema: GenMessage<FloatRules>;
 /**
  * DoubleRules describes the constraints applied to `double` values. These
  * rules may also be applied to the `google.protobuf.DoubleValue` Well-Known-Type.
  *
  * @generated from message buf.validate.DoubleRules
  */
-export declare class DoubleRules extends Message<DoubleRules> {
+export type DoubleRules = Message<"buf.validate.DoubleRules"> & {
     /**
      * `const` requires the field value to exactly match the specified value. If
      * the field value doesn't match, an error message is generated.
@@ -839,22 +632,19 @@ export declare class DoubleRules extends Message<DoubleRules> {
      * @generated from field: bool finite = 8;
      */
     finite: boolean;
-    constructor(data?: PartialMessage<DoubleRules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.DoubleRules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DoubleRules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DoubleRules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DoubleRules;
-    static equals(a: DoubleRules | PlainMessage<DoubleRules> | undefined, b: DoubleRules | PlainMessage<DoubleRules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.DoubleRules.
+ * Use `create(DoubleRulesSchema)` to create a new message.
+ */
+export declare const DoubleRulesSchema: GenMessage<DoubleRules>;
 /**
  * Int32Rules describes the constraints applied to `int32` values. These
  * rules may also be applied to the `google.protobuf.Int32Value` Well-Known-Type.
  *
  * @generated from message buf.validate.Int32Rules
  */
-export declare class Int32Rules extends Message<Int32Rules> {
+export type Int32Rules = Message<"buf.validate.Int32Rules"> & {
     /**
      * `const` requires the field value to exactly match the specified value. If
      * the field value doesn't match, an error message is generated.
@@ -997,22 +787,19 @@ export declare class Int32Rules extends Message<Int32Rules> {
      * @generated from field: repeated int32 not_in = 7;
      */
     notIn: number[];
-    constructor(data?: PartialMessage<Int32Rules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.Int32Rules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Int32Rules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Int32Rules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Int32Rules;
-    static equals(a: Int32Rules | PlainMessage<Int32Rules> | undefined, b: Int32Rules | PlainMessage<Int32Rules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.Int32Rules.
+ * Use `create(Int32RulesSchema)` to create a new message.
+ */
+export declare const Int32RulesSchema: GenMessage<Int32Rules>;
 /**
  * Int64Rules describes the constraints applied to `int64` values. These
  * rules may also be applied to the `google.protobuf.Int64Value` Well-Known-Type.
  *
  * @generated from message buf.validate.Int64Rules
  */
-export declare class Int64Rules extends Message<Int64Rules> {
+export type Int64Rules = Message<"buf.validate.Int64Rules"> & {
     /**
      * `const` requires the field value to exactly match the specified value. If
      * the field value doesn't match, an error message is generated.
@@ -1155,22 +942,19 @@ export declare class Int64Rules extends Message<Int64Rules> {
      * @generated from field: repeated int64 not_in = 7;
      */
     notIn: bigint[];
-    constructor(data?: PartialMessage<Int64Rules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.Int64Rules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Int64Rules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Int64Rules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Int64Rules;
-    static equals(a: Int64Rules | PlainMessage<Int64Rules> | undefined, b: Int64Rules | PlainMessage<Int64Rules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.Int64Rules.
+ * Use `create(Int64RulesSchema)` to create a new message.
+ */
+export declare const Int64RulesSchema: GenMessage<Int64Rules>;
 /**
  * UInt32Rules describes the constraints applied to `uint32` values. These
  * rules may also be applied to the `google.protobuf.UInt32Value` Well-Known-Type.
  *
  * @generated from message buf.validate.UInt32Rules
  */
-export declare class UInt32Rules extends Message<UInt32Rules> {
+export type UInt32Rules = Message<"buf.validate.UInt32Rules"> & {
     /**
      * `const` requires the field value to exactly match the specified value. If
      * the field value doesn't match, an error message is generated.
@@ -1313,22 +1097,19 @@ export declare class UInt32Rules extends Message<UInt32Rules> {
      * @generated from field: repeated uint32 not_in = 7;
      */
     notIn: number[];
-    constructor(data?: PartialMessage<UInt32Rules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.UInt32Rules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UInt32Rules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UInt32Rules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UInt32Rules;
-    static equals(a: UInt32Rules | PlainMessage<UInt32Rules> | undefined, b: UInt32Rules | PlainMessage<UInt32Rules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.UInt32Rules.
+ * Use `create(UInt32RulesSchema)` to create a new message.
+ */
+export declare const UInt32RulesSchema: GenMessage<UInt32Rules>;
 /**
  * UInt64Rules describes the constraints applied to `uint64` values. These
  * rules may also be applied to the `google.protobuf.UInt64Value` Well-Known-Type.
  *
  * @generated from message buf.validate.UInt64Rules
  */
-export declare class UInt64Rules extends Message<UInt64Rules> {
+export type UInt64Rules = Message<"buf.validate.UInt64Rules"> & {
     /**
      * `const` requires the field value to exactly match the specified value. If
      * the field value doesn't match, an error message is generated.
@@ -1471,21 +1252,18 @@ export declare class UInt64Rules extends Message<UInt64Rules> {
      * @generated from field: repeated uint64 not_in = 7;
      */
     notIn: bigint[];
-    constructor(data?: PartialMessage<UInt64Rules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.UInt64Rules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UInt64Rules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UInt64Rules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UInt64Rules;
-    static equals(a: UInt64Rules | PlainMessage<UInt64Rules> | undefined, b: UInt64Rules | PlainMessage<UInt64Rules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.UInt64Rules.
+ * Use `create(UInt64RulesSchema)` to create a new message.
+ */
+export declare const UInt64RulesSchema: GenMessage<UInt64Rules>;
 /**
  * SInt32Rules describes the constraints applied to `sint32` values.
  *
  * @generated from message buf.validate.SInt32Rules
  */
-export declare class SInt32Rules extends Message<SInt32Rules> {
+export type SInt32Rules = Message<"buf.validate.SInt32Rules"> & {
     /**
      * `const` requires the field value to exactly match the specified value. If
      * the field value doesn't match, an error message is generated.
@@ -1628,21 +1406,18 @@ export declare class SInt32Rules extends Message<SInt32Rules> {
      * @generated from field: repeated sint32 not_in = 7;
      */
     notIn: number[];
-    constructor(data?: PartialMessage<SInt32Rules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.SInt32Rules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SInt32Rules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SInt32Rules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SInt32Rules;
-    static equals(a: SInt32Rules | PlainMessage<SInt32Rules> | undefined, b: SInt32Rules | PlainMessage<SInt32Rules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.SInt32Rules.
+ * Use `create(SInt32RulesSchema)` to create a new message.
+ */
+export declare const SInt32RulesSchema: GenMessage<SInt32Rules>;
 /**
  * SInt64Rules describes the constraints applied to `sint64` values.
  *
  * @generated from message buf.validate.SInt64Rules
  */
-export declare class SInt64Rules extends Message<SInt64Rules> {
+export type SInt64Rules = Message<"buf.validate.SInt64Rules"> & {
     /**
      * `const` requires the field value to exactly match the specified value. If
      * the field value doesn't match, an error message is generated.
@@ -1785,21 +1560,18 @@ export declare class SInt64Rules extends Message<SInt64Rules> {
      * @generated from field: repeated sint64 not_in = 7;
      */
     notIn: bigint[];
-    constructor(data?: PartialMessage<SInt64Rules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.SInt64Rules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SInt64Rules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SInt64Rules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SInt64Rules;
-    static equals(a: SInt64Rules | PlainMessage<SInt64Rules> | undefined, b: SInt64Rules | PlainMessage<SInt64Rules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.SInt64Rules.
+ * Use `create(SInt64RulesSchema)` to create a new message.
+ */
+export declare const SInt64RulesSchema: GenMessage<SInt64Rules>;
 /**
  * Fixed32Rules describes the constraints applied to `fixed32` values.
  *
  * @generated from message buf.validate.Fixed32Rules
  */
-export declare class Fixed32Rules extends Message<Fixed32Rules> {
+export type Fixed32Rules = Message<"buf.validate.Fixed32Rules"> & {
     /**
      * `const` requires the field value to exactly match the specified value.
      * If the field value doesn't match, an error message is generated.
@@ -1942,21 +1714,18 @@ export declare class Fixed32Rules extends Message<Fixed32Rules> {
      * @generated from field: repeated fixed32 not_in = 7;
      */
     notIn: number[];
-    constructor(data?: PartialMessage<Fixed32Rules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.Fixed32Rules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Fixed32Rules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Fixed32Rules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Fixed32Rules;
-    static equals(a: Fixed32Rules | PlainMessage<Fixed32Rules> | undefined, b: Fixed32Rules | PlainMessage<Fixed32Rules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.Fixed32Rules.
+ * Use `create(Fixed32RulesSchema)` to create a new message.
+ */
+export declare const Fixed32RulesSchema: GenMessage<Fixed32Rules>;
 /**
  * Fixed64Rules describes the constraints applied to `fixed64` values.
  *
  * @generated from message buf.validate.Fixed64Rules
  */
-export declare class Fixed64Rules extends Message<Fixed64Rules> {
+export type Fixed64Rules = Message<"buf.validate.Fixed64Rules"> & {
     /**
      * `const` requires the field value to exactly match the specified value. If
      * the field value doesn't match, an error message is generated.
@@ -2099,21 +1868,18 @@ export declare class Fixed64Rules extends Message<Fixed64Rules> {
      * @generated from field: repeated fixed64 not_in = 7;
      */
     notIn: bigint[];
-    constructor(data?: PartialMessage<Fixed64Rules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.Fixed64Rules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Fixed64Rules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Fixed64Rules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Fixed64Rules;
-    static equals(a: Fixed64Rules | PlainMessage<Fixed64Rules> | undefined, b: Fixed64Rules | PlainMessage<Fixed64Rules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.Fixed64Rules.
+ * Use `create(Fixed64RulesSchema)` to create a new message.
+ */
+export declare const Fixed64RulesSchema: GenMessage<Fixed64Rules>;
 /**
  * SFixed32Rules describes the constraints applied to `fixed32` values.
  *
  * @generated from message buf.validate.SFixed32Rules
  */
-export declare class SFixed32Rules extends Message<SFixed32Rules> {
+export type SFixed32Rules = Message<"buf.validate.SFixed32Rules"> & {
     /**
      * `const` requires the field value to exactly match the specified value. If
      * the field value doesn't match, an error message is generated.
@@ -2256,21 +2022,18 @@ export declare class SFixed32Rules extends Message<SFixed32Rules> {
      * @generated from field: repeated sfixed32 not_in = 7;
      */
     notIn: number[];
-    constructor(data?: PartialMessage<SFixed32Rules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.SFixed32Rules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SFixed32Rules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SFixed32Rules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SFixed32Rules;
-    static equals(a: SFixed32Rules | PlainMessage<SFixed32Rules> | undefined, b: SFixed32Rules | PlainMessage<SFixed32Rules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.SFixed32Rules.
+ * Use `create(SFixed32RulesSchema)` to create a new message.
+ */
+export declare const SFixed32RulesSchema: GenMessage<SFixed32Rules>;
 /**
  * SFixed64Rules describes the constraints applied to `fixed64` values.
  *
  * @generated from message buf.validate.SFixed64Rules
  */
-export declare class SFixed64Rules extends Message<SFixed64Rules> {
+export type SFixed64Rules = Message<"buf.validate.SFixed64Rules"> & {
     /**
      * `const` requires the field value to exactly match the specified value. If
      * the field value doesn't match, an error message is generated.
@@ -2413,22 +2176,19 @@ export declare class SFixed64Rules extends Message<SFixed64Rules> {
      * @generated from field: repeated sfixed64 not_in = 7;
      */
     notIn: bigint[];
-    constructor(data?: PartialMessage<SFixed64Rules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.SFixed64Rules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SFixed64Rules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SFixed64Rules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SFixed64Rules;
-    static equals(a: SFixed64Rules | PlainMessage<SFixed64Rules> | undefined, b: SFixed64Rules | PlainMessage<SFixed64Rules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.SFixed64Rules.
+ * Use `create(SFixed64RulesSchema)` to create a new message.
+ */
+export declare const SFixed64RulesSchema: GenMessage<SFixed64Rules>;
 /**
  * BoolRules describes the constraints applied to `bool` values. These rules
  * may also be applied to the `google.protobuf.BoolValue` Well-Known-Type.
  *
  * @generated from message buf.validate.BoolRules
  */
-export declare class BoolRules extends Message<BoolRules> {
+export type BoolRules = Message<"buf.validate.BoolRules"> & {
     /**
      * `const` requires the field value to exactly match the specified boolean value.
      * If the field value doesn't match, an error message is generated.
@@ -2443,22 +2203,19 @@ export declare class BoolRules extends Message<BoolRules> {
      * @generated from field: optional bool const = 1;
      */
     const?: boolean;
-    constructor(data?: PartialMessage<BoolRules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.BoolRules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BoolRules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BoolRules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BoolRules;
-    static equals(a: BoolRules | PlainMessage<BoolRules> | undefined, b: BoolRules | PlainMessage<BoolRules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.BoolRules.
+ * Use `create(BoolRulesSchema)` to create a new message.
+ */
+export declare const BoolRulesSchema: GenMessage<BoolRules>;
 /**
  * StringRules describes the constraints applied to `string` values These
  * rules may also be applied to the `google.protobuf.StringValue` Well-Known-Type.
  *
  * @generated from message buf.validate.StringRules
  */
-export declare class StringRules extends Message<StringRules> {
+export type StringRules = Message<"buf.validate.StringRules"> & {
     /**
      * `const` requires the field value to exactly match the specified value. If
      * the field value doesn't match, an error message is generated.
@@ -3021,22 +2778,19 @@ export declare class StringRules extends Message<StringRules> {
      * @generated from field: optional bool strict = 25;
      */
     strict?: boolean;
-    constructor(data?: PartialMessage<StringRules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.StringRules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StringRules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StringRules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StringRules;
-    static equals(a: StringRules | PlainMessage<StringRules> | undefined, b: StringRules | PlainMessage<StringRules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.StringRules.
+ * Use `create(StringRulesSchema)` to create a new message.
+ */
+export declare const StringRulesSchema: GenMessage<StringRules>;
 /**
  * BytesRules describe the constraints applied to `bytes` values. These rules
  * may also be applied to the `google.protobuf.BytesValue` Well-Known-Type.
  *
  * @generated from message buf.validate.BytesRules
  */
-export declare class BytesRules extends Message<BytesRules> {
+export type BytesRules = Message<"buf.validate.BytesRules"> & {
     /**
      * `const` requires the field value to exactly match the specified bytes
      * value. If the field value doesn't match, an error message is generated.
@@ -3245,21 +2999,18 @@ export declare class BytesRules extends Message<BytesRules> {
         case: undefined;
         value?: undefined;
     };
-    constructor(data?: PartialMessage<BytesRules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.BytesRules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BytesRules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BytesRules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BytesRules;
-    static equals(a: BytesRules | PlainMessage<BytesRules> | undefined, b: BytesRules | PlainMessage<BytesRules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.BytesRules.
+ * Use `create(BytesRulesSchema)` to create a new message.
+ */
+export declare const BytesRulesSchema: GenMessage<BytesRules>;
 /**
  * EnumRules describe the constraints applied to `enum` values.
  *
  * @generated from message buf.validate.EnumRules
  */
-export declare class EnumRules extends Message<EnumRules> {
+export type EnumRules = Message<"buf.validate.EnumRules"> & {
     /**
      * `const` requires the field value to exactly match the specified enum value.
      * If the field value doesn't match, an error message is generated.
@@ -3342,21 +3093,18 @@ export declare class EnumRules extends Message<EnumRules> {
      * @generated from field: repeated int32 not_in = 4;
      */
     notIn: number[];
-    constructor(data?: PartialMessage<EnumRules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.EnumRules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EnumRules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EnumRules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnumRules;
-    static equals(a: EnumRules | PlainMessage<EnumRules> | undefined, b: EnumRules | PlainMessage<EnumRules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.EnumRules.
+ * Use `create(EnumRulesSchema)` to create a new message.
+ */
+export declare const EnumRulesSchema: GenMessage<EnumRules>;
 /**
  * RepeatedRules describe the constraints applied to `repeated` values.
  *
  * @generated from message buf.validate.RepeatedRules
  */
-export declare class RepeatedRules extends Message<RepeatedRules> {
+export type RepeatedRules = Message<"buf.validate.RepeatedRules"> & {
     /**
      * `min_items` requires that this field must contain at least the specified
      * minimum number of items.
@@ -3424,21 +3172,18 @@ export declare class RepeatedRules extends Message<RepeatedRules> {
      * @generated from field: optional buf.validate.FieldConstraints items = 4;
      */
     items?: FieldConstraints;
-    constructor(data?: PartialMessage<RepeatedRules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.RepeatedRules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RepeatedRules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RepeatedRules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RepeatedRules;
-    static equals(a: RepeatedRules | PlainMessage<RepeatedRules> | undefined, b: RepeatedRules | PlainMessage<RepeatedRules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.RepeatedRules.
+ * Use `create(RepeatedRulesSchema)` to create a new message.
+ */
+export declare const RepeatedRulesSchema: GenMessage<RepeatedRules>;
 /**
  * MapRules describe the constraints applied to `map` values.
  *
  * @generated from message buf.validate.MapRules
  */
-export declare class MapRules extends Message<MapRules> {
+export type MapRules = Message<"buf.validate.MapRules"> & {
     /**
      * Specifies the minimum number of key-value pairs allowed. If the field has
      * fewer key-value pairs than specified, an error message is generated.
@@ -3505,21 +3250,18 @@ export declare class MapRules extends Message<MapRules> {
      * @generated from field: optional buf.validate.FieldConstraints values = 5;
      */
     values?: FieldConstraints;
-    constructor(data?: PartialMessage<MapRules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.MapRules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MapRules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MapRules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MapRules;
-    static equals(a: MapRules | PlainMessage<MapRules> | undefined, b: MapRules | PlainMessage<MapRules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.MapRules.
+ * Use `create(MapRulesSchema)` to create a new message.
+ */
+export declare const MapRulesSchema: GenMessage<MapRules>;
 /**
  * AnyRules describe constraints applied exclusively to the `google.protobuf.Any` well-known type.
  *
  * @generated from message buf.validate.AnyRules
  */
-export declare class AnyRules extends Message<AnyRules> {
+export type AnyRules = Message<"buf.validate.AnyRules"> & {
     /**
      * `in` requires the field's `type_url` to be equal to one of the
      * specified values. If it doesn't match any of the specified values, an error
@@ -3548,21 +3290,18 @@ export declare class AnyRules extends Message<AnyRules> {
      * @generated from field: repeated string not_in = 3;
      */
     notIn: string[];
-    constructor(data?: PartialMessage<AnyRules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.AnyRules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AnyRules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AnyRules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AnyRules;
-    static equals(a: AnyRules | PlainMessage<AnyRules> | undefined, b: AnyRules | PlainMessage<AnyRules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.AnyRules.
+ * Use `create(AnyRulesSchema)` to create a new message.
+ */
+export declare const AnyRulesSchema: GenMessage<AnyRules>;
 /**
  * DurationRules describe the constraints applied exclusively to the `google.protobuf.Duration` well-known type.
  *
  * @generated from message buf.validate.DurationRules
  */
-export declare class DurationRules extends Message<DurationRules> {
+export type DurationRules = Message<"buf.validate.DurationRules"> & {
     /**
      * `const` dictates that the field must match the specified value of the `google.protobuf.Duration` type exactly.
      * If the field's value deviates from the specified value, an error message
@@ -3707,21 +3446,18 @@ export declare class DurationRules extends Message<DurationRules> {
      * @generated from field: repeated google.protobuf.Duration not_in = 8;
      */
     notIn: Duration[];
-    constructor(data?: PartialMessage<DurationRules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.DurationRules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DurationRules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DurationRules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DurationRules;
-    static equals(a: DurationRules | PlainMessage<DurationRules> | undefined, b: DurationRules | PlainMessage<DurationRules> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.DurationRules.
+ * Use `create(DurationRulesSchema)` to create a new message.
+ */
+export declare const DurationRulesSchema: GenMessage<DurationRules>;
 /**
  * TimestampRules describe the constraints applied exclusively to the `google.protobuf.Timestamp` well-known type.
  *
  * @generated from message buf.validate.TimestampRules
  */
-export declare class TimestampRules extends Message<TimestampRules> {
+export type TimestampRules = Message<"buf.validate.TimestampRules"> & {
     /**
      * `const` dictates that this field, of the `google.protobuf.Timestamp` type, must exactly match the specified value. If the field value doesn't correspond to the specified timestamp, an error message will be generated.
      *
@@ -3872,33 +3608,238 @@ export declare class TimestampRules extends Message<TimestampRules> {
      * @generated from field: optional google.protobuf.Duration within = 9;
      */
     within?: Duration;
-    constructor(data?: PartialMessage<TimestampRules>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.TimestampRules";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TimestampRules;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TimestampRules;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TimestampRules;
-    static equals(a: TimestampRules | PlainMessage<TimestampRules> | undefined, b: TimestampRules | PlainMessage<TimestampRules> | undefined): boolean;
+};
+/**
+ * Describes the message buf.validate.TimestampRules.
+ * Use `create(TimestampRulesSchema)` to create a new message.
+ */
+export declare const TimestampRulesSchema: GenMessage<TimestampRules>;
+/**
+ * Specifies how FieldConstraints.ignore behaves. See the documentation for
+ * FieldConstraints.required for definitions of "populated" and "nullable".
+ *
+ * @generated from enum buf.validate.Ignore
+ */
+export declare enum Ignore {
+    /**
+     * Validation is only skipped if it's an unpopulated nullable fields.
+     *
+     * ```proto
+     * syntax="proto3";
+     *
+     * message Request {
+     *   // The uri rule applies to any value, including the empty string.
+     *   string foo = 1 [
+     *     (buf.validate.field).string.uri = true
+     *   ];
+     *
+     *   // The uri rule only applies if the field is set, including if it's
+     *   // set to the empty string.
+     *   optional string bar = 2 [
+     *     (buf.validate.field).string.uri = true
+     *   ];
+     *
+     *   // The min_items rule always applies, even if the list is empty.
+     *   repeated string baz = 3 [
+     *     (buf.validate.field).repeated.min_items = 3
+     *   ];
+     *
+     *   // The custom CEL rule applies only if the field is set, including if
+     *   // it's the "zero" value of that message.
+     *   SomeMessage quux = 4 [
+     *     (buf.validate.field).cel = {/* ... *\/}
+     *   ];
+     * }
+     * ```
+     *
+     * @generated from enum value: IGNORE_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * Validation is skipped if the field is unpopulated. This rule is redundant
+     * if the field is already nullable. This value is equivalent behavior to the
+     * deprecated ignore_empty rule.
+     *
+     * ```proto
+     * syntax="proto3
+     *
+     * message Request {
+     *   // The uri rule applies only if the value is not the empty string.
+     *   string foo = 1 [
+     *     (buf.validate.field).string.uri = true,
+     *     (buf.validate.field).ignore = IGNORE_IF_UNPOPULATED
+     *   ];
+     *
+     *   // IGNORE_IF_UNPOPULATED is equivalent to IGNORE_UNSPECIFIED in this
+     *   // case: the uri rule only applies if the field is set, including if
+     *   // it's set to the empty string.
+     *   optional string bar = 2 [
+     *     (buf.validate.field).string.uri = true,
+     *     (buf.validate.field).ignore = IGNORE_IF_UNPOPULATED
+     *   ];
+     *
+     *   // The min_items rule only applies if the list has at least one item.
+     *   repeated string baz = 3 [
+     *     (buf.validate.field).repeated.min_items = 3,
+     *     (buf.validate.field).ignore = IGNORE_IF_UNPOPULATED
+     *   ];
+     *
+     *   // IGNORE_IF_UNPOPULATED is equivalent to IGNORE_UNSPECIFIED in this
+     *   // case: the custom CEL rule applies only if the field is set, including
+     *   // if it's the "zero" value of that message.
+     *   SomeMessage quux = 4 [
+     *     (buf.validate.field).cel = {/* ... *\/},
+     *     (buf.validate.field).ignore = IGNORE_IF_UNPOPULATED
+     *   ];
+     * }
+     * ```
+     *
+     * @generated from enum value: IGNORE_IF_UNPOPULATED = 1;
+     */
+    IF_UNPOPULATED = 1,
+    /**
+     * Validation is skipped if the field is unpopulated or if it is a nullable
+     * field populated with its default value. This is typically the zero or
+     * empty value, but proto2 scalars support custom defaults. For messages, the
+     * default is a non-null message with all its fields unpopulated.
+     *
+     * ```proto
+     * syntax="proto3
+     *
+     * message Request {
+     *   // IGNORE_IF_DEFAULT_VALUE is equivalent to IGNORE_IF_UNPOPULATED in
+     *   // this case; the uri rule applies only if the value is not the empty
+     *   // string.
+     *   string foo = 1 [
+     *     (buf.validate.field).string.uri = true,
+     *     (buf.validate.field).ignore = IGNORE_IF_DEFAULT_VALUE
+     *   ];
+     *
+     *   // The uri rule only applies if the field is set to a value other than
+     *   // the empty string.
+     *   optional string bar = 2 [
+     *     (buf.validate.field).string.uri = true,
+     *     (buf.validate.field).ignore = IGNORE_IF_DEFAULT_VALUE
+     *   ];
+     *
+     *   // IGNORE_IF_DEFAULT_VALUE is equivalent to IGNORE_IF_UNPOPULATED in
+     *   // this case; the min_items rule only applies if the list has at least
+     *   // one item.
+     *   repeated string baz = 3 [
+     *     (buf.validate.field).repeated.min_items = 3,
+     *     (buf.validate.field).ignore = IGNORE_IF_DEFAULT_VALUE
+     *   ];
+     *
+     *   // The custom CEL rule only applies if the field is set to a value other
+     *   // than an empty message (i.e., fields are unpopulated).
+     *   SomeMessage quux = 4 [
+     *     (buf.validate.field).cel = {/* ... *\/},
+     *     (buf.validate.field).ignore = IGNORE_IF_DEFAULT_VALUE
+     *   ];
+     * }
+     * ```
+     *
+     * This rule is affected by proto2 custom default values:
+     *
+     * ```proto
+     * syntax="proto2";
+     *
+     * message Request {
+     *   // The gt rule only applies if the field is set and it's value is not
+     *   the default (i.e., not -42). The rule even applies if the field is set
+     *   to zero since the default value differs.
+     *   optional int32 value = 1 [
+     *     default = -42,
+     *     (buf.validate.field).int32.gt = 0,
+     *     (buf.validate.field).ignore = IGNORE_IF_DEFAULT_VALUE
+     *   ];
+     * }
+     *
+     * @generated from enum value: IGNORE_IF_DEFAULT_VALUE = 2;
+     */
+    IF_DEFAULT_VALUE = 2,
+    /**
+     * The validation rules of this field will be skipped and not evaluated. This
+     * is useful for situations that necessitate turning off the rules of a field
+     * containing a message that may not make sense in the current context, or to
+     * temporarily disable constraints during development.
+     *
+     * ```proto
+     * message MyMessage {
+     *   // The field's rules will always be ignored, including any validation's
+     *   // on value's fields.
+     *   MyOtherMessage value = 1 [
+     *     (buf.validate.field).ignore = IGNORE_ALWAYS];
+     * }
+     * ```
+     *
+     * @generated from enum value: IGNORE_ALWAYS = 3;
+     */
+    ALWAYS = 3,
+    /**
+     * Deprecated: Use IGNORE_IF_UNPOPULATED instead. TODO: Remove this value pre-v1.
+     *
+     * @generated from enum value: IGNORE_EMPTY = 1 [deprecated = true];
+     * @deprecated
+     */
+    EMPTY = 1,
+    /**
+     * Deprecated: Use IGNORE_IF_DEFAULT_VALUE. TODO: Remove this value pre-v1.
+     *
+     * @generated from enum value: IGNORE_DEFAULT = 2 [deprecated = true];
+     * @deprecated
+     */
+    DEFAULT = 2
 }
+/**
+ * Describes the enum buf.validate.Ignore.
+ */
+export declare const IgnoreSchema: GenEnum<Ignore>;
+/**
+ * WellKnownRegex contain some well-known patterns.
+ *
+ * @generated from enum buf.validate.KnownRegex
+ */
+export declare enum KnownRegex {
+    /**
+     * @generated from enum value: KNOWN_REGEX_UNSPECIFIED = 0;
+     */
+    UNSPECIFIED = 0,
+    /**
+     * HTTP header name as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2).
+     *
+     * @generated from enum value: KNOWN_REGEX_HTTP_HEADER_NAME = 1;
+     */
+    HTTP_HEADER_NAME = 1,
+    /**
+     * HTTP header value as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2.4).
+     *
+     * @generated from enum value: KNOWN_REGEX_HTTP_HEADER_VALUE = 2;
+     */
+    HTTP_HEADER_VALUE = 2
+}
+/**
+ * Describes the enum buf.validate.KnownRegex.
+ */
+export declare const KnownRegexSchema: GenEnum<KnownRegex>;
 /**
  * Rules specify the validations to be performed on this message. By default,
  * no validation is performed against a message.
  *
  * @generated from extension: optional buf.validate.MessageConstraints message = 1159;
  */
-export declare const message: import("@bufbuild/protobuf").Extension<MessageOptions, MessageConstraints>;
+export declare const message: GenExtension<MessageOptions, MessageConstraints>;
 /**
  * Rules specify the validations to be performed on this oneof. By default,
  * no validation is performed against a oneof.
  *
  * @generated from extension: optional buf.validate.OneofConstraints oneof = 1159;
  */
-export declare const oneof: import("@bufbuild/protobuf").Extension<OneofOptions, OneofConstraints>;
+export declare const oneof: GenExtension<OneofOptions, OneofConstraints>;
 /**
  * Rules specify the validations to be performed on this field. By default,
  * no validation is performed against a field.
  *
  * @generated from extension: optional buf.validate.FieldConstraints field = 1159;
  */
-export declare const field: import("@bufbuild/protobuf").Extension<FieldOptions, FieldConstraints>;
+export declare const field: GenExtension<FieldOptions, FieldConstraints>;

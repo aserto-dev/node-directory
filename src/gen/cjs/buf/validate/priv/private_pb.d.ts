@@ -1,30 +1,32 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { FieldOptions, Message, proto3 } from "@bufbuild/protobuf";
+import type { GenExtension, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1";
+import type { FieldOptions } from "@bufbuild/protobuf/wkt";
+import type { Message } from "@bufbuild/protobuf";
+/**
+ * Describes the file buf/validate/priv/private.proto.
+ */
+export declare const file_buf_validate_priv_private: GenFile;
 /**
  * Do not use. Internal to protovalidate library
  *
  * @generated from message buf.validate.priv.FieldConstraints
  */
-export declare class FieldConstraints extends Message<FieldConstraints> {
+export type FieldConstraints = Message<"buf.validate.priv.FieldConstraints"> & {
     /**
      * @generated from field: repeated buf.validate.priv.Constraint cel = 1;
      */
     cel: Constraint[];
-    constructor(data?: PartialMessage<FieldConstraints>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.priv.FieldConstraints";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FieldConstraints;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FieldConstraints;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FieldConstraints;
-    static equals(a: FieldConstraints | PlainMessage<FieldConstraints> | undefined, b: FieldConstraints | PlainMessage<FieldConstraints> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.priv.FieldConstraints.
+ * Use `create(FieldConstraintsSchema)` to create a new message.
+ */
+export declare const FieldConstraintsSchema: GenMessage<FieldConstraints>;
 /**
  * Do not use. Internal to protovalidate library
  *
  * @generated from message buf.validate.priv.Constraint
  */
-export declare class Constraint extends Message<Constraint> {
+export type Constraint = Message<"buf.validate.priv.Constraint"> & {
     /**
      * @generated from field: string id = 1;
      */
@@ -37,18 +39,15 @@ export declare class Constraint extends Message<Constraint> {
      * @generated from field: string expression = 3;
      */
     expression: string;
-    constructor(data?: PartialMessage<Constraint>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.priv.Constraint";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Constraint;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Constraint;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Constraint;
-    static equals(a: Constraint | PlainMessage<Constraint> | undefined, b: Constraint | PlainMessage<Constraint> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.priv.Constraint.
+ * Use `create(ConstraintSchema)` to create a new message.
+ */
+export declare const ConstraintSchema: GenMessage<Constraint>;
 /**
  * Do not use. Internal to protovalidate library
  *
  * @generated from extension: optional buf.validate.priv.FieldConstraints field = 1160;
  */
-export declare const field: import("@bufbuild/protobuf").Extension<FieldOptions, FieldConstraints>;
+export declare const field: GenExtension<FieldOptions, FieldConstraints>;

@@ -1,4 +1,9 @@
-import { FieldOptions } from "@bufbuild/protobuf";
+import type { GenEnum, GenExtension, GenFile } from "@bufbuild/protobuf/codegenv1";
+import type { FieldOptions } from "@bufbuild/protobuf/wkt";
+/**
+ * Describes the file google/api/field_behavior.proto.
+ */
+export declare const file_google_api_field_behavior: GenFile;
 /**
  * An indicator of the behavior of a given field (for example, that a field
  * is required in requests, or given as output but ignored as input).
@@ -94,6 +99,10 @@ export declare enum FieldBehavior {
     IDENTIFIER = 8
 }
 /**
+ * Describes the enum google.api.FieldBehavior.
+ */
+export declare const FieldBehaviorSchema: GenEnum<FieldBehavior>;
+/**
  * A designation of a specific field behavior (required, output only, etc.)
  * in protobuf messages.
  *
@@ -109,4 +118,4 @@ export declare enum FieldBehavior {
  *
  * @generated from extension: repeated google.api.FieldBehavior field_behavior = 1052 [packed = false];
  */
-export declare const field_behavior: import("@bufbuild/protobuf").Extension<FieldOptions, FieldBehavior[]>;
+export declare const field_behavior: GenExtension<FieldOptions, FieldBehavior[]>;

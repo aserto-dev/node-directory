@@ -1,33 +1,10 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, Value } from "@bufbuild/protobuf";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1";
+import type { Value } from "@bufbuild/protobuf/wkt";
+import type { Message } from "@bufbuild/protobuf";
 /**
- * Scheme describes the schemes supported by the OpenAPI Swagger
- * and Operation objects.
- *
- * @generated from enum grpc.gateway.protoc_gen_openapiv2.options.Scheme
+ * Describes the file protoc-gen-openapiv2/options/openapiv2.proto.
  */
-export declare enum Scheme {
-    /**
-     * @generated from enum value: UNKNOWN = 0;
-     */
-    UNKNOWN = 0,
-    /**
-     * @generated from enum value: HTTP = 1;
-     */
-    HTTP = 1,
-    /**
-     * @generated from enum value: HTTPS = 2;
-     */
-    HTTPS = 2,
-    /**
-     * @generated from enum value: WS = 3;
-     */
-    WS = 3,
-    /**
-     * @generated from enum value: WSS = 4;
-     */
-    WSS = 4
-}
+export declare const file_protoc_gen_openapiv2_options_openapiv2: GenFile;
 /**
  * `Swagger` is a representation of OpenAPI v2 specification's Swagger object.
  *
@@ -58,7 +35,7 @@ export declare enum Scheme {
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.Swagger
  */
-export declare class Swagger extends Message<Swagger> {
+export type Swagger = Message<"grpc.gateway.protoc_gen_openapiv2.options.Swagger"> & {
     /**
      * Specifies the OpenAPI Specification version being used. It can be
      * used by the OpenAPI UI and other clients to interpret the API listing. The
@@ -168,15 +145,12 @@ export declare class Swagger extends Message<Swagger> {
     extensions: {
         [key: string]: Value;
     };
-    constructor(data?: PartialMessage<Swagger>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.Swagger";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Swagger;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Swagger;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Swagger;
-    static equals(a: Swagger | PlainMessage<Swagger> | undefined, b: Swagger | PlainMessage<Swagger> | undefined): boolean;
-}
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.Swagger.
+ * Use `create(SwaggerSchema)` to create a new message.
+ */
+export declare const SwaggerSchema: GenMessage<Swagger>;
 /**
  * `Operation` is a representation of OpenAPI v2 specification's Operation object.
  *
@@ -206,7 +180,7 @@ export declare class Swagger extends Message<Swagger> {
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.Operation
  */
-export declare class Operation extends Message<Operation> {
+export type Operation = Message<"grpc.gateway.protoc_gen_openapiv2.options.Operation"> & {
     /**
      * A list of tags for API documentation control. Tags can be used for logical
      * grouping of operations by resources or any other qualifier.
@@ -311,15 +285,12 @@ export declare class Operation extends Message<Operation> {
      * @generated from field: grpc.gateway.protoc_gen_openapiv2.options.Parameters parameters = 14;
      */
     parameters?: Parameters;
-    constructor(data?: PartialMessage<Operation>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.Operation";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Operation;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Operation;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Operation;
-    static equals(a: Operation | PlainMessage<Operation> | undefined, b: Operation | PlainMessage<Operation> | undefined): boolean;
-}
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.Operation.
+ * Use `create(OperationSchema)` to create a new message.
+ */
+export declare const OperationSchema: GenMessage<Operation>;
 /**
  * `Parameters` is a representation of OpenAPI v2 specification's parameters object.
  * Note: This technically breaks compatibility with the OpenAPI 2 definition structure as we only
@@ -329,7 +300,7 @@ export declare class Operation extends Message<Operation> {
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.Parameters
  */
-export declare class Parameters extends Message<Parameters> {
+export type Parameters = Message<"grpc.gateway.protoc_gen_openapiv2.options.Parameters"> & {
     /**
      * `Headers` is one or more HTTP header parameter.
      * See: https://swagger.io/docs/specification/2-0/describing-parameters/#header-parameters
@@ -337,22 +308,19 @@ export declare class Parameters extends Message<Parameters> {
      * @generated from field: repeated grpc.gateway.protoc_gen_openapiv2.options.HeaderParameter headers = 1;
      */
     headers: HeaderParameter[];
-    constructor(data?: PartialMessage<Parameters>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.Parameters";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Parameters;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Parameters;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Parameters;
-    static equals(a: Parameters | PlainMessage<Parameters> | undefined, b: Parameters | PlainMessage<Parameters> | undefined): boolean;
-}
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.Parameters.
+ * Use `create(ParametersSchema)` to create a new message.
+ */
+export declare const ParametersSchema: GenMessage<Parameters>;
 /**
  * `HeaderParameter` a HTTP header parameter.
  * See: https://swagger.io/specification/v2/#parameter-object
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.HeaderParameter
  */
-export declare class HeaderParameter extends Message<HeaderParameter> {
+export type HeaderParameter = Message<"grpc.gateway.protoc_gen_openapiv2.options.HeaderParameter"> & {
     /**
      * `Name` is the header name.
      *
@@ -384,15 +352,12 @@ export declare class HeaderParameter extends Message<HeaderParameter> {
      * @generated from field: bool required = 5;
      */
     required: boolean;
-    constructor(data?: PartialMessage<HeaderParameter>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.HeaderParameter";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HeaderParameter;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HeaderParameter;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HeaderParameter;
-    static equals(a: HeaderParameter | PlainMessage<HeaderParameter> | undefined, b: HeaderParameter | PlainMessage<HeaderParameter> | undefined): boolean;
-}
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.HeaderParameter.
+ * Use `create(HeaderParameterSchema)` to create a new message.
+ */
+export declare const HeaderParameterSchema: GenMessage<HeaderParameter>;
 /**
  * `Type` is a supported HTTP header type.
  * See https://swagger.io/specification/v2/#parameterType.
@@ -422,6 +387,10 @@ export declare enum HeaderParameter_Type {
     BOOLEAN = 4
 }
 /**
+ * Describes the enum grpc.gateway.protoc_gen_openapiv2.options.HeaderParameter.Type.
+ */
+export declare const HeaderParameter_TypeSchema: GenEnum<HeaderParameter_Type>;
+/**
  * `Header` is a representation of OpenAPI v2 specification's Header object.
  *
  * See: https://github.com/OAI/OpenAPI-Specification/blob/3.0.0/versions/2.0.md#headerObject
@@ -429,7 +398,7 @@ export declare enum HeaderParameter_Type {
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.Header
  */
-export declare class Header extends Message<Header> {
+export type Header = Message<"grpc.gateway.protoc_gen_openapiv2.options.Header"> & {
     /**
      * `Description` is a short description of the header.
      *
@@ -462,15 +431,12 @@ export declare class Header extends Message<Header> {
      * @generated from field: string pattern = 13;
      */
     pattern: string;
-    constructor(data?: PartialMessage<Header>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.Header";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Header;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Header;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Header;
-    static equals(a: Header | PlainMessage<Header> | undefined, b: Header | PlainMessage<Header> | undefined): boolean;
-}
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.Header.
+ * Use `create(HeaderSchema)` to create a new message.
+ */
+export declare const HeaderSchema: GenMessage<Header>;
 /**
  * `Response` is a representation of OpenAPI v2 specification's Response object.
  *
@@ -479,7 +445,7 @@ export declare class Header extends Message<Header> {
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.Response
  */
-export declare class Response extends Message<Response> {
+export type Response = Message<"grpc.gateway.protoc_gen_openapiv2.options.Response"> & {
     /**
      * `Description` is a short description of the response.
      * GFM syntax can be used for rich text representation.
@@ -523,15 +489,12 @@ export declare class Response extends Message<Response> {
     extensions: {
         [key: string]: Value;
     };
-    constructor(data?: PartialMessage<Response>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.Response";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Response;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Response;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Response;
-    static equals(a: Response | PlainMessage<Response> | undefined, b: Response | PlainMessage<Response> | undefined): boolean;
-}
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.Response.
+ * Use `create(ResponseSchema)` to create a new message.
+ */
+export declare const ResponseSchema: GenMessage<Response>;
 /**
  * `Info` is a representation of OpenAPI v2 specification's Info object.
  *
@@ -560,7 +523,7 @@ export declare class Response extends Message<Response> {
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.Info
  */
-export declare class Info extends Message<Info> {
+export type Info = Message<"grpc.gateway.protoc_gen_openapiv2.options.Info"> & {
     /**
      * The title of the application.
      *
@@ -609,15 +572,12 @@ export declare class Info extends Message<Info> {
     extensions: {
         [key: string]: Value;
     };
-    constructor(data?: PartialMessage<Info>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.Info";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Info;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Info;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Info;
-    static equals(a: Info | PlainMessage<Info> | undefined, b: Info | PlainMessage<Info> | undefined): boolean;
-}
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.Info.
+ * Use `create(InfoSchema)` to create a new message.
+ */
+export declare const InfoSchema: GenMessage<Info>;
 /**
  * `Contact` is a representation of OpenAPI v2 specification's Contact object.
  *
@@ -641,7 +601,7 @@ export declare class Info extends Message<Info> {
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.Contact
  */
-export declare class Contact extends Message<Contact> {
+export type Contact = Message<"grpc.gateway.protoc_gen_openapiv2.options.Contact"> & {
     /**
      * The identifying name of the contact person/organization.
      *
@@ -662,15 +622,12 @@ export declare class Contact extends Message<Contact> {
      * @generated from field: string email = 3;
      */
     email: string;
-    constructor(data?: PartialMessage<Contact>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.Contact";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Contact;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Contact;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Contact;
-    static equals(a: Contact | PlainMessage<Contact> | undefined, b: Contact | PlainMessage<Contact> | undefined): boolean;
-}
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.Contact.
+ * Use `create(ContactSchema)` to create a new message.
+ */
+export declare const ContactSchema: GenMessage<Contact>;
 /**
  * `License` is a representation of OpenAPI v2 specification's License object.
  *
@@ -693,7 +650,7 @@ export declare class Contact extends Message<Contact> {
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.License
  */
-export declare class License extends Message<License> {
+export type License = Message<"grpc.gateway.protoc_gen_openapiv2.options.License"> & {
     /**
      * The license name used for the API.
      *
@@ -706,15 +663,12 @@ export declare class License extends Message<License> {
      * @generated from field: string url = 2;
      */
     url: string;
-    constructor(data?: PartialMessage<License>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.License";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): License;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): License;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): License;
-    static equals(a: License | PlainMessage<License> | undefined, b: License | PlainMessage<License> | undefined): boolean;
-}
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.License.
+ * Use `create(LicenseSchema)` to create a new message.
+ */
+export declare const LicenseSchema: GenMessage<License>;
 /**
  * `ExternalDocumentation` is a representation of OpenAPI v2 specification's
  * ExternalDocumentation object.
@@ -735,7 +689,7 @@ export declare class License extends Message<License> {
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.ExternalDocumentation
  */
-export declare class ExternalDocumentation extends Message<ExternalDocumentation> {
+export type ExternalDocumentation = Message<"grpc.gateway.protoc_gen_openapiv2.options.ExternalDocumentation"> & {
     /**
      * A short description of the target documentation. GFM syntax can be used for
      * rich text representation.
@@ -750,15 +704,12 @@ export declare class ExternalDocumentation extends Message<ExternalDocumentation
      * @generated from field: string url = 2;
      */
     url: string;
-    constructor(data?: PartialMessage<ExternalDocumentation>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.ExternalDocumentation";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExternalDocumentation;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExternalDocumentation;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExternalDocumentation;
-    static equals(a: ExternalDocumentation | PlainMessage<ExternalDocumentation> | undefined, b: ExternalDocumentation | PlainMessage<ExternalDocumentation> | undefined): boolean;
-}
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.ExternalDocumentation.
+ * Use `create(ExternalDocumentationSchema)` to create a new message.
+ */
+export declare const ExternalDocumentationSchema: GenMessage<ExternalDocumentation>;
 /**
  * `Schema` is a representation of OpenAPI v2 specification's Schema object.
  *
@@ -767,7 +718,7 @@ export declare class ExternalDocumentation extends Message<ExternalDocumentation
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.Schema
  */
-export declare class Schema extends Message<Schema> {
+export type Schema = Message<"grpc.gateway.protoc_gen_openapiv2.options.Schema"> & {
     /**
      * @generated from field: grpc.gateway.protoc_gen_openapiv2.options.JSONSchema json_schema = 1;
      */
@@ -805,15 +756,12 @@ export declare class Schema extends Message<Schema> {
      * @generated from field: string example = 6;
      */
     example: string;
-    constructor(data?: PartialMessage<Schema>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.Schema";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Schema;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Schema;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Schema;
-    static equals(a: Schema | PlainMessage<Schema> | undefined, b: Schema | PlainMessage<Schema> | undefined): boolean;
-}
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.Schema.
+ * Use `create(SchemaSchema)` to create a new message.
+ */
+export declare const SchemaSchema: GenMessage<Schema>;
 /**
  * `JSONSchema` represents properties from JSON Schema taken, and as used, in
  * the OpenAPI v2 spec.
@@ -846,7 +794,7 @@ export declare class Schema extends Message<Schema> {
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.JSONSchema
  */
-export declare class JSONSchema extends Message<JSONSchema> {
+export type JSONSchema = Message<"grpc.gateway.protoc_gen_openapiv2.options.JSONSchema"> & {
     /**
      * Ref is used to define an external reference to include in the message.
      * This could be a fully qualified proto message reference, and that type must
@@ -986,15 +934,34 @@ export declare class JSONSchema extends Message<JSONSchema> {
     extensions: {
         [key: string]: Value;
     };
-    constructor(data?: PartialMessage<JSONSchema>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.JSONSchema";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): JSONSchema;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): JSONSchema;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): JSONSchema;
-    static equals(a: JSONSchema | PlainMessage<JSONSchema> | undefined, b: JSONSchema | PlainMessage<JSONSchema> | undefined): boolean;
-}
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.JSONSchema.
+ * Use `create(JSONSchemaSchema)` to create a new message.
+ */
+export declare const JSONSchemaSchema: GenMessage<JSONSchema>;
+/**
+ * 'FieldConfiguration' provides additional field level properties used when generating the OpenAPI v2 file.
+ * These properties are not defined by OpenAPIv2, but they are used to control the generation.
+ *
+ * @generated from message grpc.gateway.protoc_gen_openapiv2.options.JSONSchema.FieldConfiguration
+ */
+export type JSONSchema_FieldConfiguration = Message<"grpc.gateway.protoc_gen_openapiv2.options.JSONSchema.FieldConfiguration"> & {
+    /**
+     * Alternative parameter name when used as path parameter. If set, this will
+     * be used as the complete parameter name when this field is used as a path
+     * parameter. Use this to avoid having auto generated path parameter names
+     * for overlapping paths.
+     *
+     * @generated from field: string path_param_name = 47;
+     */
+    pathParamName: string;
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.JSONSchema.FieldConfiguration.
+ * Use `create(JSONSchema_FieldConfigurationSchema)` to create a new message.
+ */
+export declare const JSONSchema_FieldConfigurationSchema: GenMessage<JSONSchema_FieldConfiguration>;
 /**
  * @generated from enum grpc.gateway.protoc_gen_openapiv2.options.JSONSchema.JSONSchemaSimpleTypes
  */
@@ -1033,30 +1000,9 @@ export declare enum JSONSchema_JSONSchemaSimpleTypes {
     STRING = 7
 }
 /**
- * 'FieldConfiguration' provides additional field level properties used when generating the OpenAPI v2 file.
- * These properties are not defined by OpenAPIv2, but they are used to control the generation.
- *
- * @generated from message grpc.gateway.protoc_gen_openapiv2.options.JSONSchema.FieldConfiguration
+ * Describes the enum grpc.gateway.protoc_gen_openapiv2.options.JSONSchema.JSONSchemaSimpleTypes.
  */
-export declare class JSONSchema_FieldConfiguration extends Message<JSONSchema_FieldConfiguration> {
-    /**
-     * Alternative parameter name when used as path parameter. If set, this will
-     * be used as the complete parameter name when this field is used as a path
-     * parameter. Use this to avoid having auto generated path parameter names
-     * for overlapping paths.
-     *
-     * @generated from field: string path_param_name = 47;
-     */
-    pathParamName: string;
-    constructor(data?: PartialMessage<JSONSchema_FieldConfiguration>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.JSONSchema.FieldConfiguration";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): JSONSchema_FieldConfiguration;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): JSONSchema_FieldConfiguration;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): JSONSchema_FieldConfiguration;
-    static equals(a: JSONSchema_FieldConfiguration | PlainMessage<JSONSchema_FieldConfiguration> | undefined, b: JSONSchema_FieldConfiguration | PlainMessage<JSONSchema_FieldConfiguration> | undefined): boolean;
-}
+export declare const JSONSchema_JSONSchemaSimpleTypesSchema: GenEnum<JSONSchema_JSONSchemaSimpleTypes>;
 /**
  * `Tag` is a representation of OpenAPI v2 specification's Tag object.
  *
@@ -1065,7 +1011,7 @@ export declare class JSONSchema_FieldConfiguration extends Message<JSONSchema_Fi
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.Tag
  */
-export declare class Tag extends Message<Tag> {
+export type Tag = Message<"grpc.gateway.protoc_gen_openapiv2.options.Tag"> & {
     /**
      * The name of the tag. Use it to allow override of the name of a
      * global Tag object, then use that name to reference the tag throughout the
@@ -1097,15 +1043,12 @@ export declare class Tag extends Message<Tag> {
     extensions: {
         [key: string]: Value;
     };
-    constructor(data?: PartialMessage<Tag>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.Tag";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Tag;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Tag;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Tag;
-    static equals(a: Tag | PlainMessage<Tag> | undefined, b: Tag | PlainMessage<Tag> | undefined): boolean;
-}
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.Tag.
+ * Use `create(TagSchema)` to create a new message.
+ */
+export declare const TagSchema: GenMessage<Tag>;
 /**
  * `SecurityDefinitions` is a representation of OpenAPI v2 specification's
  * Security Definitions object.
@@ -1118,7 +1061,7 @@ export declare class Tag extends Message<Tag> {
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.SecurityDefinitions
  */
-export declare class SecurityDefinitions extends Message<SecurityDefinitions> {
+export type SecurityDefinitions = Message<"grpc.gateway.protoc_gen_openapiv2.options.SecurityDefinitions"> & {
     /**
      * A single security scheme definition, mapping a "name" to the scheme it
      * defines.
@@ -1128,15 +1071,12 @@ export declare class SecurityDefinitions extends Message<SecurityDefinitions> {
     security: {
         [key: string]: SecurityScheme;
     };
-    constructor(data?: PartialMessage<SecurityDefinitions>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.SecurityDefinitions";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SecurityDefinitions;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SecurityDefinitions;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SecurityDefinitions;
-    static equals(a: SecurityDefinitions | PlainMessage<SecurityDefinitions> | undefined, b: SecurityDefinitions | PlainMessage<SecurityDefinitions> | undefined): boolean;
-}
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.SecurityDefinitions.
+ * Use `create(SecurityDefinitionsSchema)` to create a new message.
+ */
+export declare const SecurityDefinitionsSchema: GenMessage<SecurityDefinitions>;
 /**
  * `SecurityScheme` is a representation of OpenAPI v2 specification's
  * Security Scheme object.
@@ -1150,7 +1090,7 @@ export declare class SecurityDefinitions extends Message<SecurityDefinitions> {
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.SecurityScheme
  */
-export declare class SecurityScheme extends Message<SecurityScheme> {
+export type SecurityScheme = Message<"grpc.gateway.protoc_gen_openapiv2.options.SecurityScheme"> & {
     /**
      * The type of the security scheme. Valid values are "basic",
      * "apiKey" or "oauth2".
@@ -1220,15 +1160,12 @@ export declare class SecurityScheme extends Message<SecurityScheme> {
     extensions: {
         [key: string]: Value;
     };
-    constructor(data?: PartialMessage<SecurityScheme>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.SecurityScheme";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SecurityScheme;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SecurityScheme;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SecurityScheme;
-    static equals(a: SecurityScheme | PlainMessage<SecurityScheme> | undefined, b: SecurityScheme | PlainMessage<SecurityScheme> | undefined): boolean;
-}
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.SecurityScheme.
+ * Use `create(SecuritySchemeSchema)` to create a new message.
+ */
+export declare const SecuritySchemeSchema: GenMessage<SecurityScheme>;
 /**
  * The type of the security scheme. Valid values are "basic",
  * "apiKey" or "oauth2".
@@ -1254,6 +1191,10 @@ export declare enum SecurityScheme_Type {
     OAUTH2 = 3
 }
 /**
+ * Describes the enum grpc.gateway.protoc_gen_openapiv2.options.SecurityScheme.Type.
+ */
+export declare const SecurityScheme_TypeSchema: GenEnum<SecurityScheme_Type>;
+/**
  * The location of the API key. Valid values are "query" or "header".
  *
  * @generated from enum grpc.gateway.protoc_gen_openapiv2.options.SecurityScheme.In
@@ -1272,6 +1213,10 @@ export declare enum SecurityScheme_In {
      */
     HEADER = 2
 }
+/**
+ * Describes the enum grpc.gateway.protoc_gen_openapiv2.options.SecurityScheme.In.
+ */
+export declare const SecurityScheme_InSchema: GenEnum<SecurityScheme_In>;
 /**
  * The flow used by the OAuth2 security scheme. Valid values are
  * "implicit", "password", "application" or "accessCode".
@@ -1301,6 +1246,10 @@ export declare enum SecurityScheme_Flow {
     ACCESS_CODE = 4
 }
 /**
+ * Describes the enum grpc.gateway.protoc_gen_openapiv2.options.SecurityScheme.Flow.
+ */
+export declare const SecurityScheme_FlowSchema: GenEnum<SecurityScheme_Flow>;
+/**
  * `SecurityRequirement` is a representation of OpenAPI v2 specification's
  * Security Requirement object.
  *
@@ -1315,7 +1264,7 @@ export declare enum SecurityScheme_Flow {
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.SecurityRequirement
  */
-export declare class SecurityRequirement extends Message<SecurityRequirement> {
+export type SecurityRequirement = Message<"grpc.gateway.protoc_gen_openapiv2.options.SecurityRequirement"> & {
     /**
      * Each name must correspond to a security scheme which is declared in
      * the Security Definitions. If the security scheme is of type "oauth2",
@@ -1327,15 +1276,12 @@ export declare class SecurityRequirement extends Message<SecurityRequirement> {
     securityRequirement: {
         [key: string]: SecurityRequirement_SecurityRequirementValue;
     };
-    constructor(data?: PartialMessage<SecurityRequirement>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.SecurityRequirement";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SecurityRequirement;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SecurityRequirement;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SecurityRequirement;
-    static equals(a: SecurityRequirement | PlainMessage<SecurityRequirement> | undefined, b: SecurityRequirement | PlainMessage<SecurityRequirement> | undefined): boolean;
-}
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.SecurityRequirement.
+ * Use `create(SecurityRequirementSchema)` to create a new message.
+ */
+export declare const SecurityRequirementSchema: GenMessage<SecurityRequirement>;
 /**
  * If the security scheme is of type "oauth2", then the value is a list of
  * scope names required for the execution. For other security scheme types,
@@ -1343,20 +1289,17 @@ export declare class SecurityRequirement extends Message<SecurityRequirement> {
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.SecurityRequirement.SecurityRequirementValue
  */
-export declare class SecurityRequirement_SecurityRequirementValue extends Message<SecurityRequirement_SecurityRequirementValue> {
+export type SecurityRequirement_SecurityRequirementValue = Message<"grpc.gateway.protoc_gen_openapiv2.options.SecurityRequirement.SecurityRequirementValue"> & {
     /**
      * @generated from field: repeated string scope = 1;
      */
     scope: string[];
-    constructor(data?: PartialMessage<SecurityRequirement_SecurityRequirementValue>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.SecurityRequirement.SecurityRequirementValue";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SecurityRequirement_SecurityRequirementValue;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SecurityRequirement_SecurityRequirementValue;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SecurityRequirement_SecurityRequirementValue;
-    static equals(a: SecurityRequirement_SecurityRequirementValue | PlainMessage<SecurityRequirement_SecurityRequirementValue> | undefined, b: SecurityRequirement_SecurityRequirementValue | PlainMessage<SecurityRequirement_SecurityRequirementValue> | undefined): boolean;
-}
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.SecurityRequirement.SecurityRequirementValue.
+ * Use `create(SecurityRequirement_SecurityRequirementValueSchema)` to create a new message.
+ */
+export declare const SecurityRequirement_SecurityRequirementValueSchema: GenMessage<SecurityRequirement_SecurityRequirementValue>;
 /**
  * `Scopes` is a representation of OpenAPI v2 specification's Scopes object.
  *
@@ -1366,7 +1309,7 @@ export declare class SecurityRequirement_SecurityRequirementValue extends Messag
  *
  * @generated from message grpc.gateway.protoc_gen_openapiv2.options.Scopes
  */
-export declare class Scopes extends Message<Scopes> {
+export type Scopes = Message<"grpc.gateway.protoc_gen_openapiv2.options.Scopes"> & {
     /**
      * Maps between a name of a scope to a short description of it (as the value
      * of the property).
@@ -1376,12 +1319,41 @@ export declare class Scopes extends Message<Scopes> {
     scope: {
         [key: string]: string;
     };
-    constructor(data?: PartialMessage<Scopes>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "grpc.gateway.protoc_gen_openapiv2.options.Scopes";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Scopes;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Scopes;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Scopes;
-    static equals(a: Scopes | PlainMessage<Scopes> | undefined, b: Scopes | PlainMessage<Scopes> | undefined): boolean;
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.Scopes.
+ * Use `create(ScopesSchema)` to create a new message.
+ */
+export declare const ScopesSchema: GenMessage<Scopes>;
+/**
+ * Scheme describes the schemes supported by the OpenAPI Swagger
+ * and Operation objects.
+ *
+ * @generated from enum grpc.gateway.protoc_gen_openapiv2.options.Scheme
+ */
+export declare enum Scheme {
+    /**
+     * @generated from enum value: UNKNOWN = 0;
+     */
+    UNKNOWN = 0,
+    /**
+     * @generated from enum value: HTTP = 1;
+     */
+    HTTP = 1,
+    /**
+     * @generated from enum value: HTTPS = 2;
+     */
+    HTTPS = 2,
+    /**
+     * @generated from enum value: WS = 3;
+     */
+    WS = 3,
+    /**
+     * @generated from enum value: WSS = 4;
+     */
+    WSS = 4
 }
+/**
+ * Describes the enum grpc.gateway.protoc_gen_openapiv2.options.Scheme.
+ */
+export declare const SchemeSchema: GenEnum<Scheme>;

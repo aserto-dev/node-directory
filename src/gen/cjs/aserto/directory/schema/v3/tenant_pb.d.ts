@@ -1,30 +1,15 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, Struct } from "@bufbuild/protobuf";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1";
+import type { JsonObject, Message } from "@bufbuild/protobuf";
 /**
- * @generated from enum aserto.directory.schema.v3.TenantKind
+ * Describes the file aserto/directory/schema/v3/tenant.proto.
  */
-export declare enum TenantKind {
-    /**
-     * @generated from enum value: TENANT_KIND_UNKNOWN = 0;
-     */
-    UNKNOWN = 0,
-    /**
-     * @generated from enum value: TENANT_KIND_ORGANIZATION = 1;
-     */
-    ORGANIZATION = 1,
-    /**
-     * personal tenant
-     *
-     * @generated from enum value: TENANT_KIND_ACCOUNT = 2;
-     */
-    ACCOUNT = 2
-}
+export declare const file_aserto_directory_schema_v3_tenant: GenFile;
 /**
  * Properties of a tenant object
  *
  * @generated from message aserto.directory.schema.v3.TenantProperties
  */
-export declare class TenantProperties extends Message<TenantProperties> {
+export type TenantProperties = Message<"aserto.directory.schema.v3.TenantProperties"> & {
     /**
      * The kind of tenant.
      *
@@ -49,19 +34,16 @@ export declare class TenantProperties extends Message<TenantProperties> {
      * @generated from field: optional aserto.directory.schema.v3.AccountProperties account = 4;
      */
     account?: AccountProperties;
-    constructor(data?: PartialMessage<TenantProperties>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.schema.v3.TenantProperties";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TenantProperties;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TenantProperties;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TenantProperties;
-    static equals(a: TenantProperties | PlainMessage<TenantProperties> | undefined, b: TenantProperties | PlainMessage<TenantProperties> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.schema.v3.TenantProperties.
+ * Use `create(TenantPropertiesSchema)` to create a new message.
+ */
+export declare const TenantPropertiesSchema: GenMessage<TenantProperties>;
 /**
  * @generated from message aserto.directory.schema.v3.AccountProperties
  */
-export declare class AccountProperties extends Message<AccountProperties> {
+export type AccountProperties = Message<"aserto.directory.schema.v3.AccountProperties"> & {
     /**
      * Maximum number of organizations that can be created in this account.
      * If -1, there is no limit.
@@ -81,21 +63,18 @@ export declare class AccountProperties extends Message<AccountProperties> {
      * @generated from field: string default_tenant_id = 4;
      */
     defaultTenantId: string;
-    constructor(data?: PartialMessage<AccountProperties>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.schema.v3.AccountProperties";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AccountProperties;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AccountProperties;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AccountProperties;
-    static equals(a: AccountProperties | PlainMessage<AccountProperties> | undefined, b: AccountProperties | PlainMessage<AccountProperties> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.schema.v3.AccountProperties.
+ * Use `create(AccountPropertiesSchema)` to create a new message.
+ */
+export declare const AccountPropertiesSchema: GenMessage<AccountProperties>;
 /**
  * The state of a user's progress through the console's getting started guide.
  *
  * @generated from message aserto.directory.schema.v3.GuideState
  */
-export declare class GuideState extends Message<GuideState> {
+export type GuideState = Message<"aserto.directory.schema.v3.GuideState"> & {
     /**
      * Whether or not to display the getting started guide.
      *
@@ -107,13 +86,33 @@ export declare class GuideState extends Message<GuideState> {
      *
      * @generated from field: google.protobuf.Struct steps = 2;
      */
-    steps?: Struct;
-    constructor(data?: PartialMessage<GuideState>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.schema.v3.GuideState";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GuideState;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GuideState;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GuideState;
-    static equals(a: GuideState | PlainMessage<GuideState> | undefined, b: GuideState | PlainMessage<GuideState> | undefined): boolean;
+    steps?: JsonObject;
+};
+/**
+ * Describes the message aserto.directory.schema.v3.GuideState.
+ * Use `create(GuideStateSchema)` to create a new message.
+ */
+export declare const GuideStateSchema: GenMessage<GuideState>;
+/**
+ * @generated from enum aserto.directory.schema.v3.TenantKind
+ */
+export declare enum TenantKind {
+    /**
+     * @generated from enum value: TENANT_KIND_UNKNOWN = 0;
+     */
+    UNKNOWN = 0,
+    /**
+     * @generated from enum value: TENANT_KIND_ORGANIZATION = 1;
+     */
+    ORGANIZATION = 1,
+    /**
+     * personal tenant
+     *
+     * @generated from enum value: TENANT_KIND_ACCOUNT = 2;
+     */
+    ACCOUNT = 2
 }
+/**
+ * Describes the enum aserto.directory.schema.v3.TenantKind.
+ */
+export declare const TenantKindSchema: GenEnum<TenantKind>;

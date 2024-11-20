@@ -1,31 +1,14 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
-import { Object$, Relation } from "../../common/v3/common_pb.js";
+import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv1";
+import type { Object$, Relation } from "../../common/v3/common_pb";
+import type { Message } from "@bufbuild/protobuf";
 /**
- * @generated from enum aserto.directory.importer.v3.Opcode
+ * Describes the file aserto/directory/importer/v3/importer.proto.
  */
-export declare enum Opcode {
-    /**
-     * @generated from enum value: OPCODE_UNKNOWN = 0;
-     */
-    UNKNOWN = 0,
-    /**
-     * @generated from enum value: OPCODE_SET = 1;
-     */
-    SET = 1,
-    /**
-     * @generated from enum value: OPCODE_DELETE = 2;
-     */
-    DELETE = 2,
-    /**
-     * @generated from enum value: OPCODE_DELETE_WITH_RELATIONS = 3;
-     */
-    DELETE_WITH_RELATIONS = 3
-}
+export declare const file_aserto_directory_importer_v3_importer: GenFile;
 /**
  * @generated from message aserto.directory.importer.v3.ImportRequest
  */
-export declare class ImportRequest extends Message<ImportRequest> {
+export type ImportRequest = Message<"aserto.directory.importer.v3.ImportRequest"> & {
     /**
      * operation Opcode enum value
      *
@@ -55,19 +38,16 @@ export declare class ImportRequest extends Message<ImportRequest> {
         case: undefined;
         value?: undefined;
     };
-    constructor(data?: PartialMessage<ImportRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.importer.v3.ImportRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ImportRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ImportRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ImportRequest;
-    static equals(a: ImportRequest | PlainMessage<ImportRequest> | undefined, b: ImportRequest | PlainMessage<ImportRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.importer.v3.ImportRequest.
+ * Use `create(ImportRequestSchema)` to create a new message.
+ */
+export declare const ImportRequestSchema: GenMessage<ImportRequest>;
 /**
  * @generated from message aserto.directory.importer.v3.ImportResponse
  */
-export declare class ImportResponse extends Message<ImportResponse> {
+export type ImportResponse = Message<"aserto.directory.importer.v3.ImportResponse"> & {
     /**
      * object import counter
      *
@@ -80,19 +60,16 @@ export declare class ImportResponse extends Message<ImportResponse> {
      * @generated from field: aserto.directory.importer.v3.ImportCounter relation = 2;
      */
     relation?: ImportCounter;
-    constructor(data?: PartialMessage<ImportResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.importer.v3.ImportResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ImportResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ImportResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ImportResponse;
-    static equals(a: ImportResponse | PlainMessage<ImportResponse> | undefined, b: ImportResponse | PlainMessage<ImportResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.importer.v3.ImportResponse.
+ * Use `create(ImportResponseSchema)` to create a new message.
+ */
+export declare const ImportResponseSchema: GenMessage<ImportResponse>;
 /**
  * @generated from message aserto.directory.importer.v3.ImportCounter
  */
-export declare class ImportCounter extends Message<ImportCounter> {
+export type ImportCounter = Message<"aserto.directory.importer.v3.ImportCounter"> & {
     /**
      * number of messages received
      *
@@ -117,12 +94,49 @@ export declare class ImportCounter extends Message<ImportCounter> {
      * @generated from field: uint64 error = 4;
      */
     error: bigint;
-    constructor(data?: PartialMessage<ImportCounter>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.importer.v3.ImportCounter";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ImportCounter;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ImportCounter;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ImportCounter;
-    static equals(a: ImportCounter | PlainMessage<ImportCounter> | undefined, b: ImportCounter | PlainMessage<ImportCounter> | undefined): boolean;
+};
+/**
+ * Describes the message aserto.directory.importer.v3.ImportCounter.
+ * Use `create(ImportCounterSchema)` to create a new message.
+ */
+export declare const ImportCounterSchema: GenMessage<ImportCounter>;
+/**
+ * @generated from enum aserto.directory.importer.v3.Opcode
+ */
+export declare enum Opcode {
+    /**
+     * @generated from enum value: OPCODE_UNKNOWN = 0;
+     */
+    UNKNOWN = 0,
+    /**
+     * @generated from enum value: OPCODE_SET = 1;
+     */
+    SET = 1,
+    /**
+     * @generated from enum value: OPCODE_DELETE = 2;
+     */
+    DELETE = 2,
+    /**
+     * @generated from enum value: OPCODE_DELETE_WITH_RELATIONS = 3;
+     */
+    DELETE_WITH_RELATIONS = 3
 }
+/**
+ * Describes the enum aserto.directory.importer.v3.Opcode.
+ */
+export declare const OpcodeSchema: GenEnum<Opcode>;
+/**
+ * @generated from service aserto.directory.importer.v3.Importer
+ */
+export declare const Importer: GenService<{
+    /**
+     * import stream of objects and relations
+     *
+     * @generated from rpc aserto.directory.importer.v3.Importer.Import
+     */
+    import: {
+        methodKind: "bidi_streaming";
+        input: typeof ImportRequestSchema;
+        output: typeof ImportResponseSchema;
+    };
+}>;

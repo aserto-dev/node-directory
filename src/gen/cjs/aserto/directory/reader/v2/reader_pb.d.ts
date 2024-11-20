@@ -1,71 +1,69 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
-import { Object$, ObjectDependency, ObjectIdentifier, ObjectType, ObjectTypeIdentifier, PaginationRequest, PaginationResponse, Permission, PermissionIdentifier, Relation, RelationIdentifier, RelationType, RelationTypeIdentifier } from "../../common/v2/common_pb.js";
+import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv1";
+import type { Object$, ObjectDependency, ObjectIdentifier, ObjectType, ObjectTypeIdentifier, PaginationRequest, PaginationResponse, Permission, PermissionIdentifier, Relation, RelationIdentifier, RelationType, RelationTypeIdentifier } from "../../common/v2/common_pb";
+import type { Message } from "@bufbuild/protobuf";
+/**
+ * Describes the file aserto/directory/reader/v2/reader.proto.
+ */
+export declare const file_aserto_directory_reader_v2_reader: GenFile;
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectTypeRequest
  * @deprecated
  */
-export declare class GetObjectTypeRequest extends Message<GetObjectTypeRequest> {
+export type GetObjectTypeRequest = Message<"aserto.directory.reader.v2.GetObjectTypeRequest"> & {
     /**
      * object type selector
      *
      * @generated from field: aserto.directory.common.v2.ObjectTypeIdentifier param = 1;
      */
     param?: ObjectTypeIdentifier;
-    constructor(data?: PartialMessage<GetObjectTypeRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetObjectTypeRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetObjectTypeRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetObjectTypeRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetObjectTypeRequest;
-    static equals(a: GetObjectTypeRequest | PlainMessage<GetObjectTypeRequest> | undefined, b: GetObjectTypeRequest | PlainMessage<GetObjectTypeRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetObjectTypeRequest.
+ * Use `create(GetObjectTypeRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetObjectTypeRequestSchema: GenMessage<GetObjectTypeRequest>;
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectTypeResponse
  * @deprecated
  */
-export declare class GetObjectTypeResponse extends Message<GetObjectTypeResponse> {
+export type GetObjectTypeResponse = Message<"aserto.directory.reader.v2.GetObjectTypeResponse"> & {
     /**
      * object type instance
      *
      * @generated from field: aserto.directory.common.v2.ObjectType result = 1;
      */
     result?: ObjectType;
-    constructor(data?: PartialMessage<GetObjectTypeResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetObjectTypeResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetObjectTypeResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetObjectTypeResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetObjectTypeResponse;
-    static equals(a: GetObjectTypeResponse | PlainMessage<GetObjectTypeResponse> | undefined, b: GetObjectTypeResponse | PlainMessage<GetObjectTypeResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetObjectTypeResponse.
+ * Use `create(GetObjectTypeResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetObjectTypeResponseSchema: GenMessage<GetObjectTypeResponse>;
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectTypesRequest
  * @deprecated
  */
-export declare class GetObjectTypesRequest extends Message<GetObjectTypesRequest> {
+export type GetObjectTypesRequest = Message<"aserto.directory.reader.v2.GetObjectTypesRequest"> & {
     /**
      * pagination request
      *
      * @generated from field: aserto.directory.common.v2.PaginationRequest page = 9;
      */
     page?: PaginationRequest;
-    constructor(data?: PartialMessage<GetObjectTypesRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetObjectTypesRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetObjectTypesRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetObjectTypesRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetObjectTypesRequest;
-    static equals(a: GetObjectTypesRequest | PlainMessage<GetObjectTypesRequest> | undefined, b: GetObjectTypesRequest | PlainMessage<GetObjectTypesRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetObjectTypesRequest.
+ * Use `create(GetObjectTypesRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetObjectTypesRequestSchema: GenMessage<GetObjectTypesRequest>;
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectTypesResponse
  * @deprecated
  */
-export declare class GetObjectTypesResponse extends Message<GetObjectTypesResponse> {
+export type GetObjectTypesResponse = Message<"aserto.directory.reader.v2.GetObjectTypesResponse"> & {
     /**
      * array of object types
      *
@@ -78,60 +76,54 @@ export declare class GetObjectTypesResponse extends Message<GetObjectTypesRespon
      * @generated from field: aserto.directory.common.v2.PaginationResponse page = 9;
      */
     page?: PaginationResponse;
-    constructor(data?: PartialMessage<GetObjectTypesResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetObjectTypesResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetObjectTypesResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetObjectTypesResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetObjectTypesResponse;
-    static equals(a: GetObjectTypesResponse | PlainMessage<GetObjectTypesResponse> | undefined, b: GetObjectTypesResponse | PlainMessage<GetObjectTypesResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetObjectTypesResponse.
+ * Use `create(GetObjectTypesResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetObjectTypesResponseSchema: GenMessage<GetObjectTypesResponse>;
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationTypeRequest
  * @deprecated
  */
-export declare class GetRelationTypeRequest extends Message<GetRelationTypeRequest> {
+export type GetRelationTypeRequest = Message<"aserto.directory.reader.v2.GetRelationTypeRequest"> & {
     /**
      * relation type selector
      *
      * @generated from field: aserto.directory.common.v2.RelationTypeIdentifier param = 1;
      */
     param?: RelationTypeIdentifier;
-    constructor(data?: PartialMessage<GetRelationTypeRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetRelationTypeRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRelationTypeRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRelationTypeRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRelationTypeRequest;
-    static equals(a: GetRelationTypeRequest | PlainMessage<GetRelationTypeRequest> | undefined, b: GetRelationTypeRequest | PlainMessage<GetRelationTypeRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetRelationTypeRequest.
+ * Use `create(GetRelationTypeRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetRelationTypeRequestSchema: GenMessage<GetRelationTypeRequest>;
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationTypeResponse
  * @deprecated
  */
-export declare class GetRelationTypeResponse extends Message<GetRelationTypeResponse> {
+export type GetRelationTypeResponse = Message<"aserto.directory.reader.v2.GetRelationTypeResponse"> & {
     /**
      * relation type instance
      *
      * @generated from field: aserto.directory.common.v2.RelationType result = 1;
      */
     result?: RelationType;
-    constructor(data?: PartialMessage<GetRelationTypeResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetRelationTypeResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRelationTypeResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRelationTypeResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRelationTypeResponse;
-    static equals(a: GetRelationTypeResponse | PlainMessage<GetRelationTypeResponse> | undefined, b: GetRelationTypeResponse | PlainMessage<GetRelationTypeResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetRelationTypeResponse.
+ * Use `create(GetRelationTypeResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetRelationTypeResponseSchema: GenMessage<GetRelationTypeResponse>;
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationTypesRequest
  * @deprecated
  */
-export declare class GetRelationTypesRequest extends Message<GetRelationTypesRequest> {
+export type GetRelationTypesRequest = Message<"aserto.directory.reader.v2.GetRelationTypesRequest"> & {
     /**
      * object type selector
      *
@@ -144,20 +136,18 @@ export declare class GetRelationTypesRequest extends Message<GetRelationTypesReq
      * @generated from field: aserto.directory.common.v2.PaginationRequest page = 9;
      */
     page?: PaginationRequest;
-    constructor(data?: PartialMessage<GetRelationTypesRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetRelationTypesRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRelationTypesRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRelationTypesRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRelationTypesRequest;
-    static equals(a: GetRelationTypesRequest | PlainMessage<GetRelationTypesRequest> | undefined, b: GetRelationTypesRequest | PlainMessage<GetRelationTypesRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetRelationTypesRequest.
+ * Use `create(GetRelationTypesRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetRelationTypesRequestSchema: GenMessage<GetRelationTypesRequest>;
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationTypesResponse
  * @deprecated
  */
-export declare class GetRelationTypesResponse extends Message<GetRelationTypesResponse> {
+export type GetRelationTypesResponse = Message<"aserto.directory.reader.v2.GetRelationTypesResponse"> & {
     /**
      * array of relation types
      *
@@ -170,20 +160,18 @@ export declare class GetRelationTypesResponse extends Message<GetRelationTypesRe
      * @generated from field: aserto.directory.common.v2.PaginationResponse page = 9;
      */
     page?: PaginationResponse;
-    constructor(data?: PartialMessage<GetRelationTypesResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetRelationTypesResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRelationTypesResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRelationTypesResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRelationTypesResponse;
-    static equals(a: GetRelationTypesResponse | PlainMessage<GetRelationTypesResponse> | undefined, b: GetRelationTypesResponse | PlainMessage<GetRelationTypesResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetRelationTypesResponse.
+ * Use `create(GetRelationTypesResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetRelationTypesResponseSchema: GenMessage<GetRelationTypesResponse>;
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectRequest
  * @deprecated
  */
-export declare class GetObjectRequest extends Message<GetObjectRequest> {
+export type GetObjectRequest = Message<"aserto.directory.reader.v2.GetObjectRequest"> & {
     /**
      * object selector
      *
@@ -202,20 +190,18 @@ export declare class GetObjectRequest extends Message<GetObjectRequest> {
      * @generated from field: aserto.directory.common.v2.PaginationRequest page = 9;
      */
     page?: PaginationRequest;
-    constructor(data?: PartialMessage<GetObjectRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetObjectRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetObjectRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetObjectRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetObjectRequest;
-    static equals(a: GetObjectRequest | PlainMessage<GetObjectRequest> | undefined, b: GetObjectRequest | PlainMessage<GetObjectRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetObjectRequest.
+ * Use `create(GetObjectRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetObjectRequestSchema: GenMessage<GetObjectRequest>;
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectResponse
  * @deprecated
  */
-export declare class GetObjectResponse extends Message<GetObjectResponse> {
+export type GetObjectResponse = Message<"aserto.directory.reader.v2.GetObjectResponse"> & {
     /**
      * object instance
      *
@@ -234,60 +220,54 @@ export declare class GetObjectResponse extends Message<GetObjectResponse> {
      * @generated from field: aserto.directory.common.v2.PaginationResponse page = 9;
      */
     page?: PaginationResponse;
-    constructor(data?: PartialMessage<GetObjectResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetObjectResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetObjectResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetObjectResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetObjectResponse;
-    static equals(a: GetObjectResponse | PlainMessage<GetObjectResponse> | undefined, b: GetObjectResponse | PlainMessage<GetObjectResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetObjectResponse.
+ * Use `create(GetObjectResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetObjectResponseSchema: GenMessage<GetObjectResponse>;
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectManyRequest
  * @deprecated
  */
-export declare class GetObjectManyRequest extends Message<GetObjectManyRequest> {
+export type GetObjectManyRequest = Message<"aserto.directory.reader.v2.GetObjectManyRequest"> & {
     /**
      * object identifier list
      *
      * @generated from field: repeated aserto.directory.common.v2.ObjectIdentifier param = 1;
      */
     param: ObjectIdentifier[];
-    constructor(data?: PartialMessage<GetObjectManyRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetObjectManyRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetObjectManyRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetObjectManyRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetObjectManyRequest;
-    static equals(a: GetObjectManyRequest | PlainMessage<GetObjectManyRequest> | undefined, b: GetObjectManyRequest | PlainMessage<GetObjectManyRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetObjectManyRequest.
+ * Use `create(GetObjectManyRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetObjectManyRequestSchema: GenMessage<GetObjectManyRequest>;
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectManyResponse
  * @deprecated
  */
-export declare class GetObjectManyResponse extends Message<GetObjectManyResponse> {
+export type GetObjectManyResponse = Message<"aserto.directory.reader.v2.GetObjectManyResponse"> & {
     /**
      * array of object instances
      *
      * @generated from field: repeated aserto.directory.common.v2.Object results = 1;
      */
     results: Object$[];
-    constructor(data?: PartialMessage<GetObjectManyResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetObjectManyResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetObjectManyResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetObjectManyResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetObjectManyResponse;
-    static equals(a: GetObjectManyResponse | PlainMessage<GetObjectManyResponse> | undefined, b: GetObjectManyResponse | PlainMessage<GetObjectManyResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetObjectManyResponse.
+ * Use `create(GetObjectManyResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetObjectManyResponseSchema: GenMessage<GetObjectManyResponse>;
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectsRequest
  * @deprecated
  */
-export declare class GetObjectsRequest extends Message<GetObjectsRequest> {
+export type GetObjectsRequest = Message<"aserto.directory.reader.v2.GetObjectsRequest"> & {
     /**
      * object type selector
      *
@@ -300,20 +280,18 @@ export declare class GetObjectsRequest extends Message<GetObjectsRequest> {
      * @generated from field: aserto.directory.common.v2.PaginationRequest page = 9;
      */
     page?: PaginationRequest;
-    constructor(data?: PartialMessage<GetObjectsRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetObjectsRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetObjectsRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetObjectsRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetObjectsRequest;
-    static equals(a: GetObjectsRequest | PlainMessage<GetObjectsRequest> | undefined, b: GetObjectsRequest | PlainMessage<GetObjectsRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetObjectsRequest.
+ * Use `create(GetObjectsRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetObjectsRequestSchema: GenMessage<GetObjectsRequest>;
 /**
  * @generated from message aserto.directory.reader.v2.GetObjectsResponse
  * @deprecated
  */
-export declare class GetObjectsResponse extends Message<GetObjectsResponse> {
+export type GetObjectsResponse = Message<"aserto.directory.reader.v2.GetObjectsResponse"> & {
     /**
      * array of object instances
      *
@@ -326,20 +304,18 @@ export declare class GetObjectsResponse extends Message<GetObjectsResponse> {
      * @generated from field: aserto.directory.common.v2.PaginationResponse page = 9;
      */
     page?: PaginationResponse;
-    constructor(data?: PartialMessage<GetObjectsResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetObjectsResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetObjectsResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetObjectsResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetObjectsResponse;
-    static equals(a: GetObjectsResponse | PlainMessage<GetObjectsResponse> | undefined, b: GetObjectsResponse | PlainMessage<GetObjectsResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetObjectsResponse.
+ * Use `create(GetObjectsResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetObjectsResponseSchema: GenMessage<GetObjectsResponse>;
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationRequest
  * @deprecated
  */
-export declare class GetRelationRequest extends Message<GetRelationRequest> {
+export type GetRelationRequest = Message<"aserto.directory.reader.v2.GetRelationRequest"> & {
     /**
      * relation selector
      *
@@ -352,20 +328,18 @@ export declare class GetRelationRequest extends Message<GetRelationRequest> {
      * @generated from field: optional bool with_objects = 2;
      */
     withObjects?: boolean;
-    constructor(data?: PartialMessage<GetRelationRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetRelationRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRelationRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRelationRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRelationRequest;
-    static equals(a: GetRelationRequest | PlainMessage<GetRelationRequest> | undefined, b: GetRelationRequest | PlainMessage<GetRelationRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetRelationRequest.
+ * Use `create(GetRelationRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetRelationRequestSchema: GenMessage<GetRelationRequest>;
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationResponse
  * @deprecated
  */
-export declare class GetRelationResponse extends Message<GetRelationResponse> {
+export type GetRelationResponse = Message<"aserto.directory.reader.v2.GetRelationResponse"> & {
     /**
      * array of relation instances
      *
@@ -380,20 +354,18 @@ export declare class GetRelationResponse extends Message<GetRelationResponse> {
     objects: {
         [key: string]: Object$;
     };
-    constructor(data?: PartialMessage<GetRelationResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetRelationResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRelationResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRelationResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRelationResponse;
-    static equals(a: GetRelationResponse | PlainMessage<GetRelationResponse> | undefined, b: GetRelationResponse | PlainMessage<GetRelationResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetRelationResponse.
+ * Use `create(GetRelationResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetRelationResponseSchema: GenMessage<GetRelationResponse>;
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationsRequest
  * @deprecated
  */
-export declare class GetRelationsRequest extends Message<GetRelationsRequest> {
+export type GetRelationsRequest = Message<"aserto.directory.reader.v2.GetRelationsRequest"> & {
     /**
      * relation selector
      *
@@ -406,20 +378,18 @@ export declare class GetRelationsRequest extends Message<GetRelationsRequest> {
      * @generated from field: aserto.directory.common.v2.PaginationRequest page = 9;
      */
     page?: PaginationRequest;
-    constructor(data?: PartialMessage<GetRelationsRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetRelationsRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRelationsRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRelationsRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRelationsRequest;
-    static equals(a: GetRelationsRequest | PlainMessage<GetRelationsRequest> | undefined, b: GetRelationsRequest | PlainMessage<GetRelationsRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetRelationsRequest.
+ * Use `create(GetRelationsRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetRelationsRequestSchema: GenMessage<GetRelationsRequest>;
 /**
  * @generated from message aserto.directory.reader.v2.GetRelationsResponse
  * @deprecated
  */
-export declare class GetRelationsResponse extends Message<GetRelationsResponse> {
+export type GetRelationsResponse = Message<"aserto.directory.reader.v2.GetRelationsResponse"> & {
     /**
      * array of relation instances
      *
@@ -432,80 +402,72 @@ export declare class GetRelationsResponse extends Message<GetRelationsResponse> 
      * @generated from field: aserto.directory.common.v2.PaginationResponse page = 9;
      */
     page?: PaginationResponse;
-    constructor(data?: PartialMessage<GetRelationsResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetRelationsResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRelationsResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRelationsResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRelationsResponse;
-    static equals(a: GetRelationsResponse | PlainMessage<GetRelationsResponse> | undefined, b: GetRelationsResponse | PlainMessage<GetRelationsResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetRelationsResponse.
+ * Use `create(GetRelationsResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetRelationsResponseSchema: GenMessage<GetRelationsResponse>;
 /**
  * @generated from message aserto.directory.reader.v2.GetPermissionRequest
  * @deprecated
  */
-export declare class GetPermissionRequest extends Message<GetPermissionRequest> {
+export type GetPermissionRequest = Message<"aserto.directory.reader.v2.GetPermissionRequest"> & {
     /**
      * permission selector
      *
      * @generated from field: aserto.directory.common.v2.PermissionIdentifier param = 1;
      */
     param?: PermissionIdentifier;
-    constructor(data?: PartialMessage<GetPermissionRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetPermissionRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPermissionRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPermissionRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPermissionRequest;
-    static equals(a: GetPermissionRequest | PlainMessage<GetPermissionRequest> | undefined, b: GetPermissionRequest | PlainMessage<GetPermissionRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetPermissionRequest.
+ * Use `create(GetPermissionRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetPermissionRequestSchema: GenMessage<GetPermissionRequest>;
 /**
  * @generated from message aserto.directory.reader.v2.GetPermissionResponse
  * @deprecated
  */
-export declare class GetPermissionResponse extends Message<GetPermissionResponse> {
+export type GetPermissionResponse = Message<"aserto.directory.reader.v2.GetPermissionResponse"> & {
     /**
      * permission instance
      *
      * @generated from field: aserto.directory.common.v2.Permission result = 1;
      */
     result?: Permission;
-    constructor(data?: PartialMessage<GetPermissionResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetPermissionResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPermissionResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPermissionResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPermissionResponse;
-    static equals(a: GetPermissionResponse | PlainMessage<GetPermissionResponse> | undefined, b: GetPermissionResponse | PlainMessage<GetPermissionResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetPermissionResponse.
+ * Use `create(GetPermissionResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetPermissionResponseSchema: GenMessage<GetPermissionResponse>;
 /**
  * @generated from message aserto.directory.reader.v2.GetPermissionsRequest
  * @deprecated
  */
-export declare class GetPermissionsRequest extends Message<GetPermissionsRequest> {
+export type GetPermissionsRequest = Message<"aserto.directory.reader.v2.GetPermissionsRequest"> & {
     /**
      * pagination request
      *
      * @generated from field: aserto.directory.common.v2.PaginationRequest page = 9;
      */
     page?: PaginationRequest;
-    constructor(data?: PartialMessage<GetPermissionsRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetPermissionsRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPermissionsRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPermissionsRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPermissionsRequest;
-    static equals(a: GetPermissionsRequest | PlainMessage<GetPermissionsRequest> | undefined, b: GetPermissionsRequest | PlainMessage<GetPermissionsRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetPermissionsRequest.
+ * Use `create(GetPermissionsRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetPermissionsRequestSchema: GenMessage<GetPermissionsRequest>;
 /**
  * @generated from message aserto.directory.reader.v2.GetPermissionsResponse
  * @deprecated
  */
-export declare class GetPermissionsResponse extends Message<GetPermissionsResponse> {
+export type GetPermissionsResponse = Message<"aserto.directory.reader.v2.GetPermissionsResponse"> & {
     /**
      * array of permissions
      *
@@ -518,20 +480,18 @@ export declare class GetPermissionsResponse extends Message<GetPermissionsRespon
      * @generated from field: aserto.directory.common.v2.PaginationResponse page = 9;
      */
     page?: PaginationResponse;
-    constructor(data?: PartialMessage<GetPermissionsResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetPermissionsResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPermissionsResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPermissionsResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPermissionsResponse;
-    static equals(a: GetPermissionsResponse | PlainMessage<GetPermissionsResponse> | undefined, b: GetPermissionsResponse | PlainMessage<GetPermissionsResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetPermissionsResponse.
+ * Use `create(GetPermissionsResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetPermissionsResponseSchema: GenMessage<GetPermissionsResponse>;
 /**
  * @generated from message aserto.directory.reader.v2.CheckPermissionRequest
  * @deprecated
  */
-export declare class CheckPermissionRequest extends Message<CheckPermissionRequest> {
+export type CheckPermissionRequest = Message<"aserto.directory.reader.v2.CheckPermissionRequest"> & {
     /**
      * subject selector
      *
@@ -556,20 +516,18 @@ export declare class CheckPermissionRequest extends Message<CheckPermissionReque
      * @generated from field: bool trace = 7;
      */
     trace: boolean;
-    constructor(data?: PartialMessage<CheckPermissionRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.CheckPermissionRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CheckPermissionRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CheckPermissionRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CheckPermissionRequest;
-    static equals(a: CheckPermissionRequest | PlainMessage<CheckPermissionRequest> | undefined, b: CheckPermissionRequest | PlainMessage<CheckPermissionRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.CheckPermissionRequest.
+ * Use `create(CheckPermissionRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const CheckPermissionRequestSchema: GenMessage<CheckPermissionRequest>;
 /**
  * @generated from message aserto.directory.reader.v2.CheckPermissionResponse
  * @deprecated
  */
-export declare class CheckPermissionResponse extends Message<CheckPermissionResponse> {
+export type CheckPermissionResponse = Message<"aserto.directory.reader.v2.CheckPermissionResponse"> & {
     /**
      * check result
      *
@@ -582,20 +540,18 @@ export declare class CheckPermissionResponse extends Message<CheckPermissionResp
      * @generated from field: repeated string trace = 2;
      */
     trace: string[];
-    constructor(data?: PartialMessage<CheckPermissionResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.CheckPermissionResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CheckPermissionResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CheckPermissionResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CheckPermissionResponse;
-    static equals(a: CheckPermissionResponse | PlainMessage<CheckPermissionResponse> | undefined, b: CheckPermissionResponse | PlainMessage<CheckPermissionResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.CheckPermissionResponse.
+ * Use `create(CheckPermissionResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const CheckPermissionResponseSchema: GenMessage<CheckPermissionResponse>;
 /**
  * @generated from message aserto.directory.reader.v2.CheckRelationRequest
  * @deprecated
  */
-export declare class CheckRelationRequest extends Message<CheckRelationRequest> {
+export type CheckRelationRequest = Message<"aserto.directory.reader.v2.CheckRelationRequest"> & {
     /**
      * subject selector
      *
@@ -620,20 +576,18 @@ export declare class CheckRelationRequest extends Message<CheckRelationRequest> 
      * @generated from field: bool trace = 7;
      */
     trace: boolean;
-    constructor(data?: PartialMessage<CheckRelationRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.CheckRelationRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CheckRelationRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CheckRelationRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CheckRelationRequest;
-    static equals(a: CheckRelationRequest | PlainMessage<CheckRelationRequest> | undefined, b: CheckRelationRequest | PlainMessage<CheckRelationRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.CheckRelationRequest.
+ * Use `create(CheckRelationRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const CheckRelationRequestSchema: GenMessage<CheckRelationRequest>;
 /**
  * @generated from message aserto.directory.reader.v2.CheckRelationResponse
  * @deprecated
  */
-export declare class CheckRelationResponse extends Message<CheckRelationResponse> {
+export type CheckRelationResponse = Message<"aserto.directory.reader.v2.CheckRelationResponse"> & {
     /**
      * check result
      *
@@ -646,20 +600,18 @@ export declare class CheckRelationResponse extends Message<CheckRelationResponse
      * @generated from field: repeated string trace = 2;
      */
     trace: string[];
-    constructor(data?: PartialMessage<CheckRelationResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.CheckRelationResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CheckRelationResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CheckRelationResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CheckRelationResponse;
-    static equals(a: CheckRelationResponse | PlainMessage<CheckRelationResponse> | undefined, b: CheckRelationResponse | PlainMessage<CheckRelationResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.CheckRelationResponse.
+ * Use `create(CheckRelationResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const CheckRelationResponseSchema: GenMessage<CheckRelationResponse>;
 /**
  * @generated from message aserto.directory.reader.v2.CheckResponse
  * @deprecated
  */
-export declare class CheckResponse extends Message<CheckResponse> {
+export type CheckResponse = Message<"aserto.directory.reader.v2.CheckResponse"> & {
     /**
      * check result
      *
@@ -672,20 +624,18 @@ export declare class CheckResponse extends Message<CheckResponse> {
      * @generated from field: repeated string trace = 2;
      */
     trace: string[];
-    constructor(data?: PartialMessage<CheckResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.CheckResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CheckResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CheckResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CheckResponse;
-    static equals(a: CheckResponse | PlainMessage<CheckResponse> | undefined, b: CheckResponse | PlainMessage<CheckResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.CheckResponse.
+ * Use `create(CheckResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const CheckResponseSchema: GenMessage<CheckResponse>;
 /**
  * @generated from message aserto.directory.reader.v2.GetGraphRequest
  * @deprecated
  */
-export declare class GetGraphRequest extends Message<GetGraphRequest> {
+export type GetGraphRequest = Message<"aserto.directory.reader.v2.GetGraphRequest"> & {
     /**
      * anchor selector
      *
@@ -710,32 +660,195 @@ export declare class GetGraphRequest extends Message<GetGraphRequest> {
      * @generated from field: aserto.directory.common.v2.ObjectIdentifier object = 4;
      */
     object?: ObjectIdentifier;
-    constructor(data?: PartialMessage<GetGraphRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetGraphRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetGraphRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetGraphRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetGraphRequest;
-    static equals(a: GetGraphRequest | PlainMessage<GetGraphRequest> | undefined, b: GetGraphRequest | PlainMessage<GetGraphRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetGraphRequest.
+ * Use `create(GetGraphRequestSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetGraphRequestSchema: GenMessage<GetGraphRequest>;
 /**
  * @generated from message aserto.directory.reader.v2.GetGraphResponse
  * @deprecated
  */
-export declare class GetGraphResponse extends Message<GetGraphResponse> {
+export type GetGraphResponse = Message<"aserto.directory.reader.v2.GetGraphResponse"> & {
     /**
      * dependency graph
      *
      * @generated from field: repeated aserto.directory.common.v2.ObjectDependency results = 1;
      */
     results: ObjectDependency[];
-    constructor(data?: PartialMessage<GetGraphResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.reader.v2.GetGraphResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetGraphResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetGraphResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetGraphResponse;
-    static equals(a: GetGraphResponse | PlainMessage<GetGraphResponse> | undefined, b: GetGraphResponse | PlainMessage<GetGraphResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.reader.v2.GetGraphResponse.
+ * Use `create(GetGraphResponseSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const GetGraphResponseSchema: GenMessage<GetGraphResponse>;
+/**
+ * @generated from service aserto.directory.reader.v2.Reader
+ */
+export declare const Reader: GenService<{
+    /**
+     * get object type metadata
+     *
+     * @generated from rpc aserto.directory.reader.v2.Reader.GetObjectType
+     * @deprecated
+     */
+    getObjectType: {
+        methodKind: "unary";
+        input: typeof GetObjectTypeRequestSchema;
+        output: typeof GetObjectTypeResponseSchema;
+    };
+    /**
+     * list object type metadata
+     *
+     * @generated from rpc aserto.directory.reader.v2.Reader.GetObjectTypes
+     * @deprecated
+     */
+    getObjectTypes: {
+        methodKind: "unary";
+        input: typeof GetObjectTypesRequestSchema;
+        output: typeof GetObjectTypesResponseSchema;
+    };
+    /**
+     * get relation type metadata
+     *
+     * @generated from rpc aserto.directory.reader.v2.Reader.GetRelationType
+     * @deprecated
+     */
+    getRelationType: {
+        methodKind: "unary";
+        input: typeof GetRelationTypeRequestSchema;
+        output: typeof GetRelationTypeResponseSchema;
+    };
+    /**
+     * list relation type metadata
+     *
+     * @generated from rpc aserto.directory.reader.v2.Reader.GetRelationTypes
+     * @deprecated
+     */
+    getRelationTypes: {
+        methodKind: "unary";
+        input: typeof GetRelationTypesRequestSchema;
+        output: typeof GetRelationTypesResponseSchema;
+    };
+    /**
+     * get permission metadata
+     *
+     * @generated from rpc aserto.directory.reader.v2.Reader.GetPermission
+     * @deprecated
+     */
+    getPermission: {
+        methodKind: "unary";
+        input: typeof GetPermissionRequestSchema;
+        output: typeof GetPermissionResponseSchema;
+    };
+    /**
+     * list permission metadata
+     *
+     * @generated from rpc aserto.directory.reader.v2.Reader.GetPermissions
+     * @deprecated
+     */
+    getPermissions: {
+        methodKind: "unary";
+        input: typeof GetPermissionsRequestSchema;
+        output: typeof GetPermissionsResponseSchema;
+    };
+    /**
+     * get object
+     * Deprecated: directory.v2.GetObject is deprecated, use directory.v3.GetObject.
+     *
+     * @generated from rpc aserto.directory.reader.v2.Reader.GetObject
+     * @deprecated
+     */
+    getObject: {
+        methodKind: "unary";
+        input: typeof GetObjectRequestSchema;
+        output: typeof GetObjectResponseSchema;
+    };
+    /**
+     * get multiple objects
+     * Deprecated: directory.v2.GetObjectMany is deprecated, update to use directory.v3.GetObjectMany.
+     *
+     * @generated from rpc aserto.directory.reader.v2.Reader.GetObjectMany
+     * @deprecated
+     */
+    getObjectMany: {
+        methodKind: "unary";
+        input: typeof GetObjectManyRequestSchema;
+        output: typeof GetObjectManyResponseSchema;
+    };
+    /**
+     * list objects
+     * Deprecated: directory.v2.GetObjects is deprecated, update to use directory.v3.GetObjects.
+     *
+     * @generated from rpc aserto.directory.reader.v2.Reader.GetObjects
+     * @deprecated
+     */
+    getObjects: {
+        methodKind: "unary";
+        input: typeof GetObjectsRequestSchema;
+        output: typeof GetObjectsResponseSchema;
+    };
+    /**
+     * get relation
+     * Deprecated: directory.v2.GetRelation is deprecated, update to use directory.v3.GetRelation.
+     *
+     * @generated from rpc aserto.directory.reader.v2.Reader.GetRelation
+     * @deprecated
+     */
+    getRelation: {
+        methodKind: "unary";
+        input: typeof GetRelationRequestSchema;
+        output: typeof GetRelationResponseSchema;
+    };
+    /**
+     * list relations
+     * Deprecated: directory.v2.GetRelations is deprecated, update to use directory.v3.GetRelations.
+     *
+     * @generated from rpc aserto.directory.reader.v2.Reader.GetRelations
+     * @deprecated
+     */
+    getRelations: {
+        methodKind: "unary";
+        input: typeof GetRelationsRequestSchema;
+        output: typeof GetRelationsResponseSchema;
+    };
+    /**
+     * check permission
+     * Deprecated: directory.v2.CheckPermission is deprecated, update to use directory.v3.Check.
+     *
+     * @generated from rpc aserto.directory.reader.v2.Reader.CheckPermission
+     * @deprecated
+     */
+    checkPermission: {
+        methodKind: "unary";
+        input: typeof CheckPermissionRequestSchema;
+        output: typeof CheckPermissionResponseSchema;
+    };
+    /**
+     * check relation
+     * Deprecated: directory.v2.CheckRelation is deprecated, update to use directory.v3.Check.
+     *
+     * @generated from rpc aserto.directory.reader.v2.Reader.CheckRelation
+     * @deprecated
+     */
+    checkRelation: {
+        methodKind: "unary";
+        input: typeof CheckRelationRequestSchema;
+        output: typeof CheckRelationResponseSchema;
+    };
+    /**
+     * get object relationship graph
+     * Deprecated: directory.v2.GetGraph is deprecated, update to use directory.v3.GetGraph.
+     *
+     * @generated from rpc aserto.directory.reader.v2.Reader.GetGraph
+     * @deprecated
+     */
+    getGraph: {
+        methodKind: "unary";
+        input: typeof GetGraphRequestSchema;
+        output: typeof GetGraphResponseSchema;
+    };
+}>;

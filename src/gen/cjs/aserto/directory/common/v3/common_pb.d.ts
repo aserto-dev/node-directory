@@ -1,9 +1,14 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, Struct, Timestamp } from "@bufbuild/protobuf";
+import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1";
+import type { Timestamp } from "@bufbuild/protobuf/wkt";
+import type { JsonObject, Message } from "@bufbuild/protobuf";
+/**
+ * Describes the file aserto/directory/common/v3/common.proto.
+ */
+export declare const file_aserto_directory_common_v3_common: GenFile;
 /**
  * @generated from message aserto.directory.common.v3.Object
  */
-export declare class Object$ extends Message<Object$> {
+export type Object$ = Message<"aserto.directory.common.v3.Object"> & {
     /**
      * object type name
      *
@@ -27,7 +32,7 @@ export declare class Object$ extends Message<Object$> {
      *
      * @generated from field: google.protobuf.Struct properties = 4;
      */
-    properties?: Struct;
+    properties?: JsonObject;
     /**
      * created at timestamp (UTC)
      *
@@ -46,19 +51,16 @@ export declare class Object$ extends Message<Object$> {
      * @generated from field: string etag = 23;
      */
     etag: string;
-    constructor(data?: PartialMessage<Object$>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v3.Object";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Object$;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Object$;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Object$;
-    static equals(a: Object$ | PlainMessage<Object$> | undefined, b: Object$ | PlainMessage<Object$> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v3.Object.
+ * Use `create(ObjectSchema)` to create a new message.
+ */
+export declare const ObjectSchema: GenMessage<Object$>;
 /**
  * @generated from message aserto.directory.common.v3.Relation
  */
-export declare class Relation extends Message<Relation> {
+export type Relation = Message<"aserto.directory.common.v3.Relation"> & {
     /**
      * object type
      *
@@ -113,21 +115,18 @@ export declare class Relation extends Message<Relation> {
      * @generated from field: string etag = 23;
      */
     etag: string;
-    constructor(data?: PartialMessage<Relation>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v3.Relation";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Relation;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Relation;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Relation;
-    static equals(a: Relation | PlainMessage<Relation> | undefined, b: Relation | PlainMessage<Relation> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v3.Relation.
+ * Use `create(RelationSchema)` to create a new message.
+ */
+export declare const RelationSchema: GenMessage<Relation>;
 /**
  * Object identifier
  *
  * @generated from message aserto.directory.common.v3.ObjectIdentifier
  */
-export declare class ObjectIdentifier extends Message<ObjectIdentifier> {
+export type ObjectIdentifier = Message<"aserto.directory.common.v3.ObjectIdentifier"> & {
     /**
      * object type (lc-string)
      *
@@ -140,21 +139,18 @@ export declare class ObjectIdentifier extends Message<ObjectIdentifier> {
      * @generated from field: string object_id = 2;
      */
     objectId: string;
-    constructor(data?: PartialMessage<ObjectIdentifier>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v3.ObjectIdentifier";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ObjectIdentifier;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ObjectIdentifier;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ObjectIdentifier;
-    static equals(a: ObjectIdentifier | PlainMessage<ObjectIdentifier> | undefined, b: ObjectIdentifier | PlainMessage<ObjectIdentifier> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v3.ObjectIdentifier.
+ * Use `create(ObjectIdentifierSchema)` to create a new message.
+ */
+export declare const ObjectIdentifierSchema: GenMessage<ObjectIdentifier>;
 /**
  * Relation identifier
  *
  * @generated from message aserto.directory.common.v3.RelationIdentifier
  */
-export declare class RelationIdentifier extends Message<RelationIdentifier> {
+export type RelationIdentifier = Message<"aserto.directory.common.v3.RelationIdentifier"> & {
     /**
      * object type
      *
@@ -191,21 +187,18 @@ export declare class RelationIdentifier extends Message<RelationIdentifier> {
      * @generated from field: string subject_relation = 6;
      */
     subjectRelation: string;
-    constructor(data?: PartialMessage<RelationIdentifier>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v3.RelationIdentifier";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RelationIdentifier;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RelationIdentifier;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RelationIdentifier;
-    static equals(a: RelationIdentifier | PlainMessage<RelationIdentifier> | undefined, b: RelationIdentifier | PlainMessage<RelationIdentifier> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v3.RelationIdentifier.
+ * Use `create(RelationIdentifierSchema)` to create a new message.
+ */
+export declare const RelationIdentifierSchema: GenMessage<RelationIdentifier>;
 /**
  * Pagination request
  *
  * @generated from message aserto.directory.common.v3.PaginationRequest
  */
-export declare class PaginationRequest extends Message<PaginationRequest> {
+export type PaginationRequest = Message<"aserto.directory.common.v3.PaginationRequest"> & {
     /**
      * requested page size, valid value between 1-100 rows (default 100)
      *
@@ -218,33 +211,27 @@ export declare class PaginationRequest extends Message<PaginationRequest> {
      * @generated from field: string token = 2;
      */
     token: string;
-    constructor(data?: PartialMessage<PaginationRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v3.PaginationRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaginationRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaginationRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaginationRequest;
-    static equals(a: PaginationRequest | PlainMessage<PaginationRequest> | undefined, b: PaginationRequest | PlainMessage<PaginationRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v3.PaginationRequest.
+ * Use `create(PaginationRequestSchema)` to create a new message.
+ */
+export declare const PaginationRequestSchema: GenMessage<PaginationRequest>;
 /**
  * Pagination response
  *
  * @generated from message aserto.directory.common.v3.PaginationResponse
  */
-export declare class PaginationResponse extends Message<PaginationResponse> {
+export type PaginationResponse = Message<"aserto.directory.common.v3.PaginationResponse"> & {
     /**
      * next page token, when empty there are no more pages to fetch
      *
      * @generated from field: string next_token = 1;
      */
     nextToken: string;
-    constructor(data?: PartialMessage<PaginationResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.common.v3.PaginationResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaginationResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaginationResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaginationResponse;
-    static equals(a: PaginationResponse | PlainMessage<PaginationResponse> | undefined, b: PaginationResponse | PlainMessage<PaginationResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.common.v3.PaginationResponse.
+ * Use `create(PaginationResponseSchema)` to create a new message.
+ */
+export declare const PaginationResponseSchema: GenMessage<PaginationResponse>;
