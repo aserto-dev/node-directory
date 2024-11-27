@@ -13,87 +13,26 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.field = exports.Constraint = exports.FieldConstraints = void 0;
-const protobuf_1 = require("@bufbuild/protobuf");
+exports.field = exports.ConstraintSchema = exports.FieldConstraintsSchema = exports.file_buf_validate_priv_private = void 0;
+const codegenv1_1 = require("@bufbuild/protobuf/codegenv1");
+const wkt_1 = require("@bufbuild/protobuf/wkt");
 /**
- * Do not use. Internal to protovalidate library
- *
- * @generated from message buf.validate.priv.FieldConstraints
+ * Describes the file buf/validate/priv/private.proto.
  */
-class FieldConstraints extends protobuf_1.Message {
-    constructor(data) {
-        super();
-        /**
-         * @generated from field: repeated buf.validate.priv.Constraint cel = 1;
-         */
-        this.cel = [];
-        protobuf_1.proto3.util.initPartial(data, this);
-    }
-    static fromBinary(bytes, options) {
-        return new FieldConstraints().fromBinary(bytes, options);
-    }
-    static fromJson(jsonValue, options) {
-        return new FieldConstraints().fromJson(jsonValue, options);
-    }
-    static fromJsonString(jsonString, options) {
-        return new FieldConstraints().fromJsonString(jsonString, options);
-    }
-    static equals(a, b) {
-        return protobuf_1.proto3.util.equals(FieldConstraints, a, b);
-    }
-}
-exports.FieldConstraints = FieldConstraints;
-FieldConstraints.runtime = protobuf_1.proto3;
-FieldConstraints.typeName = "buf.validate.priv.FieldConstraints";
-FieldConstraints.fields = protobuf_1.proto3.util.newFieldList(() => [
-    { no: 1, name: "cel", kind: "message", T: Constraint, repeated: true },
-]);
+exports.file_buf_validate_priv_private = (0, codegenv1_1.fileDesc)("Ch9idWYvdmFsaWRhdGUvcHJpdi9wcml2YXRlLnByb3RvEhFidWYudmFsaWRhdGUucHJpdiI+ChBGaWVsZENvbnN0cmFpbnRzEioKA2NlbBgBIAMoCzIdLmJ1Zi52YWxpZGF0ZS5wcml2LkNvbnN0cmFpbnQiPQoKQ29uc3RyYWludBIKCgJpZBgBIAEoCRIPCgdtZXNzYWdlGAIgASgJEhIKCmV4cHJlc3Npb24YAyABKAk6XAoFZmllbGQSHS5nb29nbGUucHJvdG9idWYuRmllbGRPcHRpb25zGIgJIAEoCzIjLmJ1Zi52YWxpZGF0ZS5wcml2LkZpZWxkQ29uc3RyYWludHNSBWZpZWxkiAEBQncKF2J1aWxkLmJ1Zi52YWxpZGF0ZS5wcml2QgxQcml2YXRlUHJvdG9QAVpMYnVmLmJ1aWxkL2dlbi9nby9idWZidWlsZC9wcm90b3ZhbGlkYXRlL3Byb3RvY29sYnVmZmVycy9nby9idWYvdmFsaWRhdGUvcHJpdmIGcHJvdG8z", [wkt_1.file_google_protobuf_descriptor]);
 /**
- * Do not use. Internal to protovalidate library
- *
- * @generated from message buf.validate.priv.Constraint
+ * Describes the message buf.validate.priv.FieldConstraints.
+ * Use `create(FieldConstraintsSchema)` to create a new message.
  */
-class Constraint extends protobuf_1.Message {
-    constructor(data) {
-        super();
-        /**
-         * @generated from field: string id = 1;
-         */
-        this.id = "";
-        /**
-         * @generated from field: string message = 2;
-         */
-        this.message = "";
-        /**
-         * @generated from field: string expression = 3;
-         */
-        this.expression = "";
-        protobuf_1.proto3.util.initPartial(data, this);
-    }
-    static fromBinary(bytes, options) {
-        return new Constraint().fromBinary(bytes, options);
-    }
-    static fromJson(jsonValue, options) {
-        return new Constraint().fromJson(jsonValue, options);
-    }
-    static fromJsonString(jsonString, options) {
-        return new Constraint().fromJsonString(jsonString, options);
-    }
-    static equals(a, b) {
-        return protobuf_1.proto3.util.equals(Constraint, a, b);
-    }
-}
-exports.Constraint = Constraint;
-Constraint.runtime = protobuf_1.proto3;
-Constraint.typeName = "buf.validate.priv.Constraint";
-Constraint.fields = protobuf_1.proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "expression", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-]);
+exports.FieldConstraintsSchema = (0, codegenv1_1.messageDesc)(exports.file_buf_validate_priv_private, 0);
+/**
+ * Describes the message buf.validate.priv.Constraint.
+ * Use `create(ConstraintSchema)` to create a new message.
+ */
+exports.ConstraintSchema = (0, codegenv1_1.messageDesc)(exports.file_buf_validate_priv_private, 1);
 /**
  * Do not use. Internal to protovalidate library
  *
  * @generated from extension: optional buf.validate.priv.FieldConstraints field = 1160;
  */
-exports.field = protobuf_1.proto3.makeExtension("buf.validate.priv.field", protobuf_1.FieldOptions, () => ({ no: 1160, kind: "message", T: FieldConstraints, opt: true }));
+exports.field = (0, codegenv1_1.extDesc)(exports.file_buf_validate_priv_private, 0);

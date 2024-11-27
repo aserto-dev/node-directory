@@ -1,5 +1,9 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
+import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1";
+import type { Message } from "@bufbuild/protobuf";
+/**
+ * Describes the file google/api/http.proto.
+ */
+export declare const file_google_api_http: GenFile;
 /**
  * Defines the HTTP configuration for an API service. It contains a list of
  * [HttpRule][google.api.HttpRule], each specifying the mapping of an RPC method
@@ -7,7 +11,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
  *
  * @generated from message google.api.Http
  */
-export declare class Http extends Message<Http> {
+export type Http = Message<"google.api.Http"> & {
     /**
      * A list of HTTP configuration rules that apply to individual API methods.
      *
@@ -27,15 +31,12 @@ export declare class Http extends Message<Http> {
      * @generated from field: bool fully_decode_reserved_expansion = 2;
      */
     fullyDecodeReservedExpansion: boolean;
-    constructor(data?: PartialMessage<Http>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "google.api.Http";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Http;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Http;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Http;
-    static equals(a: Http | PlainMessage<Http> | undefined, b: Http | PlainMessage<Http> | undefined): boolean;
-}
+};
+/**
+ * Describes the message google.api.Http.
+ * Use `create(HttpSchema)` to create a new message.
+ */
+export declare const HttpSchema: GenMessage<Http>;
 /**
  * gRPC Transcoding
  *
@@ -304,7 +305,7 @@ export declare class Http extends Message<Http> {
  *
  * @generated from message google.api.HttpRule
  */
-export declare class HttpRule extends Message<HttpRule> {
+export type HttpRule = Message<"google.api.HttpRule"> & {
     /**
      * Selects a method to which this rule applies.
      *
@@ -407,21 +408,18 @@ export declare class HttpRule extends Message<HttpRule> {
      * @generated from field: repeated google.api.HttpRule additional_bindings = 11;
      */
     additionalBindings: HttpRule[];
-    constructor(data?: PartialMessage<HttpRule>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "google.api.HttpRule";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HttpRule;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HttpRule;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HttpRule;
-    static equals(a: HttpRule | PlainMessage<HttpRule> | undefined, b: HttpRule | PlainMessage<HttpRule> | undefined): boolean;
-}
+};
+/**
+ * Describes the message google.api.HttpRule.
+ * Use `create(HttpRuleSchema)` to create a new message.
+ */
+export declare const HttpRuleSchema: GenMessage<HttpRule>;
 /**
  * A custom pattern is used for defining custom HTTP verb.
  *
  * @generated from message google.api.CustomHttpPattern
  */
-export declare class CustomHttpPattern extends Message<CustomHttpPattern> {
+export type CustomHttpPattern = Message<"google.api.CustomHttpPattern"> & {
     /**
      * The name of this custom HTTP verb.
      *
@@ -434,12 +432,9 @@ export declare class CustomHttpPattern extends Message<CustomHttpPattern> {
      * @generated from field: string path = 2;
      */
     path: string;
-    constructor(data?: PartialMessage<CustomHttpPattern>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "google.api.CustomHttpPattern";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CustomHttpPattern;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CustomHttpPattern;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CustomHttpPattern;
-    static equals(a: CustomHttpPattern | PlainMessage<CustomHttpPattern> | undefined, b: CustomHttpPattern | PlainMessage<CustomHttpPattern> | undefined): boolean;
-}
+};
+/**
+ * Describes the message google.api.CustomHttpPattern.
+ * Use `create(CustomHttpPatternSchema)` to create a new message.
+ */
+export declare const CustomHttpPatternSchema: GenMessage<CustomHttpPattern>;

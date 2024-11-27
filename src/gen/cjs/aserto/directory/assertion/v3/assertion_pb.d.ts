@@ -1,66 +1,62 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Empty, Message, proto3 } from "@bufbuild/protobuf";
-import { PaginationRequest, PaginationResponse } from "../../common/v3/common_pb.js";
-import { CheckPermissionRequest, CheckRelationRequest, CheckRequest } from "../../reader/v3/reader_pb.js";
+import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv1";
+import type { Empty } from "@bufbuild/protobuf/wkt";
+import type { PaginationRequest, PaginationResponse } from "../../common/v3/common_pb";
+import type { CheckPermissionRequest, CheckRelationRequest, CheckRequest } from "../../reader/v3/reader_pb";
+import type { Message } from "@bufbuild/protobuf";
+/**
+ * Describes the file aserto/directory/assertion/v3/assertion.proto.
+ */
+export declare const file_aserto_directory_assertion_v3_assertion: GenFile;
 /**
  * @generated from message aserto.directory.assertion.v3.GetAssertionRequest
  */
-export declare class GetAssertionRequest extends Message<GetAssertionRequest> {
+export type GetAssertionRequest = Message<"aserto.directory.assertion.v3.GetAssertionRequest"> & {
     /**
      * assertion identifier
      *
      * @generated from field: uint32 id = 1;
      */
     id: number;
-    constructor(data?: PartialMessage<GetAssertionRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.assertion.v3.GetAssertionRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAssertionRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAssertionRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAssertionRequest;
-    static equals(a: GetAssertionRequest | PlainMessage<GetAssertionRequest> | undefined, b: GetAssertionRequest | PlainMessage<GetAssertionRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.assertion.v3.GetAssertionRequest.
+ * Use `create(GetAssertionRequestSchema)` to create a new message.
+ */
+export declare const GetAssertionRequestSchema: GenMessage<GetAssertionRequest>;
 /**
  * @generated from message aserto.directory.assertion.v3.GetAssertionResponse
  */
-export declare class GetAssertionResponse extends Message<GetAssertionResponse> {
+export type GetAssertionResponse = Message<"aserto.directory.assertion.v3.GetAssertionResponse"> & {
     /**
      * @generated from field: aserto.directory.assertion.v3.Assert result = 1;
      */
     result?: Assert;
-    constructor(data?: PartialMessage<GetAssertionResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.assertion.v3.GetAssertionResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAssertionResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAssertionResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAssertionResponse;
-    static equals(a: GetAssertionResponse | PlainMessage<GetAssertionResponse> | undefined, b: GetAssertionResponse | PlainMessage<GetAssertionResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.assertion.v3.GetAssertionResponse.
+ * Use `create(GetAssertionResponseSchema)` to create a new message.
+ */
+export declare const GetAssertionResponseSchema: GenMessage<GetAssertionResponse>;
 /**
  * @generated from message aserto.directory.assertion.v3.ListAssertionsRequest
  */
-export declare class ListAssertionsRequest extends Message<ListAssertionsRequest> {
+export type ListAssertionsRequest = Message<"aserto.directory.assertion.v3.ListAssertionsRequest"> & {
     /**
      * pagination request
      *
      * @generated from field: aserto.directory.common.v3.PaginationRequest page = 1;
      */
     page?: PaginationRequest;
-    constructor(data?: PartialMessage<ListAssertionsRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.assertion.v3.ListAssertionsRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAssertionsRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAssertionsRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAssertionsRequest;
-    static equals(a: ListAssertionsRequest | PlainMessage<ListAssertionsRequest> | undefined, b: ListAssertionsRequest | PlainMessage<ListAssertionsRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.assertion.v3.ListAssertionsRequest.
+ * Use `create(ListAssertionsRequestSchema)` to create a new message.
+ */
+export declare const ListAssertionsRequestSchema: GenMessage<ListAssertionsRequest>;
 /**
  * @generated from message aserto.directory.assertion.v3.ListAssertionsResponse
  */
-export declare class ListAssertionsResponse extends Message<ListAssertionsResponse> {
+export type ListAssertionsResponse = Message<"aserto.directory.assertion.v3.ListAssertionsResponse"> & {
     /**
      * @generated from field: repeated aserto.directory.assertion.v3.Assert results = 1;
      */
@@ -69,91 +65,76 @@ export declare class ListAssertionsResponse extends Message<ListAssertionsRespon
      * @generated from field: aserto.directory.common.v3.PaginationResponse page = 2;
      */
     page?: PaginationResponse;
-    constructor(data?: PartialMessage<ListAssertionsResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.assertion.v3.ListAssertionsResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAssertionsResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAssertionsResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAssertionsResponse;
-    static equals(a: ListAssertionsResponse | PlainMessage<ListAssertionsResponse> | undefined, b: ListAssertionsResponse | PlainMessage<ListAssertionsResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.assertion.v3.ListAssertionsResponse.
+ * Use `create(ListAssertionsResponseSchema)` to create a new message.
+ */
+export declare const ListAssertionsResponseSchema: GenMessage<ListAssertionsResponse>;
 /**
  * @generated from message aserto.directory.assertion.v3.SetAssertionRequest
  */
-export declare class SetAssertionRequest extends Message<SetAssertionRequest> {
+export type SetAssertionRequest = Message<"aserto.directory.assertion.v3.SetAssertionRequest"> & {
     /**
      * @generated from field: aserto.directory.assertion.v3.Assert assert = 1;
      */
     assert?: Assert;
-    constructor(data?: PartialMessage<SetAssertionRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.assertion.v3.SetAssertionRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetAssertionRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetAssertionRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetAssertionRequest;
-    static equals(a: SetAssertionRequest | PlainMessage<SetAssertionRequest> | undefined, b: SetAssertionRequest | PlainMessage<SetAssertionRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.assertion.v3.SetAssertionRequest.
+ * Use `create(SetAssertionRequestSchema)` to create a new message.
+ */
+export declare const SetAssertionRequestSchema: GenMessage<SetAssertionRequest>;
 /**
  * @generated from message aserto.directory.assertion.v3.SetAssertionResponse
  */
-export declare class SetAssertionResponse extends Message<SetAssertionResponse> {
+export type SetAssertionResponse = Message<"aserto.directory.assertion.v3.SetAssertionResponse"> & {
     /**
      * @generated from field: aserto.directory.assertion.v3.Assert result = 1;
      */
     result?: Assert;
-    constructor(data?: PartialMessage<SetAssertionResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.assertion.v3.SetAssertionResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetAssertionResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetAssertionResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetAssertionResponse;
-    static equals(a: SetAssertionResponse | PlainMessage<SetAssertionResponse> | undefined, b: SetAssertionResponse | PlainMessage<SetAssertionResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.assertion.v3.SetAssertionResponse.
+ * Use `create(SetAssertionResponseSchema)` to create a new message.
+ */
+export declare const SetAssertionResponseSchema: GenMessage<SetAssertionResponse>;
 /**
  * @generated from message aserto.directory.assertion.v3.DeleteAssertionRequest
  */
-export declare class DeleteAssertionRequest extends Message<DeleteAssertionRequest> {
+export type DeleteAssertionRequest = Message<"aserto.directory.assertion.v3.DeleteAssertionRequest"> & {
     /**
      * assertion identifier
      *
      * @generated from field: uint32 id = 1;
      */
     id: number;
-    constructor(data?: PartialMessage<DeleteAssertionRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.assertion.v3.DeleteAssertionRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteAssertionRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteAssertionRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteAssertionRequest;
-    static equals(a: DeleteAssertionRequest | PlainMessage<DeleteAssertionRequest> | undefined, b: DeleteAssertionRequest | PlainMessage<DeleteAssertionRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.assertion.v3.DeleteAssertionRequest.
+ * Use `create(DeleteAssertionRequestSchema)` to create a new message.
+ */
+export declare const DeleteAssertionRequestSchema: GenMessage<DeleteAssertionRequest>;
 /**
  * @generated from message aserto.directory.assertion.v3.DeleteAssertionResponse
  */
-export declare class DeleteAssertionResponse extends Message<DeleteAssertionResponse> {
+export type DeleteAssertionResponse = Message<"aserto.directory.assertion.v3.DeleteAssertionResponse"> & {
     /**
      * empty result
      *
      * @generated from field: google.protobuf.Empty result = 1;
      */
     result?: Empty;
-    constructor(data?: PartialMessage<DeleteAssertionResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.assertion.v3.DeleteAssertionResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteAssertionResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteAssertionResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteAssertionResponse;
-    static equals(a: DeleteAssertionResponse | PlainMessage<DeleteAssertionResponse> | undefined, b: DeleteAssertionResponse | PlainMessage<DeleteAssertionResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.assertion.v3.DeleteAssertionResponse.
+ * Use `create(DeleteAssertionResponseSchema)` to create a new message.
+ */
+export declare const DeleteAssertionResponseSchema: GenMessage<DeleteAssertionResponse>;
 /**
  * @generated from message aserto.directory.assertion.v3.Assert
  */
-export declare class Assert extends Message<Assert> {
+export type Assert = Message<"aserto.directory.assertion.v3.Assert"> & {
     /**
      * assertion identifier
      *
@@ -193,12 +174,46 @@ export declare class Assert extends Message<Assert> {
         case: undefined;
         value?: undefined;
     };
-    constructor(data?: PartialMessage<Assert>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.assertion.v3.Assert";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Assert;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Assert;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Assert;
-    static equals(a: Assert | PlainMessage<Assert> | undefined, b: Assert | PlainMessage<Assert> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.assertion.v3.Assert.
+ * Use `create(AssertSchema)` to create a new message.
+ */
+export declare const AssertSchema: GenMessage<Assert>;
+/**
+ * @generated from service aserto.directory.assertion.v3.Assertion
+ */
+export declare const Assertion: GenService<{
+    /**
+     * @generated from rpc aserto.directory.assertion.v3.Assertion.GetAssertion
+     */
+    getAssertion: {
+        methodKind: "unary";
+        input: typeof GetAssertionRequestSchema;
+        output: typeof GetAssertionResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.assertion.v3.Assertion.ListAssertions
+     */
+    listAssertions: {
+        methodKind: "unary";
+        input: typeof ListAssertionsRequestSchema;
+        output: typeof ListAssertionsResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.assertion.v3.Assertion.SetAssertion
+     */
+    setAssertion: {
+        methodKind: "unary";
+        input: typeof SetAssertionRequestSchema;
+        output: typeof SetAssertionResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.assertion.v3.Assertion.DeleteAssertion
+     */
+    deleteAssertion: {
+        methodKind: "unary";
+        input: typeof DeleteAssertionRequestSchema;
+        output: typeof DeleteAssertionResponseSchema;
+    };
+}>;

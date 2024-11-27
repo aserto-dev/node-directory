@@ -1,5 +1,47 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1";
+import type { Message } from "@bufbuild/protobuf";
+/**
+ * Describes the file aserto/directory/schema/v2/identity.proto.
+ */
+export declare const file_aserto_directory_schema_v2_identity: GenFile;
+/**
+ * Properties of "identity" objects.
+ *
+ * @generated from message aserto.directory.schema.v2.IdentityProperties
+ * @deprecated
+ */
+export type IdentityProperties = Message<"aserto.directory.schema.v2.IdentityProperties"> & {
+    /**
+     * identity kind [email|username|uid|pid|dn|phone]
+     *
+     * @generated from field: aserto.directory.schema.v2.IdentityKind kind = 1;
+     */
+    kind: IdentityKind;
+    /**
+     * identity provider name
+     *
+     * @generated from field: string provider = 2;
+     */
+    provider: string;
+    /**
+     * identity has been verified (false when not explicitly specified)
+     *
+     * @generated from field: bool verified = 3;
+     */
+    verified: boolean;
+    /**
+     * IDP connection id which owns the object instance
+     *
+     * @generated from field: optional string connection_id = 4;
+     */
+    connectionId?: string;
+};
+/**
+ * Describes the message aserto.directory.schema.v2.IdentityProperties.
+ * Use `create(IdentityPropertiesSchema)` to create a new message.
+ * @deprecated
+ */
+export declare const IdentityPropertiesSchema: GenMessage<IdentityProperties>;
 /**
  * @generated from enum aserto.directory.schema.v2.IdentityKind
  * @deprecated
@@ -49,42 +91,7 @@ export declare enum IdentityKind {
     EMPID = 6
 }
 /**
- * Properties of "identity" objects.
- *
- * @generated from message aserto.directory.schema.v2.IdentityProperties
+ * Describes the enum aserto.directory.schema.v2.IdentityKind.
  * @deprecated
  */
-export declare class IdentityProperties extends Message<IdentityProperties> {
-    /**
-     * identity kind [email|username|uid|pid|dn|phone]
-     *
-     * @generated from field: aserto.directory.schema.v2.IdentityKind kind = 1;
-     */
-    kind: IdentityKind;
-    /**
-     * identity provider name
-     *
-     * @generated from field: string provider = 2;
-     */
-    provider: string;
-    /**
-     * identity has been verified (false when not explicitly specified)
-     *
-     * @generated from field: bool verified = 3;
-     */
-    verified: boolean;
-    /**
-     * IDP connection id which owns the object instance
-     *
-     * @generated from field: optional string connection_id = 4;
-     */
-    connectionId?: string;
-    constructor(data?: PartialMessage<IdentityProperties>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.schema.v2.IdentityProperties";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IdentityProperties;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IdentityProperties;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IdentityProperties;
-    static equals(a: IdentityProperties | PlainMessage<IdentityProperties> | undefined, b: IdentityProperties | PlainMessage<IdentityProperties> | undefined): boolean;
-}
+export declare const IdentityKindSchema: GenEnum<IdentityKind>;

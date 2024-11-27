@@ -1,6 +1,74 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, Struct, Timestamp } from "@bufbuild/protobuf";
-import { Object$, Relation } from "../../common/v3/common_pb.js";
+import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv1";
+import type { Object$, Relation } from "../../common/v3/common_pb";
+import type { Timestamp } from "@bufbuild/protobuf/wkt";
+import type { JsonObject, Message } from "@bufbuild/protobuf";
+/**
+ * Describes the file aserto/directory/exporter/v3/exporter.proto.
+ */
+export declare const file_aserto_directory_exporter_v3_exporter: GenFile;
+/**
+ * @generated from message aserto.directory.exporter.v3.ExportRequest
+ */
+export type ExportRequest = Message<"aserto.directory.exporter.v3.ExportRequest"> & {
+    /**
+     * data export options mask
+     *
+     * @generated from field: uint32 options = 1;
+     */
+    options: number;
+    /**
+     * start export from timestamp (UTC)
+     *
+     * @generated from field: google.protobuf.Timestamp start_from = 20;
+     */
+    startFrom?: Timestamp;
+};
+/**
+ * Describes the message aserto.directory.exporter.v3.ExportRequest.
+ * Use `create(ExportRequestSchema)` to create a new message.
+ */
+export declare const ExportRequestSchema: GenMessage<ExportRequest>;
+/**
+ * @generated from message aserto.directory.exporter.v3.ExportResponse
+ */
+export type ExportResponse = Message<"aserto.directory.exporter.v3.ExportResponse"> & {
+    /**
+     * @generated from oneof aserto.directory.exporter.v3.ExportResponse.msg
+     */
+    msg: {
+        /**
+         * object instance (data)
+         *
+         * @generated from field: aserto.directory.common.v3.Object object = 2;
+         */
+        value: Object$;
+        case: "object";
+    } | {
+        /**
+         * relation instance (data)
+         *
+         * @generated from field: aserto.directory.common.v3.Relation relation = 4;
+         */
+        value: Relation;
+        case: "relation";
+    } | {
+        /**
+         * object and/or relation stats (no data)
+         *
+         * @generated from field: google.protobuf.Struct stats = 8;
+         */
+        value: JsonObject;
+        case: "stats";
+    } | {
+        case: undefined;
+        value?: undefined;
+    };
+};
+/**
+ * Describes the message aserto.directory.exporter.v3.ExportResponse.
+ * Use `create(ExportResponseSchema)` to create a new message.
+ */
+export declare const ExportResponseSchema: GenMessage<ExportResponse>;
 /**
  * @generated from enum aserto.directory.exporter.v3.Option
  */
@@ -37,71 +105,21 @@ export declare enum Option {
     STATS = 64
 }
 /**
- * @generated from message aserto.directory.exporter.v3.ExportRequest
+ * Describes the enum aserto.directory.exporter.v3.Option.
  */
-export declare class ExportRequest extends Message<ExportRequest> {
-    /**
-     * data export options mask
-     *
-     * @generated from field: uint32 options = 1;
-     */
-    options: number;
-    /**
-     * start export from timestamp (UTC)
-     *
-     * @generated from field: google.protobuf.Timestamp start_from = 20;
-     */
-    startFrom?: Timestamp;
-    constructor(data?: PartialMessage<ExportRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.exporter.v3.ExportRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportRequest;
-    static equals(a: ExportRequest | PlainMessage<ExportRequest> | undefined, b: ExportRequest | PlainMessage<ExportRequest> | undefined): boolean;
-}
+export declare const OptionSchema: GenEnum<Option>;
 /**
- * @generated from message aserto.directory.exporter.v3.ExportResponse
+ * @generated from service aserto.directory.exporter.v3.Exporter
  */
-export declare class ExportResponse extends Message<ExportResponse> {
+export declare const Exporter: GenService<{
     /**
-     * @generated from oneof aserto.directory.exporter.v3.ExportResponse.msg
+     * export objects and relations as a stream
+     *
+     * @generated from rpc aserto.directory.exporter.v3.Exporter.Export
      */
-    msg: {
-        /**
-         * object instance (data)
-         *
-         * @generated from field: aserto.directory.common.v3.Object object = 2;
-         */
-        value: Object$;
-        case: "object";
-    } | {
-        /**
-         * relation instance (data)
-         *
-         * @generated from field: aserto.directory.common.v3.Relation relation = 4;
-         */
-        value: Relation;
-        case: "relation";
-    } | {
-        /**
-         * object and/or relation stats (no data)
-         *
-         * @generated from field: google.protobuf.Struct stats = 8;
-         */
-        value: Struct;
-        case: "stats";
-    } | {
-        case: undefined;
-        value?: undefined;
+    export: {
+        methodKind: "server_streaming";
+        input: typeof ExportRequestSchema;
+        output: typeof ExportResponseSchema;
     };
-    constructor(data?: PartialMessage<ExportResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.exporter.v3.ExportResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportResponse;
-    static equals(a: ExportResponse | PlainMessage<ExportResponse> | undefined, b: ExportResponse | PlainMessage<ExportResponse> | undefined): boolean;
-}
+}>;

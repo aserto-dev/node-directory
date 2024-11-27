@@ -1,28 +1,30 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Empty, Message, proto3, Struct, Timestamp } from "@bufbuild/protobuf";
+import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv1";
+import type { Empty, Timestamp } from "@bufbuild/protobuf/wkt";
+import type { JsonObject, Message } from "@bufbuild/protobuf";
+/**
+ * Describes the file aserto/directory/model/v3/model.proto.
+ */
+export declare const file_aserto_directory_model_v3_model: GenFile;
 /**
  * @generated from message aserto.directory.model.v3.GetManifestRequest
  */
-export declare class GetManifestRequest extends Message<GetManifestRequest> {
+export type GetManifestRequest = Message<"aserto.directory.model.v3.GetManifestRequest"> & {
     /**
      * empty request
      *
      * @generated from field: google.protobuf.Empty empty = 1;
      */
     empty?: Empty;
-    constructor(data?: PartialMessage<GetManifestRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.model.v3.GetManifestRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetManifestRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetManifestRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetManifestRequest;
-    static equals(a: GetManifestRequest | PlainMessage<GetManifestRequest> | undefined, b: GetManifestRequest | PlainMessage<GetManifestRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.model.v3.GetManifestRequest.
+ * Use `create(GetManifestRequestSchema)` to create a new message.
+ */
+export declare const GetManifestRequestSchema: GenMessage<GetManifestRequest>;
 /**
  * @generated from message aserto.directory.model.v3.GetManifestResponse
  */
-export declare class GetManifestResponse extends Message<GetManifestResponse> {
+export type GetManifestResponse = Message<"aserto.directory.model.v3.GetManifestResponse"> & {
     /**
      * @generated from oneof aserto.directory.model.v3.GetManifestResponse.msg
      */
@@ -48,25 +50,22 @@ export declare class GetManifestResponse extends Message<GetManifestResponse> {
          *
          * @generated from field: google.protobuf.Struct model = 3;
          */
-        value: Struct;
+        value: JsonObject;
         case: "model";
     } | {
         case: undefined;
         value?: undefined;
     };
-    constructor(data?: PartialMessage<GetManifestResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.model.v3.GetManifestResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetManifestResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetManifestResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetManifestResponse;
-    static equals(a: GetManifestResponse | PlainMessage<GetManifestResponse> | undefined, b: GetManifestResponse | PlainMessage<GetManifestResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.model.v3.GetManifestResponse.
+ * Use `create(GetManifestResponseSchema)` to create a new message.
+ */
+export declare const GetManifestResponseSchema: GenMessage<GetManifestResponse>;
 /**
  * @generated from message aserto.directory.model.v3.SetManifestRequest
  */
-export declare class SetManifestRequest extends Message<SetManifestRequest> {
+export type SetManifestRequest = Message<"aserto.directory.model.v3.SetManifestRequest"> & {
     /**
      * manifest instance
      *
@@ -84,76 +83,64 @@ export declare class SetManifestRequest extends Message<SetManifestRequest> {
         case: undefined;
         value?: undefined;
     };
-    constructor(data?: PartialMessage<SetManifestRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.model.v3.SetManifestRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetManifestRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetManifestRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetManifestRequest;
-    static equals(a: SetManifestRequest | PlainMessage<SetManifestRequest> | undefined, b: SetManifestRequest | PlainMessage<SetManifestRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.model.v3.SetManifestRequest.
+ * Use `create(SetManifestRequestSchema)` to create a new message.
+ */
+export declare const SetManifestRequestSchema: GenMessage<SetManifestRequest>;
 /**
  * @generated from message aserto.directory.model.v3.SetManifestResponse
  */
-export declare class SetManifestResponse extends Message<SetManifestResponse> {
+export type SetManifestResponse = Message<"aserto.directory.model.v3.SetManifestResponse"> & {
     /**
      * empty result
      *
      * @generated from field: google.protobuf.Empty result = 1;
      */
     result?: Empty;
-    constructor(data?: PartialMessage<SetManifestResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.model.v3.SetManifestResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetManifestResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetManifestResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetManifestResponse;
-    static equals(a: SetManifestResponse | PlainMessage<SetManifestResponse> | undefined, b: SetManifestResponse | PlainMessage<SetManifestResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.model.v3.SetManifestResponse.
+ * Use `create(SetManifestResponseSchema)` to create a new message.
+ */
+export declare const SetManifestResponseSchema: GenMessage<SetManifestResponse>;
 /**
  * @generated from message aserto.directory.model.v3.DeleteManifestRequest
  */
-export declare class DeleteManifestRequest extends Message<DeleteManifestRequest> {
+export type DeleteManifestRequest = Message<"aserto.directory.model.v3.DeleteManifestRequest"> & {
     /**
      * empty request
      *
      * @generated from field: google.protobuf.Empty empty = 1;
      */
     empty?: Empty;
-    constructor(data?: PartialMessage<DeleteManifestRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.model.v3.DeleteManifestRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteManifestRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteManifestRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteManifestRequest;
-    static equals(a: DeleteManifestRequest | PlainMessage<DeleteManifestRequest> | undefined, b: DeleteManifestRequest | PlainMessage<DeleteManifestRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.model.v3.DeleteManifestRequest.
+ * Use `create(DeleteManifestRequestSchema)` to create a new message.
+ */
+export declare const DeleteManifestRequestSchema: GenMessage<DeleteManifestRequest>;
 /**
  * @generated from message aserto.directory.model.v3.DeleteManifestResponse
  */
-export declare class DeleteManifestResponse extends Message<DeleteManifestResponse> {
+export type DeleteManifestResponse = Message<"aserto.directory.model.v3.DeleteManifestResponse"> & {
     /**
      * empty result
      *
      * @generated from field: google.protobuf.Empty result = 1;
      */
     result?: Empty;
-    constructor(data?: PartialMessage<DeleteManifestResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.model.v3.DeleteManifestResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteManifestResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteManifestResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteManifestResponse;
-    static equals(a: DeleteManifestResponse | PlainMessage<DeleteManifestResponse> | undefined, b: DeleteManifestResponse | PlainMessage<DeleteManifestResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.model.v3.DeleteManifestResponse.
+ * Use `create(DeleteManifestResponseSchema)` to create a new message.
+ */
+export declare const DeleteManifestResponseSchema: GenMessage<DeleteManifestResponse>;
 /**
  * @generated from message aserto.directory.model.v3.Metadata
  */
-export declare class Metadata extends Message<Metadata> {
+export type Metadata = Message<"aserto.directory.model.v3.Metadata"> & {
     /**
      * last updated timestamp (UTC)
      *
@@ -166,31 +153,60 @@ export declare class Metadata extends Message<Metadata> {
      * @generated from field: string etag = 23;
      */
     etag: string;
-    constructor(data?: PartialMessage<Metadata>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.model.v3.Metadata";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Metadata;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Metadata;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Metadata;
-    static equals(a: Metadata | PlainMessage<Metadata> | undefined, b: Metadata | PlainMessage<Metadata> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.model.v3.Metadata.
+ * Use `create(MetadataSchema)` to create a new message.
+ */
+export declare const MetadataSchema: GenMessage<Metadata>;
 /**
  * @generated from message aserto.directory.model.v3.Body
  */
-export declare class Body extends Message<Body> {
+export type Body = Message<"aserto.directory.model.v3.Body"> & {
     /**
      * manifest content
      *
      * @generated from field: bytes data = 2;
      */
     data: Uint8Array;
-    constructor(data?: PartialMessage<Body>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.model.v3.Body";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Body;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Body;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Body;
-    static equals(a: Body | PlainMessage<Body> | undefined, b: Body | PlainMessage<Body> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.model.v3.Body.
+ * Use `create(BodySchema)` to create a new message.
+ */
+export declare const BodySchema: GenMessage<Body>;
+/**
+ * @generated from service aserto.directory.model.v3.Model
+ */
+export declare const Model: GenService<{
+    /**
+     * get manifest instance
+     *
+     * @generated from rpc aserto.directory.model.v3.Model.GetManifest
+     */
+    getManifest: {
+        methodKind: "server_streaming";
+        input: typeof GetManifestRequestSchema;
+        output: typeof GetManifestResponseSchema;
+    };
+    /**
+     * set manifest instance
+     *
+     * @generated from rpc aserto.directory.model.v3.Model.SetManifest
+     */
+    setManifest: {
+        methodKind: "client_streaming";
+        input: typeof SetManifestRequestSchema;
+        output: typeof SetManifestResponseSchema;
+    };
+    /**
+     * delete manifest instance
+     *
+     * @generated from rpc aserto.directory.model.v3.Model.DeleteManifest
+     */
+    deleteManifest: {
+        methodKind: "unary";
+        input: typeof DeleteManifestRequestSchema;
+        output: typeof DeleteManifestResponseSchema;
+    };
+}>;

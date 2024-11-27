@@ -1,5 +1,51 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1";
+import type { Message } from "@bufbuild/protobuf";
+/**
+ * Describes the file aserto/directory/schema/v3/user.proto.
+ */
+export declare const file_aserto_directory_schema_v3_user: GenFile;
+/**
+ * Properties of "user" objects.
+ *
+ * @generated from message aserto.directory.schema.v3.UserProperties
+ */
+export type UserProperties = Message<"aserto.directory.schema.v3.UserProperties"> & {
+    /**
+     * main email address of user
+     *
+     * @generated from field: string email = 1;
+     */
+    email: string;
+    /**
+     * URL to user's picture
+     *
+     * @generated from field: string picture = 2;
+     */
+    picture: string;
+    /**
+     * user lifecycle status
+     *
+     * @generated from field: aserto.directory.schema.v3.UserStatus status = 3;
+     */
+    status: UserStatus;
+    /**
+     * enabled (false prevents the user from accessing anything)
+     *
+     * @generated from field: bool enabled = 4;
+     */
+    enabled: boolean;
+    /**
+     * ID of the IDP connection the user instance is associated with.
+     *
+     * @generated from field: string connection_id = 5;
+     */
+    connectionId: string;
+};
+/**
+ * Describes the message aserto.directory.schema.v3.UserProperties.
+ * Use `create(UserPropertiesSchema)` to create a new message.
+ */
+export declare const UserPropertiesSchema: GenMessage<UserProperties>;
 /**
  * @generated from enum aserto.directory.schema.v3.UserStatus
  */
@@ -64,47 +110,6 @@ export declare enum UserStatus {
     DEPROVISIONED = 8
 }
 /**
- * Properties of "user" objects.
- *
- * @generated from message aserto.directory.schema.v3.UserProperties
+ * Describes the enum aserto.directory.schema.v3.UserStatus.
  */
-export declare class UserProperties extends Message<UserProperties> {
-    /**
-     * main email address of user
-     *
-     * @generated from field: string email = 1;
-     */
-    email: string;
-    /**
-     * URL to user's picture
-     *
-     * @generated from field: string picture = 2;
-     */
-    picture: string;
-    /**
-     * user lifecycle status
-     *
-     * @generated from field: aserto.directory.schema.v3.UserStatus status = 3;
-     */
-    status: UserStatus;
-    /**
-     * enabled (false prevents the user from accessing anything)
-     *
-     * @generated from field: bool enabled = 4;
-     */
-    enabled: boolean;
-    /**
-     * ID of the IDP connection the user instance is associated with.
-     *
-     * @generated from field: string connection_id = 5;
-     */
-    connectionId: string;
-    constructor(data?: PartialMessage<UserProperties>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.schema.v3.UserProperties";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserProperties;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserProperties;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserProperties;
-    static equals(a: UserProperties | PlainMessage<UserProperties> | undefined, b: UserProperties | PlainMessage<UserProperties> | undefined): boolean;
-}
+export declare const UserStatusSchema: GenEnum<UserStatus>;

@@ -1,5 +1,9 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
+import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1";
+import type { Message } from "@bufbuild/protobuf";
+/**
+ * Describes the file buf/validate/expression.proto.
+ */
+export declare const file_buf_validate_expression: GenFile;
 /**
  * `Constraint` represents a validation rule written in the Common Expression
  * Language (CEL) syntax. Each Constraint includes a unique identifier, an
@@ -19,7 +23,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
  *
  * @generated from message buf.validate.Constraint
  */
-export declare class Constraint extends Message<Constraint> {
+export type Constraint = Message<"buf.validate.Constraint"> & {
     /**
      * `id` is a string that serves as a machine-readable name for this Constraint.
      * It should be unique within its scope, which could be either a message or a field.
@@ -45,15 +49,12 @@ export declare class Constraint extends Message<Constraint> {
      * @generated from field: string expression = 3;
      */
     expression: string;
-    constructor(data?: PartialMessage<Constraint>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.Constraint";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Constraint;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Constraint;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Constraint;
-    static equals(a: Constraint | PlainMessage<Constraint> | undefined, b: Constraint | PlainMessage<Constraint> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.Constraint.
+ * Use `create(ConstraintSchema)` to create a new message.
+ */
+export declare const ConstraintSchema: GenMessage<Constraint>;
 /**
  * `Violations` is a collection of `Violation` messages. This message type is returned by
  * protovalidate when a proto message fails to meet the requirements set by the `Constraint` validation rules.
@@ -61,22 +62,19 @@ export declare class Constraint extends Message<Constraint> {
  *
  * @generated from message buf.validate.Violations
  */
-export declare class Violations extends Message<Violations> {
+export type Violations = Message<"buf.validate.Violations"> & {
     /**
      * `violations` is a repeated field that contains all the `Violation` messages corresponding to the violations detected.
      *
      * @generated from field: repeated buf.validate.Violation violations = 1;
      */
     violations: Violation[];
-    constructor(data?: PartialMessage<Violations>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.Violations";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Violations;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Violations;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Violations;
-    static equals(a: Violations | PlainMessage<Violations> | undefined, b: Violations | PlainMessage<Violations> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.Violations.
+ * Use `create(ViolationsSchema)` to create a new message.
+ */
+export declare const ViolationsSchema: GenMessage<Violations>;
 /**
  * `Violation` represents a single instance where a validation rule, expressed
  * as a `Constraint`, was not met. It provides information about the field that
@@ -93,7 +91,7 @@ export declare class Violations extends Message<Violations> {
  *
  * @generated from message buf.validate.Violation
  */
-export declare class Violation extends Message<Violation> {
+export type Violation = Message<"buf.validate.Violation"> & {
     /**
      * `field_path` is a machine-readable identifier that points to the specific field that failed the validation.
      * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
@@ -121,12 +119,9 @@ export declare class Violation extends Message<Violation> {
      * @generated from field: bool for_key = 4;
      */
     forKey: boolean;
-    constructor(data?: PartialMessage<Violation>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "buf.validate.Violation";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Violation;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Violation;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Violation;
-    static equals(a: Violation | PlainMessage<Violation> | undefined, b: Violation | PlainMessage<Violation> | undefined): boolean;
-}
+};
+/**
+ * Describes the message buf.validate.Violation.
+ * Use `create(ViolationSchema)` to create a new message.
+ */
+export declare const ViolationSchema: GenMessage<Violation>;
