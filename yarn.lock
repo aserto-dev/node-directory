@@ -10,7 +10,7 @@ __metadata:
   resolution: "@aserto/node-directory@workspace:."
   dependencies:
     "@bufbuild/buf": "npm:^1.50.0"
-    "@bufbuild/protobuf": "npm:^2.2.2"
+    "@bufbuild/protobuf": "npm:^2.2.3"
     "@bufbuild/protoc-gen-es": "npm:^2.2.3"
     "@types/node": "npm:^22.13.1"
     typescript: "npm:^5.6.3"
@@ -104,13 +104,6 @@ __metadata:
   version: 2.2.3
   resolution: "@bufbuild/protobuf@npm:2.2.3"
   checksum: 10c0/546c38b924c4a8dd79ec457928cfb99a5aab2945d11f15f4f06894bdc148ea37a1ae8b78cf17de9bb5354cbb896f6af4099073690b5b2089e1b196cec963d6ec
-  languageName: node
-  linkType: hard
-
-"@bufbuild/protobuf@npm:^2.2.2":
-  version: 2.2.2
-  resolution: "@bufbuild/protobuf@npm:2.2.2"
-  checksum: 10c0/17687c36c85b2e489c7ffd676479c54e12437270eb5a724775cb880b09948cad205b79e5822a4d10cefde0eef433b781350d73bb649d8de9e84d7745871ee719
   languageName: node
   linkType: hard
 

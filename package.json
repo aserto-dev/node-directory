@@ -1,6 +1,6 @@
 {
   "name": "@aserto/node-directory",
-  "version": "0.33.1",
+  "version": "0.33.0",
   "description": "Node gRPC bindings for the Aserto directory service",
   "scripts": {
     "gen": "rm -rf src && buf generate --include-imports ${BUF_PATH:-buf.build/aserto-dev/directory} && rm -rf src/gen/cjs && tsc",
