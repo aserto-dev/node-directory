@@ -1,6 +1,6 @@
 {
   "name": "@aserto/node-directory",
-  "version": "0.32.0",
+  "version": "0.33.1",
   "description": "Node gRPC bindings for the Aserto directory service",
   "scripts": {
     "gen": "rm -rf src && buf generate --include-imports ${BUF_PATH:-buf.build/aserto-dev/directory} && rm -rf src/gen/cjs && tsc",
@@ -13,13 +13,13 @@
   "author": "Aserto",
   "license": "Apache-2.0",
   "dependencies": {
-    "@bufbuild/protobuf": "^2.2.2"
+    "@bufbuild/protobuf": "^2.2.3"
   },
   "devDependencies": {
-    "@bufbuild/buf": "^1.40.1",
-    "@bufbuild/protoc-gen-es": "^2.2.2",
-    "@types/node": "^22.9.1",
+    "@bufbuild/buf": "^1.50.0",
+    "@bufbuild/protoc-gen-es": "^2.2.3",
+    "@types/node": "^22.13.1",
     "typescript": "^5.6.3"
   },
-  "packageManager": "yarn@4.5.1"
+  "packageManager": "yarn@4.6.0"
 }

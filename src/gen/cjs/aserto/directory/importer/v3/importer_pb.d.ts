@@ -51,15 +51,40 @@ export type ImportResponse = Message<"aserto.directory.importer.v3.ImportRespons
     /**
      * object import counter
      *
-     * @generated from field: aserto.directory.importer.v3.ImportCounter object = 1;
+     * @generated from field: aserto.directory.importer.v3.ImportCounter object = 1 [deprecated = true];
+     * @deprecated
      */
     object?: ImportCounter;
     /**
      * relation import counter
      *
-     * @generated from field: aserto.directory.importer.v3.ImportCounter relation = 2;
+     * @generated from field: aserto.directory.importer.v3.ImportCounter relation = 2 [deprecated = true];
+     * @deprecated
      */
     relation?: ImportCounter;
+    /**
+     * @generated from oneof aserto.directory.importer.v3.ImportResponse.msg
+     */
+    msg: {
+        /**
+         * import status message
+         *
+         * @generated from field: aserto.directory.importer.v3.ImportStatus status = 4;
+         */
+        value: ImportStatus;
+        case: "status";
+    } | {
+        /**
+         * import counter per type
+         *
+         * @generated from field: aserto.directory.importer.v3.ImportCounter counter = 5;
+         */
+        value: ImportCounter;
+        case: "counter";
+    } | {
+        case: undefined;
+        value?: undefined;
+    };
 };
 /**
  * Describes the message aserto.directory.importer.v3.ImportResponse.
@@ -94,12 +119,46 @@ export type ImportCounter = Message<"aserto.directory.importer.v3.ImportCounter"
      * @generated from field: uint64 error = 4;
      */
     error: bigint;
+    /**
+     * counter of type (object|relation)
+     *
+     * @generated from field: string type = 5;
+     */
+    type: string;
 };
 /**
  * Describes the message aserto.directory.importer.v3.ImportCounter.
  * Use `create(ImportCounterSchema)` to create a new message.
  */
 export declare const ImportCounterSchema: GenMessage<ImportCounter>;
+/**
+ * @generated from message aserto.directory.importer.v3.ImportStatus
+ */
+export type ImportStatus = Message<"aserto.directory.importer.v3.ImportStatus"> & {
+    /**
+     * gRPC status code (google.golang.org/grpc/codes)
+     *
+     * @generated from field: uint32 code = 1;
+     */
+    code: number;
+    /**
+     * gRPC status message (google.golang.org/grpc/status)
+     *
+     * @generated from field: string msg = 2;
+     */
+    msg: string;
+    /**
+     * req contains the original import request message
+     *
+     * @generated from field: aserto.directory.importer.v3.ImportRequest req = 3;
+     */
+    req?: ImportRequest;
+};
+/**
+ * Describes the message aserto.directory.importer.v3.ImportStatus.
+ * Use `create(ImportStatusSchema)` to create a new message.
+ */
+export declare const ImportStatusSchema: GenMessage<ImportStatus>;
 /**
  * @generated from enum aserto.directory.importer.v3.Opcode
  */

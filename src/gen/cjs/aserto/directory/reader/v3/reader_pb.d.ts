@@ -375,12 +375,54 @@ export type CheckResponse = Message<"aserto.directory.reader.v3.CheckResponse"> 
      * @generated from field: repeated string trace = 2;
      */
     trace: string[];
+    /**
+     * context
+     *
+     * @generated from field: google.protobuf.Struct context = 3;
+     */
+    context?: JsonObject;
 };
 /**
  * Describes the message aserto.directory.reader.v3.CheckResponse.
  * Use `create(CheckResponseSchema)` to create a new message.
  */
 export declare const CheckResponseSchema: GenMessage<CheckResponse>;
+/**
+ * EXPERIMENTAL
+ *
+ * @generated from message aserto.directory.reader.v3.ChecksRequest
+ */
+export type ChecksRequest = Message<"aserto.directory.reader.v3.ChecksRequest"> & {
+    /**
+     * @generated from field: aserto.directory.reader.v3.CheckRequest default = 1;
+     */
+    default?: CheckRequest;
+    /**
+     * @generated from field: repeated aserto.directory.reader.v3.CheckRequest checks = 2;
+     */
+    checks: CheckRequest[];
+};
+/**
+ * Describes the message aserto.directory.reader.v3.ChecksRequest.
+ * Use `create(ChecksRequestSchema)` to create a new message.
+ */
+export declare const ChecksRequestSchema: GenMessage<ChecksRequest>;
+/**
+ * EXPERIMENTAL
+ *
+ * @generated from message aserto.directory.reader.v3.ChecksResponse
+ */
+export type ChecksResponse = Message<"aserto.directory.reader.v3.ChecksResponse"> & {
+    /**
+     * @generated from field: repeated aserto.directory.reader.v3.CheckResponse checks = 1;
+     */
+    checks: CheckResponse[];
+};
+/**
+ * Describes the message aserto.directory.reader.v3.ChecksResponse.
+ * Use `create(ChecksResponseSchema)` to create a new message.
+ */
+export declare const ChecksResponseSchema: GenMessage<ChecksResponse>;
 /**
  * @generated from message aserto.directory.reader.v3.CheckPermissionRequest
  */
@@ -666,6 +708,16 @@ export declare const Reader: GenService<{
         methodKind: "unary";
         input: typeof CheckRequestSchema;
         output: typeof CheckResponseSchema;
+    };
+    /**
+     * EXPERIMENTAL: checks validates a set of check requests in a single roundtrip
+     *
+     * @generated from rpc aserto.directory.reader.v3.Reader.Checks
+     */
+    checks: {
+        methodKind: "unary";
+        input: typeof ChecksRequestSchema;
+        output: typeof ChecksResponseSchema;
     };
     /**
      * check permission (deprecated, use the check method)

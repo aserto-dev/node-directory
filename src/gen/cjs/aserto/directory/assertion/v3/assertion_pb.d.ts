@@ -174,6 +174,12 @@ export type Assert = Message<"aserto.directory.assertion.v3.Assert"> & {
         case: undefined;
         value?: undefined;
     };
+    /**
+     * description
+     *
+     * @generated from field: string description = 6;
+     */
+    description: string;
 };
 /**
  * Describes the message aserto.directory.assertion.v3.Assert.
