@@ -721,7 +721,7 @@ export declare const Reader: GenService<{
     };
     /**
      * check permission (deprecated, use the check method)
-     * Deprecated: use directory.v3.Check()
+     * Deprecated: use directory.reader.v3.Check()
      *
      * @generated from rpc aserto.directory.reader.v3.Reader.CheckPermission
      * @deprecated
@@ -733,7 +733,7 @@ export declare const Reader: GenService<{
     };
     /**
      * check relation (deprecated, use the check method)
-     * Deprecated: use directory.v3.Check()
+     * Deprecated: use directory.reader.v3.Check()
      *
      * @generated from rpc aserto.directory.reader.v3.Reader.CheckRelation
      * @deprecated
