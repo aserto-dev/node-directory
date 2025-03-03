@@ -763,6 +763,87 @@ export type Schema = Message<"grpc.gateway.protoc_gen_openapiv2.options.Schema">
  */
 export declare const SchemaSchema: GenMessage<Schema>;
 /**
+ * `EnumSchema` is subset of fields from the OpenAPI v2 specification's Schema object.
+ * Only fields that are applicable to Enums are included
+ * See: https://github.com/OAI/OpenAPI-Specification/blob/3.0.0/versions/2.0.md#schemaObject
+ *
+ * Example:
+ *
+ *  option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_enum) = {
+ *    ...
+ *    title: "MyEnum";
+ *    description:"This is my nice enum";
+ *    example: "ZERO";
+ *    required: true;
+ *    ...
+ *  };
+ *
+ *
+ * @generated from message grpc.gateway.protoc_gen_openapiv2.options.EnumSchema
+ */
+export type EnumSchema = Message<"grpc.gateway.protoc_gen_openapiv2.options.EnumSchema"> & {
+    /**
+     * A short description of the schema.
+     *
+     * @generated from field: string description = 1;
+     */
+    description: string;
+    /**
+     * @generated from field: string default = 2;
+     */
+    default: string;
+    /**
+     * The title of the schema.
+     *
+     * @generated from field: string title = 3;
+     */
+    title: string;
+    /**
+     * @generated from field: bool required = 4;
+     */
+    required: boolean;
+    /**
+     * @generated from field: bool read_only = 5;
+     */
+    readOnly: boolean;
+    /**
+     * Additional external documentation for this schema.
+     *
+     * @generated from field: grpc.gateway.protoc_gen_openapiv2.options.ExternalDocumentation external_docs = 6;
+     */
+    externalDocs?: ExternalDocumentation;
+    /**
+     * @generated from field: string example = 7;
+     */
+    example: string;
+    /**
+     * Ref is used to define an external reference to include in the message.
+     * This could be a fully qualified proto message reference, and that type must
+     * be imported into the protofile. If no message is identified, the Ref will
+     * be used verbatim in the output.
+     * For example:
+     *  `ref: ".google.protobuf.Timestamp"`.
+     *
+     * @generated from field: string ref = 8;
+     */
+    ref: string;
+    /**
+     * Custom properties that start with "x-" such as "x-foo" used to describe
+     * extra functionality that is not covered by the standard OpenAPI Specification.
+     * See: https://swagger.io/docs/specification/2-0/swagger-extensions/
+     *
+     * @generated from field: map<string, google.protobuf.Value> extensions = 9;
+     */
+    extensions: {
+        [key: string]: Value;
+    };
+};
+/**
+ * Describes the message grpc.gateway.protoc_gen_openapiv2.options.EnumSchema.
+ * Use `create(EnumSchemaSchema)` to create a new message.
+ */
+export declare const EnumSchemaSchema: GenMessage<EnumSchema>;
+/**
  * `JSONSchema` represents properties from JSON Schema taken, and as used, in
  * the OpenAPI v2 spec.
  *

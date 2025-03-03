@@ -1,6 +1,6 @@
 import type { GenExtension, GenFile } from "@bufbuild/protobuf/codegenv1";
-import type { FieldOptions, FileOptions, MessageOptions, MethodOptions, ServiceOptions } from "@bufbuild/protobuf/wkt";
-import type { JSONSchema, Operation, Schema, Swagger, Tag } from "./openapiv2_pb";
+import type { EnumOptions, FieldOptions, FileOptions, MessageOptions, MethodOptions, ServiceOptions } from "@bufbuild/protobuf/wkt";
+import type { EnumSchema, JSONSchema, Operation, Schema, Swagger, Tag } from "./openapiv2_pb";
 /**
  * Describes the file protoc-gen-openapiv2/options/annotations.proto.
  */
@@ -32,6 +32,15 @@ export declare const openapiv2_operation: GenExtension<MethodOptions, Operation>
  * @generated from extension: grpc.gateway.protoc_gen_openapiv2.options.Schema openapiv2_schema = 1042;
  */
 export declare const openapiv2_schema: GenExtension<MessageOptions, Schema>;
+/**
+ * ID assigned by protobuf-global-extension-registry@google.com for gRPC-Gateway project.
+ *
+ * All IDs are the same, as assigned. It is okay that they are the same, as they extend
+ * different descriptor messages.
+ *
+ * @generated from extension: grpc.gateway.protoc_gen_openapiv2.options.EnumSchema openapiv2_enum = 1042;
+ */
+export declare const openapiv2_enum: GenExtension<EnumOptions, EnumSchema>;
 /**
  * ID assigned by protobuf-global-extension-registry@google.com for gRPC-Gateway project.
  *
